@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <meta name="description" content="旅館予約サイトサンプル" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/price.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ヘッダー読み込み -->
+    <div id="header-area"></div>
+
+    <!-- プラン -->
+    <nav class="wrapper">
+      <div class="page_head">
+        <h1>プラン一覧</h1>
+        <p>plan</p>
+      </div>
+
+      <div class="plan_list">
+        <article class="plan_card">
+          <img src="images/sleep_bar.png" alt="スタンダードプラン" />
+          <div class="plan_text">
+            <h3>スタンダードプラン</h3>
+            <p class="plan_subtitle">一泊二食付き</p>
+            <p class="plan_price">28,000円～</p>
+            <p>
+              がしみや荘の基本プランです。<br />
+              地元食材を使用した夕食・朝食と、
+              館内の温泉やラウンジをお楽しみいただけます。
+            </p>
+
+            <ul>
+              <li>夕食・朝食付き</li>
+              <li>館内すべての施設使い放題</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="plan_card">
+          <img src="images/sleep_bar.png" alt="素泊まりプラン" />
+          <div class="plan_text">
+            <h3>素泊まりプラン</h3>
+            <p class="plan_subtitle">食事なし</p>
+            <p class="plan_price">23,000円～</p>
+            <p>
+              時間を気にせず自由に滞在したい方におすすめのプランです。<br />
+              温泉やラウンジなど、館内施設は通常通りご利用いただけます。
+            </p>
+
+            <ul>
+              <li>食事なし</li>
+              <li>ラウンジ、貸切風呂は利用可能</li>
+              <li>チェックインは24時まで対応</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- 宿泊料金 -->
+
+      <div class="page_head" id="price">
+        <h1>宿泊料金</h1>
+        <p>price</p>
+      </div>
+
+      <main class="price_main">
+        <h2>ご宿泊料金</h2>
+
+        <div class="price_tabs">
+          <button class="tab_btn active" data-tab="weekday">平日料金</button>
+          <button class="tab_btn" data-tab="holiday">休前日料金</button>
+        </div>
+
+        <!-- 平日料金 -->
+        <div id="weekday" class="tab_content active">
+          <table class="p_t">
+            <tr>
+              <th>客室タイプ</th>
+              <th>スタンダードプラン</th>
+              <th>素泊まりプラン</th>
+            </tr>
+            <tr>
+              <td>スタンダードルーム</td>
+              <td>28,000円</td>
+              <td>23,000円</td>
+            </tr>
+            <tr>
+              <td>デラックスルーム</td>
+              <td>35,000円</td>
+              <td>30,000円</td>
+            </tr>
+            <tr>
+              <td>スイートルーム</td>
+              <td>40,000円</td>
+              <td>35,000円</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- 休前日料金 -->
+        <div id="holiday" class="tab_content">
+          <table class="p_t">
+            <tr>
+              <th>客室タイプ</th>
+              <th>スタンダードプラン</th>
+              <th>素泊まりプラン</th>
+            </tr>
+            <tr>
+              <td>スタンダードルーム</td>
+              <td>33,000円</td>
+              <td>28,000円</td>
+            </tr>
+            <tr>
+              <td>デラックスルーム</td>
+              <td>40,000円</td>
+              <td>35,000円</td>
+            </tr>
+            <tr>
+              <td>スイートルーム</td>
+              <td>45,000円</td>
+              <td>40,000円</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          ※上記料金は、すべて税込みの金額です。<br />
+          ※18歳未満のご予約は受け付けておりません。20歳未満でも大人料金を頂戴しております。
+        </p>
+
+        <!-- キャンセルポリシー -->
+        <h2>キャンセルポリシー</h2>
+        <table class="p_c">
+          <tr>
+            <th>キャンセル日</th>
+            <th>キャンセル料</th>
+          </tr>
+          <tr>
+            <td>当日・不泊</td>
+            <td>宿泊料の100％</td>
+          </tr>
+          <tr>
+            <td>前日</td>
+            <td>宿泊料の50％</td>
+          </tr>
+          <tr>
+            <td>7～2日前まで</td>
+            <td>宿泊料の30％</td>
+          </tr>
+          <tr>
+            <td>一週間より前</td>
+            <td>キャンセル料はかかりません</td>
+          </tr>
+        </table>
+      </main>
+    </nav>
+    <!-- wrapper -->
+
+    <div class="yoyaku_foot">
+      <p>
+        <a href="reserve.html"
+          ><img src="images/yoyaku_icon.png" alt="予約はこちら"
+        /></a>
+      </p>
+    </div>
+
+    <!-- フッター読み込み -->
+    <div id="footer-area"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/price.js"></script>
+  </body>
+</html>

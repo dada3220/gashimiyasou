@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/* =========================
+   タブ
+========================= */
+
+/* =========================
+   プラン一覧
+========================= */
+
+.plan_list {
+  width: 80%;
+  margin: 50px auto 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.plan_card {
+  padding: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.plan_card img {
+  width: 100%;
+}
+
+.plan_card h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.plan_subtitle {
+  color: #d8c27a;
+  font-size: 1rem;
+}
+
+.plan_price {
+  text-align: center;
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.plan_card p {
+  line-height: 2;
+}
+
+.plan_card ul {
+  margin-top: 25px;
+  padding-left: 20px;
+}
+
+.plan_card li {
+  margin-bottom: 10px;
+}
+
+.price_main h2 {
+  border-bottom: solid 1px #cb0e0e;
+
+  margin: 50px 20px 0px 20px;
+}
+
+.price_main p {
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-bottom: 30px;
+}
+
+.p_t {
+  color: #000;
+
+  border-collapse: collapse;
+
+  font-size: 20px;
+
+  width: 80%;
+
+  margin: auto;
+  margin-top: 30px;
+}
+
+.p_c {
+  color: #000;
+
+  border-collapse: collapse;
+
+  font-size: 15px;
+
+  width: 70%;
+
+  margin: auto;
+  margin-top: 30px;
+}
+
+.p_t td {
+  background: #fff;
+}
+
+th,
+td {
+  border: solid 5px #cb0e0e;
+  text-align: center;
+}
+
+.p_t,
+.p_c {
+  background: #daef88;
+  padding: 10px;
+}
+
+.p_c {
+  margin-bottom: 100px;
+}
+
+.p_t th {
+  width: 30%;
+}
+
+.p_c td {
+  background: #fff;
+}
+
+.price_tabs {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 70px;
+}
+
+.tab_btn {
+  flex: 1;
+  max-width: 250px;
+  padding: 15px;
+  border: 1px solid #666;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.tab_btn:hover {
+  background: #333;
+}
+
+.tab_btn.active {
+  background: #8b6b3f;
+  border-color: #8b6b3f;
+}
+
+.tab_content {
+  display: none;
+}
+
+.tab_content.active {
+  display: block;
+}
+
+#price {
+  scroll-margin-top: 150px;
+}
+
+/* スマホ */
+@media screen and (max-width: 768px) {
+  .plan_list {
+    width: 90%;
+  }
+
+  .plan_card {
+    padding: 25px;
+  }
+
+  .plan_card h3 {
+    font-size: 1.5rem;
+  }
+}

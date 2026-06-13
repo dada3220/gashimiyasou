@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>客室 | がしみや荘</title>
+
+    <meta name="description" content="大宮温泉 がしみや荘 客室案内ページ" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/room.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ヘッダー -->
+    <div id="header-area"></div>
+
+    <nav class="wrapper">
+      <div class="page_head">
+        <h1>客室</h1>
+        <p>room</p>
+      </div>
+
+      <main class="room_main">
+        <h2>お部屋一覧</h2>
+
+        <p class="room_intro">
+          がしみや荘では、お一人様向けのお部屋から、
+          客室露天風呂付きの特別室までご用意しております。
+          旅のスタイルに合わせてお選びください。
+        </p>
+
+        <!-- =========================
+             客室一覧
+        ========================= -->
+
+        <section class="room_nav">
+          <a href="#standard" class="room_card">
+            <img src="images/room01.png" alt="スタンダードルーム" />
+
+            <div class="room_card_text">
+              <h3>スタンダード</h3>
+              <p>1〜2名</p>
+            </div>
+          </a>
+
+          <a href="#deluxe" class="room_card">
+            <img src="images/room02.png" alt="デラックスルーム" />
+
+            <div class="room_card_text">
+              <h3>デラックス</h3>
+              <p>1〜4名・客室風呂付</p>
+            </div>
+          </a>
+
+          <a href="#suite" class="room_card">
+            <img src="images/room03.png" alt="スイートルーム" />
+
+            <div class="room_card_text">
+              <h3>スイート</h3>
+              <p>1〜4名・客室露天風呂付</p>
+            </div>
+          </a>
+        </section>
+
+        <!-- =========================
+             スタンダード
+        ========================= -->
+
+        <section id="standard" class="room_detail">
+          <h2>スタンダードルーム</h2>
+
+          <div class="room_slider" data-room="0">
+            <button class="slider_btn prev">&#10094;</button>
+
+            <img
+              class="slider_image"
+              src="images/room01.png"
+              alt="スタンダードルーム"
+            />
+
+            <button class="slider_btn next">&#10095;</button>
+          </div>
+
+          <p class="room_text">
+            木の温もりを感じる落ち着いた客室。
+            おひとり様やご夫婦でのご利用に最適です。
+          </p>
+
+          <table class="room_table">
+            <tr>
+              <th>設備</th>
+              <td>トイレ・洗面・シャワールーム付</td>
+            </tr>
+
+            <tr>
+              <th>フロア</th>
+              <td>2階</td>
+            </tr>
+
+            <tr>
+              <th>定員</th>
+              <td>1〜2名</td>
+            </tr>
+
+            <tr>
+              <th>総面積</th>
+              <td>30㎡</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- =========================
+             デラックス
+        ========================= -->
+
+        <section id="deluxe" class="room_detail">
+          <h2>デラックスルーム</h2>
+
+          <div class="room_slider" data-room="1">
+            <button class="slider_btn prev">&#10094;</button>
+
+            <img
+              class="slider_image"
+              src="images/room02.png"
+              alt="デラックスルーム"
+            />
+
+            <button class="slider_btn next">&#10095;</button>
+          </div>
+
+          <p class="room_text">
+            ゆとりある広さと客室風呂を備えた人気のお部屋。
+            ご家族やグループ旅行にもおすすめです。
+          </p>
+
+          <table class="room_table">
+            <tr>
+              <th>設備</th>
+              <td>トイレ・洗面・客室風呂付</td>
+            </tr>
+
+            <tr>
+              <th>フロア</th>
+              <td>3階</td>
+            </tr>
+
+            <tr>
+              <th>定員</th>
+              <td>1〜4名</td>
+            </tr>
+
+            <tr>
+              <th>総面積</th>
+              <td>40㎡</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- =========================
+             スイート
+        ========================= -->
+
+        <section id="suite" class="room_detail">
+          <h2>スイートルーム</h2>
+
+          <div class="room_slider" data-room="2">
+            <button class="slider_btn prev">&#10094;</button>
+
+            <img
+              class="slider_image"
+              src="images/room03.png"
+              alt="スイートルーム"
+            />
+
+            <button class="slider_btn next">&#10095;</button>
+          </div>
+
+          <p class="room_text">
+            客室露天風呂を備えた最上級客室。 特別なひとときをお過ごしください。
+          </p>
+
+          <table class="room_table">
+            <tr>
+              <th>設備</th>
+              <td>トイレ・洗面・客室露天風呂付</td>
+            </tr>
+
+            <tr>
+              <th>フロア</th>
+              <td>3階</td>
+            </tr>
+
+            <tr>
+              <th>定員</th>
+              <td>1〜4名</td>
+            </tr>
+
+            <tr>
+              <th>総面積</th>
+              <td>50㎡</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- =========================
+             アメニティ
+        ========================= -->
+
+        <section class="amenity">
+          <h2>アメニティ</h2>
+
+          <div class="amenity_grid">
+            <div>浴衣</div>
+            <div>作務衣</div>
+
+            <div>バスタオル</div>
+            <div>フェイスタオル</div>
+
+            <div>歯ブラシ</div>
+            <div>ヘアブラシ</div>
+
+            <div>カミソリ</div>
+            <div>綿棒</div>
+
+            <div>ドライヤー</div>
+            <div>ハンドソープ</div>
+
+            <div>シャンプー</div>
+            <div>コンディショナー</div>
+
+            <div>ボディソープ</div>
+            <div>スリッパ</div>
+          </div>
+        </section>
+
+        <!-- =========================
+             客室設備
+        ========================= -->
+
+        <section class="amenity">
+          <h2>客室共通設備</h2>
+
+          <div class="amenity_grid">
+            <div>Wi-Fi</div>
+            <div>テレビ</div>
+
+            <div>冷蔵庫</div>
+            <div>金庫</div>
+
+            <div>エアコン</div>
+            <div>電気ケトル</div>
+
+            <div>空気清浄機</div>
+            <div>お茶セット</div>
+          </div>
+        </section>
+      </main>
+    </nav>
+
+    <!-- 予約ボタン -->
+
+    <div class="yoyaku_foot">
+      <p>
+        <a href="reserve.html">
+          <img src="images/yoyaku_icon.png" alt="予約はこちら" />
+        </a>
+      </p>
+    </div>
+
+    <!-- フッター -->
+    <div id="footer-area"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/room.js"></script>
+  </body>
+</html>

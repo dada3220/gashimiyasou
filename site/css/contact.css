@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+.contact_main {
+  width: 90%;
+  max-width: 1100px;
+  margin: 50px auto 100px;
+}
+
+.contact_main h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact_intro {
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 2;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq_section {
+  margin-bottom: 100px;
+}
+
+.faq_list {
+  border-top: 1px solid #666;
+}
+
+.faq_item {
+  border-bottom: 1px solid #666;
+}
+
+.faq_item summary {
+  list-style: none;
+
+  padding: 25px 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  position: relative;
+
+  padding-right: 50px;
+}
+
+.faq_item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq_item summary::after {
+  content: "+";
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 1.5rem;
+
+  transition: 0.3s;
+}
+
+.faq_item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq_item summary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.faq_content {
+  padding: 0 20px 25px;
+
+  line-height: 2;
+}
+
+/* =========================
+   フォーム
+========================= */
+
+.contact_form {
+  margin-top: 50px;
+}
+
+.form_group {
+  margin-bottom: 30px;
+}
+
+.form_group label {
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+.form_group span {
+  color: #cb0e0e;
+
+  margin-left: 10px;
+
+  font-size: 0.9rem;
+}
+
+.form_group input,
+.form_group select,
+.form_group textarea {
+  width: 100%;
+
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  border: 1px solid #666;
+
+  font-family: "Shippori Mincho", serif;
+}
+
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus {
+  outline: none;
+
+  border-color: #cb0e0e;
+}
+
+.form_group select option {
+  color: black;
+}
+
+.form_check {
+  margin-bottom: 40px;
+}
+
+.form_check label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit_btn {
+  display: block;
+
+  width: 300px;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  padding: 18px;
+
+  background: #cb0e0e;
+  color: white;
+
+  border: none;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.submit_btn:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 768px) {
+  .contact_main {
+    width: 95%;
+  }
+
+  .faq_item summary {
+    padding: 20px 50px 20px 15px;
+  }
+
+  .faq_content {
+    padding: 0 15px 20px;
+  }
+
+  .submit_btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,565 @@
+@charset "UTF-8";
+
+/* =========================
+   予約ページ
+========================= */
+
+.reserve_main {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 50px auto;
+}
+
+/* =========================
+   セクション
+========================= */
+
+.reserve_section {
+  margin-bottom: 50px;
+
+  padding: 40px;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  border: 1px solid #c9a95b;
+
+  backdrop-filter: blur(8px);
+
+  animation: fadeIn 0.5s ease;
+}
+
+/* 非表示 */
+
+.hidden {
+  display: none;
+}
+
+/* タイトル */
+
+.reserve_title {
+  font-size: 32px;
+
+  text-align: center;
+
+  color: #d4af37;
+
+  margin-bottom: 40px;
+
+  letter-spacing: 0.15em;
+}
+
+/* =========================
+   フォーム
+========================= */
+
+.form_group {
+  margin-bottom: 30px;
+}
+
+.form_group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 18px;
+
+  letter-spacing: 0.1em;
+}
+
+.form_group input,
+.form_group select,
+.form_group textarea {
+  width: 100%;
+
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.945);
+
+  border: 1px solid #777;
+
+  color: rgb(5, 5, 5);
+
+  font-size: 16px;
+
+  font-family: "Shippori Mincho", serif;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+/* focus */
+
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus {
+  border: 1px solid #d4af37;
+
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* textarea */
+
+.form_group textarea {
+  resize: vertical;
+
+  min-height: 150px;
+}
+
+/* placeholder */
+
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+  color: #ccc;
+}
+
+/* =========================
+   カレンダー
+========================= */
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+
+  cursor: pointer;
+}
+
+/* =========================
+   客室カード
+========================= */
+
+.room_cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+.room_card {
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid #777;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* hover */
+
+.room_card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* 選択中 */
+
+.room_card.active {
+  border: 2px solid #d4af37;
+
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+.room_card img {
+  width: 100%;
+
+  height: 240px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.room_text {
+  padding: 20px;
+}
+
+.room_text h3 {
+  font-size: 24px;
+
+  margin-bottom: 15px;
+
+  color: #d4af37;
+}
+
+.room_text p {
+  line-height: 1.8;
+
+  margin-bottom: 15px;
+}
+
+.room_text span {
+  color: #ccc;
+}
+
+/* =========================
+   プランボタン
+========================= */
+
+.plan_buttons {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.plan_btn {
+  width: 100%;
+
+  padding: 25px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid #777;
+
+  color: white;
+
+  font-size: 20px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  font-family: "Shippori Mincho", serif;
+}
+
+/* hover */
+
+.plan_btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 選択中 */
+
+.plan_btn.active {
+  border: 2px solid #d4af37;
+
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+}
+
+.plan_btn span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #d4af37;
+
+  font-size: 16px;
+}
+
+/* =========================
+   金額
+========================= */
+
+.price_box {
+  margin-top: 50px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid #c9a95b;
+
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.price_box p {
+  font-size: 20px;
+
+  margin-bottom: 15px;
+}
+
+#totalPrice {
+  font-size: 42px;
+
+  color: #ffd700;
+
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* =========================
+   ボタン
+========================= */
+
+.reserve_btn {
+  width: 100%;
+
+  margin-top: 40px;
+
+  padding: 20px;
+
+  border: none;
+
+  background-color: #892696;
+
+  background-image: url(../images/karakusa.png);
+
+  color: white;
+
+  font-size: 20px;
+
+  letter-spacing: 0.2em;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  border-bottom: 2px solid #1982a5;
+
+  font-family: "Shippori Mincho", serif;
+}
+
+.reserve_btn:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #1982a5);
+
+  transform: scale(1.02);
+}
+
+/* =========================
+   完了メッセージ
+========================= */
+
+#completeMessage {
+  display: none;
+
+  margin-top: 40px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  font-size: 24px;
+
+  line-height: 2;
+
+  color: #ffd700;
+
+  border: 1px solid #d4af37;
+
+  background: rgba(255, 215, 0, 0.08);
+}
+
+/* =========================
+   アニメーション
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   date 全体クリック
+========================= */
+
+input[type="date"] {
+  position: relative;
+
+  cursor: pointer;
+}
+
+/* アイコン非表示 */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+/* =========================
+   完了画面
+========================= */
+
+.complete_overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  background-image: url(../images/takegara.png);
+
+  z-index: 9999;
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* 表示 */
+
+.complete_overlay.show {
+  display: flex;
+}
+
+.rate_label {
+  text-align: center;
+
+  color: #d4af37;
+
+  font-size: 20px;
+
+  margin-bottom: 30px;
+
+  letter-spacing: 0.15em;
+}
+
+/* 中身 */
+
+.complete_box {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 60px 40px;
+
+  text-align: center;
+
+  border: 1px solid #d4af37;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(10px);
+}
+
+.complete_box h2 {
+  font-size: 42px;
+
+  color: #ffd700;
+
+  margin-bottom: 30px;
+
+  letter-spacing: 0.15em;
+}
+
+.complete_box p {
+  line-height: 2.2;
+
+  font-size: 18px;
+
+  margin-bottom: 40px;
+}
+
+/* TOPボタン */
+
+.top_btn {
+  display: inline-block;
+
+  padding: 18px 60px;
+
+  background-color: #055e2a;
+
+  background-image: url(../images/karakusa.png);
+
+  border-bottom: 2px solid #1982a5;
+
+  color: white;
+
+  text-decoration: none;
+
+  letter-spacing: 0.15em;
+
+  transition: 0.3s;
+}
+
+.top_btn:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #1982a5);
+
+  transform: scale(1.05);
+}
+
+/* =========================
+   エラー表示
+========================= */
+
+.error_message {
+  margin-top: 8px;
+
+  color: #ff7b7b;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+.input_error {
+  border: 2px solid #ff4d4d !important;
+
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media screen and (max-width: 768px) {
+  .reserve_section {
+    padding: 25px;
+  }
+
+  .reserve_title {
+    font-size: 24px;
+  }
+
+  .room_cards {
+    grid-template-columns: 1fr;
+  }
+
+  .room_card img {
+    height: 220px;
+  }
+
+  .room_text h3 {
+    font-size: 22px;
+  }
+
+  .plan_btn {
+    font-size: 18px;
+  }
+
+  #totalPrice {
+    font-size: 32px;
+  }
+
+  .complete_box {
+    padding: 40px 20px;
+  }
+
+  .complete_box h2 {
+    font-size: 28px;
+  }
+}

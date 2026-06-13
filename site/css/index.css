@@ -1,0 +1,749 @@
+@charset "UTF-8";
+
+/* FLEXSLIDER */
+
+.flexslider {
+  margin: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  overflow: hidden;
+}
+
+/* スライダー全体 */
+#fs {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* 暗めオーバーレイ */
+#fs::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.45)
+  );
+
+  z-index: 5;
+}
+
+/* 画像 */
+.flexslider .slides img {
+  width: 100%;
+  height: 100vh;
+
+  object-fit: cover;
+
+  animation: zoomAnime 10s ease-in-out infinite;
+}
+
+/* ゆっくりズーム */
+@keyframes zoomAnime {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* ページ送りボタン消す */
+.flex-direction-nav {
+  display: none;
+}
+
+/* 下の丸ボタン */
+.flex-control-nav {
+  bottom: 30px;
+
+  z-index: 20;
+}
+
+/* 丸 */
+.flex-control-paging li a {
+  width: 9px;
+  height: 9px;
+
+  background: rgba(255, 255, 255, 0.4);
+
+  box-shadow: none;
+
+  transition: 0.3s;
+}
+
+/* 選択中 */
+.flex-control-paging li a.flex-active {
+  background: #d4af37;
+
+  transform: scale(1.3);
+}
+
+/* hover */
+.flex-control-paging li a:hover {
+  background: white;
+}
+
+/* ご挨拶テキスト全体 */
+.hero_text {
+  position: absolute;
+
+  top: 45%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 10;
+
+  width: 90%;
+
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* メインロゴ画像 */
+.main_copy img {
+  width: min(250px, 80vw);
+
+  height: auto;
+
+  margin: 0 auto;
+}
+
+/* 見出し */
+.hero_text h2 {
+  font-size: clamp(2rem, 3vw, 4rem);
+
+  letter-spacing: 0.15em;
+
+  margin: 20px 0;
+
+  line-height: 1.5;
+}
+
+/* サブコピー */
+.sub_copy {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+  letter-spacing: 0.3em;
+
+  line-height: 2;
+}
+
+.con1 {
+  display: flex;
+}
+
+.con1_img {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.con_link {
+  color: #1982a5;
+  display: inline-block;
+}
+
+.wrapper {
+  margin-top: 40px;
+}
+
+/* 共通 */
+
+.section_title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section_title p {
+  color: #d4af37;
+  letter-spacing: 0.2em;
+}
+
+.section_title h2 {
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.section_text {
+  text-align: center;
+  line-height: 2;
+  margin: 30px 0;
+}
+
+.more_btn {
+  display: block;
+
+  width: fit-content;
+
+  margin: 30px auto 0;
+
+  padding: 12px 40px;
+
+  border: 1px solid white;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.more_btn:hover {
+  background: white;
+  color: black;
+}
+
+/*お知らせ*/
+.top_news {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 80px auto;
+
+  color: white;
+}
+
+.top_news h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#latestNews {
+  display: flex;
+  gap: 30px;
+
+  padding: 20px;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+
+  transition: 0.3s;
+}
+
+#newsDate {
+  width: 120px;
+  flex-shrink: 0;
+}
+.news_more {
+  text-align: right;
+  margin-right: 20px;
+}
+.news_more a {
+  color: #05d4f8;
+}
+
+.news_more:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #e0f806);
+}
+
+/* 温泉 */
+
+.pc_img {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.sp_img {
+  display: none;
+}
+
+/* ラウンジ */
+.top_lounge {
+  margin: 80px 0;
+}
+
+.lounge_hero {
+  max-width: 1400px;
+}
+
+.lounge_hero img {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.lounge_item {
+  display: flex;
+
+  align-items: center;
+
+  width: 90%;
+
+  max-width: 1400px;
+
+  margin: 0 auto 30px;
+}
+
+.lounge_item.reverse {
+  flex-direction: row-reverse;
+}
+
+.lounge_img,
+.lounge_text {
+  width: 50%;
+}
+
+.lounge_img img {
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+}
+
+.lounge_text {
+  padding: 10px;
+}
+
+.lounge_text h3 {
+  font-size: 1.3rem;
+
+  margin-bottom: 5px;
+}
+
+.lounge_text p {
+  line-height: 1;
+}
+
+/* 料理 */
+
+.top_food {
+  margin: 150px auto;
+
+  text-align: center;
+}
+
+.food_gallery {
+  display: flex;
+
+  max-width: 1400px;
+
+  margin: 0;
+}
+
+.food_gallery img {
+  width: 50%;
+
+  margin: 5px;
+
+  object-fit: cover;
+}
+
+/* 客室 */
+
+.top_room {
+  width: 90%;
+  max-width: 1400px;
+
+  margin: 150px auto;
+
+  text-align: center;
+}
+
+.room_grid {
+  display: flex;
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+.room_grid article {
+  flex: 1;
+
+  transition: flex 0.6s ease 0.5s;
+}
+
+.room_grid img {
+  width: 100%;
+  height: 400px;
+
+  object-fit: cover;
+
+  transition: 0.6s ease;
+}
+
+.room_grid h3 {
+  margin-top: 15px;
+}
+
+.room_grid:hover article {
+  flex: 0.8;
+}
+
+.room_grid article:hover {
+  flex: 3;
+}
+
+/* 日本庭園 */
+
+.top_garden {
+  height: 100vh;
+
+  background-image: url("../images/garden_bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  position: relative;
+}
+
+.garden_content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.garden_content h2 {
+  margin: 30px 0;
+
+  font-size: 2.5rem;
+}
+
+.garden_content p {
+  margin: 1px 0;
+
+  font-size: 1rem;
+}
+
+/*  ACTIVITY */
+
+.top_activity {
+  background: #000;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity_lead {
+  text-align: center;
+  line-height: 2.2;
+  margin: 30px 0 100px;
+  color: #ddd;
+}
+
+.activity_map {
+  width: 1000px;
+  max-width: 90%;
+  margin: auto;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity_map::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50px;
+  bottom: 50px;
+  left: 50%;
+
+  width: 2px;
+
+  background: linear-gradient(to bottom, #d8b46b, #8e6c2d);
+
+  transform: translateX(-50%);
+}
+
+.activity_item {
+  width: 100%;
+  margin-bottom: 80px;
+
+  position: relative;
+}
+
+.activity_item .dot {
+  width: 18px;
+  height: 18px;
+
+  background: #d8b46b;
+
+  border-radius: 50%;
+
+  position: absolute;
+  left: 50%;
+  top: 120px;
+
+  transform: translateX(-50%);
+  z-index: 5;
+
+  box-shadow: 0 0 15px rgba(216, 180, 107, 0.7);
+}
+
+.activity_box {
+  width: 50%;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid rgba(216, 180, 107, 0.4);
+
+  backdrop-filter: blur(5px);
+
+  transition: 0.4s;
+}
+
+.activity_box:hover {
+  transform: translateY(-10px);
+  border-color: #d8b46b;
+}
+
+.activity_box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.activity_box h3 {
+  padding: 5px 10px 1px;
+  color: #d8b46b;
+  font-size: 1.2rem;
+}
+
+.activity_box p {
+  padding: 0 10px 1px;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.item1 .activity_box,
+.item3 .activity_box,
+.item5 .activity_box {
+  margin-right: auto;
+}
+
+.item2 .activity_box,
+.item4 .activity_box,
+.item6 .activity_box {
+  margin-left: auto;
+}
+
+/* =========================
+   SERVICE
+========================= */
+
+.top_service {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 150px auto;
+}
+
+.service_lead {
+  text-align: center;
+
+  margin: 30px auto 60px;
+
+  line-height: 2;
+}
+
+.service_layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 50px;
+
+  align-items: stretch;
+}
+
+.service_image {
+  height: 100%;
+}
+
+.service_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service_list {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.service_item {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-right: 5px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service_item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service_item h3 {
+  font-size: 1.2rem;
+
+  margin-bottom: 10px;
+
+  color: #d7b66a;
+
+  letter-spacing: 0.08em;
+}
+
+.service_item p {
+  line-height: 2;
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin-top: 10px;
+  }
+  .hero_text {
+    width: 95%;
+  }
+
+  .main_copy img {
+    width: min(200px, 80vw);
+
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+  .hero_text h2 {
+    font-size: 1.8rem;
+
+    letter-spacing: 0.1em;
+  }
+
+  /*温泉*/
+  .pc_img {
+    display: none;
+  }
+
+  .sp_img {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .food_gallery {
+    display: block;
+  }
+
+  .food_gallery img {
+    width: 100%;
+  }
+
+  .room_grid {
+    display: block;
+  }
+
+  .room_grid article {
+    margin-bottom: 30px;
+  }
+
+  .lounge_item,
+  .lounge_item.reverse {
+    flex-direction: column;
+  }
+
+  .lounge_img,
+  .lounge_text {
+    width: 100%;
+  }
+
+  .lounge_img img {
+    height: 200px;
+  }
+
+  .lounge_text {
+    padding: 30px 20px;
+  }
+
+  .garden_content h2 {
+    font-size: 2rem;
+  }
+
+  .top_garden {
+    background-attachment: scroll;
+  }
+
+  .activity_map::before {
+    left: 20px;
+  }
+
+  .activity_item .dot {
+    left: 20px;
+  }
+
+  .activity_box {
+    width: calc(100% - 60px);
+    margin-left: 60px !important;
+  }
+
+  .service_layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .service_image img {
+    width: 90%;
+    height: 80%;
+    display: block;
+  }
+
+  .service_lead {
+    text-align: left;
+  }
+
+  .service_item {
+    padding: 25px 0;
+  }
+
+  .service_item h3 {
+    font-size: 1.2rem;
+  }
+}

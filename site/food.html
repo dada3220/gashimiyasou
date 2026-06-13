@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>食事 | がしみや荘</title>
+
+    <meta name="description" content="旅館予約サイトサンプル" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- ress -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- lightbox -->
+    <script src="js/csrc.js"></script>
+
+    <script src="js/lightbox.min.js"></script>
+
+    <link href="css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="css/food.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ヘッダー -->
+    <div id="header-area"></div>
+
+    <nav class="wrapper">
+      <!-- ページタイトル -->
+      <div class="page_head">
+        <h1>食事</h1>
+
+        <p>food</p>
+      </div>
+
+      <main class="food_main">
+        <!-- =========================
+             季節の会席
+        ========================== -->
+
+        <section class="season_area">
+          <!-- 季節コンテンツ -->
+          <div id="season-content"></div>
+
+          <!-- 季節ボタン -->
+          <div class="season_buttons">
+            <button data-season="spring">春</button>
+
+            <button data-season="summer">夏</button>
+
+            <button data-season="autumn">秋</button>
+
+            <button data-season="winter">冬</button>
+          </div>
+        </section>
+
+        <!-- =========================
+             朝食バイキング
+        ========================== -->
+
+        <section class="breakfast_area scroll-fade">
+          <div class="food_text">
+            <h2>朝食バイキング</h2>
+
+            <p>地元食材を使用した 和洋バイキングをご用意しております。</p>
+          </div>
+
+          <!-- スライダー -->
+          <div class="breakfast_slider">
+            <!-- 左ボタン -->
+            <button class="slider_btn prev">‹</button>
+
+            <!-- 表示エリア -->
+            <div class="slider_view">
+              <!-- スライド本体 -->
+              <div class="slider_track">
+                <!-- 画像1 -->
+                <a
+                  href="images/morning01.png"
+                  data-lightbox="breakfast"
+                  data-title="朝食はバイキング形式です"
+                >
+                  <img src="images/morning01.png" alt="" />
+                </a>
+
+                <!-- 画像2 -->
+                <a
+                  href="images/morning02.png"
+                  data-lightbox="breakfast"
+                  data-title="小鉢で取りやすくご用意しております"
+                >
+                  <img
+                    src="images/morning02.png"
+                    alt="小鉢で取りやすくご用意しております"
+                  />
+                </a>
+
+                <!-- 画像3 -->
+                <a
+                  href="images/morning03.png"
+                  data-lightbox="breakfast"
+                  data-title="焼き立てパンもご用意しております"
+                >
+                  <img
+                    src="images/morning03.png"
+                    alt="焼き立てパンもご用意しております"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- 右ボタン -->
+            <button class="slider_btn next">›</button>
+          </div>
+        </section>
+
+        <!-- =========================
+             夕食会場
+        ========================== -->
+
+        <section class="dinner_place_area scroll-fade">
+          <div class="food_text">
+            <h2>夕食会場</h2>
+
+            <p>本館 ２階　お食事処 四季彩</p>
+          </div>
+
+          <div class="place_image">
+            <a
+              href="images/dinner_place.png"
+              data-lightbox="place"
+              data-title="落ち着いた和モダン空間で、 季節の会席料理をお楽しみいただけます。"
+            >
+              <img src="images/dinner_place.png" alt="夕食会場" />
+            </a>
+          </div>
+        </section>
+
+        <!-- =========================
+             朝食会場
+        ========================== -->
+
+        <section class="breakfast_place_area scroll-fade">
+          <div class="food_text">
+            <h2>朝食会場</h2>
+
+            <p>本館 ３階　BAR 武蔵</p>
+          </div>
+
+          <div class="place_image">
+            <a
+              href="images/breakfast_place.png"
+              data-lightbox="place"
+              data-title="朝日が差し込む開放的な空間で、爽やかな朝のひとときをお過ごしください。"
+            >
+              <img src="images/breakfast_place.png" alt="朝食会場" />
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- 予約ボタン -->
+      <div class="yoyaku_foot">
+        <p>
+          <a href="reserve.html">
+            <img src="images/yoyaku_icon.png" alt="予約はこちら" />
+          </a>
+        </p>
+      </div>
+    </nav>
+
+    <!-- フッター -->
+    <div id="footer-area"></div>
+
+    <!-- js -->
+    <script src="js/script.js"></script>
+
+    <script src="js/food.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+/* =========================
+庭園マップ
+========================= */
+
+.garden_map {
+  margin: 80px 0 120px;
+  text-align: center;
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.fadeUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.garden_map img {
+  width: 100%;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+  margin-top: 40px;
+}
+
+.garden_map_text {
+  max-width: 900px;
+
+  margin: 40px auto 0;
+
+  line-height: 2.3;
+
+  color: #f0f0f0;
+}
+
+/* =========================
+共通タイトル
+========================= */
+
+.section_title {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.section_title h2 {
+  font-size: 2rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+}
+
+.section_title p {
+  margin-top: 10px;
+
+  color: #ddd;
+
+  letter-spacing: 0.2em;
+
+  font-size: 0.9rem;
+}
+
+/* =========================
+施設紹介
+========================= */
+
+.garden_section {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin: 100px 10px;
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.garden_section.reverse {
+  flex-direction: row-reverse;
+}
+
+.garden_img {
+  flex: 1;
+  margin: 0px 15px;
+}
+
+.garden_img img {
+  width: 100%;
+
+  border-radius: 15px;
+
+  object-fit: cover;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+  transition: 0.4s;
+}
+
+.garden_img img:hover {
+  transform: scale(1.02);
+}
+
+.garden_text {
+  flex: 1;
+}
+
+.garden_text h2 {
+  font-size: 2rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+
+  margin-bottom: 30px;
+
+  border-bottom: solid 1px #cb0e0e;
+
+  padding-bottom: 10px;
+}
+
+.garden_text p {
+  color: #f0f0f0;
+
+  line-height: 2.3;
+}
+
+/* =========================
+子コンテンツ
+========================= */
+
+.sub_facility {
+  margin-top: 40px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.sub_item {
+  flex: 1 1 32%;
+
+  background: #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  padding: 10px;
+}
+
+.sub_item img {
+  width: 100%;
+}
+
+.sub_item h3 {
+  font-size: 1rem;
+
+  font-weight: normal;
+
+  margin-bottom: 15px;
+
+  color: #d9c07c;
+}
+
+.sub_item p {
+  font-size: 0.9rem;
+
+  line-height: 2;
+}
+
+/* =========================
+スマホ
+========================= */
+
+@media (max-width: 768px) {
+  .garden_map {
+    margin: 60px 0 80px;
+  }
+
+  .garden_map_text {
+    margin: 25px 15px 0;
+
+    font-size: 0.95rem;
+
+    line-height: 2;
+  }
+
+  .garden_section,
+  .garden_section.reverse {
+    flex-direction: column;
+
+    gap: 30px;
+
+    margin: 100px 0;
+  }
+
+  .garden_text {
+    padding: 0 15px;
+  }
+
+  .garden_text h2 {
+    font-size: 1.6rem;
+  }
+
+  .garden_text p {
+    font-size: 0.95rem;
+
+    line-height: 2;
+  }
+
+  .sub_facility {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .sub_item {
+    padding: 20px;
+  }
+
+  .section_title h2 {
+    font-size: 1.6rem;
+  }
+}

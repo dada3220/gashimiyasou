@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+.access_main h2 {
+  border-bottom: solid 1px #cb0e0e;
+
+  margin: 50px 20px 20px 20px;
+}
+
+.map iframe {
+  margin: 5%;
+  width: 90%;
+}
+
+.map p {
+  margin-left: 5%;
+
+  font-size: 100%;
+
+  width: 100%;
+}
+
+.a_mes h3 {
+  margin-left: 30px;
+}
+
+.a_mes p {
+  margin: 0px 50px 20px 50px;
+}
+
+/* 周辺案内全体 */
+.a_s {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 50px;
+
+  width: 90%;
+
+  margin: 50px auto;
+}
+
+/* 各スポット */
+.spot {
+  background: rgba(255, 255, 255, 0.03);
+
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s;
+}
+
+/* hover */
+.spot:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* タイトル */
+.spot h3 {
+  margin-bottom: 15px;
+
+  font-size: 1.5rem;
+
+  letter-spacing: 0.1em;
+}
+
+/* 画像 */
+.spot img {
+  width: 100%;
+
+  height: 280px;
+
+  object-fit: cover;
+
+  margin-bottom: 15px;
+}
+
+/* テキスト */
+.spot p {
+  line-height: 2;
+
+  color: #ddd;
+}
+
+#annai {
+  scroll-margin-top: 150px;
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media screen and (max-width: 768px) {
+  .sub_copy {
+    font-size: 0.8rem;
+
+    letter-spacing: 0.15em;
+  }
+
+  .a_s {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .spot img {
+    height: auto;
+  }
+
+  #annai {
+    scroll-margin-top: 100px;
+  }
+}

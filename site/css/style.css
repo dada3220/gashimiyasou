@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+html {
+  background-color: black;
+}
+
+body {
+  background-color: black;
+  color: white;
+
+  font-family: "Shippori Mincho", serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+#header {
+  background-image: url(../images/takegara.png);
+  background-color: rgba(0, 82, 11, 0.9);
+
+  backdrop-filter: blur(5px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+
+  padding: 10px 20px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+}
+
+/* ヘッダー余白 */
+.wrapper {
+  padding-top: 120px;
+}
+
+/* 予約アイコン*/
+
+.yoyaku_icon1 {
+  width: clamp(120px, 15vw, 190px);
+
+  height: auto;
+  background-image: url(../images/karakusa.png);
+  background-color: #892696;
+
+  border-bottom: 2px solid #1982a5;
+
+  transition: 0.3s;
+  margin-top: 15%;
+  margin-left: 5%;
+}
+
+/* hover */
+.yoyaku_icon1:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #1982a5);
+
+  transform: scale(1.05);
+}
+
+/*  ロゴ */
+
+.header_title {
+  width: clamp(220px, 30vw, 380px);
+
+  height: auto;
+
+  margin: 0 auto;
+}
+
+/* ロゴを中央固定 */
+#header p:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+/*ハンバーガー*/
+
+.ham {
+  justify-self: end;
+
+  width: 50px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+  margin-right: 10%;
+}
+
+.ham img {
+  width: 100%;
+  height: auto;
+}
+
+.ham:hover {
+  transform: scale(1.1);
+}
+
+/* ハンバーガーメニュー */
+#menu {
+  position: fixed;
+
+  right: -220px;
+  top: 0;
+
+  width: 220px;
+  height: 100%;
+
+  background-color: rgba(67, 6, 6, 0.95);
+  background-image: url(../images/bamboo_bk.png);
+
+  backdrop-filter: blur(8px);
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  transition: right 0.4s ease;
+  z-index: 1000;
+}
+
+/* メニュー表示 */
+#menu.show {
+  transform: translateX(-220px);
+}
+
+/* アニメーション */
+.wrapper,
+#header,
+#menu,
+footer {
+  transition: transform 0.8s;
+}
+
+/* メニュー */
+.menu_op {
+  list-style: none;
+
+  font-size: 1.2rem;
+
+  margin: 0 20px 20px 20px;
+}
+
+.menu_op li {
+  margin-top: 20px;
+
+  border-bottom: 3px solid #00520b;
+}
+
+.menu_op a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu_op a:hover {
+  color: #1982a5;
+}
+
+.menu_op img {
+  width: 30px;
+}
+
+.it img {
+  max-width: 150px;
+  margin: 20px;
+}
+
+/* 閉じるボタン */
+
+.menu_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 40px;
+  cursor: pointer;
+}
+
+.menu_close img {
+  width: 100%;
+  display: block;
+}
+
+.menu_close:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #e2f103);
+
+  transform: scale(1.05);
+}
+
+/* サブメニュー */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.3s ease;
+
+  margin-left: 40px;
+}
+
+.has-submenu.active .submenu {
+  max-height: 300px;
+}
+
+.submenu li {
+  margin: 10px 0;
+}
+
+.submenu a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* サブメニュー開いた時 */
+.submenu.open {
+  max-height: 300px;
+}
+
+/* サブメニュー項目 */
+.submenu li {
+  border-bottom: 1px solid #777;
+
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+
+/* サブメニューリンク */
+.submenu a {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* 共通 */
+.page_head {
+  background-image: url(../images/karakusa.png);
+  background-color: #695704;
+
+  width: 100%;
+
+  font-size: 80%;
+  text-align: center;
+
+  margin-top: 45px;
+  margin-bottom: 30px;
+
+  padding: 20px;
+
+  letter-spacing: 0.1em;
+}
+
+/* FOOTER */
+.yoyaku_foot {
+  background-image: url(../images/karakusa.png);
+  background-color: #5f0469;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.yoyaku_foot img {
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #1982a5;
+}
+
+.yoyaku_icon1:hover,
+.yoyaku_foot img:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px #1982a5);
+
+  transform: scale(1.05);
+
+  transition: 0.3s;
+}
+
+.footlogo {
+  width: 25%;
+  height: auto;
+}
+
+#footer {
+  background-image: url(../images/takegara.png);
+  background-color: #00520b;
+
+  text-align: center;
+
+  font-size: small;
+}
+
+.footer_links {
+  margin-top: 30px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-size: 0.85rem;
+}
+
+.footer_links a {
+  color: #ddd;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.footer_links a:hover {
+  color: #1982a5;
+}
+
+.footer_links span {
+  margin: 0 15px;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.copyright {
+  margin-top: 20px;
+  padding-bottom: 20px;
+
+  font-size: 0.75rem;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media screen and (max-width: 768px) {
+  /*ヘッダー*/
+  #header {
+    padding: 10px;
+  }
+
+  .wrapper {
+    padding-top: 90px;
+  }
+
+  .yoyaku_icon1 {
+    width: 100px;
+  }
+
+  .header_title {
+    width: 180px;
+  }
+
+  .ham {
+    width: 32px;
+  }
+
+  .page_head {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer_links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer_links span {
+    display: none;
+  }
+}
