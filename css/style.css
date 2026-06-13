@@ -353,7 +353,9 @@ footer {
   }
 
   .yoyaku_icon1 {
-    width: 100px;
+    margin-left: 15%;
+    width: 5rem;
+    height: 2rem;
   }
 
   .header_title {
