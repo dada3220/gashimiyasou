@@ -2,8 +2,7 @@
    共通
 ========================= */
 .food_main {
-  margin-top: 80px;
-  padding: 80px 20px;
+  padding: 0px 15px;
 }
 
 .food_text h2 {
@@ -15,6 +14,10 @@
 
   font-weight: normal;
   border-bottom: solid 1px #cb0e0e;
+}
+
+.food_text h3 {
+  font-size: 1.7rem;
 }
 
 .food_text p {
@@ -146,8 +149,6 @@
   display: flex;
 
   align-items: center;
-
-  gap: 20px;
 }
 
 /* 表示エリア */
@@ -303,12 +304,16 @@
   .breakfast_area,
   .dinner_place_area,
   .breakfast_place_area {
-    padding: 80px 20px;
+    padding: 80px 10px;
   }
 
   .food_text h2,
   .season_food h2 {
     font-size: 2rem;
+  }
+
+  .food_text h3 {
+    font-size: 1.3rem;
   }
 
   .season_buttons {
@@ -320,22 +325,34 @@
   }
 
   /* スライダー */
-
   .breakfast_slider {
-    gap: 10px;
+    position: relative;
+
+    display: block;
   }
 
+  /* ボタン */
   .slider_btn {
-    width: 45px;
+    position: absolute;
 
-    height: 45px;
+    top: 50%;
 
-    font-size: 1.5rem;
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 1rem;
   }
 
-  #slider-text {
-    font-size: 1rem;
+  .prev {
+    left: 10px;
+  }
 
-    line-height: 1.8;
+  .next {
+    right: 10px;
   }
 }

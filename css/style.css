@@ -55,10 +55,8 @@ body {
 
   height: auto;
   background-image: url(../images/karakusa.png);
-  background-color: #892696;
-
-  border-bottom: 2px solid #1982a5;
-
+  background-color: #b08d57;
+  border-bottom: 2px solid #d4af37;
   transition: 0.3s;
   margin-top: 15%;
   margin-left: 5%;
@@ -92,7 +90,7 @@ body {
 .ham {
   justify-self: end;
 
-  width: 50px;
+  width: 60px;
 
   cursor: pointer;
 
@@ -263,7 +261,7 @@ footer {
 /* FOOTER */
 .yoyaku_foot {
   background-image: url(../images/karakusa.png);
-  background-color: #5f0469;
+  background-color: #b08d57;
 
   width: 100%;
 
@@ -277,7 +275,7 @@ footer {
   width: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border-bottom: 2px solid #1982a5;
+  border-bottom: 2px solid #d4af37;
 }
 
 .yoyaku_icon1:hover,
@@ -354,16 +352,15 @@ footer {
 
   .yoyaku_icon1 {
     margin-left: 15%;
-    width: 5rem;
-    height: 2rem;
+    width: 4rem;
   }
 
   .header_title {
-    width: 180px;
+    width: 220px;
   }
 
   .ham {
-    width: 32px;
+    width: 50px;
   }
 
   .page_head {
