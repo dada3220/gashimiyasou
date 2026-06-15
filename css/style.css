@@ -55,7 +55,7 @@ body {
 
   height: auto;
   background-image: url(../images/karakusa.png);
-  background-color: #b08d57;
+  background-color: #481857;
   border-bottom: 2px solid #d4af37;
   transition: 0.3s;
   margin-top: 15%;
@@ -261,7 +261,7 @@ footer {
 /* FOOTER */
 .yoyaku_foot {
   background-image: url(../images/karakusa.png);
-  background-color: #b08d57;
+  background-color: #5f2e6e;
 
   width: 100%;
 

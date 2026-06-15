@@ -5,11 +5,26 @@
 // =========================
 
 const roomImages = [
-  ["images/room01.png", "images/standard2.jpg", "images/standard3.jpg"],
+  [
+    "images/room01.png",
+    "images/standard_room01.png",
+    "images/standard_room02.png",
+  ],
 
-  ["images/room02.png", "images/deluxe2.jpg", "images/deluxe3.jpg"],
+  [
+    "images/room02.png",
+    "images/deluxe_room01.png",
+    "images/deluxe_room02.png",
+    "images/deluxe_room03.png",
+  ],
 
-  ["images/room03.png", "images/suite2.jpg", "images/suite3.jpg"],
+  [
+    "images/room03.png",
+    "images/suite_room01.png",
+    "images/suite_room02.png",
+    "images/suite_room03.png",
+    "images/suite_room04.png",
+  ],
 ];
 
 // =========================
