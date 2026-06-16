@@ -263,12 +263,18 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
 
   let isValid = true;
 
+  let firstErrorElement = null;
+
   clearErrors();
 
   /* チェックイン */
 
   if (!checkin.value) {
     showError(checkin, "チェックイン日を選択してください");
+
+    if (!firstErrorElement) {
+      firstErrorElement = checkin;
+    }
 
     isValid = false;
   }
@@ -277,6 +283,10 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
 
   if (!checkout.value) {
     showError(checkout, "チェックアウト日を選択してください");
+
+    if (!firstErrorElement) {
+      firstErrorElement = checkout;
+    }
 
     isValid = false;
   }
@@ -290,6 +300,10 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
       checkout,
       "チェックアウト日はチェックイン日より後の日付を選択してください",
     );
+
+    if (!firstErrorElement) {
+      firstErrorElement = checkout;
+    }
 
     isValid = false;
   }
@@ -317,6 +331,10 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
   if (!people.value) {
     showError(people, "人数を選択してください");
 
+    if (!firstErrorElement) {
+      firstErrorElement = people;
+    }
+
     isValid = false;
   }
 
@@ -326,6 +344,10 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
 
   if (name.value.trim() === "") {
     showError(name, "お名前を入力してください");
+
+    if (!firstErrorElement) {
+      firstErrorElement = name;
+    }
 
     isValid = false;
   }
@@ -337,9 +359,17 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
   if (kana.value.trim() === "") {
     showError(kana, "ふりがなを入力してください");
 
+    if (!firstErrorElement) {
+      firstErrorElement = kana;
+    }
+
     isValid = false;
   } else if (!/^[ぁ-んー\s]+$/.test(kana.value.trim())) {
     showError(kana, "ふりがなはひらがなで入力してください");
+
+    if (!firstErrorElement) {
+      firstErrorElement = kana;
+    }
 
     isValid = false;
   }
@@ -351,9 +381,17 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
   if (phone.value.trim() === "") {
     showError(phone, "電話番号を入力してください");
 
+    if (!firstErrorElement) {
+      firstErrorElement = phone;
+    }
+
     isValid = false;
-  } else if (!/^\d{10,11}$/.test(phone.value)) {
+  } else if (!/^\d{10,11}$/.test(phone.value.trim())) {
     showError(phone, "電話番号はハイフンなし10～11桁で入力してください");
+
+    if (!firstErrorElement) {
+      firstErrorElement = phone;
+    }
 
     isValid = false;
   }
@@ -366,11 +404,37 @@ document.getElementById("reserveForm").addEventListener("submit", function (e) {
     isValid = false;
   }
 
+  /* エラー時 */
+
+  if (!isValid) {
+    if (firstErrorElement) {
+      const headerOffset = 140;
+
+      const position =
+        firstErrorElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerOffset;
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+
+      if (
+        firstErrorElement instanceof HTMLInputElement ||
+        firstErrorElement instanceof HTMLSelectElement ||
+        firstErrorElement instanceof HTMLTextAreaElement
+      ) {
+        firstErrorElement.focus();
+      }
+    }
+
+    return;
+  }
+
   /* OK */
 
-  if (isValid) {
-    document.getElementById("completeOverlay").classList.add("show");
-  }
+  document.getElementById("completeOverlay").classList.add("show");
 });
 
 function showError(input, message) {
