@@ -54,7 +54,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
 
-  margin-top: 50px;
+  margin: 50px 5px;
 }
 
 .spa_card {
@@ -117,7 +117,7 @@
 ==================================*/
 
 #publicSpaContent {
-  margin-top: 70px;
+  margin: 70px 10px;
 }
 
 .public_detail {
@@ -196,7 +196,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-top: 35px;
+  margin: 35px 10px;
 }
 
 .public_gallery img {
@@ -217,7 +217,7 @@
 ==================================*/
 
 .spa_warning {
-  margin: 90px auto;
+  margin: 90px 0px 500px;
 
   max-width: 850px;
 
@@ -240,7 +240,7 @@
 ==================================*/
 
 .private_area {
-  margin-top: 120px;
+  margin: 120px 5px;
 }
 
 .private_title {
@@ -258,9 +258,7 @@
 .private_grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 18px;
-
-  margin-bottom: 60px;
+  gap: 5px;
 }
 
 .private_thumb {
@@ -272,6 +270,7 @@
 
 .private_thumb img {
   width: 100%;
+  height: 50%;
   aspect-ratio: 1 / 1;
 
   object-fit: cover;
@@ -327,9 +326,8 @@
 詳細表示
 ==================================*/
 
-#privateIndoorContent,
-#privateOutdoorContent {
-  margin-bottom: 80px;
+#privateIndoorContent {
+  margin-bottom: 500px;
 }
 
 .private_detail {
@@ -684,9 +682,9 @@
   }
 
   .private_grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
-    gap: 12px;
+    gap: 1px;
   }
 
   .private_thumb span {
@@ -700,7 +698,7 @@
   }
 
   .private_gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .private_gallery img {
@@ -714,7 +712,7 @@
   .spa_warning {
     padding: 20px;
 
-    margin: 60px auto;
+    margin: 90px 0px 200px;
   }
 
   .spa_warning p {

@@ -136,8 +136,13 @@ const privateIndoorData = {
     spring: "塩化物泉",
     place: "本館1階",
     effect: "冷え性・疲労回復",
-    description: "身体の芯から温まる、やさしい塩化物泉です。",
-    gallery: ["images/spa01.png", "images/spa01_2.png", "images/spa01_3.png"],
+    description:
+      "食塩を含む「熱の湯」と呼ばれる代表的な泉質。塩分が肌をコーティングするため、非常に湯冷めしにくいのが特徴です。",
+    gallery: [
+      "images/spa01.png",
+      "images/kashikiri_1f.png",
+      "images/spa01.png",
+    ],
   },
 
   shion: {
@@ -146,8 +151,13 @@ const privateIndoorData = {
     spring: "炭酸水素塩泉",
     place: "本館2階",
     effect: "美肌・保湿",
-    description: "肌をしっとり包み込む美肌の湯です。",
-    gallery: ["images/spa02.png", "images/spa02_2.png", "images/spa02_3.png"],
+    description:
+      "「清涼の湯」と呼ばれ、入浴後の気化熱による清涼感と、古い角質や皮脂を落とすクレンジング効果が特徴です。",
+    gallery: [
+      "images/spa02.png",
+      "images/kashikiri_2f.png",
+      "images/spa02.png",
+    ],
   },
 
   ruri: {
@@ -156,8 +166,13 @@ const privateIndoorData = {
     spring: "硫酸塩泉",
     place: "本館3階",
     effect: "切り傷・やけど",
-    description: "青を基調とした落ち着いた雰囲気の貸切風呂です。",
-    gallery: ["images/spa03.png", "images/spa03_2.png", "images/spa03_3.png"],
+    description:
+      "古くから「傷の湯」と呼ばれ、鎮静作用や血圧降下作用、優れた保温・保湿作用を持つ温泉です。",
+    gallery: [
+      "images/spa03.png",
+      "images/kashikiri_3f.png",
+      "images/spa03.png",
+    ],
   },
 
   bokusumi: {
@@ -166,8 +181,13 @@ const privateIndoorData = {
     spring: "モール泉",
     place: "本館1階",
     effect: "保湿・疲労回復",
-    description: "植物由来の成分を豊富に含む天然モール泉です。",
-    gallery: ["images/spa04.png", "images/spa04_2.png", "images/spa04_3.png"],
+    description:
+      "「黒湯」として知られている、地下の植物性有機物（腐植質）を豊富に含む、肌触りが非常に滑らかな温泉です。",
+    gallery: [
+      "images/spa04.png",
+      "images/kashikiri_b1.png",
+      "images/spa04.png",
+    ],
   },
 
   moegi: {
@@ -176,8 +196,13 @@ const privateIndoorData = {
     spring: "放射能泉",
     place: "屋上",
     effect: "神経痛・関節痛",
-    description: "屋上で静かな時間を楽しめる貸切風呂です。",
-    gallery: ["images/spa05.png", "images/spa05_2.png", "images/spa05_3.png"],
+    description:
+      "人工温泉。微量の放射物質（ラドン）を含む温泉。細胞が活性化し自然治癒力を高めるため、「万病の湯」として親しまれています。",
+    gallery: [
+      "images/spa05.png",
+      "images/kashikiri_rf1.png",
+      "images/spa05.png",
+    ],
   },
 
   asagi: {
@@ -186,8 +211,13 @@ const privateIndoorData = {
     spring: "二酸化炭素泉",
     place: "屋上",
     effect: "血行促進",
-    description: "やさしい湯あたりで身体を温める人気のお風呂です。",
-    gallery: ["images/spa06.png", "images/spa06_2.png", "images/spa06_3.png"],
+    description:
+      "人工温泉。無数の気泡が付着することから「ラムネの湯」と呼ばれる温泉。炭酸ガスが皮膚から吸収され、血行促進効果があります。",
+    gallery: [
+      "images/spa06.png",
+      "images/kashikiri_rf2.png",
+      "images/spa06.png",
+    ],
   },
 };
 
@@ -202,8 +232,9 @@ const privateOutdoorData = {
     spring: "含鉄泉",
     place: "日本庭園",
     effect: "冷え性・貧血",
-    description: "赤褐色の湯が特徴の開放感あふれる露天風呂です。",
-    gallery: ["images/spa07.png", "images/spa07_2.png", "images/spa07_3.png"],
+    description:
+      "鉄イオンを多く含む温泉で、貧血、月経障害などに効果があることから「婦人の湯」と呼ばれています。鉄分が酸化し、赤褐色のお湯になります。",
+    gallery: ["images/spa07.png", "images/roten01.png", "images/spa07.png"],
   },
 
   nyuhaku: {
@@ -212,8 +243,9 @@ const privateOutdoorData = {
     spring: "硫黄泉",
     place: "日本庭園",
     effect: "皮膚病・疲労回復",
-    description: "乳白色の湯を楽しめる人気の露天風呂です。",
-    gallery: ["images/spa08.png", "images/spa08_2.png", "images/spa08_3.png"],
+    description:
+      "殺菌効果や血行促進効果が高い温泉。肌荒れの改善や、角質を軟化させメラニンを分解する働きがあることから「美白の湯」とも呼ばれています。",
+    gallery: ["images/spa08.png", "images/roten02.png", "images/spa08.png"],
   },
 
   hisui: {
@@ -222,8 +254,9 @@ const privateOutdoorData = {
     spring: "酸性泉",
     place: "日本庭園",
     effect: "皮膚病",
-    description: "庭園の景色を眺めながらゆったり過ごせます。",
-    gallery: ["images/spa09.png", "images/spa09_2.png", "images/spa09_3.png"],
+    description:
+      "強い殺菌力から「直しの湯」と呼ばれ、角質を溶かし肌を引き締める効果があります。刺激の強い温泉なのでご注意ください。",
+    gallery: ["images/spa09.png", "images/roten03.png", "images/spa09.png"],
   },
 
   kihada: {
@@ -232,8 +265,9 @@ const privateOutdoorData = {
     spring: "含アルミニウム泉",
     place: "日本庭園",
     effect: "皮膚病",
-    description: "木々に囲まれた静かな露天風呂です。",
-    gallery: ["images/spa10.png", "images/spa10_2.png", "images/spa10_3.png"],
+    description:
+      "肌を引き締める収れん作用が高いため、「引き締めの湯」とも呼ばれています。以前はみょうばん泉とも言われていました。",
+    gallery: ["images/spa10.png", "images/roten04.png", "images/spa10.png"],
   },
 
   kuchiba: {
@@ -242,8 +276,9 @@ const privateOutdoorData = {
     spring: "アルカリ性単純温泉",
     place: "日本庭園",
     effect: "美肌",
-    description: "柔らかな湯ざわりが特徴の露天風呂です。",
-    gallery: ["images/spa11.png", "images/spa11_2.png", "images/spa11_3.png"],
+    description:
+      "トロトロとした肌触りが特徴の温泉。「化粧水の湯」とも呼ばれ、入浴後にはしっとり感も実感できます。",
+    gallery: ["images/spa11.png", "images/roten05.png", "images/spa11.png"],
   },
 
   hakudei: {
@@ -252,8 +287,9 @@ const privateOutdoorData = {
     spring: "酸性単純温泉",
     place: "日本庭園",
     effect: "疲労回復",
-    description: "自然に囲まれた静かな貸切露天風呂です。",
-    gallery: ["images/spa12.png", "images/spa12_2.png", "images/spa12_3.png"],
+    description:
+      "湯底にミネラル豊富な泥が沈殿している「泥湯」。泥を全身に塗りパックとして楽しむこともできます。",
+    gallery: ["images/spa12.png", "images/roten06.png", "images/spa12.png"],
   },
 };
 /*==================================
@@ -316,10 +352,6 @@ function renderPublicSpa(id) {
 
   refreshLightbox();
 }
-
-/*==================================
-貸切風呂 共通描画
-==================================*/
 
 /*==================================
 貸切風呂 共通描画
