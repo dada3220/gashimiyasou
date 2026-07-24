@@ -1,5 +1,50 @@
 @charset "UTF-8";
 
+/*==============================
+ご予約について
+==============================*/
+
+.plan_notice {
+  width: 95%;
+  margin: 50px auto 70px;
+  padding: 28px 35px;
+  background: #d3cf02;
+  border-left: 15px solid #fc2802;
+  border-radius: 3px;
+}
+
+.plan_notice h2 {
+  font-size: 2rem;
+  margin-bottom: 13px;
+  color: #333;
+}
+
+.plan_notice ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan_notice li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 5px;
+  line-height: 1.9;
+  color: #050505;
+}
+
+.plan_notice li:last-child {
+  margin-bottom: 0;
+}
+
+.plan_notice li::before {
+  content: "※";
+  position: absolute;
+  left: 0;
+  color: #fc2802;
+  font-weight: bold;
+}
+
 /* =========================
    プラン一覧
 ========================= */
@@ -36,6 +81,48 @@
   color: #d8c27a;
   font-size: 1rem;
 }
+
+/* =========================
+   共通サービス
+========================= */
+
+.plan_common {
+  margin: 80px auto;
+  padding: 40px;
+  background: #686766;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.plan_common h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.plan_common_list {
+  list-style: none;
+  padding: 0;
+}
+
+.plan_common_list li {
+  position: relative;
+  padding-left: 1.8em;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.plan_common_list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #fdf903;
+  font-weight: bold;
+}
+
+/* =========================
+   プライス
+========================= */
 
 .plan_price {
   text-align: center;
