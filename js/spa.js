@@ -81,6 +81,8 @@ const publicSpaData = {
 
     name: "大桜の湯",
 
+    color: "#d42b8e",
+
     main: "images/spa_main1.png",
 
     description:
@@ -104,6 +106,8 @@ const publicSpaData = {
     id: "otaki",
 
     name: "大滝の湯",
+
+    color: "#300791",
 
     main: "images/spa_main2.png",
 
@@ -334,6 +338,8 @@ function renderPublicSpa(id) {
     )
     .join("");
 
+  const content = document.getElementById("publicSpaContent");
+
   document.getElementById("publicSpaContent").innerHTML = `
     <div class="public_detail">
 
@@ -362,6 +368,7 @@ function renderPublicSpa(id) {
     </div>
   `;
 
+  content.style.background = `linear-gradient(135deg, ${spa.color}, #1b1b1b)`;
   refreshLightbox();
 }
 

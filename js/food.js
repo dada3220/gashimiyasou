@@ -90,7 +90,9 @@ function initSeasonMenu() {
       content.innerHTML = `
         <section class="season_food fade scroll-fade">
 
-          <h2>${data.title}</h2>
+          <h2 class="season_title ${season}">
+            ${data.title}
+          </h2>
 
           <!-- 料理画像 -->
           <div class="food_image">

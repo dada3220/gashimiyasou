@@ -4,11 +4,6 @@
    メイン
 ========================= */
 
-.room_main {
-  width: 90%;
-  margin: 0 auto;
-}
-
 .room_main h2 {
   text-align: center;
 
@@ -21,12 +16,9 @@
 }
 
 .room_intro {
-  width: 80%;
-
-  margin: 0 auto 60px;
-
   text-align: center;
 
+  margin: 50px;
   line-height: 2;
 }
 

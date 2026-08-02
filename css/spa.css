@@ -117,7 +117,7 @@
 ==================================*/
 
 #publicSpaContent {
-  margin: 70px 10px;
+  margin: 70px 0px;
 }
 
 .public_detail {
@@ -136,6 +136,12 @@
   border-radius: 18px;
 
   display: block;
+
+  padding: 50px 5px 0px;
+}
+
+.public_info {
+  padding: 10px;
 }
 
 .public_info h2 {
@@ -205,6 +211,7 @@
   object-fit: cover;
   border-radius: 10px;
   transition: 0.3s;
+  margin-bottom: 50px;
 }
 
 .public_gallery img:hover {
@@ -250,7 +257,7 @@
 }
 
 .private_content {
-  padding: 45px;
+  padding: 45px 20px;
   border-radius: 20px;
   transition: background 0.5s ease;
 }

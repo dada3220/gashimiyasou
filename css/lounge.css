@@ -5,16 +5,11 @@ html {
 }
 
 /* =========================
-   PAGE
-========================= */
-
-.lounge_page {
-  color: white;
-}
-
-/* =========================
    INTRO
 ========================= */
+.section_title {
+  color: rgb(145, 145, 114);
+}
 
 .lounge_intro {
   margin-top: 80px;
@@ -52,6 +47,8 @@ html {
   color: white;
 
   transition: 0.3s;
+
+  padding: 0px 15px;
 }
 
 .summary_item:hover {
@@ -76,6 +73,7 @@ html {
 
 .summary_item p {
   line-height: 2;
+  text-align: center;
 }
 
 h2,
@@ -136,6 +134,39 @@ h3 {
   line-height: 1.8;
 }
 
+/* =========================
+   文字色
+========================= */
+
+.lounge_s1,
+#lounge01 h3 {
+  color: #bd0404;
+}
+
+.lounge_s2,
+#lounge02 h3 {
+  color: #89039b;
+}
+
+.lounge_s3,
+#lounge03 h3 {
+  color: #cc5009;
+}
+
+.lounge_s4,
+#lounge04 h3 {
+  color: #069201;
+}
+
+.lounge_s5,
+#lounge05 h3 {
+  color: #0284a5;
+}
+
+.lounge_s6,
+#lounge02 h6 {
+  color: #c6d403;
+}
 /* =========================
    RESPONSIVE
 ========================= */

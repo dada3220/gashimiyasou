@@ -40,7 +40,7 @@
 
     <!-- css -->
     <link href="css/style.css" rel="stylesheet" />
-
+    <link href="css/mv.css" rel="stylesheet" />
     <link href="css/food.css" rel="stylesheet" />
   </head>
 
@@ -48,20 +48,44 @@
     <!-- ヘッダー -->
     <div id="header-area"></div>
 
-    <nav class="wrapper">
-      <!-- ページタイトル -->
-      <div class="page_head">
-        <h1>食事</h1>
-
-        <p>food</p>
-      </div>
-
       <main class="food_main">
-        <!-- =========================
+      
+        <nav class="wrapper">
+        <!-- ページタイトル -->
+          <div class="page_head">
+            <h1>食事</h1>
+            <p>food</p>
+          </div>
+
+        <!--=================================
+          MV
+        ==================================-->
+        <section class="mv">
+          <img src="images/mv/food_mv.png" alt="料理" />
+
+          <div class="mv_text">
+            <h1>四季を味わう、至福の一皿。</h1>
+
+             <p>
+              地元の旬と全国の厳選食材が織りなす会席料理。<br />
+              がしみや荘ならではの美食体験をご堪能ください。
+              </p>
+          </div>
+        </section>
+
+          <!-- =========================
              季節の会席
         ========================== -->
 
         <section class="season_area">
+          <div class="food_text">
+            <h1>夕食【季節の会席】</h1>
+
+           <p>
+              彩り、香り、器までこだわった会席料理。<br />
+              一品一品に、季節のおもてなしを込めています。
+            </p>
+          </div>
           <!-- 季節コンテンツ -->
           <div id="season-content"></div>
 
@@ -77,15 +101,38 @@
           </div>
         </section>
 
+         <!-- =========================
+             夕食会場
+        ========================== -->
+
+        <section class="dinner_place_area scroll-fade">
+          <div class="food_text">
+            <h2>夕食会場</h2>
+
+            <h3>本館 ２階　お食事処 四季彩</h3>
+          </div>
+
+          <div class="place_image">
+            <a
+              href="images/dinner_place.png"
+              data-lightbox="place"
+              data-title="落ち着いた和モダン空間で、 季節の会席料理をお楽しみいただけます。"
+            >
+              <img src="images/dinner_place.png" alt="夕食会場" />
+            </a>
+          </div>
+        </section>
+
         <!-- =========================
              朝食バイキング
         ========================== -->
 
         <section class="breakfast_area scroll-fade">
           <div class="food_text">
-            <h2>朝食バイキング</h2>
+            <h1>朝食バイキング</h1>
 
-            <p>地元食材を使用した 和洋バイキングをご用意しております。</p>
+            <p>地元食材を使用した 和洋バイキングをご用意しております。<br>
+                好きなものを、好きなだけお召し上がりください。</p>
           </div>
 
           <!-- スライダー -->
@@ -137,27 +184,7 @@
           </div>
         </section>
 
-        <!-- =========================
-             夕食会場
-        ========================== -->
-
-        <section class="dinner_place_area scroll-fade">
-          <div class="food_text">
-            <h2>夕食会場</h2>
-
-            <h3>本館 ２階　お食事処 四季彩</h3>
-          </div>
-
-          <div class="place_image">
-            <a
-              href="images/dinner_place.png"
-              data-lightbox="place"
-              data-title="落ち着いた和モダン空間で、 季節の会席料理をお楽しみいただけます。"
-            >
-              <img src="images/dinner_place.png" alt="夕食会場" />
-            </a>
-          </div>
-        </section>
+       
 
         <!-- =========================
              朝食会場

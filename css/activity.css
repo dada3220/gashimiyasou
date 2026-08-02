@@ -124,7 +124,7 @@ MV
 }
 
 .activity_nav a.active {
-  background: #b48b46;
+  background: #855606;
 
   color: #fff;
 }
@@ -212,7 +212,7 @@ MV
 }
 
 .activity_info dt {
-  color: #777;
+  color: #f38585;
 
   font-size: 0.95rem;
 }
@@ -224,7 +224,7 @@ MV
 .activity_info p {
   line-height: 2.3;
 
-  color: #555;
+  color: #c4c2c2;
 }
 
 /*==================================================
@@ -276,7 +276,7 @@ MV
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 25px;
+  gap: 15px;
 
   margin-top: 45px;
 }
@@ -299,6 +299,8 @@ MV
   display: block;
 
   transition: 0.45s;
+
+  border: 1px solid #ffffff;
 }
 
 .gallery a:hover img {

@@ -1,8 +1,18 @@
 /* =========================
    共通
 ========================= */
-.food_main {
-  padding: 0px 15px;
+.food_text h1 {
+  text-align: center;
+
+  font-size: 2.5rem;
+
+  margin-bottom: 40px;
+
+  letter-spacing: 0.15em;
+
+  font-weight: normal;
+
+  border-bottom: solid 1px #838282;
 }
 
 .food_text h2 {
@@ -24,6 +34,8 @@
   line-height: 2.2;
 
   letter-spacing: 0.1em;
+
+  text-align: center;
 }
 
 /* =========================
@@ -34,12 +46,15 @@
 .breakfast_area,
 .dinner_place_area,
 .breakfast_place_area {
-  padding: 120px 0;
+  padding: 120px 15px;
 }
 
 /* =========================
    季節料理
 ========================= */
+#season-content {
+  margin-top: 150px;
+}
 
 .season_food h2 {
   text-align: center;
@@ -53,6 +68,22 @@
   font-weight: normal;
 
   border-bottom: solid 1px #838282;
+}
+
+.season_title.spring {
+  color: #c97f8d; /* 桜色 */
+}
+
+.season_title.summer {
+  color: #2b8c8c; /* 青磁色 */
+}
+
+.season_title.autumn {
+  color: #9c5b2b; /* 柿渋色 */
+}
+
+.season_title.winter {
+  color: #4b6fa8; /* 瑠璃色 */
 }
 
 /* 料理画像 */
@@ -235,6 +266,8 @@
   display: block;
 
   border-radius: 10px;
+
+  margin-bottom: 200px;
 }
 
 /* =========================
