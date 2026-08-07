@@ -312,11 +312,11 @@ Lightbox
 }
 
 .stall_card h4 {
-  margin: 25px 25px 15px;
-
-  font-size: 1.3rem;
+  margin: 25px 10px 15px;
 
   font-weight: normal;
+
+  font-size: 1.1rem;
 
   color: #e5ff00;
 }
@@ -332,7 +332,7 @@ Lightbox
 }
 
 .stall_card p {
-  margin: 20px 25px 30px;
+  margin: 20px 10px 20px;
 
   line-height: 2;
 
@@ -558,22 +558,6 @@ Lightbox
 ==================================================*/
 
 @media (max-width: 600px) {
-  .activity_mv img {
-    height: 55vh;
-
-    min-height: 400px;
-  }
-
-  .activity_mv_text h1 {
-    font-size: 2rem;
-  }
-
-  .activity_mv_text p {
-    font-size: 0.95rem;
-
-    line-height: 2;
-  }
-
   .activity_nav ul {
     width: 100%;
 
@@ -629,20 +613,16 @@ Lightbox
     row-gap: 6px;
   }
 
+  .gallery {
+    gap: 5px;
+  }
+
   .activity_info dt {
     font-weight: bold;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    aspect-ratio: 16 / 10;
-  }
-
   .stall_grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .activity_model img {
