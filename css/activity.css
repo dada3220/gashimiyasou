@@ -138,7 +138,7 @@
 }
 
 .activity_info dt {
-  color: #f38585;
+  color: #e01919;
 
   font-size: 0.95rem;
 }
@@ -232,9 +232,40 @@
 }
 
 .gallery a:hover img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
+#play h3 {
+  color: #ee4e04;
+}
+
+#play .gallery img {
+  border: 1px solid #ee4e04;
+}
+
+#relax h3 {
+  color: #0691aa;
+}
+
+#relax .gallery img {
+  border: 1px solid #0668aa;
+}
+
+#stay h3 {
+  color: #979710;
+}
+
+#stay .gallery img {
+  border: 1px solid #979710;
+}
+
+#others h3 {
+  color: #09971c;
+}
+
+#others .gallery img {
+  border: 1px solid #09971c;
+}
 /*==================================================
 Lightbox
 ==================================================*/
@@ -579,9 +610,7 @@ Lightbox
   }
 
   .activity_area {
-    width: 92%;
-
-    margin: 70px auto;
+    width: 95%;
   }
 
   .section_title {
@@ -615,6 +644,10 @@ Lightbox
 
   .gallery {
     gap: 5px;
+  }
+
+  .gallery img {
+    height: 150px;
   }
 
   .activity_info dt {
