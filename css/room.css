@@ -18,7 +18,7 @@
 .room_intro {
   text-align: center;
 
-  margin: 50px;
+  margin: 30px 0 50px;
   line-height: 2;
 }
 
@@ -492,8 +492,6 @@
 
   .room_intro {
     width: 100%;
-
-    text-align: left;
 
     line-height: 1.8;
   }
