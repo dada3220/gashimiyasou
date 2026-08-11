@@ -4,460 +4,737 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-    <meta name="description" content="旅館予約サイトサンプル" />
+
+    <title>大宮温泉 がしみや荘</title>
+
+    <meta
+      name="description"
+      content="十二の湯と六つのラウンジ。湯も、食も、遊びも。大人のための24時間を楽しむ温泉宿、がしみや荘。"
+    />
+
     <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Ress -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
       rel="stylesheet"
     />
-    <!-- flexslider -->
+
+    <!-- ==================================
+    FlexSlider
+    ================================== -->
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
+
     <link href="css/flexslider.css" rel="stylesheet" />
-    <!-- //flexslider -->
+
+    <!-- ==================================
+    CSS
+    ================================== -->
+
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- ヘッダー読み込み -->
+    <!-- ==================================
+    Header
+    ================================== -->
+
     <div id="header-area"></div>
 
-    <!-- スライダー -->
-    <div class="wrapper">
-      <div class="flexslider" id="fs">
-        <ul class="slides">
-          <li><img src="images/top_fs01.png" /></li>
-          <li><img src="images/top_fs02.png" /></li>
-          <li><img src="images/top_fs03.png" /></li>
-          <li><img src="images/top_fs04.png" /></li>
-          <li><img src="images/top_fs05.png" /></li>
-        </ul>
-        <div class="hero_text">
-          <p class="sub_copy">OMIYA ONSEN</p>
-          <h2>東大宮に温泉が湧きました <br />都心から最も近い温泉郷</h2>
-          <p class="main_copy"><img src="images/logo.png" alt="" /></p>
+    <!-- ==================================
+    TOP PAGE
+    ================================== -->
+
+    <main class="top_page">
+      <!-- ==================================
+      MV / FLEXSLIDER
+      ================================== -->
+
+      <section class="top_hero">
+        <div class="flexslider" id="fs">
+          <ul class="slides">
+            <li>
+              <img src="images/top_fs01.png" alt="がしみや荘の風景" />
+            </li>
+
+            <li>
+              <img src="images/top_fs02.png" alt="がしみや荘の温泉" />
+            </li>
+
+            <li>
+              <img src="images/top_fs03.png" alt="がしみや荘の庭園" />
+            </li>
+
+            <li>
+              <img src="images/top_fs04.png" alt="がしみや荘の館内" />
+            </li>
+
+            <li>
+              <img src="images/top_fs05.png" alt="がしみや荘の料理" />
+            </li>
+          </ul>
+
+          <!-- MV TEXT -->
+
+          <div class="hero_text">
+            <p class="hero_sub">OMIYA ONSEN</p>
+
+            <h1>
+              湯に浸かり、<br />
+              時間に浸る。
+            </h1>
+
+            <p class="hero_copy">
+              12の湯、6つのラウンジ。<br />
+              食も遊びも、寛ぎも。<br />
+              大人のための24時間を、がしみや荘で。
+            </p>
+          </div>
+
+          <!-- SCROLL -->
+
+          <div class="hero_scroll">
+            <span>SCROLL</span>
+
+            <i></i>
+          </div>
         </div>
-      </div>
-
-<main class="top_main">
-  <!-- お知らせ -->
-  <section class="top_news">
-    <h2>最新情報</h2>
-
-    <p id="latestNews">
-      <span id="newsDate"></span>
-      <span id="newsTitle"></span>
-      
-    </p>
-
-    <p class="news_more">
-      <a href="news.html">＞＞ 詳細はこちら</a>
-    </p>
-  </section>
-
-  <!-- 温泉 -->
- <section class="top_onsen">
-  <div class="section_title">
-    <p>HOT SPRING</p>
-    <h2>温泉</h2>
-    <p class="section_text">
-    大浴場２種と貸し切り風呂12種類<br />
-    趣の異なる温泉を自由に巡る湯めぐり体験
-  </p>
-  </div>
-
-  <div class="onsen_gallery">
-  <img
-    class="pc_img"
-    src="images/top_onsen01.png"
-    alt="温泉"
-  />
-
-  <img
-    class="sp_img"
-    src="images/top_onsen01_sp.png"
-    alt="温泉"
-  />
-</div>
-
-<div class="onsen_gallery">
-  <img
-    class="pc_img"
-    src="images/top_onsen02.png"
-    alt="露天風呂"
-  />
-
-  <img
-    class="sp_img"
-    src="images/top_onsen02_sp.png"
-    alt="露天風呂"
-  />
-</div>
-
-  <a href="spa.html" class="more_btn">
-      温泉を見る
-    </a>
-</section>
-
-  <!-- ラウンジ -->
-  <section class="top_lounge">
-
-  <div class="section_title">
-    <p>LOUNGE</p>
-    <h2>ラウンジ</h2>
-  </div>
-
-  <!-- 大画像 -->
-  <div class="lounge_hero">
-    <img
-    class="pc_img"
-    src="images/top_lounge.png"
-    alt="ラウンジ"
-    />
-
-    <img
-    class="sp_img"
-    src="images/top_lounge_sp.png"
-    alt="ラウンジ"
-    />
-  
-  </div>
-</div>
-
-  <!-- 火 -->
-  <div class="lounge_item">
-
-    <div class="lounge_img">
-      <img src="images/lounge01_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>火のラウンジ</h3>
-
-      <p>
-        暖炉の炎を眺めながら過ごす、
-        皆が集まる暖かな空間。
-      </p>
-    </div>
-
-  </div>
-
-  <!-- 月 -->
-  <div class="lounge_item reverse">
-
-    <div class="lounge_img">
-      <img src="images/lounge02_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>月のラウンジ</h3>
-
-      <p>
-        壮大な星空の中で過ごす、
-        綺麗で煌びやかな空間。
-      </p>
-    </div>
-    
-  </div>
-    <!-- 土 -->
-  <div class="lounge_item">
-
-    <div class="lounge_img">
-      <img src="images/lounge03_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>土のラウンジ</h3>
-
-      <p>
-        地下の秘密基地で過ごす、
-        時間を忘れる落ち着く空間。
-      </p>
-    </div>
-
-  </div>
-
-  <!-- 木 -->
-  <div class="lounge_item reverse">
-
-    <div class="lounge_img">
-      <img src="images/lounge04_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>木のラウンジ</h3>
-
-      <p>
-        大自然の中で過ごす、
-        ワイルドで開放的な空間。
-      </p>
-    </div>
-    
-  </div>
-  <!-- 水 -->
-  <div class="lounge_item">
-
-    <div class="lounge_img">
-      <img src="images/lounge05_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>水のラウンジ</h3>
-
-      <p>
-        川のせせらぎを聞きながら過ごす、
-        爽やかで涼やかな空間。
-      </p>
-    </div>
-
-  </div>
-
-  <!-- 金 -->
-  <div class="lounge_item reverse">
-
-    <div class="lounge_img">
-      <img src="images/lounge06_s.png" alt="">
-    </div>
-
-    <div class="lounge_text">
-      <h3>金のラウンジ</h3>
-
-      <p>
-        アートに囲まれて過ごす、
-        ラグジュアリーで贅沢な空間。
-      </p>
-    </div>
-    
-  </div>
-   <a href="lounge.html" class="more_btn">
-      ラウンジを見る
-    </a>
-</section>
-
- <!-- 料理 -->
-  <section class="top_food">
-    <div class="section_title">
-      <p>FOOD</p>
-      <h2>料理</h2>
-    </div>
-
-    <div class="food_gallery">
-      <img src="images/top_food01.png" alt="">
-      <img src="images/top_food02.png" alt="">
-    </div>
-
-    <a href="food.html" class="more_btn">
-      お料理を見る
-    </a>
-  </section>
-
-  <!-- 客室 -->
-  <section class="top_room">
-    <div class="section_title">
-      <p>ROOM</p>
-      <h2>客室</h2>
-      <p class="section_text">
-        客室タイプは3タイプ<br/>
-        用途に合わせてお選びください
-      </p>
-      
-    </div>
-
-    <div class="room_grid">
-      <article>
-        <img src="images/room01.png" alt="" />
-        <h3>スタンダードルーム</h3>
-      </article>
-
-      <article>
-        <img src="images/room02.png" alt="" />
-        <h3>デラックスルーム</h3>
-      </article>
-
-      <article>
-        <img src="images/room03.png" alt="" />
-        <h3>スイートルーム</h3>
-      </article>
-    </div>
-
-    <a href="room.html" class="more_btn">客室を見る</a>
-  </section>
-
-  <!-- 日本庭園 -->
- <div class="section_title">
-      <p>GARDEN</p>
-      <h2>庭園</h2>
-    </div>
-
-  <section class="top_garden">
-   
-    <div class="garden_content">
-      
-      <h2>
-        四季を感じる<br />
-        広大な日本庭園
-      </h2>
-      <p>
-        庭園内には温泉神社、湯畑、展望台、ギャラリーなど見所もたくさん。<br/>
-        散策しながら、季節によって変わる花や木々達をお楽しみください。
-      </p>
-
-      <a href="garden.html" class="more_btn">
-        庭園を見る
-      </a>
-    </div>
-  </section>
-
-  <!-- アクティビティ -->
-<section class="top_activity">
-
-  <div class="section_title">
-    <p>ACTIVITY</p>
-    <h2>アクティビティ</h2>
-  </div>
-
-  <p class="activity_lead">
-    温泉やラウンジだけではない。<br>
-    館内各所に点在する施設で、
-    思い思いの時間をお楽しみください。<br>
-    もちろんオールインクルーシブです。
-  </p>
-
-  <div class="activity_map">
-
-    <div class="activity_item item1">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/karaoke.png" alt="">
-        <h3>カラオケ「歌戯処」</h3>
-        <p>仲間と盛り上がる楽しい時間。お酒を持ち込んで、歌い放題飲み放題。</p>
-      </div>
-    </div>
-
-    <div class="activity_item item2">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/gamecenter.png" alt="">
-        <h3>ゲームセンター「遊戯処」</h3>
-        <p>懐かしさと遊び心を満喫。メダルも無料貸し出しで遊び放題。</p>
-      </div>
-    </div>
-
-    <div class="activity_item item3">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/tabletennis.png" alt="">
-        <h3>卓球「球戯処」</h3>
-        <p>温泉の定番！白熱すること間違いなし。</p>
-      </div>
-    </div>
-
-    <div class="activity_item item4">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/theater.png" alt="">
-        <h3>ミニシアター</h3>
-        <p>大画面で懐かしの名作映画を。上映作品はその日のお楽しみ。</p>
-      </div>
-    </div>
-
-    <div class="activity_item item5">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/bar.png" alt="">
-        <h3>BAR 武蔵</h3>
-        <p>夜だけオープン。ラウンジでは味わえない、バーテンダーが作るカクテルを。</p>
-      </div>
-    </div>
-
-    <div class="activity_item item6">
-      <span class="dot"></span>
-      <div class="activity_box">
-        <img src="images/massage.png" alt="">
-        <h3>マッサージ「癒し庵」</h3>
-        <p>最新マッサージ機も使い放題。半個室でゆったりと。</p>
-      </div>
-    </div>
-
-  </div>
-
-      <a href="activity.html" class="more_btn">
-    館内施設を見る
-     </a>
-
-  </section>
-
-  <!-- アメニティ -->
-  <section class="top_service">
-
-  <div class="section_title">
-    <p>AMENITY</p>
-    <h2>旅支度処</h2>
-  </div>
-
-  <p class="service_lead">
-    ご滞在をより快適にお過ごしいただくため、
-    お好みに合わせて選べるサービスをご用意しております。
-  </p>
-
-  <div class="service_layout">
-
-    <div class="service_image">
-      <img src="images/top_service.png" alt="">
-    </div>
-
-    <div class="service_list">
-
-      <article class="service_item">
-        <h3>色浴衣・色甚平バー</h3>
-        <p>
-          お好みの柄や色を自由に選んで、
-          館内散策や温泉巡りをお楽しみください。
-        </p>
-      </article>
-
-      <article class="service_item">
-        <h3>スリープバー</h3>
-        <p>
-          枕や快眠アイテムをご自由にお選びいただけます。
-          心地よい眠りをご体感ください。
-        </p>
-      </article>
-
-      <article class="service_item">
-        <h3>アメニティバー</h3>
-        <p>
-          スキンケア用品や各種アメニティを
-          お好みに合わせてお選びいただけます。
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
- 
-</main>
-
-    <!-- wrapper -->
-
-    <div class="yoyaku_foot">
-      <p>
-        <a href="reserve.html"
-          ><img src="images/yoyaku_icon.png" alt="予約はこちら"
-        /></a>
-      </p>
-    </div>
-
-    <!-- フッター読み込み -->
+      </section>
+
+      <!-- ==================================
+      Introduction
+      ================================== -->
+
+      <section class="top_intro">
+        <div class="top_intro_inner">
+          <p class="section_en">ABOUT GASHIMIYASOU</p>
+
+          <h2>
+            一泊ではなく、<br />
+            24時間を楽しむ。
+          </h2>
+
+          <div class="top_intro_text">
+            <p>
+              温泉に入り、ラウンジで寛ぎ、<br />
+              庭園を歩き、美味しいものを味わう。
+            </p>
+
+            <p>
+              夜は遊び、また湯に浸かる。<br />
+              朝の静かな庭園を歩き、ゆっくりと一日を始める。
+            </p>
+
+            <p>
+              がしみや荘は、<br />
+              「泊まる」だけでは終わらない温泉宿です。
+            </p>
+
+            <p>
+              好きな場所で、好きな時間に、好きなだけ。<br />
+              大人のための24時間をお楽しみください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      12 Private Baths
+      ================================== -->
+
+      <section class="top_bath">
+        <div class="top_bath_image">
+          <img src="images/top_bath.jpg" alt="貸切風呂" />
+        </div>
+
+        <div class="top_bath_content">
+          <p class="section_en">12 PRIVATE BATHS</p>
+
+          <p class="section_number">12</p>
+
+          <h2>
+            十二の湯を、<br />
+            巡る。
+          </h2>
+
+          <p class="section_lead">12種類の貸切風呂</p>
+
+          <p class="section_text">
+            本館に6つ、庭園に6つ。<br />
+            趣の異なる十二の貸切風呂を、<br />
+            滞在中いつでも自由に湯巡り。
+          </p>
+
+          <p class="section_text">
+            今日はどの湯へ行こう。<br />
+            そんな時間さえ、旅の楽しみになる。
+          </p>
+
+          <a href="spa.html" class="top_link">
+            温泉を詳しく見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Bath Names
+      ================================== -->
+
+      <section class="top_bath_names">
+        <div class="top_bath_names_inner">
+          <div class="top_bath_column">
+            <p class="bath_area">本館</p>
+
+            <ul>
+              <li>琥珀の湯</li>
+              <li>紫苑の湯</li>
+              <li>瑠璃の湯</li>
+              <li>黒墨の湯</li>
+              <li>萌葱の湯</li>
+              <li>浅葱の湯</li>
+            </ul>
+          </div>
+
+          <div class="top_bath_column">
+            <p class="bath_area">庭園</p>
+
+            <ul>
+              <li>紅殻の湯</li>
+              <li>乳白の湯</li>
+              <li>翡翠の湯</li>
+              <li>黄蘗の湯</li>
+              <li>朽葉の湯</li>
+              <li>白泥の湯</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Lounge
+      ================================== -->
+
+      <section class="top_lounge">
+        <div class="top_lounge_image">
+          <img src="images/top_lounge.jpg" alt="がしみや荘のラウンジ" />
+        </div>
+
+        <div class="top_lounge_content">
+          <p class="section_en">6 LOUNGES</p>
+
+          <p class="section_number">06</p>
+
+          <h2>
+            六つの場所で、<br />
+            六つの寛ぎ。
+          </h2>
+
+          <p class="section_text">
+            火、月、土、木、水、金。<br />
+            それぞれ異なる雰囲気を持つ六つのラウンジ。
+          </p>
+
+          <p class="section_text">
+            コーヒーやお酒、軽食やスイーツまで。<br />
+            滞在中はオールインクルーシブで楽しめます。
+          </p>
+
+          <a href="lounge.html" class="top_link">
+            ラウンジを見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Lounge List
+      ================================== -->
+
+      <section class="top_lounge_list">
+        <div class="top_lounge_grid">
+          <a href="lounge.html#lounge01" class="lounge_item lounge_fire">
+            <span class="lounge_name">火</span>
+            <span class="lounge_sub">FIRE</span>
+          </a>
+
+          <a href="lounge.html#lounge02" class="lounge_item lounge_moon">
+            <span class="lounge_name">月</span>
+            <span class="lounge_sub">MOON</span>
+          </a>
+
+          <a href="lounge.html#lounge03" class="lounge_item lounge_earth">
+            <span class="lounge_name">土</span>
+            <span class="lounge_sub">EARTH</span>
+          </a>
+
+          <a href="lounge.html#lounge04" class="lounge_item lounge_wood">
+            <span class="lounge_name">木</span>
+            <span class="lounge_sub">WOOD</span>
+          </a>
+
+          <a href="lounge.html#lounge05" class="lounge_item lounge_water">
+            <span class="lounge_name">水</span>
+            <span class="lounge_sub">WATER</span>
+          </a>
+
+          <a href="lounge.html#lounge06" class="lounge_item lounge_gold">
+            <span class="lounge_name">金</span>
+            <span class="lounge_sub">GOLD</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      24 Hours
+      ================================== -->
+
+      <section class="top_24hours">
+        <div class="top_24hours_inner">
+          <p class="section_en">STAY FOR 24 HOURS</p>
+
+          <div class="top_24hours_number">24</div>
+
+          <p class="top_24hours_unit">HOURS</p>
+
+          <h2>
+            24時間、<br />
+            好きなように。
+          </h2>
+
+          <p class="top_24hours_text">
+            チェックインからチェックアウトまで。<br />
+            館内のあらゆる時間を、ゆっくり楽しむ。
+          </p>
+
+          <p class="top_24hours_text">
+            ラウンジの飲み物も、<br />
+            湯巡りも、館内での遊びも。
+          </p>
+
+          <p class="top_24hours_text">滞在中は、オールインクルーシブ。</p>
+
+          <a href="stay.html" class="top_link">
+            過ごし方を見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Food
+      ================================== -->
+
+      <section class="top_food">
+        <div class="top_food_visual">
+          <div class="top_food_main">
+            <img src="images/top_food1.jpg" alt="がしみや荘の料理" />
+          </div>
+
+          <div class="top_food_sub">
+            <img src="images/top_food2.jpg" alt="季節の料理" />
+          </div>
+        </div>
+
+        <div class="top_food_content">
+          <p class="section_en">CUISINE</p>
+
+          <h2>
+            土地の恵みを、<br />
+            一皿に。
+          </h2>
+
+          <p class="section_text">
+            地元で採れた旬の食材を中心に、<br />
+            一品一品、丁寧に手作りしています。
+          </p>
+
+          <p class="section_text">
+            季節を感じる料理とともに、<br />
+            がしみや荘ならではの食の時間を。
+          </p>
+
+          <a href="food.html" class="top_link">
+            料理を見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Activity
+      ================================== -->
+
+      <section class="top_activity">
+        <div class="top_activity_content">
+          <p class="section_en">ACTIVITIES</p>
+
+          <h2>
+            遊ぶ、癒す、<br />
+            思い思いに。
+          </h2>
+
+          <p class="section_text">
+            温泉だけでは終わらない。<br />
+            館内には、大人が楽しめる多彩な体験があります。
+          </p>
+        </div>
+      </section>
+
+      <!-- Activity Cards -->
+
+      <section class="top_activity_cards">
+        <div class="top_activity_cards_inner">
+          <a href="activity.html#play" class="activity_card">
+            <div class="activity_card_image">
+              <img src="images/activity_yukari.jpg" alt="湯あかり横丁" />
+            </div>
+
+            <div class="activity_card_content">
+              <p>YUKAKARI YOKOCHO</p>
+
+              <h3>湯あかり横丁</h3>
+
+              <span> 詳しく見る → </span>
+            </div>
+          </a>
+
+          <a href="activity.html#relax" class="activity_card">
+            <div class="activity_card_image">
+              <img src="images/activity_karaoke.jpg" alt="天空癒庭" />
+            </div>
+
+            <div class="activity_card_content">
+              <p>TENKUYUTEI</p>
+
+              <h3>天空癒庭</h3>
+
+              <span> 詳しく見る → </span>
+            </div>
+          </a>
+
+          <a href="activity.html#stay" class="activity_card">
+            <div class="activity_card_image">
+              <img src="images/activity_game.jpg" alt="雅廊館" />
+            </div>
+
+            <div class="activity_card_content">
+              <p>GAROUKAN</p>
+
+              <h3>雅廊館</h3>
+
+              <span> 詳しく見る → </span>
+            </div>
+          </a>
+
+          <a href="activity.html#others" class="activity_card">
+            <div class="activity_card_image">
+              <img
+                src="images/activity_tabletennis.jpg"
+                alt="大衆演劇場「花舞座」"
+              />
+            </div>
+
+            <div class="activity_card_content">
+              <p>KABUZA</p>
+
+              <h3>大衆演劇場「花舞座」</h3>
+
+              <span> 詳しく見る → </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Garden
+      ================================== -->
+
+      <section class="top_garden">
+        <div class="top_garden_content">
+          <p class="section_en">JAPANESE GARDEN</p>
+
+          <h2>
+            庭園そのものが、<br />
+            もうひとつの旅。
+          </h2>
+
+          <p class="section_text">
+            季節ごとに表情を変える、<br />
+            広大な日本庭園。
+          </p>
+
+          <p class="section_text">
+            湯畑を眺め、<br />
+            川床で涼み、<br />
+            森の中を歩き、<br />
+            温泉神社に立ち寄る。
+          </p>
+
+          <p class="section_text">
+            館内だけでは終わらない。<br />
+            庭園にも、がしみや荘の時間があります。
+          </p>
+
+          <a href="garden.html" class="top_link">
+            庭園を見る
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="top_garden_visual">
+          <div class="garden_image garden_image_01">
+            <img src="images/top_garden1.jpg" alt="日本庭園" />
+          </div>
+
+          <div class="garden_image garden_image_02">
+            <img src="images/top_garden2.jpg" alt="庭園の小径" />
+          </div>
+
+          <div class="garden_image garden_image_03">
+            <img src="images/top_garden3.jpg" alt="庭園の風景" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Garden Facilities
+      ================================== -->
+
+      <section class="top_garden_list">
+        <div class="top_garden_list_inner">
+          <div class="garden_list_item">
+            <span>01</span>
+            <h3>川床ラウンジ</h3>
+          </div>
+
+          <div class="garden_list_item">
+            <span>02</span>
+            <h3>森のラウンジ</h3>
+          </div>
+
+          <div class="garden_list_item">
+            <span>03</span>
+            <h3>雅廊館</h3>
+          </div>
+
+          <div class="garden_list_item">
+            <span>04</span>
+            <h3>温泉神社</h3>
+          </div>
+
+          <div class="garden_list_item">
+            <span>05</span>
+            <h3>湯畑</h3>
+          </div>
+
+          <div class="garden_list_item">
+            <span>06</span>
+            <h3>展望台</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Concept
+      ================================== -->
+
+      <section class="top_concept">
+        <div class="top_concept_inner">
+          <p class="section_en">FOR ADULTS</p>
+
+          <h2>
+            大人のための、<br />
+            温泉宿。
+          </h2>
+
+          <div class="top_concept_words">
+            <span>湯</span>
+            <span>食</span>
+            <span>感</span>
+            <span>遊</span>
+            <span>癒</span>
+          </div>
+
+          <div class="top_concept_text">
+            <p>がしみや荘は18歳未満の方は宿泊できない旅館です。</p>
+
+            <p>
+              静かに過ごしたい日も。<br />
+              思い切り遊びたい日も。
+            </p>
+
+            <p>
+              好きな場所で。<br />
+              好きな時間に。<br />
+              好きなだけ。
+            </p>
+
+            <p class="concept_strong">
+              自分だけの24時間を<br />
+              お過ごしください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Rooms
+      ================================== -->
+
+      <section class="top_rooms">
+        <div class="top_rooms_image">
+          <img src="images/top_room.jpg" alt="がしみや荘の客室" />
+        </div>
+
+        <div class="top_rooms_content">
+          <p class="section_en">GUEST ROOMS</p>
+
+          <h2>
+            旅の続きを、<br />
+            自分だけの空間で。
+          </h2>
+
+          <p class="section_text">一日の終わりに戻る、もうひとつの居場所。</p>
+
+          <p class="section_text">
+            趣の異なる客室で、<br />
+            がしみや荘ならではの寛ぎを。
+          </p>
+
+          <a href="room.html" class="top_link">
+            客室を見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================================
+      お知らせ
+      ================================== -->
+      <section class="top_news">
+        <div class="top_news_inner">
+          <div class="top_news_heading">
+            <p class="top_section_en">NEWS</p>
+            <h2>がしみや荘からのお知らせ</h2>
+          </div>
+
+          <div class="top_news_list" id="topNewsList">
+            <!-- news.jsonから最新3件を自動表示 -->
+          </div>
+
+          <div class="top_news_more">
+            <a href="news.html">
+              <span>お知らせ一覧</span>
+              <span class="more_arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Plans
+      ================================== -->
+
+      <section class="top_plans">
+        <div class="top_plans_inner">
+          <p class="section_en">STAY PLANS</p>
+
+          <h2>
+            次の休日を、<br />
+            がしみや荘で。
+          </h2>
+
+          <p class="top_plans_lead">
+            湯も、食も、遊びも。<br />
+            滞在そのものを楽しむ旅へ。
+          </p>
+
+          <div class="top_plan_buttons">
+            <a href="plan.html" class="top_button"> 宿泊プランを見る </a>
+
+            <a href="price.html" class="top_button top_button_outline">
+              宿泊料金を見る
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Access
+      ================================== -->
+
+      <section class="top_access">
+        <div class="top_access_inner">
+          <div class="top_access_content">
+            <p class="section_en">ACCESS</p>
+
+            <h2>がしみや荘への旅</h2>
+
+            <p>
+              大宮温泉<br />
+              がしみや荘
+            </p>
+
+            <a href="access.html" class="top_link">
+              アクセスを見る
+              <span>→</span>
+            </a>
+          </div>
+
+          <div class="top_access_map">
+            <img src="images/access_map.jpg" alt="がしみや荘周辺地図" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================
+      Reservation
+      ================================== -->
+
+      <section class="top_reservation">
+        <div class="top_reservation_image">
+          <img src="images/top_reservation.jpg" alt="がしみや荘の庭園" />
+        </div>
+
+        <div class="top_reservation_overlay"></div>
+
+        <div class="top_reservation_content">
+          <p class="section_en">GASHIMIYASOU</p>
+
+          <h2>
+            湯に浸かり、<br />
+            時間に浸る。
+          </h2>
+
+          <p>
+            大人のための24時間を、<br />
+            がしみや荘で。
+          </p>
+
+          <a href="reserve.html" class="reservation_button"> ご予約はこちら </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================================
+    Footer
+    ================================== -->
+
     <div id="footer-area"></div>
+
+    <!-- ==================================
+    JavaScript
+    ================================== -->
 
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
