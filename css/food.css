@@ -1,6 +1,9 @@
+@charset "UTF-8";
+
 /* =========================
-   共通
+共通
 ========================= */
+
 .food_text h1 {
   text-align: center;
 
@@ -18,11 +21,14 @@
 .food_text h2 {
   font-size: 2.5rem;
 
+  text-align: center;
+
   margin-bottom: 20px;
 
   letter-spacing: 0.15em;
 
   font-weight: normal;
+
   border-bottom: solid 1px #cb0e0e;
 }
 
@@ -39,7 +45,7 @@
 }
 
 /* =========================
-   セクション余白
+セクション余白
 ========================= */
 
 .season_area,
@@ -50,8 +56,9 @@
 }
 
 /* =========================
-   季節料理
+季節料理
 ========================= */
+
 #season-content {
   margin-top: 150px;
 }
@@ -71,22 +78,28 @@
 }
 
 .season_title.spring {
-  color: #c97f8d; /* 桜色 */
+  color: #c97f8d;
+  /* 桜色 */
 }
 
 .season_title.summer {
-  color: #2b8c8c; /* 青磁色 */
+  color: #2b8c8c;
+  /* 青磁色 */
 }
 
 .season_title.autumn {
-  color: #9c5b2b; /* 柿渋色 */
+  color: #9c5b2b;
+  /* 柿渋色 */
 }
 
 .season_title.winter {
-  color: #4b6fa8; /* 瑠璃色 */
+  color: #4b6fa8;
+  /* 瑠璃色 */
 }
 
-/* 料理画像 */
+/* =========================
+料理画像
+========================= */
 
 .food_image {
   max-width: 1000px;
@@ -102,7 +115,9 @@
   border-radius: 10px;
 }
 
-/* お品書き */
+/* =========================
+お品書き
+========================= */
 
 .menu_image {
   max-width: 700px;
@@ -121,7 +136,7 @@
 }
 
 /* =========================
-   季節ボタン
+季節ボタン
 ========================= */
 
 .season_buttons {
@@ -165,7 +180,526 @@
 }
 
 /* =========================
-   朝食バイキング
+夜のおもてなし
+========================= */
+
+.night_food_area {
+  padding: 150px 15px;
+}
+
+/* =========================
+夜のおもてなし
+イントロ
+========================= */
+
+.night_food_area > .food_text {
+  max-width: 900px;
+
+  margin: 0 auto 130px;
+}
+
+.night_food_area > .food_text h1 {
+  margin-bottom: 35px;
+}
+
+.night_food_area > .food_text p:last-child {
+  margin-top: 30px;
+}
+
+/* =========================
+夜鳴きそば
+BAR 共通
+========================= */
+
+.night_soba_area,
+.night_bar_area {
+  max-width: 1200px;
+
+  margin: 0 auto 200px;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+/* =========================
+夜鳴きそば
+画像エリア
+========================= */
+
+.night_soba_area .night_food_images {
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 80px;
+}
+
+/* メイン画像 */
+
+.night_soba_area .night_food_image_main {
+  display: block;
+
+  width: 84%;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* サブ画像 */
+
+.night_soba_area .night_food_image_sub {
+  display: block;
+
+  width: 45%;
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: 0;
+
+  overflow: hidden;
+
+  border: 4px solid #fff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  z-index: 2;
+}
+
+/* =========================
+画像共通
+========================= */
+
+.night_food_image_main img,
+.night_food_image_sub img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    opacity 0.4s ease;
+}
+
+/* メイン画像の高さ */
+
+.night_soba_area .night_food_image_main {
+  aspect-ratio: 4 / 3;
+}
+
+/* サブ画像の高さ */
+
+.night_soba_area .night_food_image_sub {
+  aspect-ratio: 4 / 3;
+}
+
+/* ホバー */
+
+.night_food_image_main:hover img,
+.night_food_image_sub:hover img {
+  transform: scale(1.03);
+}
+
+/* =========================
+夜鳴きそば テキスト
+========================= */
+
+.night_soba_text {
+  padding: 20px 20px 20px 10px;
+}
+
+.night_soba_text h2,
+.night_bar_text h2 {
+  font-size: 2.5rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+
+  margin-bottom: 25px;
+
+  line-height: 1.6;
+}
+
+.night_soba_text h3,
+.night_bar_text h3 {
+  font-size: 1.3rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.1em;
+
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+.night_soba_text > p,
+.night_bar_text > p {
+  font-size: 0.95rem;
+
+  line-height: 2.2;
+
+  letter-spacing: 0.1em;
+
+  margin-bottom: 35px;
+}
+
+/* =========================
+夜鳴きそば 詳細情報
+========================= */
+
+.night_info {
+  border-top: 1px solid #ccc;
+
+  margin-top: 30px;
+}
+
+.night_info div {
+  display: flex;
+
+  border-bottom: 1px solid #ccc;
+
+  padding: 15px 0;
+}
+
+.night_info dt {
+  width: 100px;
+
+  flex-shrink: 0;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 0.1em;
+
+  color: #666;
+}
+
+.night_info dd {
+  margin: 0;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1.7;
+}
+
+/* =========================
+BAR 武蔵
+========================= */
+
+/*
+夜鳴きそばと左右反転
+*/
+
+.night_bar_area {
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+}
+
+/* =========================
+BAR テキスト
+========================= */
+
+.night_bar_text {
+  order: 1;
+
+  padding: 20px 10px 20px 20px;
+}
+
+/* =========================
+BAR 画像エリア
+========================= */
+
+.night_bar_area .night_food_images {
+  order: 2;
+
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 80px;
+}
+
+/* メイン画像 */
+
+.night_bar_area .night_food_image_main {
+  display: block;
+
+  width: 84%;
+
+  margin-left: auto;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* サブ画像 */
+
+.night_bar_area .night_food_image_sub {
+  display: block;
+
+  width: 45%;
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  overflow: hidden;
+
+  border: 4px solid #fff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  z-index: 2;
+}
+
+/* =========================
+BAR 画像比率
+========================= */
+
+.night_bar_area .night_food_image_main {
+  aspect-ratio: 4 / 3;
+}
+
+.night_bar_area .night_food_image_sub {
+  aspect-ratio: 4 / 3;
+}
+
+/* =========================
+ラウンジ限定料理
+========================= */
+
+.lounge_food_area {
+  max-width: 1300px;
+
+  margin: 0 auto;
+}
+
+/* 見出し */
+
+.lounge_food_area > .food_text {
+  margin-bottom: 80px;
+}
+
+/* =========================
+ラウンジカード グリッド
+========================= */
+
+.lounge_food_grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 50px 35px;
+}
+
+/* =========================
+ラウンジカード
+========================= */
+
+.lounge_food_card {
+  border: 1px solid #d4d4d4;
+
+  background: rgba(65, 64, 64, 0.5);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.lounge_food_card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+ラウンジ画像
+========================= */
+
+.lounge_food_card > a {
+  display: block;
+
+  overflow: hidden;
+}
+
+.lounge_food_card img {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.6s ease;
+}
+
+.lounge_food_card > a:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+ラウンジカード テキスト
+========================= */
+
+.lounge_food_card_text {
+  padding: 30px 28px 35px;
+}
+
+.lounge_type {
+  font-family: "Times New Roman", serif;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.25em;
+
+  color: #4b4949;
+
+  margin-bottom: 8px;
+}
+
+.lounge_food_card_text h3 {
+  font-size: 1.5rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+
+  margin-bottom: 20px;
+}
+
+.lounge_food_card_text > p:not(.lounge_type):not(.lounge_food_name) {
+  font-size: 0.85rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.08em;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+限定料理名
+========================= */
+
+.lounge_food_name {
+  border-top: 1px solid #ccc;
+
+  padding-top: 18px;
+
+  margin-top: 20px;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================
+ラウンジ別アクセントカラー
+========================= */
+
+/* 火 */
+
+.lounge_fire {
+  border-top: 3px solid #b94b4b;
+}
+
+.lounge_fire h3,
+.lounge_fire .lounge_food_name {
+  color: #a94646;
+}
+
+/* 月 */
+
+.lounge_moon {
+  border-top: 3px solid #8070a8;
+}
+
+.lounge_moon h3,
+.lounge_moon .lounge_food_name {
+  color: #71619a;
+}
+
+/* 土 */
+
+.lounge_earth {
+  border-top: 3px solid #98765a;
+}
+
+.lounge_earth h3,
+.lounge_earth .lounge_food_name {
+  color: #866348;
+}
+
+/* 木 */
+
+.lounge_wood {
+  border-top: 3px solid #688b68;
+}
+
+.lounge_wood h3,
+.lounge_wood .lounge_food_name {
+  color: #587858;
+}
+
+/* 水 */
+
+.lounge_water {
+  border-top: 3px solid #628ca3;
+}
+
+.lounge_water h3,
+.lounge_water .lounge_food_name {
+  color: #557c91;
+}
+
+/* 金 */
+
+.lounge_gold {
+  border-top: 3px solid #b29a52;
+}
+
+.lounge_gold h3,
+.lounge_gold .lounge_food_name {
+  color: #9b843e;
+}
+
+/* =========================
+朝食バイキング
 ========================= */
 
 /* スライダー */
@@ -214,7 +748,9 @@
   border-radius: 10px;
 }
 
-/* ボタン */
+/* =========================
+スライダーボタン
+========================= */
 
 .slider_btn {
   width: 55px;
@@ -244,20 +780,22 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* 説明文 */
+/* =========================
+スライダー説明文
+========================= */
 
 #slider-text.show {
   opacity: 1;
 }
 
 /* =========================
-   会場紹介
+会場紹介
 ========================= */
 
 .place_image {
-  max-width: 1000px;
+  width: 90%;
 
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .place_image img {
@@ -267,11 +805,13 @@
 
   border-radius: 10px;
 
-  margin-bottom: 200px;
+  border: 1px solid #da2808;
+
+  margin-bottom: 100px;
 }
 
 /* =========================
-   フェード
+フェード
 ========================= */
 
 .fade {
@@ -293,7 +833,7 @@
 }
 
 /* =========================
-   季節切替フェード
+季節切替フェード
 ========================= */
 
 #season-content {
@@ -305,7 +845,7 @@
 }
 
 /* =========================
-   スクロールフェード
+スクロールフェード
 ========================= */
 
 .scroll-fade {
@@ -325,13 +865,53 @@
 }
 
 /* =========================
-   レスポンシブ
+レスポンシブ
 ========================= */
 
+@media (max-width: 1000px) {
+  .night_soba_area,
+  .night_bar_area {
+    gap: 50px;
+  }
+
+  .night_soba_text,
+  .night_bar_text {
+    padding: 10px;
+  }
+
+  .night_soba_text h2,
+  .night_bar_text h2 {
+    font-size: 2.1rem;
+  }
+
+  .night_soba_text h3,
+  .night_bar_text h3 {
+    font-size: 1.15rem;
+  }
+
+  .night_soba_text > p,
+  .night_bar_text > p {
+    font-size: 0.9rem;
+  }
+
+  .night_soba_area .night_food_image_sub,
+  .night_bar_area .night_food_image_sub {
+    width: 48%;
+  }
+}
+
 @media (max-width: 768px) {
+  /* =========================
+  共通
+  ========================= */
+
   .food_main {
     margin-top: 50px;
   }
+
+  /* =========================
+  セクション余白
+  ========================= */
 
   .season_area,
   .breakfast_area,
@@ -340,31 +920,244 @@
     padding: 80px 10px;
   }
 
+  /* =========================
+  見出し
+  ========================= */
+
+  .food_text h1 {
+    font-size: 1.8rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+  }
+
   .food_text h2,
   .season_food h2 {
     font-size: 2rem;
+
+    line-height: 1.6;
   }
 
   .food_text h3 {
     font-size: 1.3rem;
   }
 
+  .food_text p {
+    font-size: 0.85rem;
+
+    line-height: 2;
+  }
+
+  /* =========================
+  季節料理
+  ========================= */
+
+  #season-content {
+    margin-top: 80px;
+  }
+
+  /* =========================
+  季節ボタン
+  ========================= */
+
   .season_buttons {
     gap: 10px;
+
+    margin-top: 40px;
   }
 
   .season_buttons button {
     padding: 12px 20px;
   }
 
-  /* スライダー */
+  /* =========================
+  夜のおもてなし
+  ========================= */
+
+  .night_food_area {
+    padding: 100px 15px;
+  }
+
+  /* イントロ */
+
+  .night_food_area > .food_text {
+    margin-bottom: 80px;
+  }
+
+  .night_food_area > .food_text h1 {
+    font-size: 1.8rem;
+
+    line-height: 1.8;
+  }
+
+  /* =========================
+  夜鳴きそば
+  ========================= */
+
+  .night_soba_area {
+    display: block;
+
+    margin-bottom: 130px;
+  }
+
+  /* =========================
+  夜鳴きそば 写真
+  ========================= */
+
+  .night_soba_area .night_food_images {
+    padding-bottom: 60px;
+  }
+
+  .night_soba_area .night_food_image_main {
+    width: 88%;
+  }
+
+  .night_soba_area .night_food_image_sub {
+    width: 45%;
+
+    border-width: 5px;
+  }
+
+  /* =========================
+  夜鳴きそば テキスト
+  ========================= */
+
+  .night_soba_text {
+    padding: 40px 10px 0;
+  }
+
+  .night_soba_text h2,
+  .night_bar_text h2 {
+    font-size: 2rem;
+  }
+
+  .night_soba_text h3,
+  .night_bar_text h3 {
+    font-size: 1.1rem;
+  }
+
+  .night_soba_text > p,
+  .night_bar_text > p {
+    font-size: 0.85rem;
+
+    line-height: 2;
+  }
+
+  /* =========================
+  BAR 武蔵
+  ========================= */
+
+  .night_bar_area {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    margin-bottom: 130px;
+  }
+
+  /* BAR テキスト */
+
+  .night_bar_text {
+    order: 2;
+
+    width: 100%;
+
+    padding: 40px 10px 0;
+  }
+
+  /* BAR 写真 */
+
+  .night_bar_area .night_food_images {
+    order: 1;
+
+    width: 100%;
+
+    padding-bottom: 60px;
+  }
+
+  .night_bar_area .night_food_image_main {
+    width: 88%;
+  }
+
+  .night_bar_area .night_food_image_sub {
+    width: 45%;
+
+    border-width: 5px;
+  }
+
+  /* =========================
+  夜情報
+  ========================= */
+
+  .night_info {
+    margin-top: 25px;
+  }
+
+  .night_info div {
+    padding: 12px 0;
+  }
+
+  .night_info dt {
+    width: 85px;
+
+    font-size: 0.75rem;
+  }
+
+  .night_info dd {
+    font-size: 0.8rem;
+
+    line-height: 1.7;
+  }
+
+  /* =========================
+  ラウンジ限定料理
+  ========================= */
+
+  .lounge_food_area > .food_text {
+    margin-bottom: 50px;
+  }
+
+  .lounge_food_grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  /* =========================
+  ラウンジカード
+  ========================= */
+
+  .lounge_food_card_text {
+    padding: 25px 22px 30px;
+  }
+
+  .lounge_food_card_text h3 {
+    font-size: 1.3rem;
+  }
+
+  .lounge_food_card_text > p:not(.lounge_type):not(.lounge_food_name) {
+    font-size: 0.8rem;
+
+    line-height: 2;
+  }
+
+  /* =========================
+  朝食スライダー
+  ========================= */
+
   .breakfast_slider {
     position: relative;
 
     display: block;
   }
 
-  /* ボタン */
+  /* =========================
+  スライダーボタン
+  ========================= */
+
   .slider_btn {
     position: absolute;
 

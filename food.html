@@ -49,165 +49,564 @@
     <div id="header-area"></div>
 
       <main class="food_main">
+
+  <nav class="wrapper">
+
+    <!-- =========================
+         ページタイトル
+    ========================== -->
+    <div class="page_head">
+      <h1>食事</h1>
+      <p>food</p>
+    </div>
+
+
+    <!-- =========================
+         MV
+    ========================== -->
+    <section class="mv">
+      <img src="images/mv/food_mv.png" alt="料理" />
+
+      <div class="mv_text">
+        <h1>四季を味わう、至福の一皿。</h1>
+
+        <p>
+          地元の旬と全国の厳選食材が織りなす会席料理。<br />
+          がしみや荘ならではの美食体験をご堪能ください。
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         季節の会席
+    ========================== -->
+    <section class="season_area scroll-fade">
+
+      <div class="food_text">
+        <h1>夕食【季節の会席】</h1>
+
+        <p>
+          彩り、香り、器までこだわった会席料理。<br />
+          一品一品に、季節のおもてなしを込めています。
+        </p>
+      </div>
+
+      <!-- 季節コンテンツ -->
+      <div id="season-content"></div>
+
+      <!-- 季節ボタン -->
+      <div class="season_buttons">
+        <button data-season="spring">春</button>
+        <button data-season="summer">夏</button>
+        <button data-season="autumn">秋</button>
+        <button data-season="winter">冬</button>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         夕食会場
+    ========================== -->
+    <section class="dinner_place_area scroll-fade">
+
+      <div class="food_text">
+        <h2>夕食会場</h2>
+
+        <h3>本館 ２階　お食事処 四季彩</h3>
+      </div>
+
+      <div class="place_image">
+        <a
+          href="images/dinner_place.png"
+          data-lightbox="place"
+          data-title="落ち着いた和モダン空間で、季節の会席料理をお楽しみいただけます。"
+        >
+          <img src="images/dinner_place.png" alt="夕食会場" />
+        </a>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         夜のおもてなし
+    ========================== -->
+    <section class="night_food_area scroll-fade">
+
+      <!-- セクションイントロ -->
+      <div class="food_text">
       
-        <nav class="wrapper">
-        <!-- ページタイトル -->
-          <div class="page_head">
-            <h1>食事</h1>
-            <p>food</p>
-          </div>
+        <h1>食後の夜を、もうひとつの愉しみに</h1>
 
-        <!--=================================
-          MV
-        ==================================-->
-        <section class="mv">
-          <img src="images/mv/food_mv.png" alt="料理" />
+        <p>
+          夕食を終えた後も、夜鳴きそばやBarなど<br />
+          夜だけのおもてなしをご用意しております。<br />
+          がしみや荘の夜を、おいしいお酒と食事でご堪能ください。
+        </p>
+      </div>
 
-          <div class="mv_text">
-            <h1>四季を味わう、至福の一皿。</h1>
 
-             <p>
-              地元の旬と全国の厳選食材が織りなす会席料理。<br />
-              がしみや荘ならではの美食体験をご堪能ください。
-              </p>
-          </div>
-        </section>
+      <!-- =========================
+           夜鳴きラーメン
+      ========================== -->
+      <section class="night_soba_area">
 
-          <!-- =========================
-             季節の会席
-        ========================== -->
+          <div class="night_food_images">
 
-        <section class="season_area">
-          <div class="food_text">
-            <h1>夕食【季節の会席】</h1>
+          <a
+            href="images/night_soba01.png"
+            data-lightbox="night-soba"
+            data-title="夜鳴きそば"
+            class="night_food_image_main"
+          >
+            <img
+              src="images/night_soba01.png"
+              alt="夜鳴きそば"
+            />
+          </a>
 
-           <p>
-              彩り、香り、器までこだわった会席料理。<br />
-              一品一品に、季節のおもてなしを込めています。
-            </p>
-          </div>
-          <!-- 季節コンテンツ -->
-          <div id="season-content"></div>
+          <a
+            href="images/night_soba02.png"
+            data-lightbox="night-soba"
+            data-title="夜鳴きそば"
+            class="night_food_image_sub"
+          >
+            <img
+              src="images/night_soba02.png"
+              alt="夜鳴きそば"
+            />
+          </a>
 
-          <!-- 季節ボタン -->
-          <div class="season_buttons">
-            <button data-season="spring">春</button>
+        </div>
 
-            <button data-season="summer">夏</button>
+        <div class="night_soba_text">
 
-            <button data-season="autumn">秋</button>
+          <h2>夜鳴きラーメン</h2>
 
-            <button data-season="winter">冬</button>
-          </div>
-        </section>
+          <h3>夜更けの一杯を、旅の余韻とともに。</h3>
 
-         <!-- =========================
-             夕食会場
-        ========================== -->
+          <p>
+            小腹が空いたら、懐かしい味わいを。<br />
+            夜のひとときに、温かな夜鳴きそばをご用意しております。
+          </p>
 
-        <section class="dinner_place_area scroll-fade">
-          <div class="food_text">
-            <h2>夕食会場</h2>
-
-            <h3>本館 ２階　お食事処 四季彩</h3>
-          </div>
-
-          <div class="place_image">
-            <a
-              href="images/dinner_place.png"
-              data-lightbox="place"
-              data-title="落ち着いた和モダン空間で、 季節の会席料理をお楽しみいただけます。"
-            >
-              <img src="images/dinner_place.png" alt="夕食会場" />
-            </a>
-          </div>
-        </section>
-
-        <!-- =========================
-             朝食バイキング
-        ========================== -->
-
-        <section class="breakfast_area scroll-fade">
-          <div class="food_text">
-            <h1>朝食バイキング</h1>
-
-            <p>地元食材を使用した 和洋バイキングをご用意しております。<br>
-                好きなものを、好きなだけお召し上がりください。</p>
-          </div>
-
-          <!-- スライダー -->
-          <div class="breakfast_slider">
-            <!-- 左ボタン -->
-            <button class="slider_btn prev">‹</button>
-
-            <!-- 表示エリア -->
-            <div class="slider_view">
-              <!-- スライド本体 -->
-              <div class="slider_track">
-                <!-- 画像1 -->
-                <a
-                  href="images/morning01.png"
-                  data-lightbox="breakfast"
-                  data-title="朝食はバイキング形式です"
-                >
-                  <img src="images/morning01.png" alt="" />
-                </a>
-
-                <!-- 画像2 -->
-                <a
-                  href="images/morning02.png"
-                  data-lightbox="breakfast"
-                  data-title="小鉢で取りやすくご用意しております"
-                >
-                  <img
-                    src="images/morning02.png"
-                    alt="小鉢で取りやすくご用意しております"
-                  />
-                </a>
-
-                <!-- 画像3 -->
-                <a
-                  href="images/morning03.png"
-                  data-lightbox="breakfast"
-                  data-title="焼き立てパンもご用意しております"
-                >
-                  <img
-                    src="images/morning03.png"
-                    alt="焼き立てパンもご用意しております"
-                  />
-                </a>
-              </div>
+          <dl class="night_info">
+            <div>
+              <dt>提供時間</dt>
+              <dd>21:00〜23:00</dd>
             </div>
 
-            <!-- 右ボタン -->
-            <button class="slider_btn next">›</button>
-          </div>
-        </section>
+            <div>
+              <dt>場所</dt>
+              <dd>本館地下 湯あかり横丁</dd>
+            </div>
 
-       
+          </dl>
 
-        <!-- =========================
-             朝食会場
-        ========================== -->
+        </div>
 
-        <section class="breakfast_place_area scroll-fade">
-          <div class="food_text">
-            <h2>朝食会場</h2>
+      </section>
 
-            <h3>本館 ３階　BAR 武蔵</h3>
-          </div>
 
-          <div class="place_image">
+      <!-- =========================
+           BAR 武蔵
+      ========================== -->
+      <section class="night_bar_area">
+
+        <div class="night_bar_text">
+
+          <h2>BAR 武蔵</h2>
+
+          <h3>旅の夜を彩る、静かな一杯。</h3>
+
+          <p>
+            夜の時間だけ開かれる、がしみや荘のBar。<br />
+            プロのバーテンダーが作るお酒とともに、ゆっくりと旅の余韻をお楽しみください。
+          </p>
+
+          <dl class="night_info">
+            <div>
+              <dt>営業時間</dt>
+              <dd>21:00〜24:00</dd>
+            </div>
+
+            <div>
+              <dt>場所</dt>
+              <dd>本館3階 BAR武蔵</dd>
+            </div>
+          </dl>
+
+        </div>
+
+        <div class="night_food_images">
+
+        <a
+          href="images/bar_musashi01.png"
+          data-lightbox="bar-musashi"
+          data-title="BAR 武蔵"
+          class="night_food_image_main"
+        >
+          <img
+            src="images/bar_musashi01.png"
+            alt="BAR 武蔵"
+          />
+        </a>
+
+        <a
+          href="images/bar_musashi02.png"
+          data-lightbox="bar-musashi"
+          data-title="BAR 武蔵"
+          class="night_food_image_sub"
+        >
+          <img
+            src="images/bar_musashi02.png"
+            alt="BAR 武蔵"
+          />
+        </a>
+
+      </div>
+
+      </section>
+
+
+      <!-- =========================
+           ラウンジ限定料理
+      ========================== -->
+      <section class="lounge_food_area">
+
+        <div class="food_text">
+         
+
+          <h2>六つのラウンジ、六つの味わい</h2>
+
+          <p>
+            がしみや荘では、それぞれのラウンジで楽しめる料理も手作りしております。<br />
+            美味しい料理を滞在中好きなだけお召し上がりください。
+          </p>
+        </div>
+
+
+        <!-- ラウンジ一覧 -->
+        <div class="lounge_food_grid">
+
+          <!-- =========================
+               火のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_fire">
+
             <a
-              href="images/breakfast_place.png"
-              data-lightbox="place"
-              data-title="朝日が差し込む開放的な空間で、爽やかな朝のひとときをお過ごしください。"
+              href="images/lounge_fire_food.png"
+              data-lightbox="lounge-food"
+              data-title="火のラウンジ 限定料理"
             >
-              <img src="images/breakfast_place.png" alt="朝食会場" />
+              <img
+                src="images/lounge_fire_food.png"
+                alt="火のラウンジ 限定料理"
+              />
             </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>火のラウンジ</h3>
+
+              <p>
+                火を囲むような温もりの空間で、
+                夜の限定料理をお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================
+               月のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_moon">
+
+            <a
+              href="images/lounge_moon_food.png"
+              data-lightbox="lounge-food"
+              data-title="月のラウンジ 限定料理"
+            >
+              <img
+                src="images/lounge_moon_food.png"
+                alt="月のラウンジ 限定料理"
+              />
+            </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>月のラウンジ</h3>
+
+              <p>
+                月明かりを思わせる静かな空間で、
+                夜の限定料理をお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================
+               土のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_earth">
+
+            <a
+              href="images/lounge_earth_food.png"
+              data-lightbox="lounge-food"
+              data-title="土のラウンジ 限定料理"
+            >
+              <img
+                src="images/lounge_earth_food.png"
+                alt="土のラウンジ 限定料理"
+              />
+            </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>土のラウンジ</h3>
+
+              <p>
+                大地のぬくもりを感じる空間で、
+                ゆったりと限定料理をお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================
+               木のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_wood">
+
+            <a
+              href="images/lounge_wood_food.png"
+              data-lightbox="lounge-food"
+              data-title="木のラウンジ 限定料理"
+            >
+              <img
+                src="images/lounge_wood_food.png"
+                alt="木のラウンジ 限定料理"
+              />
+            </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>木のラウンジ</h3>
+
+              <p>
+                木々に包まれるような穏やかな空間で、
+                夜の限定料理をお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================
+               水のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_water">
+
+            <a
+              href="images/lounge_water_food.png"
+              data-lightbox="lounge-food"
+              data-title="水のラウンジ 限定料理"
+            >
+              <img
+                src="images/lounge_water_food.png"
+                alt="水のラウンジ 限定料理"
+              />
+            </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>水のラウンジ</h3>
+
+              <p>
+                水のせせらぎを感じながら、
+                爽やかな限定料理をお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================
+               金のラウンジ
+          ========================== -->
+          <article class="lounge_food_card lounge_gold">
+
+            <a
+              href="images/lounge_gold_food.png"
+              data-lightbox="lounge-food"
+              data-title="金のラウンジ 限定料理"
+            >
+              <img
+                src="images/lounge_gold_food.png"
+                alt="金のラウンジ 限定料理"
+              />
+            </a>
+
+            <div class="lounge_food_card_text">
+
+              <h3>金のラウンジ</h3>
+
+              <p>
+                華やかな夜のひとときを、
+                限定料理とともにお楽しみください。
+              </p>
+
+              <p class="lounge_food_name">
+                限定料理　○○○○
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================
+         朝食バイキング
+    ========================== -->
+    <section class="breakfast_area scroll-fade">
+
+      <div class="food_text">
+        <h1>朝食バイキング</h1>
+
+        <p>
+          地元食材を使用した和洋バイキングをご用意しております。<br />
+          好きなものを、好きなだけお召し上がりください。
+        </p>
+      </div>
+
+
+      <!-- スライダー -->
+      <div class="breakfast_slider">
+
+        <!-- 左ボタン -->
+        <button class="slider_btn prev">‹</button>
+
+        <!-- 表示エリア -->
+        <div class="slider_view">
+
+          <!-- スライド本体 -->
+          <div class="slider_track">
+
+            <!-- 画像1 -->
+            <a
+              href="images/morning01.png"
+              data-lightbox="breakfast"
+              data-title="朝食はバイキング形式です"
+            >
+              <img
+                src="images/morning01.png"
+                alt="朝食バイキング"
+              />
+            </a>
+
+
+            <!-- 画像2 -->
+            <a
+              href="images/morning02.png"
+              data-lightbox="breakfast"
+              data-title="小鉢で取りやすくご用意しております"
+            >
+              <img
+                src="images/morning02.png"
+                alt="小鉢で取りやすくご用意しております"
+              />
+            </a>
+
+
+            <!-- 画像3 -->
+            <a
+              href="images/morning03.png"
+              data-lightbox="breakfast"
+              data-title="焼き立てパンもご用意しております"
+            >
+              <img
+                src="images/morning03.png"
+                alt="焼き立てパンもご用意しております"
+              />
+            </a>
+
           </div>
-        </section>
-      </main>
+
+        </div>
+
+        <!-- 右ボタン -->
+        <button class="slider_btn next">›</button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         朝食会場
+    ========================== -->
+    <section class="breakfast_place_area scroll-fade">
+
+      <div class="food_text">
+        <h2>朝食会場</h2>
+
+        <h3>本館 ３階　BAR 武蔵</h3>
+      </div>
+
+      <div class="place_image">
+        <a
+          href="images/breakfast_place.png"
+          data-lightbox="place"
+          data-title="朝日が差し込む開放的な空間で、爽やかな朝のひとときをお過ごしください。"
+        >
+          <img
+            src="images/breakfast_place.png"
+            alt="朝食会場"
+          />
+        </a>
+      </div>
+
+    </section>
+
+  </nav>
+
+</main>
 
       <!-- 予約ボタン -->
       <div class="yoyaku_foot">
