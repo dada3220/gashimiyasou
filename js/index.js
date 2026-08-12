@@ -1,36 +1,37 @@
 "use strict";
 
-$(function () {
-  /* ==================================
-     FlexSlider
-  ================================== */
+/* =========================================================
+   HERO SLIDER
+========================================================= */
 
-  $("#fs").flexslider({
-    animation: "fade",
+document.addEventListener("DOMContentLoaded", () => {
+  const heroSlider = document.getElementById("heroSlider");
 
-    slideshow: true,
+  if (heroSlider) {
+    const slides = heroSlider.querySelectorAll(".hero_slide");
 
-    slideshowSpeed: 6000,
+    let currentIndex = 0;
+    const slideInterval = 6000;
 
-    animationSpeed: 1500,
+    if (slides.length > 1) {
+      setInterval(() => {
+        slides[currentIndex].classList.remove("active");
 
-    controlNav: true,
+        currentIndex++;
 
-    directionNav: false,
+        if (currentIndex >= slides.length) {
+          currentIndex = 0;
+        }
 
-    pauseOnHover: false,
-
-    pauseOnAction: false,
-
-    touch: true,
-
-    smoothHeight: false,
-  });
+        slides[currentIndex].classList.add("active");
+      }, slideInterval);
+    }
+  }
 });
 
-/* ==================================
-     お知らせ読み込み
-  ================================== */
+/* =========================================================
+   お知らせ読み込み
+========================================================= */
 
 fetch("data/news.json")
   .then((response) => response.json())
@@ -51,7 +52,6 @@ fetch("data/news.json")
       article.href = "news.html";
 
       article.innerHTML = `
-
         <time class="top_news_date">
           ${news.date}
         </time>
@@ -71,7 +71,6 @@ fetch("data/news.json")
         <span class="top_news_arrow">
           →
         </span>
-
       `;
 
       newsList.appendChild(article);
