@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = heroSlider.querySelectorAll(".hero_slide");
 
     let currentIndex = 0;
-    const slideInterval = 6000;
+    const slideInterval = 3000;
 
     if (slides.length > 1) {
       setInterval(() => {
