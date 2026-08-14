@@ -823,7 +823,7 @@ ACTIVITY
 
   align-items: center;
 
-  min-height: 700px;
+  min-height: 500px;
 
   background:
     linear-gradient(rgba(10, 9, 8, 0.6), rgba(10, 9, 8, 0.85)),
@@ -853,7 +853,7 @@ ACTIVITY CARDS
 ========================================================= */
 
 .top_activity_cards {
-  padding: 100px 20px;
+  padding: 100px 20px 200px;
 
   background: #0f0e0c;
 }
@@ -2046,16 +2046,8 @@ MOBILE
   Activity
   ======================================================= */
 
-  .top_activity {
-    min-height: 650px;
-  }
-
   .top_activity_content {
-    min-height: 650px;
-
     width: 86%;
-
-    padding: 80px 0;
   }
 
   .top_activity_content h2 {
@@ -2065,13 +2057,7 @@ MOBILE
   }
 
   .top_activity_cards {
-    padding: 60px 20px;
-  }
-
-  .top_activity_cards_inner {
-    grid-template-columns: 1fr;
-
-    gap: 20px;
+    padding: 60px 20px 120px;
   }
 
   .activity_card_content {
