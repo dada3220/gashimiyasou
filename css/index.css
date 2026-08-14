@@ -1227,7 +1227,7 @@ NEWS
 ========================================================= */
 
 .top_news {
-  padding: 140px 20px;
+  padding: 80px 20px;
 
   background: #706f6d;
 
@@ -1884,12 +1884,6 @@ MOBILE
     flex-direction: column;
   }
 
-  .top_bath_image {
-    min-height: 450px;
-
-    height: 60vw;
-  }
-
   .top_bath_content {
     padding: 80px 30px;
   }
@@ -2222,7 +2216,7 @@ MOBILE
   ======================================================= */
 
   .top_news {
-    padding: 90px 20px;
+    padding: 30px 20px;
   }
 
   .top_news_heading {
