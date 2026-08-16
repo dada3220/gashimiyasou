@@ -1,140 +1,132 @@
-"use strict";
-
 /* =========================================================
-庭園ページ
-garden.js
+   がしみや荘 庭園ページ
+   garden.js
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* =======================================================
-  スクロールアニメーション
-  ======================================================= */
+  const mapObject = document.querySelector(".garden_map_svg");
 
-  const fadeTargets = document.querySelectorAll(".fadeUp, .garden_section");
-
-  if (fadeTargets.length > 0) {
-    fadeTargets.forEach((element) => {
-      element.classList.add("is-hidden");
-    });
-
-    const fadeObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.remove("is-hidden");
-          entry.target.classList.add("is-visible");
-
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px",
-      },
-    );
-
-    fadeTargets.forEach((element) => {
-      fadeObserver.observe(element);
-    });
-  }
-
-  /* =======================================================
-  庭園マップ
-  ======================================================= */
-
-  const gardenMapSvg = document.querySelector(".garden_map_svg");
-
-  if (!gardenMapSvg) {
+  // SVGが存在しない場合は終了
+  if (!mapObject) {
+    console.warn("庭園マップSVGが見つかりません。");
     return;
   }
 
-  /* =======================================================
-  SVG読み込み完了
-  ======================================================= */
+  /*
+   * SVGの読み込み完了後
+   */
+  mapObject.addEventListener("load", () => {
+    const svgDocument = mapObject.contentDocument;
 
-  gardenMapSvg.addEventListener("load", () => {
-    const svgDocument = gardenMapSvg.contentDocument;
-
+    // SVG内部にアクセスできない場合
     if (!svgDocument) {
-      console.warn("庭園マップSVGを読み込めませんでした。");
-
+      console.warn("SVGのcontentDocumentを取得できませんでした。");
       return;
     }
 
-    /* =====================================================
-    SVG内のリンクを取得
-    ===================================================== */
+    console.log("庭園マップSVGの読み込み成功");
 
+    /*
+     * SVG内のリンクを取得
+     */
     const links = svgDocument.querySelectorAll("a");
 
+    console.log(`庭園マップのクリックエリア：${links.length}個`);
+
     links.forEach((link) => {
+      /*
+       * クリック可能であることを示す
+       */
       link.style.cursor = "pointer";
 
-      /* -------------------------
-      マウスオーバー
-      ------------------------- */
+      /*
+       * リンク内の図形を取得
+       */
+      const shape = link.querySelector("rect, path, polygon, circle, ellipse");
 
+      /*
+       * -------------------------
+       * マウスオーバー
+       * -------------------------
+       */
       link.addEventListener("mouseenter", () => {
-        link.style.opacity = "0.7";
+        if (!shape) return;
+
+        shape.style.fill = "#ffffff";
+        shape.style.fillOpacity = "0.18";
       });
 
-      /* -------------------------
-      マウスアウト
-      ------------------------- */
-
+      /*
+       * -------------------------
+       * マウスアウト
+       * -------------------------
+       */
       link.addEventListener("mouseleave", () => {
-        link.style.opacity = "1";
+        if (!shape) return;
+
+        shape.style.fill = "#000000";
+        shape.style.fillOpacity = "0";
       });
 
-      /* -------------------------
-      クリック
-      ------------------------- */
-
+      /*
+       * -------------------------
+       * クリック
+       * -------------------------
+       */
       link.addEventListener("click", (event) => {
         event.preventDefault();
+        event.stopPropagation();
 
+        /*
+         * hrefを取得
+         */
         const href = link.getAttribute("href");
 
-        if (!href) {
-          return;
-        }
+        console.log("庭園マップクリック:", href);
+
+        if (!href) return;
 
         /*
          * #gallery
          * #yubatake
-         * などのページ内リンクだけ処理
+         * #jinja
+         * など
          */
-
         if (!href.startsWith("#")) {
           return;
         }
 
+        /*
+         * 親ページから対象を探す
+         */
         const target = document.querySelector(href);
 
         if (!target) {
-          console.warn(`スクロール先が見つかりません: ${href}`);
+          console.warn(`庭園マップのリンク先が見つかりません: ${href}`);
 
           return;
         }
 
-        /* -------------------------
-        スムーズスクロール
-        ------------------------- */
+        /*
+         * スクロール
+         */
+        const offset = 200;
 
-        target.scrollIntoView({
+        const targetPosition =
+          target.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+          top: targetPosition,
           behavior: "smooth",
-          block: "start",
         });
-
-        /* -------------------------
-        URLの#を変更
-        ------------------------- */
-
-        history.pushState(null, "", href);
       });
     });
+  });
+
+  /*
+   * SVGの読み込みに失敗した場合
+   */
+  mapObject.addEventListener("error", () => {
+    console.error("庭園マップSVGの読み込みに失敗しました。", mapObject.data);
   });
 });

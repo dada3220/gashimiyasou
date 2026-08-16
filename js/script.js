@@ -10,6 +10,9 @@ fetch("parts/header.html")
     document.getElementById("header-area").innerHTML = data;
 
     initMenu();
+  })
+  .catch((error) => {
+    console.error("ヘッダーの読み込みに失敗しました。", error);
   });
 
 // =========================
@@ -20,6 +23,12 @@ fetch("parts/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer-area").innerHTML = data;
+
+    // フッター読み込み後に上に戻るボタンを初期化
+    initBackToTop();
+  })
+  .catch((error) => {
+    console.error("フッターの読み込みに失敗しました。", error);
   });
 
 // =========================
@@ -27,32 +36,51 @@ fetch("parts/footer.html")
 // =========================
 
 function initMenu() {
+  // -------------------------
   // サブメニュー
+  // -------------------------
+
   document.querySelectorAll(".submenu-toggle").forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
 
       const parent = toggle.closest(".has-submenu");
+
       parent.classList.toggle("active");
     });
   });
 
+  // -------------------------
   // ハンバーガーメニュー
+  // -------------------------
+
   const menu = document.getElementById("menu");
   const hamOpen = document.getElementById("ham_op");
   const hamClose = document.getElementById("ham_cl");
 
+  // 要素が存在しない場合は処理しない
+  if (!menu || !hamOpen || !hamClose) {
+    return;
+  }
+
+  // メニューを開く
   hamOpen.addEventListener("click", () => {
     menu.classList.add("show");
+
     document.body.style.overflow = "hidden";
   });
 
+  // メニューを閉じる
   hamClose.addEventListener("click", () => {
     menu.classList.remove("show");
+
     document.body.style.overflow = "";
   });
 
-  // 外クリックで閉じる
+  // -------------------------
+  // 外側をクリックして閉じる
+  // -------------------------
+
   document.addEventListener("click", (e) => {
     if (
       menu.classList.contains("show") &&
@@ -60,41 +88,44 @@ function initMenu() {
       !hamOpen.contains(e.target)
     ) {
       menu.classList.remove("show");
+
       document.body.style.overflow = "";
     }
   });
 }
 
-// =========================
-// FlexSlider
-// =========================
+// =========================================================
+// 上に戻るボタン初期化
+// =========================================================
 
-$(document).ready(function () {
-  $(".flexslider").flexslider({
-    animation: "fade",
+function initBackToTop() {
+  const backToTop = document.getElementById("backToTop");
 
-    slideshowSpeed: 6000,
+  // ボタンが存在しない場合は処理しない
+  if (!backToTop) {
+    return;
+  }
 
-    animationSpeed: 2500,
+  // -------------------------
+  // スクロールで表示・非表示
+  // -------------------------
 
-    controlNav: true,
-
-    directionNav: false,
-
-    pauseOnHover: false,
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1500) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
   });
-});
 
-// =========================
-// Lightbox
-// =========================
+  // -------------------------
+  // クリックでページ上部へ
+  // -------------------------
 
-if (typeof lightbox !== "undefined") {
-  lightbox.option({
-    alwaysShowNavOnTouchDevices: true,
-
-    showImageNumberLabel: false,
-
-    maxWidth: 1000,
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 }

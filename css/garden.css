@@ -66,8 +66,9 @@ garden.css
   border: none;
 
   z-index: 2;
-}
 
+  pointer-events: auto;
+}
 /* 地図説明 */
 
 .garden_map_text {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    version="1.1"
@@ -7,151 +6,249 @@
    width="1536"
    height="1024"
    viewBox="0 0 1536 1024"
-   sodipodi:docname="garden-map-hitarea.svg"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs1" />
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.48339844"
-     inkscape:cx="824.37172"
-     inkscape:cy="512"
-     inkscape:window-width="1366"
-     inkscape:window-height="697"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g1" />
-  <g
-     inkscape:groupmode="layer"
-     inkscape:label="Image"
-     id="g1">
-    <path
-       style="fill:#000000;stroke-width:1.12875;fill-opacity:0"
-       d="m 345.47071,136.53333 h 132.39596 l -2.20661,88.95354 H 349.8839 Z"
-       id="nyuuhaku" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="tenboudai"
-       width="136.533"
-       height="82.747475"
-       x="964.00806"
-       y="64.129295" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="kutiba"
-       width="138.60201"
-       height="101.36565"
-       x="1255.6929"
-       y="134.46465" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="hikawataki"
-       width="128.259"
-       height="84.816162"
-       x="1383.9515"
-       y="330.9899" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="iwakage"
-       width="134.465"
-       height="72.404037"
-       x="1063.3051"
-       y="337.19595" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="tree"
-       width="132.396"
-       height="93.090912"
-       x="757.1394"
-       y="246.17374" />
-    <rect
-       style="fill:#000000;fill-opacity:0;stroke-width:1.03719"
-       id="oozakura"
-       width="146.877"
-       height="88.953537"
-       x="432.35553"
-       y="268.92929" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="gankutu"
-       width="146.877"
-       height="68.26667"
-       x="250.31111"
-       y="275.13535" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="kokage"
-       width="136.533"
-       height="86.88485"
-       x="188.2505"
-       y="384.77576" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="onsenjinjya"
-       width="138.60201"
-       height="97.228279"
-       x="444.7677"
-       y="450.97372" />
-    <rect
-       style="fill:#000000;fill-opacity:0;stroke-width:1.06749"
-       id="yubatake"
-       width="134.465"
-       height="101.36566"
-       x="459.24847"
-       y="562.68286" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="benigara"
-       width="136.533"
-       height="97.228279"
-       x="167.56363"
-       y="606.12524" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="kihada"
-       width="140.67101"
-       height="88.953537"
-       x="196.52525"
-       y="748.86462" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="garoukan"
-       width="167.56363"
-       height="103.43434"
-       x="769.55151"
-       y="453.04242" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="water"
-       width="151.01401"
-       height="93.090912"
-       x="835.74951"
-       y="852.29901" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="hisui"
-       width="130.327"
-       height="93.090912"
-       x="1259.8303"
-       y="496.48486" />
-    <rect
-       style="fill:#000000;fill-opacity:0"
-       id="hakudei"
-       width="132.396"
-       height="86.88485"
-       x="1321.8909"
-       y="678.5293" />
+
+  <defs id="defs1" />
+
+  <g id="g1">
+
+
+    <!-- =========================
+    乳白の湯
+    ========================= -->
+    <a href="#roten">
+      <path
+         style="fill:#000000;stroke-width:1.12875;fill-opacity:0"
+         d="m 345.47071,136.53333 h 132.39596 l -2.20661,88.95354 H 349.8839 Z"
+         id="nyuuhaku" />
+    </a>
+
+
+    <!-- =========================
+    展望台
+    ========================= -->
+    <a href="#tenboudai">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="tenboudai"
+         width="136.533"
+         height="82.747475"
+         x="964.00806"
+         y="64.129295" />
+    </a>
+
+
+    <!-- =========================
+    朽葉の湯
+    ========================= -->
+    <a href="#roten">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="kutiba"
+         width="138.60201"
+         height="101.36565"
+         x="1255.6929"
+         y="134.46465" />
+    </a>
+
+
+    <!-- =========================
+    氷川大滝
+    ========================= -->
+    <a href="#hikawanotaki">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="hikawataki"
+         width="128.259"
+         height="84.816162"
+         x="1383.9515"
+         y="330.9899" />
+    </a>
+
+
+    <!-- =========================
+    岩陰休憩処
+    ========================= -->
+    <a href="#kyuukeisyo">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="iwakage"
+         width="134.465"
+         height="72.404037"
+         x="1063.3051"
+         y="337.19595" />
+    </a>
+
+
+    <!-- =========================
+      木のラウンジ
+      ========================= -->
+   <a href="#kinolounge">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="tree"
+         width="132.396"
+         height="93.090912"
+         x="757.1394"
+         y="246.17374" />
+      </a>
+
+
+    <!-- =========================
+    大宮大桜
+    ========================= -->
+    <a href="#oomiyaoosakura">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke-width:1.03719"
+         id="oozakura"
+         width="146.877"
+         height="88.953537"
+         x="432.35553"
+         y="268.92929" />
+    </a>
+
+
+    <!-- =========================
+    岩窟像
+    ========================= -->
+    <a href="#gankutuzou">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="gankutu"
+         width="146.877"
+         height="68.26667"
+         x="250.31111"
+         y="275.13535" />
+    </a>
+
+
+    <!-- =========================
+    木陰休憩処
+    ========================= -->
+    <a href="#kyuukeisyo">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="kokage"
+         width="136.533"
+         height="86.88485"
+         x="188.2505"
+         y="384.77576" />
+    </a>
+
+
+    <!-- =========================
+    温泉神社
+    ========================= -->
+    <a href="#jinja">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="onsenjinjya"
+         width="138.60201"
+         height="97.228279"
+         x="444.7677"
+         y="450.97372" />
+    </a>
+
+
+    <!-- =========================
+    湯畑
+    ========================= -->
+    <a href="#yubatake">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke-width:1.06749"
+         id="yubatake"
+         width="134.465"
+         height="101.36566"
+         x="459.24847"
+         y="562.68286" />
+    </a>
+
+
+    <!-- =========================
+    紅殻の湯
+    ========================= -->
+    <a href="#roten">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="benigara"
+         width="136.533"
+         height="97.228279"
+         x="167.56363"
+         y="606.12524" />
+    </a>
+
+
+    <!-- =========================
+    黄檗の湯
+    ========================= -->
+    <a href="#roten">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="kihada"
+         width="140.67101"
+         height="88.953537"
+         x="196.52525"
+         y="748.86462" />
+    </a>
+
+
+    <!-- =========================
+    雅廊館
+    ========================= -->
+    <a href="#gallery">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="garoukan"
+         width="167.56363"
+         height="103.43434"
+         x="769.55151"
+         y="453.04242" />
+    </a>
+
+
+    <!-- =========================
+    水のラウンジ
+    ========================= -->
+    <a href="#mizunolounge">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="water"
+         width="151.01401"
+         height="93.090912"
+         x="835.74951"
+         y="852.29901" />
+    </a>
+
+
+    <!-- =========================
+    翡翠の湯
+    ========================= -->
+    <a href="#roten">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="hisui"
+         width="130.327"
+         height="93.090912"
+         x="1259.8303"
+         y="496.48486" />
+    </a>
+
+
+    <!-- =========================
+    白泥の湯
+    ========================= -->
+    <a href="#roten">
+      <rect
+         style="fill:#000000;fill-opacity:0"
+         id="hakudei"
+         width="132.396"
+         height="86.88485"
+         x="1321.8909"
+         y="678.5293" />
+    </a>
+
   </g>
+
 </svg>
+
