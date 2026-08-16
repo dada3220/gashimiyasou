@@ -768,6 +768,8 @@ FOOD
   height: 100%;
 
   object-fit: cover;
+
+  border: 2px solid #8f8610;
 }
 
 .top_food_sub {
@@ -780,8 +782,6 @@ FOOD
   height: 40%;
 
   overflow: hidden;
-
-  border: 8px solid #11100e;
 }
 
 .top_food_content {
@@ -988,6 +988,8 @@ GARDEN
   object-fit: cover;
 
   transition: transform 0.8s ease;
+
+  border: 3px solid #977710;
 }
 
 .garden_image:hover img {
@@ -1008,8 +1010,6 @@ GARDEN
 
   width: 48%;
   height: 35%;
-
-  border: 8px solid #151311;
 }
 
 .garden_image_03 {
@@ -1018,8 +1018,6 @@ GARDEN
 
   width: 35%;
   height: 28%;
-
-  border: 8px solid #151311;
 }
 
 /* =========================================================

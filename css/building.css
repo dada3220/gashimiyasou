@@ -176,13 +176,13 @@
 .sub_facility {
   margin-top: 30px;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
 .sub_item {
-  flex: 1;
-
   padding: 10px;
 
   border-radius: 15px;
@@ -272,21 +272,19 @@
   .sub_facility {
     margin-top: 40px;
 
-    grid-template-columns: 1fr;
-
-    gap: 20px;
+    gap: 10px;
   }
 
   .sub_item {
-    padding: 15px;
+    padding: 20px 5px;
   }
 
   .sub_item h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .sub_item p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .yoyaku_foot {
