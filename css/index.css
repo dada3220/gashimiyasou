@@ -728,6 +728,18 @@ LOUNGE LIST
   letter-spacing: 0.12em;
 }
 
+.top_24hours_filmimage {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 100vw;
+  max-width: none;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
 /* =========================================================
 FOOD
 ========================================================= */
