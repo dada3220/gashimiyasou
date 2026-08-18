@@ -1121,9 +1121,11 @@ BAR 画像比率
   }
 
   .lounge_food_grid {
-    grid-template-columns: 1fr;
+    display: grid;
 
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
   }
 
   /* =========================
@@ -1131,17 +1133,17 @@ BAR 画像比率
   ========================= */
 
   .lounge_food_card_text {
-    padding: 25px 22px 30px;
+    padding: 10px 15px 15px;
   }
 
   .lounge_food_card_text h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .lounge_food_card_text > p:not(.lounge_type):not(.lounge_food_name) {
     font-size: 0.8rem;
 
-    line-height: 2;
+    line-height: 1.7;
   }
 
   /* =========================

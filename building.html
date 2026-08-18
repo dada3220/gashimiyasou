@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>本館案内 | がしみや荘</title>
-    <meta name="description" content="がしみや荘 本館案内ページ" />
+    <title>館内マップ | がしみや荘</title>
+
+    <meta
+      name="description"
+      content="がしみや荘の本館と庭園をご案内します。館内の各施設や、四季折々の自然を楽しめる広大な日本庭園をご覧いただけます。"
+    />
 
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
@@ -20,569 +24,969 @@
       rel="stylesheet"
     />
 
+    <!-- 共通CSS -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- 館内マップ専用CSS -->
     <link href="css/building.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- ヘッダー -->
+    <!-- =========================
+    ヘッダー
+    ========================= -->
     <div id="header-area"></div>
 
     <main class="building_page wrapper">
-      <!-- ページタイトル -->
+      <!-- =========================================================
+      ページタイトル
+      ========================================================= -->
+
       <div class="page_head">
-        <h1>本館案内</h1>
-        <p>building guide</p>
+        <h1>館内マップ</h1>
+        <p>building map</p>
       </div>
 
-      <!-- ========================= -->
-      <!-- 館内図 -->
-      <!-- ========================= -->
+      <!-- =========================================================
+      本館
+      ========================================================= -->
 
-      <section class="building_map fadeUp">
-        <div class="section_title">
-          <h2>館内マップ</h2>
-          <p>building map</p>
+      <section class="map_section building_map_section">
+        <!-- 本館 開閉ボタン -->
+
+        <button class="map_section_btn" type="button" aria-expanded="false">
+          <span class="map_section_title">
+            <strong>本館</strong>
+            <small>building</small>
+          </span>
+
+          <span class="map_section_arrow">＋</span>
+        </button>
+
+        <!-- =========================
+        本館コンテンツ
+        ========================= -->
+
+        <div class="map_section_content">
+          <!-- =====================================================
+          本館マップ
+          ===================================================== -->
+
+          <section class="building_map">
+            <div class="section_title">
+              <h2>館内マップ</h2>
+              <p>building map</p>
+            </div>
+
+            <img
+              src="images/building/building_map.png"
+              alt="がしみや荘 本館館内マップ"
+            />
+
+            <p class="building_map_text">
+              吹き抜けアトリウムを中心に、 温泉・ラウンジ・お食事処など
+              多彩な施設をご用意しております。<br />
+              館内散策をお楽しみください。
+            </p>
+          </section>
+
+          <!-- =====================================================
+          地下
+          ===================================================== -->
+
+          <div class="floor_item">
+            <button class="floor_btn" type="button" aria-expanded="false">
+              <span>地下</span>
+              <span class="arrow">＋</span>
+            </button>
+
+            <div class="floor_content">
+              <!-- 土のラウンジ -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/bf_groundlounge.png"
+                    alt="土のラウンジ"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>土のラウンジ</h2>
+
+                  <p>読書やボードゲームを楽しめる、 落ち着いた空間。</p>
+                </div>
+              </section>
+
+              <!-- 千代文庫 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/bf_tiyobunko.png"
+                    alt="図書室「千代文庫」"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>図書室「千代文庫」</h2>
+
+                  <p>小説や雑誌、漫画などを 取り揃えた図書室。</p>
+                </div>
+              </section>
+
+              <!-- 湯あかり横丁 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/bf_yuakariyokotyou.png"
+                    alt="湯あかり横丁"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>湯あかり横丁</h2>
+
+                  <p>館内にいながら、 温泉街を楽しめるエリアです。</p>
+
+                  <div class="sub_facility">
+                    <div class="sub_item">
+                      <img
+                        src="images/building/bf_kagidokoro.png"
+                        alt="カラオケ「歌戯処」"
+                      />
+
+                      <h3>カラオケ「歌戯処」</h3>
+
+                      <p>
+                        使い放題のカラオケルーム。 ラウンジのお酒も持込めます。
+                      </p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img
+                        src="images/building/bf_yuugidokoro.png"
+                        alt="ゲームセンター「遊戯処」"
+                      />
+
+                      <h3>ゲームセンター「遊戯処」</h3>
+
+                      <p>メダルも無料貸し出しで 遊び放題のゲームセンター。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img
+                        src="images/building/bf_kyougidokoro.png"
+                        alt="プレイルーム「競戯処」"
+                      />
+
+                      <h3>プレイルーム「競戯処」</h3>
+
+                      <p>卓球、ダーツ、ビリヤードを お楽しみいただけます。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img
+                        src="images/building/bf_yatai.png"
+                        alt="湯あかり横丁屋台"
+                      />
+
+                      <h3>湯あかり横丁屋台</h3>
+
+                      <p>
+                        スマートボールや射的など、 昔ながらの遊びが楽しめます。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 黒墨の湯 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/bf_kurozumi.png"
+                    alt="貸切風呂「黒墨の湯」"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「黒墨の湯」</h2>
+
+                  <p>洞窟風呂で黒湯が楽しめる 貸切風呂です。</p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- =====================================================
+          1階
+          ===================================================== -->
+
+          <div class="floor_item">
+            <button class="floor_btn" type="button" aria-expanded="false">
+              <span>1階</span>
+              <span class="arrow">＋</span>
+            </button>
+
+            <div class="floor_content">
+              <!-- 玄関 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/1f_genkan.png" alt="玄関" />
+                </div>
+
+                <div class="building_text">
+                  <h2>玄関</h2>
+
+                  <p>
+                    スタッフと看板犬がお出迎えいたします。
+                    チェックイン前後の荷物のお預かりなど。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 吹き抜けアトリウム -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/1f_atrium.png"
+                    alt="吹き抜けアトリウム"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>吹き抜けアトリウム</h2>
+
+                  <p>本館の中央に広がる、 豪華な庭園と開放的な吹き抜け空間。</p>
+                </div>
+              </section>
+
+              <!-- フロント -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/1f_front.png" alt="フロント" />
+                </div>
+
+                <div class="building_text">
+                  <h2>フロント</h2>
+
+                  <p>
+                    チェックイン・チェックアウトのほか、
+                    ご入用の際にはご滞在をサポートいたします。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 火のラウンジ -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/1f_firelounge.png"
+                    alt="火のラウンジ"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>火のラウンジ</h2>
+
+                  <p>
+                    暖炉の炎が揺らめくラウンジ。
+                    日によってはミニライブなども開催します。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 売店 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/1f_meikasen.png" alt="銘花撰" />
+                </div>
+
+                <div class="building_text">
+                  <h2>売店「銘花撰」</h2>
+
+                  <p>
+                    地元の銘菓や特産品、
+                    オリジナル商品などを取り揃えております。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 旅支度処 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/1f_tabisitaku.png" alt="旅支度処" />
+                </div>
+
+                <div class="building_text">
+                  <h2>旅支度処</h2>
+
+                  <p>
+                    ご滞在をより快適にするための
+                    様々なアイテムをご用意しております。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 大浴場 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/1f_public_bath.png" alt="大浴場" />
+                </div>
+
+                <div class="building_text">
+                  <h2>大浴場</h2>
+
+                  <p>
+                    趣の異なる二つの湯処をご用意しております。
+                    男女入れ替え制です。
+                  </p>
+
+                  <div class="sub_facility">
+                    <div class="sub_item">
+                      <img
+                        src="images/building/1f_oozakura.png"
+                        alt="大桜の湯"
+                      />
+
+                      <h3>大桜の湯</h3>
+
+                      <p>檜と桜をテーマにした華やかな湯処。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img src="images/building/1f_ootaki.png" alt="大滝の湯" />
+
+                      <h3>大滝の湯</h3>
+
+                      <p>岩と滝をテーマにした開放的な湯処。</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 琥珀の湯 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/1f_kohaku.png"
+                    alt="貸切風呂「琥珀の湯」"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「琥珀の湯」</h2>
+
+                  <p>
+                    湯冷めしにくい塩化物泉のお風呂。
+                    浴室に成分が固まって層になっております。
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- =====================================================
+          2階
+          ===================================================== -->
+
+          <div class="floor_item">
+            <button class="floor_btn" type="button" aria-expanded="false">
+              <span>2階</span>
+              <span class="arrow">＋</span>
+            </button>
+
+            <div class="floor_content">
+              <!-- 四季彩 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img src="images/building/2f_shikisai.png" alt="四季彩" />
+                </div>
+
+                <div class="building_text">
+                  <h2>お食事処「四季彩」</h2>
+
+                  <p>
+                    全席個室、
+                    プライベートな空間でお過ごしいただける夕食会場です。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 紫苑の湯 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img src="images/building/2f_sion.png" alt="紫苑の湯" />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「紫苑の湯」</h2>
+
+                  <p>
+                    紫苑の花をイメージした、 清涼感のある炭酸水素塩泉のお風呂。
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- =====================================================
+          3階
+          ===================================================== -->
+
+          <div class="floor_item">
+            <button class="floor_btn" type="button" aria-expanded="false">
+              <span>3階</span>
+              <span class="arrow">＋</span>
+            </button>
+
+            <div class="floor_content">
+              <!-- 武蔵 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img src="images/building/3f_musashi.png" alt="Bar「武蔵」" />
+                </div>
+
+                <div class="building_text">
+                  <h2>Bar「武蔵」</h2>
+
+                  <p>
+                    夜だけオープンする、
+                    バーテンダーが作るカクテルを楽しめる本格バー。<br />
+                    朝は朝食会場になります。
+                  </p>
+                </div>
+              </section>
+
+              <!-- 花舞座 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/3f_kabuza.png"
+                    alt="大衆演劇場「花舞座」"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>大衆演劇場「花舞座」</h2>
+
+                  <p>演劇や、和太鼓ショーなどが開催される演劇場。</p>
+                </div>
+              </section>
+
+              <!-- 瑠璃の湯 -->
+
+              <section class="building_section">
+                <div class="building_img">
+                  <img
+                    src="images/building/3f_ruri.png"
+                    alt="貸切風呂「瑠璃の湯」"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「瑠璃の湯」</h2>
+
+                  <p>
+                    畳敷きの浴室でゆっくり入れる、 傷に効く硫酸塩泉の温泉です。
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- =====================================================
+          屋上
+          ===================================================== -->
+
+          <div class="floor_item">
+            <button class="floor_btn" type="button" aria-expanded="false">
+              <span>屋上</span>
+              <span class="arrow">＋</span>
+            </button>
+
+            <div class="floor_content">
+              <!-- 月のラウンジ -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img
+                    src="images/building/rf_moonlounge.png"
+                    alt="月のラウンジ"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>月のラウンジ</h2>
+
+                  <p>満天の星空や、 雄大な山々の景色を楽しめる屋上ラウンジ。</p>
+                </div>
+              </section>
+
+              <!-- 天空癒庭 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img
+                    src="images/building/rf_tenkuuryoutei.png"
+                    alt="天空癒庭"
+                  />
+                </div>
+
+                <div class="building_text">
+                  <h2>天空癒庭</h2>
+
+                  <p>
+                    岩盤浴、スポーツジム、
+                    マッサージ機など癒しをテーマにした施設。
+                  </p>
+
+                  <div class="sub_facility">
+                    <div class="sub_item">
+                      <img
+                        src="images/building/rf_kenshinan.png"
+                        alt="スポーツジム「健心庵」"
+                      />
+
+                      <h3>スポーツジム「健心庵」</h3>
+
+                      <p>絶景を見ながら利用できるスポーツジム。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img
+                        src="images/building/rf_onjyakuan.png"
+                        alt="岩盤浴「温石庵」"
+                      />
+
+                      <h3>岩盤浴「温石庵」</h3>
+
+                      <p>多種の天然鉱石と、 温泉熱を利用した岩盤浴場。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img
+                        src="images/building/rf_kyuusokuan.png"
+                        alt="マッサージ「休息庵」"
+                      />
+
+                      <h3>マッサージ「休息庵」</h3>
+
+                      <p>最新式マッサージ機を、 ゆっくり個室で利用できます。</p>
+                    </div>
+
+                    <div class="sub_item">
+                      <img src="images/building/rf_pool.png" alt="プール" />
+
+                      <h3>プール（7～9月のみ）</h3>
+
+                      <p>夏季の場合のみ、 プールもご利用いただけます。</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 空中庭園 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img src="images/building/rf_kutyuteien.png" alt="空中庭園" />
+                </div>
+
+                <div class="building_text">
+                  <h2>空中庭園</h2>
+
+                  <p>雄大な山々の景色や、 夜景をお楽しみいただける屋上庭園。</p>
+                </div>
+              </section>
+
+              <!-- 萌葱の湯 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img src="images/building/rf_moegi.png" alt="萌葱の湯" />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「萌葱の湯」</h2>
+
+                  <p>貸切風呂では一番広い、 ジャングル風呂のラドン温泉。</p>
+                </div>
+              </section>
+
+              <!-- 浅葱の湯 -->
+
+              <section class="building_section reverse">
+                <div class="building_img">
+                  <img src="images/building/rf_asagi.png" alt="浅葱の湯" />
+                </div>
+
+                <div class="building_text">
+                  <h2>貸切風呂「浅葱の湯」</h2>
+
+                  <p>景色を眺めながら、 ゆっくり入れる二酸化炭素泉。</p>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
-
-        <img src="images/building_map.png" alt="本館マップ" />
-
-        <p class="building_map_text">
-          吹き抜けアトリウムを中心に、 温泉・ラウンジ・お食事処など
-          多彩な施設をご用意しております。<br />
-          館内散策をお楽しみください。
-        </p>
       </section>
 
-      <!-- ========================= -->
-      <!-- 1階 -->
-      <!-- ========================= -->
+      <!-- =========================================================
+      庭園
+      ========================================================= -->
 
-      <div class="floor_item">
-        <button class="floor_btn">
-          <span>1階</span>
-          <span class="arrow">＋</span>
+      <section class="map_section garden_map_section">
+        <!-- 庭園 開閉ボタン -->
+
+        <button class="map_section_btn" type="button" aria-expanded="false">
+          <span class="map_section_title">
+            <strong>庭園</strong>
+            <small>garden</small>
+          </span>
+
+          <span class="map_section_arrow">＋</span>
         </button>
 
-        <div class="floor_content">
-          <!-- 玄関 -->
+        <!-- =========================
+        庭園コンテンツ
+        ========================= -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_genkan.png" alt="玄関" />
+        <div class="map_section_content">
+          <!-- =====================================================
+          庭園散策マップ
+          ===================================================== -->
+
+          <section class="garden_map_section_inner">
+            <div class="section_title">
+              <h2>庭園散策マップ</h2>
+              <p>garden map</p>
             </div>
 
-            <div class="building_text">
-              <h2>玄関</h2>
+            <div class="garden_map">
+              <img
+                src="images/building/garden_map.png"
+                alt="がしみや荘 庭園地図"
+              />
+
+              <object
+                class="garden_map_svg"
+                data="images/building/garden-map-hitarea.svg"
+                type="image/svg+xml"
+                aria-label="庭園施設のクリックマップ"
+              ></object>
+            </div>
+
+            <p class="garden_map_text">
+              四季折々の表情を見せる広大な日本庭園。<br />
+              温泉神社や湯畑、展望台、ラウンジなどを巡りながら、<br />
+              ゆったりとした散策をお楽しみください。
+            </p>
+          </section>
+
+          <!-- =====================================================
+          雅廊館
+          ===================================================== -->
+
+          <section class="garden_section" id="gallery">
+            <div class="garden_img">
+              <img src="images/building/g_garoukan.png" alt="雅廊館" />
+            </div>
+
+            <div class="garden_text">
+              <h2>雅廊館</h2>
 
               <p>
-                スタッフと看板犬がお出迎えいたします。
-                チェックイン前の荷物のお預かりなど、お気軽にお申し付けください
+                庭園の中心に佇む文化施設。
+                ギャラリーやシアター、ラウンジなどが入っています。
               </p>
 
               <div class="sub_facility">
                 <div class="sub_item">
                   <img
-                    src="images/building/1f_doteni.png.png"
-                    alt="看板犬どてに"
+                    src="images/building/g_geisaidou.png"
+                    alt="ギャラリー「芸彩堂」"
                   />
 
-                  <h3>看板犬「どてに」</h3>
+                  <h3>ギャラリー「芸彩堂」</h3>
+
+                  <p>美術品や、がしみや荘の歴史などを展示しております。</p>
+                </div>
+
+                <div class="sub_item">
+                  <img
+                    src="images/building/g_eisaidou.png"
+                    alt="ミニシアター「映彩堂」"
+                  />
+
+                  <h3>ミニシアター「映彩堂」</h3>
 
                   <p>
-                    当旅館の看板犬の「どてに」です。
-                    玄関でお客様のお出迎えをしています。
+                    厳選した映画を放映しています。
+                    オールナイト上映会なども開催しております。
                   </p>
                 </div>
 
                 <div class="sub_item">
                   <img
-                    src="images/building/1f_dotenihouse.png"
-                    alt="どてにの家"
+                    src="images/building/g_goldlounge.png"
+                    alt="金のラウンジ"
                   />
 
-                  <h3>どてにの家</h3>
+                  <h3>金のラウンジ</h3>
 
-                  <p>
-                    玄関横にあるどてにのお家です。
-                    触れ合ったりおやつをあげたりできます。
-                  </p>
+                  <p>落ち着いた空間で、 コーヒーやお酒を楽しめます。</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <!-- 吹き抜けアトリウム -->
+          <!-- =====================================================
+          湯畑
+          ===================================================== -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/1f_atrium.png"
-                alt="吹き抜けアトリウム"
-              />
+          <section class="garden_section reverse" id="yubatake">
+            <div class="garden_img">
+              <img src="images/building/g_yubatake.png" alt="湯畑" />
             </div>
 
-            <div class="building_text">
-              <h2>吹き抜けアトリウム</h2>
+            <div class="garden_text">
+              <h2>湯畑</h2>
 
-              <p>本館の中央に広がる、豪華な庭園と開放的な吹き抜け空間。</p>
+              <p>豊富な自家源泉から湧き出る温泉を利用した湯畑。</p>
             </div>
           </section>
 
-          <!-- フロント -->
+          <!-- =====================================================
+          温泉神社
+          ===================================================== -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_front.png" alt="フロント" />
+          <section class="garden_section" id="jinja">
+            <div class="garden_img">
+              <img src="images/building/g_onsenjinja.png" alt="温泉神社" />
             </div>
 
-            <div class="building_text">
-              <h2>フロント</h2>
+            <div class="garden_text">
+              <h2>温泉神社</h2>
+
+              <p>温泉の恵みに感謝を捧げる神社。 お守りなども購入できます。</p>
+            </div>
+          </section>
+
+          <!-- =====================================================
+          展望台
+          ===================================================== -->
+
+          <section class="garden_section reverse" id="tenboudai">
+            <div class="garden_img">
+              <img src="images/building/g_tenboudai.png" alt="展望台" />
+            </div>
+
+            <div class="garden_text">
+              <h2>展望台</h2>
 
               <p>
-                チェックイン・チェックアウトのほか、ご入用の際には
-                ご滞在をサポートいたします。
+                庭園や山々の景色、満天の星空を 一望できる高台の展望スポット。
               </p>
             </div>
           </section>
 
-          <!-- 火のラウンジ -->
+          <!-- =====================================================
+          氷川大滝
+          ===================================================== -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_firelounge.png" alt="火のラウンジ" />
+          <section class="garden_section" id="hikawanotaki">
+            <div class="garden_img">
+              <img src="images/building/g_hikawanotaki.png" alt="氷川大滝" />
             </div>
 
-            <div class="building_text">
-              <h2>火のラウンジ</h2>
+            <div class="garden_text">
+              <h2>氷川大滝</h2>
+
+              <p>落差50メートルの大きな滝。 冬には氷瀑が楽しめます。</p>
+            </div>
+          </section>
+
+          <!-- =====================================================
+          大宮大桜
+          ===================================================== -->
+
+          <section class="garden_section reverse" id="oomiyaoosakura">
+            <div class="garden_img">
+              <img src="images/building/g_oomiyaoosakura.png" alt="大宮大桜" />
+            </div>
+
+            <div class="garden_text">
+              <h2>大宮大桜</h2>
 
               <p>
-                暖炉の炎が揺らめくラウンジ。日によってはミニライブなども開催します。
+                樹齢400年を超える大きな山桜の御神木。
+                4月上旬ごろ満開の花を咲かせます。
               </p>
             </div>
           </section>
 
-          <!-- 売店 -->
+          <!-- =====================================================
+          休憩処
+          ===================================================== -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_meikasen.png" alt="銘花撰" />
+          <section class="garden_section" id="kyuukeisyo">
+            <div class="garden_img">
+              <img src="images/building/g_kyuukeisyo.png" alt="休憩処" />
             </div>
 
-            <div class="building_text">
-              <h2>売店「銘花撰」</h2>
+            <div class="garden_text">
+              <h2>休憩処</h2>
 
               <p>
-                地元の銘菓や特産品、オリジナル商品などを取り揃えております。
-              </p>
-            </div>
-          </section>
-
-          <!-- 旅支度処 -->
-
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_tabisitaku.png" alt="旅支度処" />
-            </div>
-
-            <div class="building_text">
-              <h2>旅支度処</h2>
-
-              <p>
-                ご滞在をより快適にするための
-                様々なアイテムをご用意しております。
-              </p>
-            </div>
-          </section>
-
-          <!-- 大浴場 -->
-
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/1f_public_bath.png" alt="大浴場" />
-            </div>
-
-            <div class="building_text">
-              <h2>大浴場</h2>
-
-              <p>
-                趣の異なる二つの湯処をご用意しております。男女入れ替え制です。
+                庭園内にある、秘密基地のような休憩所。
+                貸し切り風呂の待合いなどにお使いください。
               </p>
 
               <div class="sub_facility">
                 <div class="sub_item">
-                  <img src="images/building/1f_oozakura.png" alt="大桜の湯" />
+                  <img src="images/building/g_kokage.png" alt="木陰休憩処" />
 
-                  <h3>大桜の湯</h3>
+                  <h3>木陰休憩処</h3>
 
-                  <p>檜と桜をテーマにした華やかな湯処。</p>
+                  <p>ツリーハウス型の眺めのいい休憩処。</p>
                 </div>
 
                 <div class="sub_item">
-                  <img src="images/building/1f_ootaki.png" alt="大滝の湯" />
+                  <img src="images/building/g_iwakage.png" alt="岩陰休憩処" />
 
-                  <h3>大滝の湯</h3>
+                  <h3>岩陰休憩処</h3>
 
-                  <p>岩と滝をテーマにした開放的な湯処。</p>
+                  <p>洞窟型の落ち着く空間の休憩処。</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <!-- 琥珀の湯 -->
+          <!-- =====================================================
+          岩窟像
+          ===================================================== -->
 
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/1f_kohaku.png"
-                alt="貸切風呂「琥珀の湯」"
-              />
+          <section class="garden_section reverse" id="gankutuzou">
+            <div class="garden_img">
+              <img src="images/building/g_gankutuzou.png" alt="岩窟像" />
             </div>
 
-            <div class="building_text">
-              <h2>貸切風呂「琥珀の湯」</h2>
+            <div class="garden_text">
+              <h2>岩窟像</h2>
 
               <p>
-                湯冷めしにくい塩化物泉のお風呂。浴室に成分が固まって層になっております。
-              </p>
-            </div>
-          </section>
-        </div>
-      </div>
-      <!-- ========================= -->
-      <!-- 2階 -->
-      <!-- ========================= -->
-
-      <div class="floor_item">
-        <button class="floor_btn">
-          <span>2階</span>
-          <span class="arrow">＋</span>
-        </button>
-
-        <div class="floor_content">
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/2f_shikisai.png" alt="四季彩" />
-            </div>
-
-            <div class="building_text">
-              <h2>お食事処「四季彩」</h2>
-
-              <p>
-                全席個室、プライベートな空間でお過ごしいただける夕食会場です。
+                大岩に掘られた石像。 300年以上前に掘られた、貴重な遺跡です。
               </p>
             </div>
           </section>
 
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/2f_sion.png" alt="紫苑の湯" />
+          <!-- =====================================================
+          水のラウンジ
+          ===================================================== -->
+
+          <section class="garden_section" id="mizunolounge">
+            <div class="garden_img">
+              <img src="images/building/g_waterlounge.png" alt="水のラウンジ" />
             </div>
 
-            <div class="building_text">
-              <h2>貸切風呂「紫苑の湯」</h2>
+            <div class="garden_text">
+              <h2>水のラウンジ</h2>
 
-              <p>紫苑の花をイメージした、清涼感のある炭酸水素塩泉のお風呂。</p>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <!-- ========================= -->
-      <!-- 3階 -->
-      <!-- ========================= -->
-
-      <div class="floor_item">
-        <button class="floor_btn">
-          <span>3階</span>
-          <span class="arrow">＋</span>
-        </button>
-
-        <div class="floor_content">
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/3f_musashi.png" alt="Bar「武蔵」" />
-            </div>
-
-            <div class="building_text">
-              <h2>Bar「武蔵」</h2>
-
-              <p>
-                夜だけオープンする、バーテンダーが作るカクテルを楽しめる本格バー。<br />
-                朝は朝食会場になります。
-              </p>
+              <p>川のせせらぎを聞きながら寛げる川床ラウンジ。</p>
             </div>
           </section>
 
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/3f_kabuza.png"
-                alt="大衆演劇場「花舞座」"
-              />
+          <!-- =====================================================
+          木のラウンジ
+          ===================================================== -->
+
+          <section class="garden_section reverse" id="kinolounge">
+            <div class="garden_img">
+              <img src="images/building/g_treelounge.png" alt="木のラウンジ" />
             </div>
 
-            <div class="building_text">
-              <h2>大衆演劇場「花舞座」</h2>
+            <div class="garden_text">
+              <h2>木のラウンジ</h2>
 
-              <p>演劇や、和太鼓ショーなどが開催される演劇場。</p>
-            </div>
-          </section>
-
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/3f_ruri.png"
-                alt="貸切風呂「瑠璃の湯」"
-              />
-            </div>
-
-            <div class="building_text">
-              <h2>貸切風呂「瑠璃の湯」</h2>
-
-              <p>畳敷きの浴室でゆっくり入れる、傷に効く硫酸塩泉の温泉です。</p>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <!-- ========================= -->
-      <!-- 屋上 -->
-      <!-- ========================= -->
-
-      <div class="floor_item">
-        <button class="floor_btn">
-          <span>屋上</span>
-          <span class="arrow">＋</span>
-        </button>
-
-        <div class="floor_content">
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/rf_moonlounge.png" alt="月のラウンジ" />
-            </div>
-
-            <div class="building_text">
-              <h2>月のラウンジ</h2>
-
-              <p>満天の星空や、雄大な山々の景色を楽しめる屋上ラウンジ。</p>
+              <p>森林浴をしながら寛げる グランピング型ラウンジ。</p>
             </div>
           </section>
 
-          <!-- 天空癒庭 -->
+          <!-- =====================================================
+          貸切風呂
+          ===================================================== -->
 
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/rf_tenkuuryoutei.png" alt="天空癒庭" />
+          <section class="garden_section" id="roten">
+            <div class="garden_img">
+              <img src="images/building/g_roten.png" alt="貸切露天風呂" />
             </div>
 
-            <div class="building_text">
-              <h2>天空癒庭</h2>
+            <div class="garden_text">
+              <h2>貸切風呂</h2>
 
-              <p>
-                岩盤浴、スポーツジム、マッサージ機など癒しをテーマにした施設。
-              </p>
+              <p>庭園内に点在している、 個性豊かな貸し切り露天風呂。</p>
 
               <div class="sub_facility">
                 <div class="sub_item">
-                  <img
-                    src="images/building/rf_kenshinan.png"
-                    alt="スポーツジム「健心庵」"
-                  />
+                  <img src="images/building/g_roten01.png" alt="紅殻の湯" />
 
-                  <h3>スポーツジム「健心庵」</h3>
-
-                  <p>絶景を見ながら利用できるスポーツジム。</p>
+                  <h3>紅殻の湯</h3>
                 </div>
 
                 <div class="sub_item">
-                  <img
-                    src="images/building/rf_onjyakuan.png"
-                    alt="岩盤浴「温石庵」"
-                  />
+                  <img src="images/building/g_roten02.png" alt="乳白の湯" />
 
-                  <h3>岩盤浴「温石庵」</h3>
-
-                  <p>多種の天然鉱石と、温泉熱を利用した岩盤浴場。</p>
+                  <h3>乳白の湯</h3>
                 </div>
 
                 <div class="sub_item">
-                  <img
-                    src="images/building/rf_kyuusokuan.png"
-                    alt="マッサージ「休息庵」"
-                  />
+                  <img src="images/building/g_roten03.png" alt="翡翠の湯" />
 
-                  <h3>マッサージ「休息庵」</h3>
-
-                  <p>最新式マッサージ機を、ゆっくり個室で利用できます。</p>
+                  <h3>翡翠の湯</h3>
                 </div>
 
                 <div class="sub_item">
-                  <img src="images/building/rf_pool.png" alt="プール" />
+                  <img src="images/building/g_roten04.png" alt="黄檗の湯" />
 
-                  <h3>プール（7～9月のみ）</h3>
+                  <h3>黄檗の湯</h3>
+                </div>
 
-                  <p>夏季の場合のみ、プールもご利用いただけます。</p>
+                <div class="sub_item">
+                  <img src="images/building/g_roten05.png" alt="朽葉の湯" />
+
+                  <h3>朽葉の湯</h3>
+                </div>
+
+                <div class="sub_item">
+                  <img src="images/building/g_roten06.png" alt="白泥の湯" />
+
+                  <h3>白泥の湯</h3>
                 </div>
               </div>
             </div>
           </section>
-
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/rf_kutyuteien.png" alt="空中庭園" />
-            </div>
-
-            <div class="building_text">
-              <h2>空中庭園</h2>
-
-              <p>雄大な山々の景色や、夜景をお楽しみいただける屋上庭園。</p>
-            </div>
-          </section>
-
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/rf_moegi.png" alt="萌葱の湯" />
-            </div>
-
-            <div class="building_text">
-              <h2>貸切風呂「萌葱の湯」</h2>
-
-              <p>貸切風呂では一番広い、ジャングル風呂のラドン温泉。</p>
-            </div>
-          </section>
-
-          <section class="building_section reverse">
-            <div class="building_img">
-              <img src="images/building/rf_asagi.png" alt="浅葱の湯" />
-            </div>
-
-            <div class="building_text">
-              <h2>貸切風呂「浅葱の湯」</h2>
-
-              <p>景色を眺めながら、ゆっくり入れる二酸化炭素泉。</p>
-            </div>
-          </section>
         </div>
-      </div>
+      </section>
 
-      <!-- ========================= -->
-      <!-- 地下 -->
-      <!-- ========================= -->
-
-      <div class="floor_item">
-        <button class="floor_btn">
-          <span>地下</span>
-          <span class="arrow">＋</span>
-        </button>
-
-        <div class="floor_content">
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/bf_groundlounge.png"
-                alt="土のラウンジ"
-              />
-            </div>
-
-            <div class="building_text">
-              <h2>土のラウンジ</h2>
-
-              <p>読書やボードゲームを楽しめる、落ち着いた空間。</p>
-            </div>
-          </section>
-
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/bf_tiyobunko.png"
-                alt="図書室「千代文庫」"
-              />
-            </div>
-
-            <div class="building_text">
-              <h2>図書室「千代文庫」</h2>
-
-              <p>小説や雑誌、漫画などを取り揃えた図書室。</p>
-            </div>
-          </section>
-
-          <!-- 湯あかり横丁 -->
-
-          <section class="building_section">
-            <div class="building_img">
-              <img
-                src="images/building/bf_yuakariyokotyou.png"
-                alt="湯あかり横丁"
-              />
-            </div>
-
-            <div class="building_text">
-              <h2>湯あかり横丁</h2>
-
-              <p>館内にいながら、温泉街を楽しめるエリアです。</p>
-
-              <div class="sub_facility">
-                <div class="sub_item">
-                  <img
-                    src="images/building/bf_kagidokoro.png"
-                    alt="カラオケ「歌戯処」"
-                  />
-
-                  <h3>カラオケ「歌戯処」</h3>
-
-                  <p>使い放題のカラオケルーム。ラウンジのお酒も持込めます。</p>
-                </div>
-
-                <div class="sub_item">
-                  <img
-                    src="images/building/bf_yuugidokoro.png"
-                    alt="ゲームセンター「遊戯処」"
-                  />
-
-                  <h3>ゲームセンター「遊戯処」</h3>
-
-                  <p>メダルも無料貸し出しで遊び放題のゲームセンター。</p>
-                </div>
-
-                <div class="sub_item">
-                  <img
-                    src="images/building/bf_kyougidokoro.png"
-                    alt="プレイルーム「競戯処」"
-                  />
-
-                  <h3>プレイルーム「競戯処」</h3>
-
-                  <p>卓球、ダーツ、ビリヤードをお楽しみいただけます。</p>
-                </div>
-
-                <div class="sub_item">
-                  <img
-                    src="images/building/bf_yatai.png"
-                    alt="湯あかり横丁屋台"
-                  />
-
-                  <h3>湯あかり横丁屋台</h3>
-
-                  <p>スマートボールや射的など、昔ながらの遊びが楽しめます。</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="building_section">
-            <div class="building_img">
-              <img src="images/building/bf_kurozumi.png" alt="黒墨の湯" />
-            </div>
-            <div class="building_text">
-              <h2>貸切風呂「黒墨の湯」</h2>
-              <p>洞窟風呂で黒湯が楽しめる貸切風呂です。</p>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <!-- 予約ボタン -->
+      <!-- =========================================================
+      予約
+      ========================================================= -->
 
       <div class="yoyaku_foot">
         <p>
@@ -593,8 +997,15 @@
       </div>
     </main>
 
-    <!-- フッター -->
+    <!-- =========================
+    フッター
+    ========================= -->
+
     <div id="footer-area"></div>
+
+    <!-- =========================
+    JavaScript
+    ========================= -->
 
     <script src="js/script.js"></script>
     <script src="js/building.js"></script>
