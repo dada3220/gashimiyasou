@@ -74,7 +74,7 @@
 
   color: #f3eee3;
 
-  font-size: 2.4rem;
+  font-size: 2.5rem;
 
   font-weight: 400;
 
@@ -88,7 +88,7 @@
 
   color: #d6c9ad;
 
-  font-size: 1.15rem;
+  font-size: 1.8rem;
 
   font-weight: 400;
 
@@ -98,7 +98,7 @@
 .service_text p {
   color: #c9c2b6;
 
-  font-size: 0.95rem;
+  font-size: 1rem;
 
   line-height: 2.4;
 
@@ -163,14 +163,19 @@
   padding-bottom: 170px;
 }
 
+.tabisitaku_image {
+  width: 80%;
+  margin: 100px auto;
+}
+
 /* 画像グリッド */
 
 .service_image_grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-  gap: 8px;
+  gap: 10px;
 
   width: min(900px, 100%);
 
@@ -207,7 +212,7 @@
 .service_items {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 30px;
 
@@ -253,7 +258,7 @@
 }
 
 /* =========================================================
-   貸出・フロントサービス
+  フロントサービス・スマホ
 ========================================================= */
 
 .rental_area {
@@ -274,7 +279,13 @@
 
   gap: 80px;
 
-  margin-bottom: 90px;
+  margin: 90px auto;
+}
+
+/* 左右反転 */
+
+.rental_feature.reverse {
+  flex-direction: row-reverse;
 }
 
 .rental_feature_image {
@@ -482,7 +493,7 @@
 
   display: grid;
 
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 1px;
 
@@ -939,20 +950,6 @@
 }
 
 /* =========================================================
-   PC 大画面
-========================================================= */
-
-@media screen and (min-width: 1400px) {
-  .service_section,
-  .smoking_area,
-  .anniversary_area,
-  .shop_area,
-  .other_service_area {
-    width: min(1250px, 88%);
-  }
-}
-
-/* =========================================================
    タブレット
 ========================================================= */
 
@@ -965,25 +962,7 @@
     width: 88%;
   }
 
-  /* 旅支度 */
-
-  .service_items {
-    grid-template-columns: repeat(2, 1fr);
-
-    row-gap: 35px;
-  }
-
-  .service_items > div:nth-child(2) {
-    border-right: none;
-  }
-
   /* 貸出 */
-
-  .rental_feature {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-  }
 
   .rental_feature_text {
     padding: 0;
@@ -1004,7 +983,7 @@
   /* アイス */
 
   .ice_category_grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* 喫煙 */
@@ -1110,23 +1089,9 @@
   }
 
   .service_items {
-    grid-template-columns: 1fr;
-
     gap: 0;
 
     padding-top: 0;
-  }
-
-  .service_items > div {
-    padding: 25px 10px;
-
-    border-right: none;
-
-    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
-  }
-
-  .service_items > div:last-child {
-    border-bottom: none;
   }
 
   /* 貸出 */
@@ -1138,6 +1103,10 @@
 
   .rental_feature {
     margin-bottom: 55px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
   }
 
   .rental_feature_text h3 {
