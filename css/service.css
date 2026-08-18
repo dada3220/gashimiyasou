@@ -1,0 +1,1376 @@
+@charset "UTF-8";
+
+/* =========================================================
+   SERVICE PAGE
+   がしみや荘 - 高級旅館風サービスページ
+========================================================= */
+
+/* =========================================================
+   共通
+========================================================= */
+
+.service_main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.service_main .wrapper {
+  width: 100%;
+}
+
+.service_section,
+.ice_area,
+.smoking_area,
+.anniversary_area,
+.shop_area,
+.other_service_area {
+  width: min(1200px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   スクロールフェード
+========================================================= */
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.scroll-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   共通テキスト
+========================================================= */
+
+.service_text {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.service_label {
+  margin-bottom: 18px;
+
+  color: #bca76b;
+
+  font-family: "Times New Roman", serif;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+}
+
+.service_text h2 {
+  margin-bottom: 25px;
+
+  color: #f3eee3;
+
+  font-size: 2.4rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.7;
+}
+
+.service_text h3 {
+  margin-bottom: 25px;
+
+  color: #d6c9ad;
+
+  font-size: 1.15rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+}
+
+.service_text p {
+  color: #c9c2b6;
+
+  font-size: 0.95rem;
+
+  line-height: 2.4;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   共通画像
+========================================================= */
+
+.service_main img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   共通リンク
+========================================================= */
+
+.service_link {
+  position: relative;
+
+  display: inline-block;
+
+  margin-top: 35px;
+  padding: 13px 40px;
+
+  border: 1px solid rgba(188, 167, 107, 0.6);
+
+  color: #d8c69d;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 0.15em;
+
+  text-decoration: none;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.service_link:hover {
+  background: #bca76b;
+
+  border-color: #bca76b;
+
+  color: #171717;
+}
+
+/* =========================================================
+   旅支度処
+========================================================= */
+
+.preparation_area {
+  padding-top: 150px;
+  padding-bottom: 170px;
+}
+
+/* 画像グリッド */
+
+.service_image_grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  width: min(900px, 100%);
+
+  margin: 0 auto 70px;
+}
+
+.service_image_grid a {
+  display: block;
+
+  overflow: hidden;
+
+  aspect-ratio: 4 / 3;
+}
+
+.service_image_grid img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.service_image_grid a:hover img {
+  transform: scale(1.04);
+
+  filter: brightness(0.8);
+}
+
+/* アイテム一覧 */
+
+.service_items {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.25);
+
+  padding-top: 45px;
+}
+
+.service_items > div {
+  padding: 0 15px;
+
+  border-right: 1px solid rgba(188, 167, 107, 0.2);
+}
+
+.service_items > div:last-child {
+  border-right: none;
+}
+
+.service_items h4 {
+  margin-bottom: 15px;
+
+  color: #d8c69d;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+
+  text-align: center;
+}
+
+.service_items p {
+  color: #aaa49a;
+
+  font-size: 0.8rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.05em;
+
+  text-align: center;
+}
+
+/* =========================================================
+   貸出・フロントサービス
+========================================================= */
+
+.rental_area {
+  padding-top: 130px;
+  padding-bottom: 170px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.18);
+}
+
+/* メイン */
+
+.rental_feature {
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: center;
+
+  gap: 80px;
+
+  margin-bottom: 90px;
+}
+
+.rental_feature_image {
+  overflow: hidden;
+
+  aspect-ratio: 16 / 10;
+}
+
+.rental_feature_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.rental_feature_image:hover img {
+  transform: scale(1.03);
+}
+
+.rental_feature_text {
+  padding: 20px;
+}
+
+.rental_feature_text .service_label {
+  margin-bottom: 15px;
+}
+
+.rental_feature_text h3 {
+  margin-bottom: 25px;
+
+  color: #eee8dc;
+
+  font-size: 1.6rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+}
+
+.rental_feature_text p:last-child {
+  color: #aaa49a;
+
+  font-size: 0.9rem;
+
+  line-height: 2.3;
+
+  letter-spacing: 0.07em;
+}
+
+/* 貸出一覧 */
+
+.rental_list {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(188, 167, 107, 0.25);
+
+  border-bottom: 1px solid rgba(188, 167, 107, 0.25);
+}
+
+.rental_list article {
+  padding: 40px 25px;
+
+  border-right: 1px solid rgba(188, 167, 107, 0.2);
+}
+
+.rental_list article:last-child {
+  border-right: none;
+}
+
+.rental_list h4 {
+  margin-bottom: 18px;
+
+  color: #d8c69d;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.13em;
+}
+
+.rental_list p {
+  color: #9e9990;
+
+  font-size: 0.8rem;
+
+  line-height: 2.1;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   オリジナルアイス 41種
+========================================================= */
+
+.ice_area {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+
+  padding: 170px 5% 190px;
+
+  background: linear-gradient(180deg, #161616 0%, #1b1b1b 50%, #141414 100%);
+
+  border-top: 1px solid rgba(188, 167, 107, 0.25);
+
+  border-bottom: 1px solid rgba(188, 167, 107, 0.25);
+
+  text-align: center;
+}
+
+/* 装飾 */
+
+.ice_area::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50px;
+  left: 50%;
+
+  width: 1px;
+  height: 70px;
+
+  background: linear-gradient(to bottom, transparent, rgba(188, 167, 107, 0.6));
+}
+
+/* イントロ */
+
+.ice_intro {
+  width: min(850px, 90%);
+
+  margin: 0 auto 70px;
+}
+
+.ice_intro .service_label {
+  margin-bottom: 25px;
+}
+
+.ice_intro h2 {
+  margin-bottom: 35px;
+
+  color: #eee7d8;
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.7;
+}
+
+.ice_intro > p:last-child {
+  color: #aaa49a;
+
+  font-size: 0.9rem;
+
+  line-height: 2.5;
+
+  letter-spacing: 0.08em;
+}
+
+/* メイン画像 */
+
+.ice_main_image {
+  width: min(1000px, 90%);
+
+  margin: 0 auto 90px;
+
+  overflow: hidden;
+}
+
+.ice_main_image a {
+  display: block;
+
+  overflow: hidden;
+}
+
+.ice_main_image img {
+  width: 100%;
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.ice_main_image a:hover img {
+  transform: scale(1.025);
+
+  filter: brightness(0.85);
+}
+
+/* カテゴリー */
+
+.ice_category_grid {
+  width: min(1100px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 1px;
+
+  background: rgba(188, 167, 107, 0.3);
+}
+
+.ice_category {
+  min-height: 250px;
+
+  padding: 35px 25px;
+
+  background: #191919;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition: background 0.4s ease;
+}
+
+.ice_category:hover {
+  background: #222;
+}
+
+.ice_category_number {
+  color: #bca76b;
+
+  font-family: "Times New Roman", serif;
+
+  font-size: 2.7rem;
+
+  line-height: 1;
+}
+
+.ice_category_label {
+  margin-bottom: 8px;
+
+  color: #8f8a82;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.2em;
+}
+
+.ice_category h3 {
+  margin-bottom: 15px;
+
+  color: #ded6c7;
+
+  font-size: 1.05rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.13em;
+}
+
+.ice_category p:last-child {
+  color: #8f8b84;
+
+  font-size: 0.75rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.04em;
+}
+
+/* 合計 */
+
+.ice_total {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 90px;
+
+  color: #d8c69d;
+
+  letter-spacing: 0.15em;
+}
+
+.ice_total strong {
+  font-family: "Times New Roman", serif;
+
+  font-size: 5rem;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.ice_total span {
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   喫煙所
+========================================================= */
+
+.smoking_area {
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: center;
+
+  gap: 100px;
+
+  padding-top: 180px;
+  padding-bottom: 180px;
+}
+
+/* 画像 */
+
+.smoking_image {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 4 / 5;
+}
+
+.smoking_image::after {
+  content: "";
+
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+
+  border: 1px solid rgba(188, 167, 107, 0.35);
+
+  pointer-events: none;
+}
+
+.smoking_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.smoking_image:hover img {
+  transform: scale(1.03);
+
+  filter: brightness(0.8);
+}
+
+/* テキスト */
+
+.smoking_text {
+  padding-right: 20px;
+}
+
+.smoking_text .service_label {
+  margin-bottom: 25px;
+}
+
+.smoking_text h2 {
+  margin-bottom: 30px;
+
+  color: #eee7dc;
+
+  font-size: clamp(2rem, 3.5vw, 3rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  line-height: 1.7;
+}
+
+.smoking_text h3 {
+  margin-bottom: 30px;
+
+  color: #cdbb94;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+}
+
+.smoking_text > p {
+  color: #aaa49a;
+
+  font-size: 0.85rem;
+
+  line-height: 2.5;
+
+  letter-spacing: 0.06em;
+}
+
+/* 情報 */
+
+.service_info {
+  margin-top: 45px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.25);
+}
+
+.service_info div {
+  display: flex;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid rgba(188, 167, 107, 0.18);
+}
+
+.service_info dt {
+  width: 100px;
+
+  color: #bca76b;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.12em;
+}
+
+.service_info dd {
+  color: #aaa49a;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   記念日
+========================================================= */
+
+.anniversary_area {
+  padding-top: 150px;
+  padding-bottom: 170px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.18);
+}
+
+.anniversary_grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.anniversary_grid article {
+  text-align: center;
+}
+
+.anniversary_grid article > a {
+  display: block;
+
+  overflow: hidden;
+
+  margin-bottom: 30px;
+
+  aspect-ratio: 4 / 3;
+}
+
+.anniversary_grid img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.anniversary_grid article > a:hover img {
+  transform: scale(1.04);
+
+  filter: brightness(0.8);
+}
+
+.anniversary_grid h3 {
+  margin-bottom: 15px;
+
+  color: #d8c69d;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+}
+
+.anniversary_grid p {
+  color: #9e9990;
+
+  font-size: 0.8rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   売店
+========================================================= */
+
+.shop_area {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  align-items: center;
+
+  gap: 100px;
+
+  padding-top: 170px;
+  padding-bottom: 180px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.18);
+}
+
+.shop_text {
+  padding-left: 20px;
+}
+
+.shop_text .service_label {
+  margin-bottom: 20px;
+}
+
+.shop_text h2 {
+  margin-bottom: 30px;
+
+  color: #eee7dc;
+
+  font-size: clamp(2rem, 3.5vw, 3rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  line-height: 1.7;
+}
+
+.shop_text h3 {
+  margin-bottom: 25px;
+
+  color: #cdbb94;
+
+  font-size: 1.1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+}
+
+.shop_text > p {
+  color: #aaa49a;
+
+  font-size: 0.85rem;
+
+  line-height: 2.5;
+
+  letter-spacing: 0.06em;
+}
+
+.shop_image {
+  overflow: hidden;
+
+  aspect-ratio: 16 / 10;
+}
+
+.shop_image a {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.shop_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.shop_image:hover img {
+  transform: scale(1.03);
+
+  filter: brightness(0.82);
+}
+
+/* =========================================================
+   その他サービス
+========================================================= */
+
+.other_service_area {
+  padding-top: 140px;
+  padding-bottom: 170px;
+
+  border-top: 1px solid rgba(188, 167, 107, 0.18);
+}
+
+.other_service_list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid rgba(188, 167, 107, 0.25);
+}
+
+.other_service_list article {
+  padding: 40px;
+
+  border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+}
+
+.other_service_list article:nth-child(odd) {
+  border-right: 1px solid rgba(188, 167, 107, 0.2);
+}
+
+.other_service_list h3 {
+  margin-bottom: 15px;
+
+  color: #d8c69d;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.13em;
+}
+
+.other_service_list p {
+  color: #99948b;
+
+  font-size: 0.8rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   PC 大画面
+========================================================= */
+
+@media screen and (min-width: 1400px) {
+  .service_section,
+  .smoking_area,
+  .anniversary_area,
+  .shop_area,
+  .other_service_area {
+    width: min(1250px, 88%);
+  }
+}
+
+/* =========================================================
+   タブレット
+========================================================= */
+
+@media screen and (max-width: 1000px) {
+  .service_section,
+  .smoking_area,
+  .anniversary_area,
+  .shop_area,
+  .other_service_area {
+    width: 88%;
+  }
+
+  /* 旅支度 */
+
+  .service_items {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 35px;
+  }
+
+  .service_items > div:nth-child(2) {
+    border-right: none;
+  }
+
+  /* 貸出 */
+
+  .rental_feature {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .rental_feature_text {
+    padding: 0;
+  }
+
+  .rental_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rental_list article:nth-child(2) {
+    border-right: none;
+  }
+
+  .rental_list article:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+  }
+
+  /* アイス */
+
+  .ice_category_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 喫煙 */
+
+  .smoking_area {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .smoking_image {
+    width: 80%;
+
+    margin: 0 auto;
+  }
+
+  .smoking_text {
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .service_info {
+    width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  /* 記念日 */
+
+  .anniversary_grid {
+    gap: 15px;
+  }
+
+  /* 売店 */
+
+  .shop_area {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .shop_text {
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .shop_image {
+    order: -1;
+  }
+}
+
+/* =========================================================
+   スマートフォン
+========================================================= */
+
+@media screen and (max-width: 600px) {
+  /* 共通 */
+
+  .service_section,
+  .smoking_area,
+  .anniversary_area,
+  .shop_area,
+  .other_service_area {
+    width: 90%;
+  }
+
+  .service_text {
+    margin-bottom: 50px;
+  }
+
+  .service_text h2 {
+    font-size: 1.7rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .service_text h3 {
+    font-size: 0.95rem;
+  }
+
+  .service_text p {
+    font-size: 0.78rem;
+
+    line-height: 2.2;
+  }
+
+  /* 旅支度 */
+
+  .preparation_area {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+
+  .service_image_grid {
+    gap: 5px;
+
+    margin-bottom: 45px;
+  }
+
+  .service_items {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding-top: 0;
+  }
+
+  .service_items > div {
+    padding: 25px 10px;
+
+    border-right: none;
+
+    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+  }
+
+  .service_items > div:last-child {
+    border-bottom: none;
+  }
+
+  /* 貸出 */
+
+  .rental_area {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+
+  .rental_feature {
+    margin-bottom: 55px;
+  }
+
+  .rental_feature_text h3 {
+    font-size: 1.3rem;
+  }
+
+  .rental_list {
+    grid-template-columns: 1fr;
+  }
+
+  .rental_list article {
+    padding: 30px 15px;
+
+    border-right: none;
+
+    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+  }
+
+  .rental_list article:last-child {
+    border-bottom: none;
+  }
+
+  /* アイス */
+
+  .ice_area {
+    padding: 120px 5% 130px;
+  }
+
+  .ice_area::before {
+    top: 30px;
+
+    height: 50px;
+  }
+
+  .ice_intro {
+    width: 92%;
+
+    margin-bottom: 50px;
+  }
+
+  .ice_intro h2 {
+    font-size: 1.9rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .ice_intro > p:last-child {
+    font-size: 0.75rem;
+
+    line-height: 2.3;
+  }
+
+  .ice_main_image {
+    width: 100%;
+
+    margin-bottom: 50px;
+  }
+
+  .ice_category_grid {
+    grid-template-columns: 1fr;
+
+    gap: 1px;
+  }
+
+  .ice_category {
+    min-height: auto;
+
+    padding: 28px 25px;
+
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    gap: 20px;
+
+    text-align: left;
+  }
+
+  .ice_category_number {
+    font-size: 2rem;
+  }
+
+  .ice_category h3 {
+    font-size: 0.95rem;
+  }
+
+  .ice_category p:last-child {
+    font-size: 0.7rem;
+  }
+
+  .ice_total {
+    margin-top: 60px;
+  }
+
+  .ice_total strong {
+    font-size: 4rem;
+  }
+
+  /* 喫煙所 */
+
+  .smoking_area {
+    padding-top: 110px;
+    padding-bottom: 120px;
+
+    gap: 45px;
+  }
+
+  .smoking_image {
+    width: 100%;
+  }
+
+  .smoking_image::after {
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .smoking_text h2 {
+    font-size: 1.9rem;
+
+    letter-spacing: 0.1em;
+  }
+
+  .smoking_text h3 {
+    font-size: 0.85rem;
+  }
+
+  .smoking_text > p {
+    font-size: 0.75rem;
+
+    line-height: 2.3;
+  }
+
+  .service_info {
+    width: 100%;
+
+    margin-top: 35px;
+  }
+
+  /* 記念日 */
+
+  .anniversary_area {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+
+  .anniversary_grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .anniversary_grid article > a {
+    margin-bottom: 20px;
+  }
+
+  /* 売店 */
+
+  .shop_area {
+    padding-top: 110px;
+    padding-bottom: 120px;
+
+    gap: 40px;
+  }
+
+  .shop_text h2 {
+    font-size: 1.9rem;
+  }
+
+  .shop_text h3 {
+    font-size: 0.95rem;
+  }
+
+  .shop_text > p {
+    font-size: 0.75rem;
+
+    line-height: 2.3;
+  }
+
+  /* その他 */
+
+  .other_service_area {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .other_service_list {
+    grid-template-columns: 1fr;
+  }
+
+  .other_service_list article {
+    padding: 30px 15px;
+  }
+
+  .other_service_list article:nth-child(odd) {
+    border-right: none;
+  }
+
+  .other_service_list h3 {
+    font-size: 0.9rem;
+  }
+
+  .other_service_list p {
+    font-size: 0.72rem;
+  }
+
+  /* リンク */
+
+  .service_link {
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    font-size: 0.75rem;
+  }
+}
+
+/* =========================================================
+   極小スマートフォン
+========================================================= */
+
+@media screen and (max-width: 380px) {
+  .service_text h2 {
+    font-size: 1.5rem;
+  }
+
+  .ice_intro h2 {
+    font-size: 1.65rem;
+  }
+
+  .smoking_text h2,
+  .shop_text h2 {
+    font-size: 1.65rem;
+  }
+}

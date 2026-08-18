@@ -1,575 +1,926 @@
 @charset "UTF-8";
 
 /* =========================================================
-庭園ページ
-garden.css
+   がしみや荘 庭園ページ
+   garden.css
 ========================================================= */
 
 /* =========================================================
-庭園マップ
+   共通
 ========================================================= */
 
-.garden_map_section {
-  margin: 80px 0 120px;
-
-  text-align: center;
-
-  opacity: 1;
-  transform: translateY(0);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-/* マップ本体 */
-
-.garden_map {
-  position: relative;
-
-  width: 100%;
-  max-width: 1200px;
-
-  margin: 0 auto;
-
+.garden_main {
   overflow: hidden;
-
-  border-radius: 15px;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* 庭園地図画像 */
-
-.garden_map > img {
+.garden_main img {
   display: block;
-
   width: 100%;
   height: auto;
-
-  margin: 0;
-
-  border-radius: 15px;
 }
 
-/* SVGクリックマップ */
-
-.garden_map_svg {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border: none;
-
-  z-index: 2;
-
-  pointer-events: auto;
-}
-/* 地図説明 */
-
-.garden_map_text {
-  max-width: 900px;
-
-  margin: 40px auto 0;
-
-  color: #f0f0f0;
-
-  line-height: 2.3;
-
-  letter-spacing: 0.05em;
-}
-
-/* =========================================================
-共通タイトル
-========================================================= */
-
-.section_title {
-  text-align: center;
-
-  margin-bottom: 50px;
-}
-
-.section_title h2 {
-  margin: 0;
-
-  font-size: 2rem;
-
-  font-weight: normal;
-
-  letter-spacing: 0.15em;
-}
-
-.section_title p {
-  margin: 10px 0 0;
-
-  color: #ddd;
-
-  letter-spacing: 0.2em;
-
-  font-size: 0.9rem;
-}
-
-/* =========================================================
-施設紹介
-========================================================= */
-
-.garden_section {
-  display: flex;
-
-  align-items: center;
-
-  gap: 40px;
-
-  margin: 120px 10px;
-
-  opacity: 1;
-  transform: translateY(0);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-/* 左右反転 */
-
-.garden_section.reverse {
-  flex-direction: row-reverse;
-}
-
-/* =========================================================
-施設画像
-========================================================= */
-
-.garden_img {
-  flex: 1;
-
-  min-width: 0;
-
-  margin: 0 15px;
-}
-
-.garden_img img {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  border-radius: 15px;
-
-  object-fit: cover;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.garden_img img:hover {
-  transform: scale(1.02);
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
-}
-
-/* =========================================================
-施設テキスト
-========================================================= */
-
-.garden_text {
-  flex: 1;
-
-  min-width: 0;
-}
-
-.garden_text h2 {
-  position: relative;
-
-  margin: 0 0 30px;
-
-  padding-bottom: 10px;
-
-  font-size: 2rem;
-
-  font-weight: normal;
-
-  letter-spacing: 0.15em;
-
-  border-bottom: solid 1px #cb0e0e;
-}
-
-.garden_text p {
-  margin: 0;
-
-  color: #f0f0f0;
-
-  line-height: 2.3;
-
-  letter-spacing: 0.05em;
-}
-
-/* =========================================================
-子コンテンツ
-========================================================= */
-
-.sub_facility {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 20px;
-
-  margin-top: 40px;
-}
-
-.sub_item {
-  flex: 1 1 calc(33.333% - 14px);
-
-  min-width: 180px;
-
-  padding: 20px;
-
-  background: #1b1b1b;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.sub_item:hover {
-  transform: translateY(-4px);
-
-  background: #222;
-
-  border-color: rgba(217, 192, 124, 0.35);
-}
-
-/* 子画像 */
-
-.sub_item img {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  margin-bottom: 15px;
-
-  border-radius: 8px;
-
-  object-fit: cover;
-}
-
-/* 子タイトル */
-
-.sub_item h3 {
-  margin: 0 0 15px;
-
-  color: #d9c07c;
-
-  font-size: 1rem;
-
-  font-weight: normal;
-
-  letter-spacing: 0.08em;
-}
-
-/* 子説明 */
-
-.sub_item p {
-  margin: 0;
-
-  color: #ddd;
-
-  font-size: 0.9rem;
-
+.garden_main p {
   line-height: 2;
 }
 
-/* =========================================================
-予約ボタン
-========================================================= */
-
-.yoyaku_foot {
-  margin-top: 120px;
-
-  text-align: center;
+.inner {
+  width: min(1200px, 90%);
+  margin: 0 auto;
 }
 
-.yoyaku_foot p {
+.section_en,
+.spot_en,
+.season_en {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #bca36a;
+  margin-bottom: 15px;
+}
+
+.section_heading {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section_heading h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  line-height: 1.7;
+  margin: 0 0 25px;
+}
+
+.section_heading > p:last-child {
+  color: #c9c9c9;
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+/* =========================================================
+   GARDEN MAP
+========================================================= */
+
+.garden_map_section {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 600px;
+  background: #171717;
+  margin-top: 100px;
+}
+
+.garden_map_img {
+  min-height: 600px;
+}
+
+.garden_map_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.garden_map_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px clamp(40px, 7vw, 110px);
+}
+
+.garden_map_text h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  line-height: 1.7;
+  margin: 0 0 30px;
+}
+
+.garden_map_text > p:not(.section_en) {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 2.3;
+}
+
+.garden_button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 260px;
+  margin-top: 40px;
+  padding: 17px 22px;
+  border: 1px solid #8e7848;
+  color: #eee;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  transition: 0.35s ease;
+}
+
+.garden_button span {
+  font-size: 1.1rem;
+  transition: transform 0.35s ease;
+}
+
+.garden_button:hover {
+  background: #8e7848;
+  color: #fff;
+}
+
+.garden_button:hover span {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.garden_highlights {
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+.garden_spot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 130px;
+}
+
+.garden_spot:last-of-type {
+  margin-bottom: 100px;
+}
+
+.garden_spot_reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.garden_spot_reverse .garden_spot_img {
+  order: 2;
+}
+
+.garden_spot_reverse .garden_spot_text {
+  order: 1;
+}
+
+.garden_spot_img {
+  overflow: hidden;
+}
+
+.garden_spot_img img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.garden_spot:hover .garden_spot_img img {
+  transform: scale(1.03);
+}
+
+.garden_spot_text h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0 0 25px;
+}
+
+.garden_spot_text p:last-child {
+  color: #c7c7c7;
+  font-size: 0.9rem;
+  line-height: 2.4;
+}
+
+/* =========================================================
+   SMALL SPOTS
+========================================================= */
+
+.garden_small_spots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-top: 40px;
+}
+
+.garden_small_spot {
+  background: #171717;
+}
+
+.garden_small_spot > img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.garden_small_spot > div {
+  padding: 30px 30px 35px;
+}
+
+.garden_small_spot h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0 0 15px;
+}
+
+.garden_small_spot p:last-child {
+  color: #bbb;
+  font-size: 0.82rem;
+  line-height: 2.1;
+}
+
+/* =========================================================
+   CREATURES
+========================================================= */
+
+.garden_creatures {
+  background: #161a16;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.creature_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.creature_card {
+  background: #101310;
+}
+
+.creature_img {
+  overflow: hidden;
+}
+
+.creature_img img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.creature_card:hover .creature_img img {
+  transform: scale(1.04);
+}
+
+.creature_text {
+  padding: 30px 30px 35px;
+}
+
+.creature_text h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0 0 15px;
+}
+
+.creature_text p:last-child {
+  color: #bfc3bf;
+  font-size: 0.85rem;
+  line-height: 2.2;
+}
+
+.garden_notice {
+  margin: 60px auto 0;
+  max-width: 900px;
+  padding: 35px 45px;
+  border: 1px solid rgba(188, 163, 106, 0.4);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.garden_notice h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin: 0 0 15px;
+}
+
+.garden_notice p {
+  color: #bfc3bf;
+  font-size: 0.8rem;
+  line-height: 2.1;
   margin: 0;
 }
 
-.yoyaku_foot a {
-  display: inline-block;
+/* =========================================================
+   PLANTS
+========================================================= */
+
+.garden_plants {
+  padding-top: 150px;
+  padding-bottom: 160px;
 }
 
-.yoyaku_foot img {
-  display: block;
-
-  max-width: 100%;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+.season_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 35px;
 }
 
-.yoyaku_foot a:hover img {
-  transform: scale(1.04);
+.season_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #171717;
+}
 
-  opacity: 0.85;
+.season_card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.season_card > div {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.season_card h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0 0 15px;
+}
+
+.season_card p:last-child {
+  color: #bbb;
+  font-size: 0.82rem;
+  line-height: 2.1;
 }
 
 /* =========================================================
-スクロールアニメーション
+   FRUITS
 ========================================================= */
 
-/*
-JavaScriptで .fadeUp に active クラスなどを
-付ける場合にも対応できるようにしています。
-*/
-
-.fadeUp {
-  opacity: 1;
-
-  transform: translateY(0);
+.garden_fruits {
+  background: #171614;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
-.fadeUp.is-hidden {
-  opacity: 0;
-
-  transform: translateY(40px);
+.fruit_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
-.fadeUp.is-visible {
-  opacity: 1;
+.fruit_card {
+  background: #111;
+}
 
-  transform: translateY(0);
+.fruit_card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.fruit_card > div {
+  padding: 30px;
+}
+
+.fruit_card h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0 0 10px;
+}
+
+.fruit_card p {
+  color: #bbb;
+  font-size: 0.82rem;
+  line-height: 2;
+  margin: 0;
+}
+
+.fruit_notice {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 35px 45px;
+  border: 1px solid rgba(188, 163, 106, 0.4);
+}
+
+.fruit_notice h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin: 0 0 15px;
+}
+
+.fruit_notice p {
+  color: #bbb;
+  font-size: 0.8rem;
+  line-height: 2.1;
+  margin: 0;
 }
 
 /* =========================================================
-タブレット
+   JAPANESE GARDEN
 ========================================================= */
 
-@media (max-width: 1000px) {
-  .garden_section {
-    gap: 30px;
+.japanese_garden {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+}
 
-    margin: 100px 10px;
-  }
+.japanese_garden_img {
+  position: absolute;
+  inset: 0;
+}
 
-  .garden_img {
-    margin: 0 10px;
-  }
+.japanese_garden_img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.05)
+  );
+}
 
-  .garden_text h2 {
-    font-size: 1.8rem;
-  }
+.japanese_garden_img img {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+}
 
-  .sub_item {
-    flex: 1 1 calc(50% - 10px);
-  }
+.japanese_garden_text {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.japanese_garden_text h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.15em;
+  margin: 0 0 35px;
+}
+
+.japanese_garden_text p:not(.section_en) {
+  color: #ddd;
+  font-size: 0.9rem;
+  line-height: 2.3;
+  margin-bottom: 20px;
 }
 
 /* =========================================================
-スマートフォン
+   SKY GARDEN
 ========================================================= */
 
-@media (max-width: 768px) {
-  /* -------------------------
-  庭園マップ
-  ------------------------- */
+.sky_garden {
+  padding-top: 160px;
+  padding-bottom: 170px;
+}
 
+.sky_garden_content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sky_garden_img {
+  overflow: hidden;
+}
+
+.sky_garden_img img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.sky_garden_text {
+  padding-right: 20px;
+}
+
+.sky_garden_text p {
+  color: #c7c7c7;
+  font-size: 0.9rem;
+  line-height: 2.4;
+  margin: 0 0 25px;
+}
+
+/* =========================================================
+   ATRIUM
+========================================================= */
+
+.garden_atrium {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 650px;
+  background: #171717;
+}
+
+.atrium_img {
+  min-height: 650px;
+}
+
+.atrium_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.atrium_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px clamp(40px, 7vw, 110px);
+}
+
+.atrium_text h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.15em;
+  margin: 0 0 35px;
+}
+
+.atrium_text p:not(.section_en) {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 2.3;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.garden_message {
+  text-align: center;
+  padding-top: 160px;
+  padding-bottom: 180px;
+  background: radial-gradient(circle at center, #24251f 0%, #121212 65%);
+}
+
+.garden_message h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  margin: 0 0 50px;
+}
+
+.garden_message p:not(.section_en) {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 2.5;
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 900px) {
   .garden_map_section {
-    margin: 60px 0 80px;
+    grid-template-columns: 1fr;
   }
 
-  .garden_map {
-    width: 100%;
-
-    border-radius: 10px;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  }
-
-  .garden_map > img {
-    border-radius: 10px;
+  .garden_map_img {
+    min-height: 450px;
   }
 
   .garden_map_text {
-    margin: 25px 15px 0;
-
-    font-size: 0.95rem;
-
-    line-height: 2;
-
-    letter-spacing: 0.03em;
+    padding: 80px 10%;
   }
 
-  /* -------------------------
-  セクションタイトル
-  ------------------------- */
-
-  .section_title {
-    margin-bottom: 35px;
+  .garden_spot {
+    gap: 45px;
+    margin-bottom: 90px;
   }
 
-  .section_title h2 {
-    font-size: 1.6rem;
+  .garden_small_spots {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .section_title p {
-    font-size: 0.8rem;
+  .garden_small_spot:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 17.5px);
+    margin: 0 auto;
   }
 
-  /* -------------------------
-  施設紹介
-  ------------------------- */
-
-  .garden_section,
-  .garden_section.reverse {
-    flex-direction: column;
-
-    gap: 30px;
-
-    margin: 100px 15px;
+  .creature_grid {
+    gap: 20px;
   }
 
-  /* -------------------------
-  画像
-  ------------------------- */
-
-  .garden_img {
-    width: 100%;
-
-    margin: 0;
+  .season_grid {
+    gap: 25px;
   }
 
-  .garden_img img {
-    width: 100%;
-
-    border-radius: 12px;
+  .season_card {
+    grid-template-columns: 1fr;
   }
 
-  /* -------------------------
-  テキスト
-  ------------------------- */
-
-  .garden_text {
-    width: 100%;
-
-    padding: 0 15px;
+  .season_card > img {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
   }
 
-  .garden_text h2 {
-    margin-bottom: 25px;
-
-    font-size: 1.6rem;
-
-    letter-spacing: 0.12em;
+  .sky_garden_content {
+    gap: 45px;
   }
 
-  .garden_text p {
-    font-size: 0.95rem;
-
-    line-height: 2;
-
-    letter-spacing: 0.03em;
+  .garden_atrium {
+    grid-template-columns: 1fr;
   }
 
-  /* -------------------------
-  子コンテンツ
-  ------------------------- */
-
-  .sub_facility {
-    gap: 15px;
-
-    margin-top: 30px;
+  .atrium_img {
+    min-height: 500px;
   }
 
-  .sub_item {
-    width: 100%;
-
-    padding: 15px 20px;
-  }
-
-  .sub_item img {
-    margin-bottom: 15px;
-
-    border-radius: 8px;
-  }
-
-  .sub_item h3 {
-    margin-bottom: 10px;
-
-    font-size: 1rem;
-  }
-
-  .sub_item p {
-    font-size: 0.8rem;
-
-    line-height: 1.9;
-  }
-
-  /* -------------------------
-  予約
-  ------------------------- */
-
-  .yoyaku_foot {
-    margin: 90px 0px;
+  .atrium_text {
+    padding: 80px 10%;
   }
 }
 
 /* =========================================================
-小型スマートフォン
+   MOBILE
 ========================================================= */
 
-@media (max-width: 480px) {
-  .garden_map_section {
-    margin-top: 50px;
+@media screen and (max-width: 600px) {
+  .inner {
+    width: 88%;
   }
 
-  .garden_section,
-  .garden_section.reverse {
-    margin: 80px 0;
+  /* -----------------------------------------
+     共通
+  ----------------------------------------- */
+
+  .section_heading {
+    margin-bottom: 50px;
   }
 
-  .garden_text {
-    padding: 0 10px;
+  .section_heading h2 {
+    font-size: 1.7rem;
+    letter-spacing: 0.1em;
   }
 
-  .garden_text h2 {
-    font-size: 1.45rem;
-
-    padding-bottom: 8px;
-
-    margin-bottom: 20px;
+  .section_heading > p:last-child {
+    font-size: 0.8rem;
   }
 
-  .garden_text p {
-    font-size: 0.9rem;
+  /* -----------------------------------------
+     MAP
+  ----------------------------------------- */
 
-    line-height: 2;
+  .garden_map_img {
+    min-height: 300px;
   }
 
-  .sub_item {
-    padding: 12px;
+  .garden_map_text {
+    padding: 65px 8%;
   }
 
-  .sub_item h3 {
-    font-size: 0.9rem;
+  .garden_map_text h2 {
+    font-size: 1.7rem;
   }
 
-  .sub_item p {
+  .garden_map_text > p:not(.section_en) {
     font-size: 0.82rem;
+  }
+
+  .garden_button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* -----------------------------------------
+     HIGHLIGHTS
+  ----------------------------------------- */
+
+  .garden_highlights {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .garden_spot {
+    display: block;
+    margin-bottom: 70px;
+  }
+
+  .garden_spot_reverse .garden_spot_img {
+    order: initial;
+  }
+
+  .garden_spot_reverse .garden_spot_text {
+    order: initial;
+  }
+
+  .garden_spot_img img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .garden_spot_text {
+    padding-top: 25px;
+  }
+
+  .garden_spot_text h3 {
+    font-size: 1.5rem;
+  }
+
+  .garden_spot_text p:last-child {
+    font-size: 0.82rem;
+  }
+
+  /* -----------------------------------------
+     SMALL SPOTS
+  ----------------------------------------- */
+
+  .garden_small_spots {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .garden_small_spot:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .garden_small_spot > div {
+    padding: 25px;
+  }
+
+  /* -----------------------------------------
+     CREATURES
+  ----------------------------------------- */
+
+  .garden_creatures {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .creature_grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .creature_text {
+    padding: 25px;
+  }
+
+  .garden_notice {
+    margin-top: 40px;
+    padding: 25px;
+  }
+
+  /* -----------------------------------------
+     PLANTS
+  ----------------------------------------- */
+
+  .garden_plants {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .season_grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .season_card > div {
+    padding: 25px;
+  }
+
+  /* -----------------------------------------
+     FRUITS
+  ----------------------------------------- */
+
+  .garden_fruits {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .fruit_grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .fruit_card > div {
+    padding: 25px;
+  }
+
+  .fruit_notice {
+    padding: 25px;
+  }
+
+  /* -----------------------------------------
+     JAPANESE GARDEN
+  ----------------------------------------- */
+
+  .japanese_garden {
+    min-height: 650px;
+  }
+
+  .japanese_garden_img img {
+    height: 650px;
+  }
+
+  .japanese_garden_img::after {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.4));
+  }
+
+  .japanese_garden_text {
+    width: 88%;
+  }
+
+  .japanese_garden_text h2 {
+    font-size: 1.8rem;
+  }
+
+  .japanese_garden_text p:not(.section_en) {
+    font-size: 0.82rem;
+  }
+
+  /* -----------------------------------------
+     SKY GARDEN
+  ----------------------------------------- */
+
+  .sky_garden {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+
+  .sky_garden_content {
+    display: block;
+  }
+
+  .sky_garden_img {
+    margin-bottom: 30px;
+  }
+
+  .sky_garden_text {
+    padding-right: 0;
+  }
+
+  .sky_garden_text p {
+    font-size: 0.82rem;
+  }
+
+  /* -----------------------------------------
+     ATRIUM
+  ----------------------------------------- */
+
+  .garden_atrium {
+    display: block;
+  }
+
+  .atrium_img {
+    min-height: auto;
+  }
+
+  .atrium_img img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .atrium_text {
+    padding: 70px 8%;
+  }
+
+  .atrium_text h2 {
+    font-size: 1.8rem;
+  }
+
+  .atrium_text p:not(.section_en) {
+    font-size: 0.82rem;
+  }
+
+  /* -----------------------------------------
+     FINAL MESSAGE
+  ----------------------------------------- */
+
+  .garden_message {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .garden_message h2 {
+    font-size: 1.9rem;
+    letter-spacing: 0.12em;
+  }
+
+  .garden_message p:not(.section_en) {
+    font-size: 0.82rem;
+    line-height: 2.3;
   }
 }

@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>日本庭園 | がしみや荘</title>
+    <title>庭園案内 | がしみや荘</title>
+
     <meta
       name="description"
-      content="四季折々の自然と温泉、文化に触れながら楽しむ、がしみや荘の広大な日本庭園をご紹介します。"
+      content="十二の湯と六つのラウンジ。湯も、食も、遊びも。大人のための24時間を楽しむ温泉宿、がしみや荘。"
     />
 
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
+    <!-- Ress -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -23,329 +26,621 @@
       rel="stylesheet"
     />
 
+    <!-- ==================================
+    CSS
+    ================================== -->
+
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/mv.css" rel="stylesheet" />
     <link href="css/garden.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- =========================
-    ヘッダー
-    ========================= -->
+    <!-- ==================================
+    Header
+    ================================== -->
+
     <div id="header-area"></div>
 
-    <main class="garden_page wrapper">
-      <!-- =========================
-      ページタイトル
-      ========================= -->
-      <div class="page_head">
-        <h1>庭園</h1>
-        <p>garden</p>
-      </div>
+    <main class="garden_main">
+      <!-- ========================================
+      MV
+      ======================================== -->
 
-      <!-- =========================
-      庭園散策マップ
-      ========================= -->
-      <section class="garden_map_section fadeUp">
-        <div class="section_title">
-          <h2>庭園散策マップ</h2>
-          <p>garden map</p>
+      <!--=================================
+          MV
+        ==================================-->
+      <section class="mv">
+        <img src="images/mv/garden_mv.png" alt="庭園" />
+
+        <div class="mv_text">
+          <h1>自然とともに過ごす、もうひとつの旅。</h1>
+          <p>
+            がしみや荘の庭園は、季節の移ろいを感じられる場所です。<br />
+            ゆっくりと歩く時間も、旅のひとときです。
+          </p>
         </div>
-
-        <div class="garden_map">
-          <img src="images/garden/garden_map.png" alt="がしみや荘 庭園地図" />
-
-          <object
-            class="garden_map_svg"
-            data="images/garden/garden-map-hitarea.svg"
-            type="image/svg+xml"
-            aria-label="庭園施設のクリックマップ"
-          ></object>
-        </div>
-
-        <p class="garden_map_text">
-          四季折々の表情を見せる広大な日本庭園。<br />
-          温泉神社や湯畑、展望台、ラウンジなどを巡りながら、<br />
-          ゆったりとした散策をお楽しみください。
-        </p>
       </section>
 
-      <!-- =========================
-      雅廊館
-      ========================= -->
-      <section class="garden_section" id="gallery">
-        <div class="garden_img">
-          <img src="images/garden/g_garoukan.png" alt="雅廊館" />
+      <!-- ========================================
+      GARDEN MAP
+      ======================================== -->
+
+      <section class="garden_map_section">
+        <div class="garden_map_img">
+          <img
+            src="images/garden/garden_map_preview.jpg"
+            alt="がしみや荘 庭園マップ"
+          />
         </div>
 
-        <div class="garden_text">
-          <h2>雅廊館</h2>
+        <div class="garden_map_text">
+          <p class="section_en">GARDEN MAP</p>
+
+          <h2>庭園を歩いてみる。</h2>
 
           <p>
-            庭園の中心に佇む文化施設。ギャラリーやシアター、ラウンジなどが入っています。
+            湯畑、大宮大桜、氷川大滝、展望台など、
+            <br />
+            庭園にはさまざまな見どころが点在しています。
+            <br />
+            気になる場所を見つけながら、
+            <br />
+            ゆっくりと庭園を散策してみてください。
           </p>
 
-          <div class="sub_facility">
-            <div class="sub_item">
-              <img
-                src="images/garden/g_geisaidou.png"
-                alt="ギャラリー「芸彩堂」"
-              />
+          <a href="garden_map.html" class="garden_button">
+            庭園マップを見る
+            <span>→</span>
+          </a>
+        </div>
+      </section>
 
-              <h3>ギャラリー「芸彩堂」</h3>
+      <!-- ========================================
+      HIGHLIGHTS
+      ======================================== -->
 
-              <p>美術品や、がしみや荘の歴史などを展示しております。</p>
-            </div>
+      <section class="garden_highlights inner">
+        <div class="section_heading">
+          <p class="section_en">HIGHLIGHTS</p>
+          <h2>庭園の見どころ</h2>
 
-            <div class="sub_item">
-              <img
-                src="images/garden/g_eisaidou.png"
-                alt="ミニシアター「映彩堂」"
-              />
+          <p>
+            散策の途中で出会う、<br />
+            がしみや荘の庭園ならではの景色。
+          </p>
+        </div>
 
-              <h3>ミニシアター「映彩堂」</h3>
+        <!-- 湯畑 -->
+
+        <article class="garden_spot garden_spot_large">
+          <div class="garden_spot_img">
+            <img src="images/garden/garden_yubatake.jpg" alt="庭園の湯畑" />
+          </div>
+
+          <div class="garden_spot_text">
+            <p class="spot_en">YUBATAKE</p>
+
+            <h3>湯畑</h3>
+
+            <p>
+              庭園の中に広がる、温泉地ならではの景色。
+              <br />
+              立ち上る湯けむりや温泉の香りを感じながら、
+              <br />
+              ゆっくりと散策をお楽しみいただけます。
+            </p>
+          </div>
+        </article>
+
+        <!-- 大宮大桜 -->
+
+        <article class="garden_spot garden_spot_reverse">
+          <div class="garden_spot_img">
+            <img src="images/garden/garden_oomiya_sakura.jpg" alt="大宮大桜" />
+          </div>
+
+          <div class="garden_spot_text">
+            <p class="spot_en">OOMIYA OSAKURA</p>
+
+            <h3>大宮大桜</h3>
+
+            <p>
+              庭園を象徴する大きな桜の木。
+              <br />
+              春には大きく枝を広げ、
+              <br />
+              庭園を淡い桜色に染めます。
+            </p>
+          </div>
+        </article>
+
+        <!-- 氷川大滝 -->
+
+        <article class="garden_spot">
+          <div class="garden_spot_img">
+            <img src="images/garden/garden_hikawa_otaki.jpg" alt="氷川大滝" />
+          </div>
+
+          <div class="garden_spot_text">
+            <p class="spot_en">HIKAWA OTAKI</p>
+
+            <h3>氷川大滝</h3>
+
+            <p>
+              庭園を流れる水がつくる、涼やかな景色。
+              <br />
+              水の音に耳を傾けながら、
+              <br />
+              木々の間でひと休みするのもおすすめです。
+            </p>
+          </div>
+        </article>
+
+        <!-- 展望台 -->
+
+        <article class="garden_spot garden_spot_reverse">
+          <div class="garden_spot_img">
+            <img
+              src="images/garden/garden_observatory.jpg"
+              alt="庭園の展望台"
+            />
+          </div>
+
+          <div class="garden_spot_text">
+            <p class="spot_en">OBSERVATORY</p>
+
+            <h3>展望台</h3>
+
+            <p>
+              庭園を少し高い場所から眺められる展望台。
+              <br />
+              季節によって表情を変える木々や、
+              <br />
+              遠くまで広がる景色をお楽しみいただけます。
+            </p>
+          </div>
+        </article>
+
+        <!-- 岩窟像・休憩所 -->
+
+        <div class="garden_small_spots">
+          <article class="garden_small_spot">
+            <img src="images/garden/garden_gankutsu.jpg" alt="庭園の岩窟像" />
+
+            <div>
+              <p class="spot_en">GANKUTSU</p>
+              <h3>岩窟像</h3>
 
               <p>
-                厳選した映画を放映しています。オールナイト上映会なども開催しております。
+                木々に囲まれた岩窟に佇む像。
+                <br />
+                庭園を歩く中で、ふと目に留まる 静かな景観です。
               </p>
             </div>
+          </article>
 
-            <div class="sub_item">
-              <img src="images/garden/g_goldlounge.png" alt="金のラウンジ" />
+          <article class="garden_small_spot">
+            <img src="images/garden/garden_rest_01.jpg" alt="庭園の休憩所" />
 
-              <h3>金のラウンジ</h3>
+            <div>
+              <p class="spot_en">REST AREA</p>
+              <h3>休憩所</h3>
 
-              <p>落ち着いた空間で、コーヒーやお酒を楽しめます。</p>
+              <p>
+                散策の途中にひと息つける場所。
+                <br />
+                水音や木々のざわめきを聞きながら、 ゆっくりとお過ごしください。
+              </p>
             </div>
+          </article>
+
+          <article class="garden_small_spot">
+            <img src="images/garden/garden_rest_02.jpg" alt="庭園の休憩所" />
+
+            <div>
+              <p class="spot_en">REST AREA</p>
+              <h3>休憩所</h3>
+
+              <p>
+                季節の景色を眺めながら、
+                <br />
+                散策の途中でひと休み。
+                <br />
+                何もしない時間も庭園の楽しみです。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================
+      CREATURES
+      ======================================== -->
+
+      <section class="garden_creatures">
+        <div class="inner">
+          <div class="section_heading">
+            <p class="section_en">CREATURES</p>
+
+            <h2>庭園の生き物</h2>
+
+            <p>
+              庭園を歩いていると、<br />
+              さまざまな生き物に出会うことがあります。
+            </p>
+          </div>
+
+          <div class="creature_grid">
+            <!-- 鯉 -->
+
+            <article class="creature_card">
+              <div class="creature_img">
+                <img src="images/garden/garden_koi.jpg" alt="池を泳ぐ鯉" />
+              </div>
+
+              <div class="creature_text">
+                <p class="spot_en">KOI</p>
+
+                <h3>鯉</h3>
+
+                <p>
+                  池をゆったりと泳ぐ色とりどりの鯉。
+                  <br />
+                  池のほとりでは、餌やりを お楽しみいただけることもあります。
+                </p>
+              </div>
+            </article>
+
+            <!-- 鴨 -->
+
+            <article class="creature_card">
+              <div class="creature_img">
+                <img
+                  src="images/garden/garden_kamo.jpg"
+                  alt="庭園の池にいる鴨"
+                />
+              </div>
+
+              <div class="creature_text">
+                <p class="spot_en">KAMO</p>
+
+                <h3>鴨</h3>
+
+                <p>
+                  池には鴨が訪れることも。
+                  <br />
+                  水面を泳ぐ姿や庭園を歩く姿を、
+                  <br />
+                  のんびりと眺めてみてください。
+                </p>
+              </div>
+            </article>
+
+            <!-- 猫 -->
+
+            <article class="creature_card">
+              <div class="creature_img">
+                <img src="images/garden/garden_cat.jpg" alt="庭園にいる猫" />
+              </div>
+
+              <div class="creature_text">
+                <p class="spot_en">CAT</p>
+
+                <h3>猫</h3>
+
+                <p>
+                  庭園には、ときどき猫たちも姿を見せます。
+                  <br />
+                  出会えたときは、驚かせないよう そっと見守ってあげてください。
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="garden_notice">
+            <h3>生き物とのふれあいについて</h3>
+
+            <p>
+              鯉や鴨への餌やりをお楽しみいただける場合があります。
+              <br />
+              餌やりの際は、指定された餌をご利用ください。
+              <br />
+              生き物の健康のため、持参した食べ物を与えることはご遠慮ください。
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-      湯畑
-      ========================= -->
-      <section class="garden_section reverse" id="yubatake">
-        <div class="garden_img">
-          <img src="images/garden/g_yubatake.png" alt="湯畑" />
-        </div>
+      <!-- ========================================
+      PLANTS
+      ======================================== -->
 
-        <div class="garden_text">
-          <h2>湯畑</h2>
+      <section class="garden_plants inner">
+        <div class="section_heading">
+          <p class="section_en">PLANTS</p>
 
-          <p>豊富な自家源泉から湧き出る温泉を利用した湯畑。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      温泉神社
-      ========================= -->
-      <section class="garden_section" id="jinja">
-        <div class="garden_img">
-          <img src="images/garden/g_onsenjinja.png" alt="温泉神社" />
-        </div>
-
-        <div class="garden_text">
-          <h2>温泉神社</h2>
-
-          <p>温泉の恵みに感謝を捧げる神社。お守りなども購入できます。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      展望台
-      ========================= -->
-      <section class="garden_section reverse" id="tenboudai">
-        <div class="garden_img">
-          <img src="images/garden/g_tenboudai.png" alt="展望台" />
-        </div>
-
-        <div class="garden_text">
-          <h2>展望台</h2>
-
-          <p>庭園や山々の景色、満天の星空を一望できる高台の展望スポット。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      氷川大滝
-      ========================= -->
-      <section class="garden_section" id="hikawanotaki">
-        <div class="garden_img">
-          <img src="images/garden/g_hikawanotaki.png" alt="氷川大滝" />
-        </div>
-
-        <div class="garden_text">
-          <h2>氷川大滝</h2>
-
-          <p>落差50メートルの大きな滝。冬には氷瀑が楽しめます。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      大宮大桜
-      ========================= -->
-      <section class="garden_section reverse" id="oomiyaoosakura">
-        <div class="garden_img">
-          <img src="images/garden/g_oomiyaoosakura.png" alt="大宮大桜" />
-        </div>
-
-        <div class="garden_text">
-          <h2>大宮大桜</h2>
+          <h2>季節を彩る植物</h2>
 
           <p>
-            樹齢400年を超える大きな山桜の御神木。
-            4月上旬ごろ満開の花を咲かせます。
+            春の花、夏の緑、秋の紅葉。
+            <br />
+            庭園では季節ごとに違った表情を楽しめます。
+          </p>
+        </div>
+
+        <div class="season_grid">
+          <article class="season_card">
+            <img src="images/garden/garden_spring.jpg" alt="春の庭園" />
+
+            <div>
+              <p class="season_en">SPRING</p>
+              <h3>春</h3>
+
+              <p>
+                桜をはじめ、さまざまな春の花が咲き始める季節。
+                <br />
+                大宮大桜とともに、春の訪れをお楽しみください。
+              </p>
+            </div>
+          </article>
+
+          <article class="season_card">
+            <img src="images/garden/garden_summer.jpg" alt="夏の庭園" />
+
+            <div>
+              <p class="season_en">SUMMER</p>
+              <h3>夏</h3>
+
+              <p>
+                木々の緑が濃くなる夏。
+                <br />
+                木陰や水辺を歩けば、涼やかなひとときを感じられます。
+              </p>
+            </div>
+          </article>
+
+          <article class="season_card">
+            <img src="images/garden/garden_autumn.jpg" alt="秋の庭園" />
+
+            <div>
+              <p class="season_en">AUTUMN</p>
+              <h3>秋</h3>
+
+              <p>
+                木々が少しずつ色づき、 庭園が秋の景色へと変わっていきます。
+                <br />
+                紅葉を眺めながらの散策もおすすめです。
+              </p>
+            </div>
+          </article>
+
+          <article class="season_card">
+            <img src="images/garden/garden_winter.jpg" alt="冬の庭園" />
+
+            <div>
+              <p class="season_en">WINTER</p>
+              <h3>冬</h3>
+
+              <p>
+                静けさが際立つ冬の庭園。
+                <br />
+                雪の日には、普段とは違った幻想的な景色が広がります。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================
+      FRUITS
+      ======================================== -->
+
+      <section class="garden_fruits">
+        <div class="inner">
+          <div class="section_heading">
+            <p class="section_en">FRUITS</p>
+
+            <h2>庭園の実り</h2>
+
+            <p>
+              花だけではなく、季節になると<br />
+              庭園の木々にはさまざまな実がなります。
+            </p>
+          </div>
+
+          <div class="fruit_grid">
+            <article class="fruit_card">
+              <img src="images/garden/garden_biwa.jpg" alt="枇杷の実" />
+
+              <div>
+                <h3>枇杷</h3>
+                <p>初夏に実る、みずみずしい果実。</p>
+              </div>
+            </article>
+
+            <article class="fruit_card">
+              <img
+                src="images/garden/garden_sarunashi.jpg"
+                alt="サルナシの実"
+              />
+
+              <div>
+                <h3>サルナシ</h3>
+                <p>小さな実の中に、 キウイのような味わいを楽しめます。</p>
+              </div>
+            </article>
+
+            <article class="fruit_card">
+              <img src="images/garden/garden_yamamomo.jpg" alt="ヤマモモの実" />
+
+              <div>
+                <h3>ヤマモモ</h3>
+                <p>赤く色づく、庭園の初夏の実り。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="fruit_notice">
+            <h3>庭の実りを楽しむ際に</h3>
+
+            <p>
+              果実は、食べ頃を迎えたものの中から
+              スタッフがご案内したものに限りお楽しみいただけます。
+              <br />
+              木や植物の状態によっては、お召し上がりいただけない場合があります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+      JAPANESE GARDEN
+      ======================================== -->
+
+      <section class="japanese_garden">
+        <div class="japanese_garden_img">
+          <img
+            src="images/garden/japanese_garden.jpg"
+            alt="がしみや荘の日本庭園"
+          />
+        </div>
+
+        <div class="japanese_garden_text">
+          <p class="section_en">JAPANESE GARDEN</p>
+
+          <h2>
+            庭を眺めるだけではなく、<br />
+            庭を歩く。
+          </h2>
+
+          <p>がしみや荘の庭園は、 館内から眺めるためだけの庭ではありません。</p>
+
+          <p>
+            小径を歩き、水の音を聞き、 季節の花を見つける。
+            <br />
+            池の鯉や鳥たちに出会う。
+          </p>
+
+          <p>
+            一歩歩くたびに景色が変わる。
+            <br />
+            そんな「歩いて楽しむ日本庭園」を目指しています。
           </p>
         </div>
       </section>
 
-      <!-- =========================
-      休憩処
-      ========================= -->
-      <section class="garden_section" id="kyuukeisyo">
-        <div class="garden_img">
-          <img src="images/garden/g_kyuukeisyo.png" alt="休憩処" />
-        </div>
+      <!-- ========================================
+      SKY GARDEN
+      ======================================== -->
 
-        <div class="garden_text">
-          <h2>休憩処</h2>
+      <section class="sky_garden inner">
+        <div class="section_heading">
+          <p class="section_en">SKY GARDEN</p>
+
+          <h2>空に近い、もうひとつの庭。</h2>
 
           <p>
-            庭園内にある、秘密基地のような休憩所。
-            貸し切り風呂の待合いなどにお使いください。
+            がしみや荘の自然は、地上だけではありません。
+            <br />
+            屋上には、空を身近に感じられる空中庭園があります。
+          </p>
+        </div>
+
+        <div class="sky_garden_content">
+          <div class="sky_garden_img">
+            <img
+              src="images/garden/sky_garden.jpg"
+              alt="がしみや荘の空中庭園"
+            />
+          </div>
+
+          <div class="sky_garden_text">
+            <p>
+              屋上に広がる空中庭園では、
+              地上の庭園とはまた違った景色をお楽しみいただけます。
+            </p>
+
+            <p>
+              昼は青空の下で。
+              <br />
+              夕暮れには空の色を眺めながら。
+              <br />
+              夜には星空の下で。
+            </p>
+
+            <p>時間によって表情を変える、 がしみや荘のもうひとつの庭です。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+      ATRIUM
+      ======================================== -->
+
+      <section class="garden_atrium">
+        <div class="atrium_img">
+          <img
+            src="images/garden/atrium.jpg"
+            alt="がしみや荘の大きなアトリウム"
+          />
+        </div>
+
+        <div class="atrium_text">
+          <p class="section_en">ATRIUM</p>
+
+          <h2>
+            館内にも、<br />
+            もうひとつの庭。
+          </h2>
+
+          <p>大きな吹き抜けから自然光が降り注ぐ、 がしみや荘のアトリウム。</p>
+
+          <p>館内にいながらも、 木々の緑や光を感じられる開放的な空間です。</p>
+
+          <p>外の庭園とは違った、 静かで穏やかな時間をお過ごしください。</p>
+        </div>
+      </section>
+
+      <!-- ========================================
+      GARDEN MESSAGE
+      ======================================== -->
+
+      <section class="garden_message">
+        <div class="inner">
+          <p class="section_en">A MOMENT IN THE GARDEN</p>
+
+          <h2>季節を見つける旅。</h2>
+
+          <p>
+            花が咲いたこと。
+            <br />
+            木に実がなったこと。
+            <br />
+            鴨が池にやってきたこと。
           </p>
 
-          <div class="sub_facility">
-            <div class="sub_item">
-              <img src="images/garden/g_kokage.png" alt="木陰休憩処" />
+          <p>同じ庭でも、 訪れるたびに少しずつ景色が変わります。</p>
 
-              <h3>木陰休憩処</h3>
-
-              <p>ツリーハウス型の眺めのいい休憩処。</p>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/garden/g_iwakage.png" alt="岩陰休憩処" />
-
-              <h3>岩陰休憩処</h3>
-
-              <p>洞窟型の落ち着く空間の休憩処。</p>
-            </div>
-          </div>
+          <p>
+            がしみや荘で過ごす時間の中に、
+            <br />
+            ぜひ庭園を歩くひとときを。
+          </p>
         </div>
       </section>
-
-      <!-- =========================
-      岩窟像
-      ========================= -->
-      <section class="garden_section reverse" id="gankutuzou">
-        <div class="garden_img">
-          <img src="images/garden/g_gankutuzou.png" alt="岩窟像" />
-        </div>
-
-        <div class="garden_text">
-          <h2>岩窟像</h2>
-
-          <p>大岩に掘られた石像。 300年以上前に掘られた、貴重な遺跡です。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      水のラウンジ
-      ========================= -->
-      <section class="garden_section" id="mizunolounge">
-        <div class="garden_img">
-          <img src="images/garden/g_waterlounge.png" alt="水のラウンジ" />
-        </div>
-
-        <div class="garden_text">
-          <h2>水のラウンジ</h2>
-
-          <p>川のせせらぎを聞きながら寛げる川床ラウンジ。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      木のラウンジ
-      ========================= -->
-      <section class="garden_section reverse" id="kinolounge">
-        <div class="garden_img">
-          <img src="images/garden/g_treelounge.png" alt="木のラウンジ" />
-        </div>
-
-        <div class="garden_text">
-          <h2>木のラウンジ</h2>
-
-          <p>森林浴をしながら寛げるグランピング型ラウンジ。</p>
-        </div>
-      </section>
-
-      <!-- =========================
-      貸切風呂
-      ========================= -->
-      <section class="garden_section" id="roten">
-        <div class="garden_img">
-          <img src="images/roten.png" alt="貸切露天風呂" />
-        </div>
-
-        <div class="garden_text">
-          <h2>貸切風呂</h2>
-
-          <p>庭園内に点在している、個性豊かな貸し切り露天風呂。</p>
-
-          <div class="sub_facility">
-            <div class="sub_item">
-              <img src="images/roten01.png" alt="紅殻の湯" />
-              <h3>紅殻の湯</h3>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/roten02.png" alt="乳白の湯" />
-              <h3>乳白の湯</h3>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/roten03.png" alt="翡翠の湯" />
-              <h3>翡翠の湯</h3>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/roten04.png" alt="黄檗の湯" />
-              <h3>黄檗の湯</h3>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/roten05.png" alt="朽葉の湯" />
-              <h3>朽葉の湯</h3>
-            </div>
-
-            <div class="sub_item">
-              <img src="images/roten06.png" alt="白泥の湯" />
-              <h3>白泥の湯</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =========================
-      予約
-      ========================= -->
-      <div class="yoyaku_foot">
-        <p>
-          <a href="reserve.html">
-            <img src="images/yoyaku_icon.png" alt="予約はこちら" />
-          </a>
-        </p>
-      </div>
     </main>
 
-    <!-- =========================
-    フッター
-    ========================= -->
+    <!-- ========================================
+    FOOTER
+    ======================================== -->
+
     <div id="footer-area"></div>
 
-    <!-- =========================
-    JavaScript
-    ========================= -->
+    <!-- ========================================
+    JS
+    ======================================== -->
+
     <script src="js/script.js"></script>
     <script src="js/garden.js"></script>
   </body>
