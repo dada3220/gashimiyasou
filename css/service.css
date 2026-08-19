@@ -1,8 +1,16 @@
 @charset "UTF-8";
 
 /* =========================================================
-   SERVICE PAGE
-   がしみや荘 - 高級旅館風サービスページ
+   がしみや荘 SERVICE PAGE
+   service.css
+
+   Design Concept
+   ・高級旅館
+   ・黒を基調とした静かな空間
+   ・金色をアクセント
+   ・大きな余白
+   ・細い罫線
+   ・写真を主役にする
 ========================================================= */
 
 /* =========================================================
@@ -18,32 +26,138 @@
   width: 100%;
 }
 
+/* =========================================================
+   ページタイトル
+========================================================= */
+
+.service_main .page_head {
+  text-align: center;
+
+  padding-top: 90px;
+  padding-bottom: 70px;
+}
+
+.service_main .page_head h1 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 2.8rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.3em;
+
+  margin-bottom: 15px;
+}
+
+.service_main .page_head p {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.35em;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+/* =========================================================
+   MV
+========================================================= */
+
+.service_main .mv {
+  position: relative;
+
+  width: 100%;
+
+  height: 72vh;
+
+  min-height: 560px;
+
+  overflow: hidden;
+
+  margin-bottom: 170px;
+}
+
+.service_main .mv img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.service_main .mv::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0.35)
+  );
+}
+
+.service_main .mv_text {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 9%;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #fff;
+
+  max-width: 650px;
+}
+
+.service_main .mv_text h1 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 2.6rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.8;
+
+  margin-bottom: 35px;
+}
+
+.service_main .mv_text p {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 1rem;
+
+  line-height: 2.4;
+
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   共通セクション
+========================================================= */
+
 .service_section,
 .ice_area,
 .smoking_area,
 .anniversary_area,
 .shop_area,
 .other_service_area {
-  width: min(1200px, 90%);
-  margin-left: auto;
-  margin-right: auto;
-}
+  width: 90%;
 
-/* =========================================================
-   スクロールフェード
-========================================================= */
+  max-width: 1200px;
 
-.scroll-fade {
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1.2s ease,
-    transform 1.2s ease;
-}
-
-.scroll-fade.active {
-  opacity: 1;
-  transform: translateY(0);
+  margin: 0 auto 190px;
 }
 
 /* =========================================================
@@ -52,106 +166,84 @@
 
 .service_text {
   text-align: center;
+
   margin-bottom: 70px;
 }
 
 .service_label {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.32em;
+
+  color: #b8a276;
+
   margin-bottom: 18px;
-
-  color: #bca76b;
-
-  font-family: "Times New Roman", serif;
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.3em;
 
   text-transform: uppercase;
 }
 
 .service_text h2 {
-  margin-bottom: 25px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #f3eee3;
-
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 
   font-weight: 400;
 
   letter-spacing: 0.18em;
 
   line-height: 1.7;
+
+  margin-bottom: 30px;
 }
 
 .service_text h3 {
-  margin-bottom: 25px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #d6c9ad;
-
-  font-size: 1.8rem;
+  font-size: 1.15rem;
 
   font-weight: 400;
 
   letter-spacing: 0.12em;
+
+  margin-bottom: 25px;
 }
 
 .service_text p {
-  color: #c9c2b6;
+  font-size: 0.9rem;
 
-  font-size: 1rem;
-
-  line-height: 2.4;
+  line-height: 2.3;
 
   letter-spacing: 0.08em;
 }
 
 /* =========================================================
-   共通画像
+   画像共通
 ========================================================= */
+
+.service_main a {
+  display: block;
+}
 
 .service_main img {
-  display: block;
+  max-width: 100%;
 
-  width: 100%;
   height: auto;
 
-  object-fit: cover;
+  display: block;
 }
 
-/* =========================================================
-   共通リンク
-========================================================= */
-
-.service_link {
-  position: relative;
-
-  display: inline-block;
-
-  margin-top: 35px;
-  padding: 13px 40px;
-
-  border: 1px solid rgba(188, 167, 107, 0.6);
-
-  color: #d8c69d;
-
-  font-size: 0.85rem;
-
-  letter-spacing: 0.15em;
-
-  text-decoration: none;
-
+.service_main a img {
   transition:
-    background 0.4s ease,
-    color 0.4s ease,
-    border-color 0.4s ease;
+    opacity 0.5s ease,
+    transform 0.6s ease;
 }
 
-.service_link:hover {
-  background: #bca76b;
+.service_main a:hover img {
+  opacity: 0.82;
 
-  border-color: #bca76b;
-
-  color: #171717;
+  transform: scale(1.015);
 }
 
 /* =========================================================
@@ -159,72 +251,91 @@
 ========================================================= */
 
 .preparation_area {
-  padding-top: 150px;
-  padding-bottom: 170px;
+  position: relative;
+
+  padding-top: 30px;
+}
+
+.preparation_area .service_text {
+  max-width: 700px;
+
+  margin: 0 auto 60px;
+}
+
+.preparation_area .service_text h2 {
+  font-size: 3rem;
+}
+
+.preparation_area .service_text h3 {
+  margin-top: 15px;
 }
 
 .tabisitaku_image {
-  width: 80%;
-  margin: 100px auto;
+  width: 82%;
+
+  max-width: 950px;
+
+  margin: 0 auto 55px;
+
+  position: relative;
 }
 
-/* 画像グリッド */
+.tabisitaku_image::before {
+  content: "";
+
+  position: absolute;
+
+  top: -18px;
+  left: -18px;
+
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(184, 162, 118, 0.35);
+
+  z-index: -1;
+}
+
+.tabisitaku_image img {
+  width: 100%;
+}
 
 .service_image_grid {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 10px;
+  gap: 22px;
 
-  width: min(900px, 100%);
-
-  margin: 0 auto 70px;
+  margin-bottom: 55px;
 }
 
 .service_image_grid a {
-  display: block;
-
   overflow: hidden;
-
-  aspect-ratio: 4 / 3;
 }
 
 .service_image_grid img {
   width: 100%;
-  height: 100%;
+
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
-
-  transition:
-    transform 0.8s ease,
-    filter 0.8s ease;
 }
-
-.service_image_grid a:hover img {
-  transform: scale(1.04);
-
-  filter: brightness(0.8);
-}
-
-/* アイテム一覧 */
 
 .service_items {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 30px;
+  border-top: 1px solid rgba(184, 162, 118, 0.35);
 
-  border-top: 1px solid rgba(188, 167, 107, 0.25);
-
-  padding-top: 45px;
+  border-bottom: 1px solid rgba(184, 162, 118, 0.35);
 }
 
 .service_items > div {
-  padding: 0 15px;
+  padding: 35px 30px;
 
-  border-right: 1px solid rgba(188, 167, 107, 0.2);
+  border-right: 1px solid rgba(184, 162, 118, 0.25);
 }
 
 .service_items > div:last-child {
@@ -232,366 +343,534 @@
 }
 
 .service_items h4 {
-  margin-bottom: 15px;
-
-  color: #d8c69d;
-
-  font-size: 1rem;
-
-  font-weight: 400;
-
-  letter-spacing: 0.15em;
-
-  text-align: center;
-}
-
-.service_items p {
-  color: #aaa49a;
-
-  font-size: 0.8rem;
-
-  line-height: 2;
-
-  letter-spacing: 0.05em;
-
-  text-align: center;
-}
-
-/* =========================================================
-  フロントサービス・スマホ
-========================================================= */
-
-.rental_area {
-  padding-top: 130px;
-  padding-bottom: 170px;
-
-  border-top: 1px solid rgba(188, 167, 107, 0.18);
-}
-
-/* メイン */
-
-.rental_feature {
-  display: grid;
-
-  grid-template-columns: 1.15fr 0.85fr;
-
-  align-items: center;
-
-  gap: 80px;
-
-  margin: 90px auto;
-}
-
-/* 左右反転 */
-
-.rental_feature.reverse {
-  flex-direction: row-reverse;
-}
-
-.rental_feature_image {
-  overflow: hidden;
-
-  aspect-ratio: 16 / 10;
-}
-
-.rental_feature_image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.8s ease;
-}
-
-.rental_feature_image:hover img {
-  transform: scale(1.03);
-}
-
-.rental_feature_text {
-  padding: 20px;
-}
-
-.rental_feature_text .service_label {
-  margin-bottom: 15px;
-}
-
-.rental_feature_text h3 {
-  margin-bottom: 25px;
-
-  color: #eee8dc;
-
-  font-size: 1.6rem;
-
-  font-weight: 400;
-
-  letter-spacing: 0.15em;
-}
-
-.rental_feature_text p:last-child {
-  color: #aaa49a;
-
-  font-size: 0.9rem;
-
-  line-height: 2.3;
-
-  letter-spacing: 0.07em;
-}
-
-/* 貸出一覧 */
-
-.rental_list {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  border-top: 1px solid rgba(188, 167, 107, 0.25);
-
-  border-bottom: 1px solid rgba(188, 167, 107, 0.25);
-}
-
-.rental_list article {
-  padding: 40px 25px;
-
-  border-right: 1px solid rgba(188, 167, 107, 0.2);
-}
-
-.rental_list article:last-child {
-  border-right: none;
-}
-
-.rental_list h4 {
-  margin-bottom: 18px;
-
-  color: #d8c69d;
-
-  font-size: 1rem;
-
-  font-weight: 400;
-
-  letter-spacing: 0.13em;
-}
-
-.rental_list p {
-  color: #9e9990;
-
-  font-size: 0.8rem;
-
-  line-height: 2.1;
-
-  letter-spacing: 0.05em;
-}
-
-/* =========================================================
-   オリジナルアイス 41種
-========================================================= */
-
-.ice_area {
-  position: relative;
-
-  width: 100%;
-  max-width: none;
-
-  padding: 170px 5% 190px;
-
-  background: linear-gradient(180deg, #161616 0%, #1b1b1b 50%, #141414 100%);
-
-  border-top: 1px solid rgba(188, 167, 107, 0.25);
-
-  border-bottom: 1px solid rgba(188, 167, 107, 0.25);
-
-  text-align: center;
-}
-
-/* 装飾 */
-
-.ice_area::before {
-  content: "";
-
-  position: absolute;
-
-  top: 50px;
-  left: 50%;
-
-  width: 1px;
-  height: 70px;
-
-  background: linear-gradient(to bottom, transparent, rgba(188, 167, 107, 0.6));
-}
-
-/* イントロ */
-
-.ice_intro {
-  width: min(850px, 90%);
-
-  margin: 0 auto 70px;
-}
-
-.ice_intro .service_label {
-  margin-bottom: 25px;
-}
-
-.ice_intro h2 {
-  margin-bottom: 35px;
-
-  color: #eee7d8;
-
-  font-size: clamp(2rem, 4vw, 3.4rem);
-
-  font-weight: 400;
-
-  letter-spacing: 0.18em;
-
-  line-height: 1.7;
-}
-
-.ice_intro > p:last-child {
-  color: #aaa49a;
-
-  font-size: 0.9rem;
-
-  line-height: 2.5;
-
-  letter-spacing: 0.08em;
-}
-
-/* メイン画像 */
-
-.ice_main_image {
-  width: min(1000px, 90%);
-
-  margin: 0 auto 90px;
-
-  overflow: hidden;
-}
-
-.ice_main_image a {
-  display: block;
-
-  overflow: hidden;
-}
-
-.ice_main_image img {
-  width: 100%;
-
-  transition:
-    transform 1s ease,
-    filter 1s ease;
-}
-
-.ice_main_image a:hover img {
-  transform: scale(1.025);
-
-  filter: brightness(0.85);
-}
-
-/* カテゴリー */
-
-.ice_category_grid {
-  width: min(1100px, 100%);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 1px;
-
-  background: rgba(188, 167, 107, 0.3);
-}
-
-.ice_category {
-  min-height: 250px;
-
-  padding: 35px 25px;
-
-  background: #191919;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  transition: background 0.4s ease;
-}
-
-.ice_category:hover {
-  background: #222;
-}
-
-.ice_category_number {
-  color: #bca76b;
-
-  font-family: "Times New Roman", serif;
-
-  font-size: 2.7rem;
-
-  line-height: 1;
-}
-
-.ice_category_label {
-  margin-bottom: 8px;
-
-  color: #8f8a82;
-
-  font-size: 0.6rem;
-
-  letter-spacing: 0.2em;
-}
-
-.ice_category h3 {
-  margin-bottom: 15px;
-
-  color: #ded6c7;
+  font-family: "Shippori Mincho", serif;
 
   font-size: 1.05rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.13em;
+  letter-spacing: 0.15em;
+
+  margin-bottom: 15px;
 }
 
-.ice_category p:last-child {
-  color: #8f8b84;
-
-  font-size: 0.75rem;
+.service_items p {
+  font-size: 0.78rem;
 
   line-height: 2;
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+
+  opacity: 0.75;
 }
 
-/* 合計 */
+/* =========================================================
+   フロントサービス
+========================================================= */
 
-.ice_total {
+.front_service_area {
+  padding-top: 50px;
+}
+
+.service_feature {
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 90px;
+
+  align-items: center;
+
+  margin-bottom: 70px;
+}
+
+.service_feature.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.service_feature.reverse .service_feature_image {
+  order: 2;
+}
+
+.service_feature.reverse .service_feature_text {
+  order: 1;
+}
+
+.service_feature_image {
+  position: relative;
+}
+
+.service_feature_image::after {
+  content: "";
+
+  position: absolute;
+
+  right: -20px;
+  bottom: -20px;
+
+  width: 75%;
+  height: 75%;
+
+  border-right: 1px solid rgba(184, 162, 118, 0.4);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.4);
+
+  pointer-events: none;
+}
+
+.service_feature_image img {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+}
+
+.service_feature_text {
+  padding: 20px 10px;
+}
+
+.service_feature_text h2 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 2.25rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  line-height: 1.7;
+
+  margin-bottom: 25px;
+}
+
+.service_feature_text h3 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 1.05rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  margin-bottom: 25px;
+}
+
+.service_feature_text > p:last-child {
+  font-size: 0.86rem;
+
+  line-height: 2.4;
+
+  letter-spacing: 0.06em;
+
+  opacity: 0.8;
+}
+
+/* =========================================================
+   サービスカード
+========================================================= */
+
+.service_card_grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(184, 162, 118, 0.35);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.35);
+}
+
+.service_card_grid article {
+  padding: 35px 25px;
+
+  border-right: 1px solid rgba(184, 162, 118, 0.22);
+}
+
+.service_card_grid article:last-child {
+  border-right: none;
+}
+
+.service_card_grid h4 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  margin-bottom: 15px;
+}
+
+.service_card_grid p {
+  font-size: 0.76rem;
+
+  line-height: 2.1;
+
+  letter-spacing: 0.04em;
+
+  opacity: 0.7;
+}
+
+/* =========================================================
+   貸出スマホ
+========================================================= */
+
+.smartphone_area {
+  padding-top: 20px;
+}
+
+.smartphone_area .service_feature {
+  margin-bottom: 60px;
+}
+
+.service_note {
+  text-align: right;
+
+  margin-top: 18px;
+}
+
+.service_note p {
+  font-size: 0.7rem;
+
+  opacity: 0.5;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   無料送迎
+========================================================= */
+
+.transfer_area {
+  position: relative;
+
+  max-width: 1300px;
+
+  padding: 90px 70px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  border-top: 1px solid rgba(184, 162, 118, 0.35);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.35);
+}
+
+.transfer_inner {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.transfer_image {
+  position: relative;
+}
+
+.transfer_image::before {
+  content: "";
+
+  position: absolute;
+
+  left: -20px;
+  top: -20px;
+
+  width: 75%;
+  height: 75%;
+
+  border-left: 1px solid rgba(184, 162, 118, 0.35);
+
+  border-top: 1px solid rgba(184, 162, 118, 0.35);
+}
+
+.transfer_image img {
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
+}
+
+.transfer_text h2 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 2.4rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  margin-bottom: 20px;
+}
+
+.transfer_text h3 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 1.05rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  margin-bottom: 25px;
+}
+
+.transfer_text > p {
+  font-size: 0.84rem;
+
+  line-height: 2.3;
+
+  letter-spacing: 0.06em;
+
+  opacity: 0.8;
+
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   情報DL
+========================================================= */
+
+.service_info {
+  border-top: 1px solid rgba(184, 162, 118, 0.3);
+
+  margin-top: 30px;
+}
+
+.service_info > div {
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.2);
+}
+
+.service_info dt {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.12em;
+
+  color: #b8a276;
+}
+
+.service_info dd {
+  font-size: 0.78rem;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   オリジナルアイス
+========================================================= */
+
+.ice_area {
+  padding-top: 40px;
+
+  text-align: center;
+}
+
+.ice_intro {
+  max-width: 760px;
+
+  margin: 0 auto 60px;
+}
+
+.ice_intro h2 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 3rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.6;
+
+  margin-bottom: 30px;
+}
+
+.ice_intro > p:last-child {
+  font-size: 0.84rem;
+
+  line-height: 2.3;
+
+  letter-spacing: 0.06em;
+
+  opacity: 0.78;
+}
+
+.ice_main_image {
+  width: 90%;
+
+  max-width: 1050px;
+
+  margin: 0 auto 70px;
+
+  position: relative;
+}
+
+.ice_main_image::before,
+.ice_main_image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  pointer-events: none;
+}
+
+.ice_main_image::before {
+  top: -18px;
+  left: -18px;
+
+  border-left: 1px solid #b8a276;
+  border-top: 1px solid #b8a276;
+}
+
+.ice_main_image::after {
+  bottom: -18px;
+  right: -18px;
+
+  border-right: 1px solid #b8a276;
+  border-bottom: 1px solid #b8a276;
+}
+
+.ice_main_image img {
+  width: 100%;
+
+  display: block;
+}
+
+/* =========================================================
+   アイスカテゴリー
+========================================================= */
+
+.ice_category_grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  text-align: left;
+}
+
+.ice_category {
   display: flex;
 
-  align-items: baseline;
+  gap: 18px;
+
+  min-height: 190px;
+
+  padding: 28px 20px;
+
+  border: 1px solid rgba(184, 162, 118, 0.28);
+
+  background: rgba(255, 255, 255, 0.018);
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.ice_category:hover {
+  background: rgba(255, 255, 255, 0.045);
+
+  border-color: rgba(184, 162, 118, 0.6);
+
+  transform: translateY(-5px);
+}
+
+.ice_category_number {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 2.3rem;
+
+  line-height: 1;
+
+  color: #b8a276;
+
+  min-width: 48px;
+}
+
+.ice_category_label {
+  font-size: 0.58rem;
+
+  letter-spacing: 0.18em;
+
+  color: #b8a276;
+
+  margin-bottom: 8px;
+}
+
+.ice_category h3 {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  margin-bottom: 12px;
+}
+
+.ice_category > div:last-child p:last-child {
+  font-size: 0.7rem;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.03em;
+
+  opacity: 0.65;
+}
+
+.ice_total {
+  margin-top: 65px;
+
+  display: flex;
 
   justify-content: center;
 
-  gap: 12px;
+  align-items: baseline;
 
-  margin-top: 90px;
+  gap: 10px;
+}
 
-  color: #d8c69d;
+.ice_total span {
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 0.9rem;
 
   letter-spacing: 0.15em;
 }
 
 .ice_total strong {
-  font-family: "Times New Roman", serif;
+  font-family: "Shippori Mincho", serif;
 
-  font-size: 5rem;
+  font-size: 4rem;
 
   font-weight: 400;
 
-  line-height: 1;
-}
+  color: #b8a276;
 
-.ice_total span {
-  font-size: 0.9rem;
+  line-height: 1;
 }
 
 /* =========================================================
@@ -603,22 +882,19 @@
 
   grid-template-columns: 1.15fr 0.85fr;
 
+  gap: 90px;
+
   align-items: center;
 
-  gap: 100px;
+  padding: 100px 0;
 
-  padding-top: 180px;
-  padding-bottom: 180px;
+  border-top: 1px solid rgba(184, 162, 118, 0.3);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.3);
 }
-
-/* 画像 */
 
 .smoking_image {
   position: relative;
-
-  overflow: hidden;
-
-  aspect-ratio: 4 / 5;
 }
 
 .smoking_image::after {
@@ -626,111 +902,63 @@
 
   position: absolute;
 
-  top: 20px;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
+  right: -18px;
+  bottom: -18px;
 
-  border: 1px solid rgba(188, 167, 107, 0.35);
+  width: 70%;
+  height: 70%;
 
-  pointer-events: none;
+  border-right: 1px solid rgba(184, 162, 118, 0.45);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.45);
 }
 
 .smoking_image img {
   width: 100%;
-  height: 100%;
+
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
-
-  transition:
-    transform 1s ease,
-    filter 1s ease;
 }
-
-.smoking_image:hover img {
-  transform: scale(1.03);
-
-  filter: brightness(0.8);
-}
-
-/* テキスト */
 
 .smoking_text {
-  padding-right: 20px;
-}
-
-.smoking_text .service_label {
-  margin-bottom: 25px;
+  padding: 10px;
 }
 
 .smoking_text h2 {
-  margin-bottom: 30px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #eee7dc;
-
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: 2.5rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 
-  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 .smoking_text h3 {
-  margin-bottom: 30px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #cdbb94;
-
-  font-size: 1rem;
+  font-size: 1.05rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.1em;
+  line-height: 1.9;
+
+  letter-spacing: 0.08em;
+
+  margin-bottom: 25px;
 }
 
 .smoking_text > p {
-  color: #aaa49a;
+  font-size: 0.82rem;
 
-  font-size: 0.85rem;
+  line-height: 2.3;
 
-  line-height: 2.5;
+  letter-spacing: 0.05em;
 
-  letter-spacing: 0.06em;
-}
-
-/* 情報 */
-
-.service_info {
-  margin-top: 45px;
-
-  border-top: 1px solid rgba(188, 167, 107, 0.25);
-}
-
-.service_info div {
-  display: flex;
-
-  padding: 18px 0;
-
-  border-bottom: 1px solid rgba(188, 167, 107, 0.18);
-}
-
-.service_info dt {
-  width: 100px;
-
-  color: #bca76b;
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.12em;
-}
-
-.service_info dd {
-  color: #aaa49a;
-
-  font-size: 0.8rem;
-
-  letter-spacing: 0.08em;
+  opacity: 0.78;
 }
 
 /* =========================================================
@@ -738,10 +966,7 @@
 ========================================================= */
 
 .anniversary_area {
-  padding-top: 150px;
-  padding-bottom: 170px;
-
-  border-top: 1px solid rgba(188, 167, 107, 0.18);
+  padding-top: 20px;
 }
 
 .anniversary_grid {
@@ -757,52 +982,39 @@
 }
 
 .anniversary_grid article > a {
-  display: block;
-
   overflow: hidden;
 
-  margin-bottom: 30px;
-
-  aspect-ratio: 4 / 3;
+  margin-bottom: 25px;
 }
 
 .anniversary_grid img {
   width: 100%;
-  height: 100%;
+
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
-
-  transition:
-    transform 0.8s ease,
-    filter 0.8s ease;
-}
-
-.anniversary_grid article > a:hover img {
-  transform: scale(1.04);
-
-  filter: brightness(0.8);
 }
 
 .anniversary_grid h3 {
-  margin-bottom: 15px;
-
-  color: #d8c69d;
+  font-family: "Shippori Mincho", serif;
 
   font-size: 1rem;
 
   font-weight: 400;
 
   letter-spacing: 0.15em;
+
+  margin-bottom: 12px;
 }
 
 .anniversary_grid p {
-  color: #9e9990;
-
-  font-size: 0.8rem;
+  font-size: 0.76rem;
 
   line-height: 2;
 
   letter-spacing: 0.05em;
+
+  opacity: 0.7;
 }
 
 /* =========================================================
@@ -814,170 +1026,289 @@
 
   grid-template-columns: 0.85fr 1.15fr;
 
+  gap: 90px;
+
   align-items: center;
 
-  gap: 100px;
-
-  padding-top: 170px;
-  padding-bottom: 180px;
-
-  border-top: 1px solid rgba(188, 167, 107, 0.18);
-}
-
-.shop_text {
-  padding-left: 20px;
-}
-
-.shop_text .service_label {
-  margin-bottom: 20px;
+  padding: 80px 0;
 }
 
 .shop_text h2 {
-  margin-bottom: 30px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #eee7dc;
-
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: 2.4rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 
   line-height: 1.7;
+
+  margin-bottom: 25px;
 }
 
 .shop_text h3 {
-  margin-bottom: 25px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #cdbb94;
-
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
+
+  margin-bottom: 25px;
 }
 
 .shop_text > p {
-  color: #aaa49a;
+  font-size: 0.82rem;
 
-  font-size: 0.85rem;
+  line-height: 2.3;
 
-  line-height: 2.5;
+  letter-spacing: 0.05em;
 
-  letter-spacing: 0.06em;
+  opacity: 0.75;
+
+  margin-bottom: 30px;
 }
 
 .shop_image {
-  overflow: hidden;
-
-  aspect-ratio: 16 / 10;
+  position: relative;
 }
 
-.shop_image a {
-  display: block;
+.shop_image::before {
+  content: "";
 
-  width: 100%;
-  height: 100%;
+  position: absolute;
+
+  top: -18px;
+  left: -18px;
+
+  width: 75%;
+  height: 75%;
+
+  border-left: 1px solid rgba(184, 162, 118, 0.4);
+
+  border-top: 1px solid rgba(184, 162, 118, 0.4);
 }
 
 .shop_image img {
   width: 100%;
-  height: 100%;
+
+  aspect-ratio: 16 / 10;
 
   object-fit: cover;
-
-  transition:
-    transform 1s ease,
-    filter 1s ease;
-}
-
-.shop_image:hover img {
-  transform: scale(1.03);
-
-  filter: brightness(0.82);
 }
 
 /* =========================================================
-   その他サービス
+   ページ内リンク
+========================================================= */
+
+.service_link {
+  display: inline-flex !important;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 25px;
+
+  border: 1px solid rgba(184, 162, 118, 0.6);
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.service_link::after {
+  content: "→";
+
+  font-size: 1rem;
+
+  transition: transform 0.4s ease;
+}
+
+.service_link:hover {
+  background: #b8a276;
+
+  color: #111;
+}
+
+.service_link:hover::after {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   その他のサービス
 ========================================================= */
 
 .other_service_area {
-  padding-top: 140px;
-  padding-bottom: 170px;
+  padding: 90px 0 160px;
 
-  border-top: 1px solid rgba(188, 167, 107, 0.18);
+  border-top: 1px solid rgba(184, 162, 118, 0.3);
 }
 
 .other_service_list {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
-  border-top: 1px solid rgba(188, 167, 107, 0.25);
+  border-top: 1px solid rgba(184, 162, 118, 0.25);
+
+  border-bottom: 1px solid rgba(184, 162, 118, 0.25);
 }
 
 .other_service_list article {
-  padding: 40px;
+  padding: 35px 25px;
 
-  border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+  border-right: 1px solid rgba(184, 162, 118, 0.2);
 }
 
-.other_service_list article:nth-child(odd) {
-  border-right: 1px solid rgba(188, 167, 107, 0.2);
+.other_service_list article:last-child {
+  border-right: none;
 }
 
 .other_service_list h3 {
-  margin-bottom: 15px;
+  font-family: "Shippori Mincho", serif;
 
-  color: #d8c69d;
-
-  font-size: 1rem;
+  font-size: 0.95rem;
 
   font-weight: 400;
 
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
+
+  margin-bottom: 15px;
 }
 
 .other_service_list p {
-  color: #99948b;
-
-  font-size: 0.8rem;
+  font-size: 0.72rem;
 
   line-height: 2;
 
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+
+  opacity: 0.65;
 }
 
 /* =========================================================
-   タブレット
+   スクロールバー等による横揺れ防止
 ========================================================= */
 
-@media screen and (max-width: 1000px) {
+.service_main,
+.service_main * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 900px) {
+  /* 共通 */
+
+  .service_main .page_head {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .service_main .mv {
+    height: 60vh;
+
+    min-height: 480px;
+
+    margin-bottom: 120px;
+  }
+
+  .service_main .mv_text {
+    left: 7%;
+    right: 7%;
+  }
+
+  .service_main .mv_text h1 {
+    font-size: 2.1rem;
+  }
+
   .service_section,
+  .ice_area,
   .smoking_area,
   .anniversary_area,
   .shop_area,
   .other_service_area {
-    width: 88%;
+    width: 86%;
+
+    margin-bottom: 130px;
   }
 
-  /* 貸出 */
+  /* 旅支度 */
 
-  .rental_feature_text {
-    padding: 0;
+  .service_image_grid {
+    gap: 12px;
   }
 
-  .rental_list {
+  .service_items {
+    grid-template-columns: 1fr;
+  }
+
+  .service_items > div {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(184, 162, 118, 0.2);
+  }
+
+  .service_items > div:last-child {
+    border-bottom: none;
+  }
+
+  /* feature */
+
+  .service_feature,
+  .service_feature.reverse {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .service_feature.reverse .service_feature_image {
+    order: 1;
+  }
+
+  .service_feature.reverse .service_feature_text {
+    order: 2;
+  }
+
+  .service_feature_text {
+    text-align: center;
+  }
+
+  .service_card_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .rental_list article:nth-child(2) {
+  .service_card_grid article:nth-child(2) {
     border-right: none;
   }
 
-  .rental_list article:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
+  .service_card_grid article:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(184, 162, 118, 0.2);
+  }
+
+  /* 送迎 */
+
+  .transfer_area {
+    padding: 60px 45px;
+  }
+
+  .transfer_inner {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
   }
 
   /* アイス */
@@ -986,33 +1317,14 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* 喫煙 */
+  /* 喫煙所 */
 
   .smoking_area {
     grid-template-columns: 1fr;
 
     gap: 60px;
-  }
 
-  .smoking_image {
-    width: 80%;
-
-    margin: 0 auto;
-  }
-
-  .smoking_text {
-    padding: 0;
-
-    text-align: center;
-  }
-
-  .service_info {
-    width: 80%;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: left;
+    padding: 70px 0;
   }
 
   /* 記念日 */
@@ -1029,40 +1341,86 @@
     gap: 60px;
   }
 
-  .shop_text {
-    padding: 0;
+  /* その他 */
 
-    text-align: center;
+  .other_service_list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .shop_image {
-    order: -1;
+  .other_service_list article:nth-child(2) {
+    border-right: none;
+  }
+
+  .other_service_list article:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(184, 162, 118, 0.2);
   }
 }
 
 /* =========================================================
-   スマートフォン
+   MOBILE
 ========================================================= */
 
 @media screen and (max-width: 600px) {
   /* 共通 */
 
+  .service_main .page_head {
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+
+  .service_main .page_head h1 {
+    font-size: 2rem;
+
+    letter-spacing: 0.22em;
+  }
+
+  .service_main .mv {
+    height: 68vh;
+
+    min-height: 480px;
+
+    margin-bottom: 90px;
+  }
+
+  .service_main .mv_text {
+    left: 8%;
+
+    top: 55%;
+  }
+
+  .service_main .mv_text h1 {
+    font-size: 1.65rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+  }
+
+  .service_main .mv_text p {
+    font-size: 0.78rem;
+
+    line-height: 2.2;
+  }
+
   .service_section,
+  .ice_area,
   .smoking_area,
   .anniversary_area,
   .shop_area,
   .other_service_area {
-    width: 90%;
+    width: 88%;
+
+    margin-bottom: 100px;
   }
 
+  /* 共通テキスト */
+
   .service_text {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 
   .service_text h2 {
-    font-size: 1.7rem;
-
-    letter-spacing: 0.12em;
+    font-size: 1.9rem;
   }
 
   .service_text h3 {
@@ -1072,209 +1430,239 @@
   .service_text p {
     font-size: 0.78rem;
 
-    line-height: 2.2;
+    line-height: 2.1;
   }
 
   /* 旅支度 */
 
-  .preparation_area {
-    padding-top: 100px;
-    padding-bottom: 110px;
+  .preparation_area .service_text h2 {
+    font-size: 2.2rem;
+  }
+
+  .tabisitaku_image {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  .tabisitaku_image::before {
+    top: -10px;
+    left: -10px;
   }
 
   .service_image_grid {
-    gap: 5px;
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+  }
+
+  .service_image_grid img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .service_items {
+    grid-template-columns: 1fr;
+  }
+
+  .service_items > div {
+    padding: 25px 10px;
+  }
+
+  /* feature */
+
+  .service_feature,
+  .service_feature.reverse {
+    gap: 35px;
 
     margin-bottom: 45px;
   }
 
-  .service_items {
-    gap: 0;
-
-    padding-top: 0;
+  .service_feature_image::after {
+    right: -10px;
+    bottom: -10px;
   }
 
-  /* 貸出 */
+  .service_feature_text h2 {
+    font-size: 1.9rem;
 
-  .rental_area {
-    padding-top: 100px;
-    padding-bottom: 110px;
+    line-height: 1.6;
   }
 
-  .rental_feature {
-    margin-bottom: 55px;
+  .service_feature_text h3 {
+    font-size: 0.9rem;
 
+    line-height: 1.8;
+  }
+
+  .service_feature_text > p:last-child {
+    font-size: 0.76rem;
+
+    line-height: 2.1;
+  }
+
+  /* カード */
+
+  .service_card_grid {
     grid-template-columns: 1fr;
-
-    gap: 45px;
   }
 
-  .rental_feature_text h3 {
-    font-size: 1.3rem;
+  .service_card_grid article {
+    border-right: none !important;
+
+    border-bottom: 1px solid rgba(184, 162, 118, 0.2);
   }
 
-  .rental_list {
-    grid-template-columns: 1fr;
-  }
-
-  .rental_list article {
-    padding: 30px 15px;
-
-    border-right: none;
-
-    border-bottom: 1px solid rgba(188, 167, 107, 0.2);
-  }
-
-  .rental_list article:last-child {
+  .service_card_grid article:last-child {
     border-bottom: none;
+  }
+
+  /* 送迎 */
+
+  .transfer_area {
+    width: 100%;
+
+    padding: 55px 8%;
+  }
+
+  .transfer_image::before {
+    left: -10px;
+    top: -10px;
+  }
+
+  .transfer_text h2 {
+    font-size: 2rem;
+  }
+
+  .transfer_text h3 {
+    font-size: 0.9rem;
+  }
+
+  .transfer_text > p {
+    font-size: 0.76rem;
+  }
+
+  /* service info */
+
+  .service_info > div {
+    grid-template-columns: 80px 1fr;
+
+    padding: 13px 0;
+  }
+
+  .service_info dt,
+  .service_info dd {
+    font-size: 0.7rem;
   }
 
   /* アイス */
 
-  .ice_area {
-    padding: 120px 5% 130px;
-  }
-
-  .ice_area::before {
-    top: 30px;
-
-    height: 50px;
-  }
-
-  .ice_intro {
-    width: 92%;
-
-    margin-bottom: 50px;
-  }
-
   .ice_intro h2 {
-    font-size: 1.9rem;
+    font-size: 2.15rem;
 
-    letter-spacing: 0.12em;
+    line-height: 1.7;
   }
 
   .ice_intro > p:last-child {
     font-size: 0.75rem;
 
-    line-height: 2.3;
+    line-height: 2.1;
   }
 
   .ice_main_image {
     width: 100%;
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+  }
+
+  .ice_main_image::before,
+  .ice_main_image::after {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ice_main_image::before {
+    top: -10px;
+    left: -10px;
+  }
+
+  .ice_main_image::after {
+    bottom: -10px;
+    right: -10px;
   }
 
   .ice_category_grid {
     grid-template-columns: 1fr;
 
-    gap: 1px;
+    gap: 10px;
   }
 
   .ice_category {
     min-height: auto;
 
-    padding: 28px 25px;
-
-    display: grid;
-
-    grid-template-columns: 60px 1fr;
-
-    gap: 20px;
-
-    text-align: left;
-  }
-
-  .ice_category_number {
-    font-size: 2rem;
-  }
-
-  .ice_category h3 {
-    font-size: 0.95rem;
-  }
-
-  .ice_category p:last-child {
-    font-size: 0.7rem;
+    padding: 23px 18px;
   }
 
   .ice_total {
-    margin-top: 60px;
+    margin-top: 45px;
   }
 
   .ice_total strong {
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   /* 喫煙所 */
 
   .smoking_area {
-    padding-top: 110px;
-    padding-bottom: 120px;
+    width: 88%;
 
     gap: 45px;
-  }
 
-  .smoking_image {
-    width: 100%;
+    padding: 60px 0;
   }
 
   .smoking_image::after {
-    top: 12px;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
+    right: -10px;
+    bottom: -10px;
   }
 
   .smoking_text h2 {
-    font-size: 1.9rem;
-
-    letter-spacing: 0.1em;
+    font-size: 2rem;
   }
 
   .smoking_text h3 {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .smoking_text > p {
-    font-size: 0.75rem;
+    font-size: 0.76rem;
 
-    line-height: 2.3;
-  }
-
-  .service_info {
-    width: 100%;
-
-    margin-top: 35px;
+    line-height: 2.1;
   }
 
   /* 記念日 */
 
-  .anniversary_area {
-    padding-top: 100px;
-    padding-bottom: 110px;
-  }
-
   .anniversary_grid {
     grid-template-columns: 1fr;
 
-    gap: 50px;
+    gap: 45px;
   }
 
   .anniversary_grid article > a {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   /* 売店 */
 
   .shop_area {
-    padding-top: 110px;
-    padding-bottom: 120px;
-
     gap: 40px;
+
+    padding: 50px 0;
   }
 
   .shop_text h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .shop_text h3 {
@@ -1282,16 +1670,20 @@
   }
 
   .shop_text > p {
-    font-size: 0.75rem;
+    font-size: 0.76rem;
 
-    line-height: 2.3;
+    line-height: 2.1;
+  }
+
+  .shop_image::before {
+    top: -10px;
+    left: -10px;
   }
 
   /* その他 */
 
   .other_service_area {
-    padding-top: 100px;
-    padding-bottom: 120px;
+    padding: 60px 0 100px;
   }
 
   .other_service_list {
@@ -1299,47 +1691,12 @@
   }
 
   .other_service_list article {
-    padding: 30px 15px;
+    border-right: none !important;
+
+    border-bottom: 1px solid rgba(184, 162, 118, 0.2);
   }
 
-  .other_service_list article:nth-child(odd) {
-    border-right: none;
-  }
-
-  .other_service_list h3 {
-    font-size: 0.9rem;
-  }
-
-  .other_service_list p {
-    font-size: 0.72rem;
-  }
-
-  /* リンク */
-
-  .service_link {
-    margin-top: 25px;
-
-    padding: 12px 30px;
-
-    font-size: 0.75rem;
-  }
-}
-
-/* =========================================================
-   極小スマートフォン
-========================================================= */
-
-@media screen and (max-width: 380px) {
-  .service_text h2 {
-    font-size: 1.5rem;
-  }
-
-  .ice_intro h2 {
-    font-size: 1.65rem;
-  }
-
-  .smoking_text h2,
-  .shop_text h2 {
-    font-size: 1.65rem;
+  .other_service_list article:last-child {
+    border-bottom: none;
   }
 }
