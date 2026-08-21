@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 /* =========================================================
+   がしみや荘 SERVICE PAGE
+   service.css
+========================================================= */
+
+/* =========================================================
    共通
 ========================================================= */
 
@@ -16,34 +21,6 @@
 .service_main,
 .service_main * {
   box-sizing: border-box;
-}
-
-/* =========================================================
-   ページタイトル
-========================================================= */
-
-.service_main .page_head {
-  width: 100%;
-  text-align: center;
-  padding: 90px 20px 70px;
-}
-
-.service_main .page_head h1 {
-  font-family: "Shippori Mincho", serif;
-  font-size: 2.8rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  line-height: 1.6;
-  margin: 0 0 15px;
-}
-
-.service_main .page_head p {
-  font-family: "Shippori Mincho", serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  opacity: 0.55;
-  margin: 0;
 }
 
 /* =========================================================
@@ -579,6 +556,10 @@
 
 .transfer_image img {
   width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
 }
 
 /* テキスト */
@@ -1183,15 +1164,6 @@
 
 @media screen and (max-width: 900px) {
   /* -------------------------------------------------------
-     ページタイトル
-  ------------------------------------------------------- */
-
-  .service_main .page_head {
-    padding-top: 70px;
-    padding-bottom: 50px;
-  }
-
-  /* -------------------------------------------------------
      MV
   ------------------------------------------------------- */
 
@@ -1363,27 +1335,6 @@
 ========================================================= */
 
 @media screen and (max-width: 600px) {
-  /* -------------------------------------------------------
-     ページタイトル
-  ------------------------------------------------------- */
-
-  .service_main .page_head {
-    padding-top: 50px;
-    padding-bottom: 35px;
-  }
-
-  .service_main .page_head h1 {
-    font-size: 2rem;
-
-    letter-spacing: 0.22em;
-  }
-
-  .service_main .page_head p {
-    font-size: 0.68rem;
-
-    letter-spacing: 0.3em;
-  }
-
   /* -------------------------------------------------------
      MV
   ------------------------------------------------------- */
