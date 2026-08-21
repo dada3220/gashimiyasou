@@ -320,12 +320,11 @@ TAKE HOME
 }
 
 /* =========================================================
-ICE
+   ICE
 ========================================================= */
 
 .shop_ice {
   position: relative;
-
   background: linear-gradient(180deg, #11100f 0%, #0b0b0b 100%);
 }
 
@@ -339,17 +338,14 @@ ICE
 
 .shop_heading_description {
   margin: 35px auto 0;
-
   max-width: 700px;
-
   font-size: 0.85rem !important;
   line-height: 2.4 !important;
-
   color: #999 !important;
 }
 
 /* =========================================================
-ICE CATEGORY
+   ICE CATEGORY
 ========================================================= */
 
 .ice_category {
@@ -362,65 +358,52 @@ ICE CATEGORY
 
 .ice_category_heading {
   margin-bottom: 45px;
-
   text-align: center;
 }
 
 .ice_category_heading > p:first-child {
   margin-bottom: 12px;
-
   font-size: 0.68rem;
   letter-spacing: 0.25em;
-
   color: #a9936e;
 }
 
 .ice_category_heading h3 {
   margin-bottom: 15px;
-
   font-size: 1.8rem;
   font-weight: 400;
-
   letter-spacing: 0.13em;
 }
 
 .ice_category_heading h3 span {
   display: inline-block;
-
   margin-left: 15px;
-
   font-family: Arial, sans-serif;
-
   font-size: 0.65rem;
   letter-spacing: 0.16em;
-
   color: #777;
 }
 
 .ice_category_heading > p:last-child {
   margin: 0;
-
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-
   color: #888;
 }
 
 /* =========================================================
-ICE GRID
+   ICE GRID
 ========================================================= */
 
 .ice_grid {
   display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: repeat(5, 1fr);
   gap: 22px;
 }
 
 .ice_card {
+  overflow: hidden;
   background: #151515;
-
   transition:
     transform 0.4s ease,
     background 0.4s ease;
@@ -428,26 +411,21 @@ ICE GRID
 
 .ice_card:hover {
   transform: translateY(-6px);
-
   background: #1b1b1b;
 }
 
 .ice_image {
   position: relative;
-
   aspect-ratio: 1 / 1;
-
   overflow: hidden;
-
   background: #222;
 }
 
 .ice_image img {
-  width: 100%;
+  display: block;
+  width: 90%;
   height: 100%;
-
   object-fit: cover;
-
   transition: transform 0.7s ease;
 }
 
@@ -461,202 +439,124 @@ ICE GRID
 
 .ice_card_text h4 {
   margin-bottom: 10px;
-
   font-size: 1rem;
   font-weight: 400;
-
   letter-spacing: 0.1em;
 }
 
 .ice_card_text p {
   margin: 0;
-
   font-size: 0.72rem;
   line-height: 1.9;
   letter-spacing: 0.04em;
-
   color: #888;
 }
 
 /* =========================================================
-ICE / LOUNGE
+   ICE / STANDARD
+   定番 10種
+========================================================= */
+
+.ice_standard {
+  position: relative;
+}
+
+/* =========================================================
+   ICE / LOUNGE
+   ラウンジ限定 6種
 ========================================================= */
 
 .ice_lounge {
   padding: 80px 50px;
-
-  background: linear-gradient(135deg, #17141a, #111);
-
+  background: linear-gradient(135deg, #17141a 0%, #111 100%);
   border-top: 1px solid rgba(160, 130, 180, 0.18);
   border-bottom: 1px solid rgba(160, 130, 180, 0.18);
 }
 
 .ice_lounge .ice_grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* =========================================================
-ICE / AFTER BATH
+   ICE / PRIVATE BATH
+   貸切風呂限定 12種
 ========================================================= */
 
-.ice_afterbath {
+.ice_privatebath {
   padding: 80px 50px;
-
-  background: linear-gradient(135deg, #111719, #0d0f0f);
-
+  background: linear-gradient(135deg, #111719 0%, #0d0f0f 100%);
   border-top: 1px solid rgba(100, 150, 150, 0.15);
   border-bottom: 1px solid rgba(100, 150, 150, 0.15);
 }
 
-.ice_afterbath .ice_grid {
-  grid-template-columns: repeat(4, 1fr);
+.ice_privatebath .ice_grid {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* =========================================================
-ICE / PUBLIC BATH
+   ICE / PUBLIC BATH
+   大浴場限定 2種
 ========================================================= */
 
 .ice_publicbath {
-  margin-top: 30px;
+  padding: 80px 50px;
+  background: linear-gradient(135deg, #151719 0%, #0f1112 100%);
+  border-top: 1px solid rgba(150, 170, 180, 0.14);
+  border-bottom: 1px solid rgba(150, 170, 180, 0.14);
 }
 
-.ice_special {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  min-height: 440px;
-
-  background: #151515;
-}
-
-.ice_special_image {
-  overflow: hidden;
-}
-
-.ice_special_image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.ice_special_text {
-  display: flex;
-
-  flex-direction: column;
+.ice_publicbath .ice_grid {
+  grid-template-columns: repeat(2, minmax(0, 360px));
   justify-content: center;
-
-  padding: 70px;
-}
-
-.ice_special_text > p:first-child {
-  margin-bottom: 15px;
-
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
-
-  color: #a9936e;
-}
-
-.ice_special_text h3 {
-  margin-bottom: 15px;
-
-  font-size: 2.3rem;
-  font-weight: 400;
-
-  letter-spacing: 0.12em;
-}
-
-.ice_count {
-  display: inline-block;
-
-  margin-bottom: 35px;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-
-  color: #777;
-}
-
-.ice_special_text h4 {
-  margin-bottom: 18px;
-
-  font-size: 1.1rem;
-  font-weight: 400;
-
-  letter-spacing: 0.1em;
-}
-
-.ice_special_text p:last-child {
-  margin: 0;
-
-  font-size: 0.82rem;
-  line-height: 2.3;
-  letter-spacing: 0.08em;
-
-  color: #999;
+  gap: 30px;
 }
 
 /* =========================================================
-ICE / SEASON
+   ICE / SEASON
+   季節限定 12種
 ========================================================= */
 
 .ice_season {
   padding: 80px 50px;
-
-  background: linear-gradient(135deg, #181513, #10100f);
-
+  background: linear-gradient(135deg, #181513 0%, #10100f 100%);
   border-top: 1px solid rgba(180, 150, 110, 0.15);
   border-bottom: 1px solid rgba(180, 150, 110, 0.15);
 }
 
 .ice_season .ice_grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* =========================================================
-ICE FOOTER
+   ICE FOOTER
 ========================================================= */
 
 .ice_footer {
   margin-top: 110px;
-
   padding-top: 70px;
-
   text-align: center;
-
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ice_footer > p:first-child {
   margin-bottom: 15px;
-
   font-family: Arial, sans-serif;
-
   font-size: 0.65rem;
   letter-spacing: 0.25em;
-
   color: #a9936e;
 }
 
 .ice_footer h3 {
   margin-bottom: 20px;
-
   font-size: 1.7rem;
   font-weight: 400;
-
   letter-spacing: 0.15em;
 }
 
 .ice_footer p:last-child {
   margin: 0;
-
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-
   color: #777;
 }
 
@@ -1013,22 +913,19 @@ TABLET
     padding: 45px;
   }
 
-  /* Ice */
-
+  /* ice */
   .ice_grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .ice_lounge .ice_grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .ice_lounge .ice_grid,
-  .ice_afterbath .ice_grid,
+  .ice_privatebath .ice_grid,
   .ice_season .ice_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .ice_lounge,
-  .ice_afterbath,
-  .ice_season {
-    padding: 60px 35px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   /* Omamori */
@@ -1255,18 +1152,6 @@ MOBILE
 
   /* Ice grid */
 
-  .ice_grid {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-  }
-
-  .ice_lounge .ice_grid,
-  .ice_afterbath .ice_grid,
-  .ice_season .ice_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .ice_lounge,
   .ice_afterbath,
   .ice_season {
@@ -1461,7 +1346,7 @@ MOBILE
 SMALL MOBILE
 ========================================================= */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .shop_container {
     width: calc(100% - 28px);
   }
@@ -1479,27 +1364,117 @@ SMALL MOBILE
     padding: 35px 22px 40px;
   }
 
-  .ice_lounge,
-  .ice_afterbath,
-  .ice_season {
-    padding: 35px 10px;
+  /* =========================================================
+   ice
+========================================================= */
+
+  .shop_ice_heading {
+    margin-bottom: 70px;
   }
+
+  .shop_ice_heading h2 {
+    font-size: 2.4rem;
+  }
+
+  .shop_heading_description {
+    margin-top: 28px;
+    font-size: 0.78rem !important;
+    line-height: 2.2 !important;
+  }
+
+  /* -----------------------------------------
+     Category
+  ----------------------------------------- */
+
+  .ice_category {
+    margin-bottom: 90px;
+  }
+
+  .ice_category_heading {
+    margin-bottom: 30px;
+  }
+
+  .ice_category_heading h3 {
+    font-size: 1.45rem;
+  }
+
+  .ice_category_heading h3 span {
+    display: block;
+    margin: 10px 0 0;
+    font-size: 0.6rem;
+  }
+
+  .ice_category_heading > p:last-child {
+    font-size: 0.7rem;
+    line-height: 1.9;
+  }
+
+  /* -----------------------------------------
+     Grid
+  ----------------------------------------- */
 
   .ice_grid {
-    gap: 9px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 
+  .ice_lounge .ice_grid,
+  .ice_privatebath .ice_grid,
+  .ice_season .ice_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ice_publicbath .ice_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* -----------------------------------------
+     Card
+  ----------------------------------------- */
+
   .ice_card_text {
-    padding: 13px 10px 16px;
+    padding: 16px 14px 20px;
   }
 
   .ice_card_text h4 {
-    font-size: 0.75rem;
+    margin-bottom: 7px;
+    font-size: 0.88rem;
+    letter-spacing: 0.07em;
   }
 
   .ice_card_text p {
-    font-size: 0.58rem;
+    font-size: 0.65rem;
+    line-height: 1.75;
   }
+
+  /* -----------------------------------------
+     Special category backgrounds
+  ----------------------------------------- */
+
+  .ice_lounge,
+  .ice_privatebath,
+  .ice_publicbath,
+  .ice_season {
+    padding: 55px 20px;
+  }
+
+  /* -----------------------------------------
+     Footer
+  ----------------------------------------- */
+
+  .ice_footer {
+    margin-top: 80px;
+    padding-top: 50px;
+  }
+
+  .ice_footer h3 {
+    font-size: 1.35rem;
+  }
+
+  /* -----------------------------------------
+     その他
+  ----------------------------------------- */
 
   .shop_omamori_text,
   .drink_text,
