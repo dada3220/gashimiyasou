@@ -1,21 +1,21 @@
 "use strict";
 
 /* =========================================================
-がしみや荘 SHOP PAGE
-shop.js
+   がしみや荘 SHOP PAGE
+   shop.js
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   /* =======================================================
-  SCROLL ANIMATION
+     SCROLL ANIMATION
   ======================================================= */
 
   const animatedItems = document.querySelectorAll(
-    ".shop_feature, " +
-      ".ice_category, " +
-      ".shop_omamori_feature, " +
-      ".game_card, " +
-      ".drink_card",
+    ".shop_product, " +
+      ".shop_omamori_product, " +
+      ".game_item, " +
+      ".drink_item, " +
+      ".ice_category",
   );
 
   if (animatedItems.length > 0) {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =======================================================
-  IMAGE FADE IN
+     IMAGE FADE IN
   ======================================================= */
 
   const images = document.querySelectorAll(".shop_page img");
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =======================================================
-  ICE CARD HOVER
+     ICE CARD HOVER
   ======================================================= */
 
   const iceCards = document.querySelectorAll(".ice_card");
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =======================================================
-  ICE CATEGORY NUMBER
+     ICE CATEGORY NUMBER
   ======================================================= */
 
   /*
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =======================================================
-  ICE TOTAL COUNT
+     ICE TOTAL COUNT
   ======================================================= */
 
   const totalIceCards = document.querySelectorAll(".ice_card").length;
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =======================================================
-  SMOOTH SCROLL
+     SMOOTH SCROLL
   ======================================================= */
 
   const internalLinks = document.querySelectorAll('a[href^="#"]');
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =======================================================
-  PAGE READY
+     PAGE READY
   ======================================================= */
 
   document.body.classList.add("shop-page-ready");

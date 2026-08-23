@@ -1,229 +1,767 @@
 @charset "UTF-8";
 
+/* =========================================================
+   がしみや荘 ラウンジページ
+   lounge.css
+========================================================= */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* =========================
+.lounge_page {
+  overflow: hidden;
+}
+
+/* =========================================================
    INTRO
-========================= */
+========================================================= */
+
+.lounge_intro {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
 .section_title {
   color: rgb(145, 145, 114);
 }
 
-.lounge_intro {
-  margin-top: 80px;
+.section_title h2 {
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #696767;
+
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+}
+
+.intro_text {
+  max-width: 900px;
+  margin: 45px auto 0;
+}
+
+.intro_text p {
+  margin-bottom: 20px;
+
+  line-height: 2.3;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   LOUNGE NAV
+========================================================= */
+
+.lounge_nav {
+  max-width: 1000px;
+
+  margin: 0 auto 150px;
+
+  text-align: center;
+}
+
+.lounge_nav_title {
+  margin-bottom: 35px;
+
+  color: #a9a18d;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+}
+
+.lounge_nav_list {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  border-top: solid 1px #555;
+  border-bottom: solid 1px #555;
+}
+
+.lounge_nav_list a {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  min-height: 110px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.lounge_nav_list a + a {
+  border-left: solid 1px #444;
+}
+
+.lounge_nav_list a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.4s ease;
+}
+
+.lounge_nav_list a:hover::after {
+  width: 60%;
+}
+
+.lounge_nav_list span {
+  margin-bottom: 8px;
+
+  color: #888;
+
+  font-family: serif;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.15em;
+}
+
+.lounge_nav_list strong {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.nav_fire::after {
+  background: #bd0404;
+}
+
+.nav_moon::after {
+  background: #89039b;
+}
+
+.nav_earth::after {
+  background: #cc5009;
+}
+
+.nav_wood::after {
+  background: #069201;
+}
+
+.nav_water::after {
+  background: #0284a5;
+}
+
+.nav_gold::after {
+  background: #c6d403;
+}
+
+/* =========================================================
+   LOUNGE CONTENT
+========================================================= */
+
+.lounge_contents {
+  width: 100%;
+}
+
+.lounge_block {
+  position: relative;
+
+  margin-bottom: 180px;
+
+  scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.lounge_main_image {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+.lounge_main_image img {
+  display: block;
+
+  width: 100%;
+  height: 580px;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.lounge_block:hover .lounge_main_image img {
+  transform: scale(1.015);
+}
+
+/* =========================================================
+   LOUNGE HEADER
+========================================================= */
+
+.lounge_header {
+  max-width: 1000px;
+
+  margin: 65px auto 0;
+
+  text-align: center;
+}
+
+.lounge_number {
+  margin-bottom: 15px;
+
+  color: #888;
+
+  font-family: serif;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.35em;
+}
+
+.lounge_header h3 {
+  margin: 0 0 30px;
+
+  padding-bottom: 20px;
+
+  border-bottom: solid 1px #555;
+
+  font-size: 2.3rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+}
+
+.lounge_catch {
+  max-width: 850px;
+
+  margin: 0 auto 45px;
+
+  font-size: 1.05rem;
+
+  line-height: 2.2;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   LOUNGE META
+========================================================= */
+
+.lounge_meta {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: solid 1px #444;
+  border-bottom: solid 1px #444;
+}
+
+.meta_item {
+  min-height: 105px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 20px 30px;
+}
+
+.meta_item + .meta_item {
+  border-left: solid 1px #444;
+}
+
+.meta_item span {
+  margin-bottom: 10px;
+
+  color: #bfa76f;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.15em;
+}
+
+.meta_item strong {
+  font-size: 0.95rem;
+
+  font-weight: normal;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.lounge_features {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 35px;
+
+  margin-top: 65px;
+}
+
+.lounge_feature {
+  overflow: hidden;
+
+  border: solid 1px #383838;
+
+  background: rgba(255, 255, 255, 0.015);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.lounge_feature:hover {
+  transform: translateY(-5px);
+
+  border-color: #777;
+}
+
+.feature_image {
+  overflow: hidden;
+
+  aspect-ratio: 16 / 9;
+}
+
+.feature_image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.lounge_feature:hover .feature_image img {
+  transform: scale(1.04);
+}
+
+.feature_text {
+  padding: 25px 28px 30px;
+}
+
+.feature_text h4 {
+  margin: 0 0 15px;
+
+  font-size: 1.15rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.12em;
+}
+
+.feature_text p {
+  margin: 0;
+
+  color: #ccc;
+
+  font-size: 0.9rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   LOUNGE COLOR
+========================================================= */
+
+/* 火 */
+
+.lounge_fire .lounge_header h3,
+.lounge_fire .feature_text h4 {
+  color: #bd0404;
+}
+
+/* 月 */
+
+.lounge_moon .lounge_header h3,
+.lounge_moon .feature_text h4 {
+  color: #a84bb7;
+}
+
+/* 土 */
+
+.lounge_earth .lounge_header h3,
+.lounge_earth .feature_text h4 {
+  color: #cc5009;
+}
+
+/* 木 */
+
+.lounge_wood .lounge_header h3,
+.lounge_wood .feature_text h4 {
+  color: #069201;
+}
+
+/* 水 */
+
+.lounge_water .lounge_header h3,
+.lounge_water .feature_text h4 {
+  color: #0284a5;
+}
+
+/* 金 */
+
+.lounge_gold .lounge_header h3,
+.lounge_gold .feature_text h4 {
+  color: #c6d403;
+}
+
+/* =========================================================
+   ラウンジごとの区切り
+========================================================= */
+
+.lounge_block:not(:last-child)::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 1px;
+
+  margin: 150px auto 0;
+
+  background: #555;
+}
+
+/* =========================================================
+   RESERVATION
+========================================================= */
+
+.yoyaku_foot {
+  margin-top: 20px;
   margin-bottom: 100px;
 
   text-align: center;
 }
 
-.intro_text {
-  max-width: 900px;
-  margin: 40px auto 0;
+.yoyaku_foot p {
+  margin: 0;
 }
 
-.intro_text p {
-  line-height: 2.2;
-  margin-bottom: 20px;
+.yoyaku_foot a {
+  display: inline-block;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* =========================
-   SUMMARY
-========================= */
+.yoyaku_foot a:hover {
+  opacity: 0.75;
 
-.lounge_summary {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 60px;
+  transform: translateY(-3px);
 }
 
-.summary_item {
+.yoyaku_foot img {
   display: block;
 
-  text-decoration: none;
-  color: white;
-
-  transition: 0.3s;
-
-  padding: 0px 15px;
+  max-width: 100%;
+  height: auto;
 }
 
-.summary_item:hover {
-  opacity: 0.8;
-}
-
-.summary_item h3 {
-  text-align: center;
-
-  font-size: 32px;
-
-  margin-bottom: 25px;
-}
-
-.summary_item img {
-  width: 100%;
-
-  border-radius: 10px;
-
-  margin-bottom: 20px;
-}
-
-.summary_item p {
-  line-height: 2;
-  text-align: center;
-}
-
-h2,
-h3 {
-  border-bottom: solid 1px #696767;
-  margin: 0px 70px 0px 70px;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.lounge_gallery {
-  margin-top: 140px;
-}
-
-.gallery_item {
-  margin-bottom: 120px;
-}
-
-.gallery_item picture {
-  display: block;
-}
-
-.gallery_item img {
-  width: 98%;
-  display: block;
-  border-radius: 15px;
-}
-
-.gallery_info {
-  margin: 40px 50px;
-}
-
-.gallery_info h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.gallery_catch {
-  font-size: 1.1rem;
-  line-height: 2;
-  margin-bottom: 30px;
-}
-
-.gallery_info dl {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 15px 30px;
-}
-
-.gallery_info dt {
-  color: #bfa76f;
-}
-
-.gallery_info dd {
-  line-height: 1.8;
-}
-
-/* =========================
-   文字色
-========================= */
-
-.lounge_s1,
-#lounge01 h3 {
-  color: #bd0404;
-}
-
-.lounge_s2,
-#lounge02 h3 {
-  color: #89039b;
-}
-
-.lounge_s3,
-#lounge03 h3 {
-  color: #cc5009;
-}
-
-.lounge_s4,
-#lounge04 h3 {
-  color: #069201;
-}
-
-.lounge_s5,
-#lounge05 h3 {
-  color: #0284a5;
-}
-
-.lounge_s6,
-#lounge02 h6 {
-  color: #c6d403;
-}
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
+
+@media screen and (max-width: 1000px) {
+  .lounge_main_image img {
+    height: 500px;
+  }
+
+  .lounge_header {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .lounge_features {
+    gap: 20px;
+  }
+
+  .feature_text {
+    padding: 22px 20px 25px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media screen and (max-width: 768px) {
-  .lounge_summary {
-    grid-template-columns: 1fr;
+  /* -------------------------
+     INTRO
+  ------------------------- */
 
-    gap: 40px;
+  .lounge_intro {
+    margin-top: 60px;
+    margin-bottom: 70px;
   }
 
-  .summary_item {
-    display: grid;
-
-    grid-template-columns: 45% 1fr;
-
-    gap: 20px;
-
-    align-items: center;
-  }
-
-  .summary_item h3 {
-    grid-column: 1 / 3;
-
-    text-align: center;
-
-    margin-bottom: 10px;
-
-    font-size: 24px;
-  }
-
-  .summary_item img {
-    margin-bottom: 0;
-  }
-
-  .summary_item p {
-    line-height: 1.8;
-  }
-
-  .gallery_item {
-    margin-bottom: 80px;
-  }
-
-  .gallery_info {
-    margin-top: 25px;
-  }
-
-  .gallery_info h3 {
+  .section_title h2 {
     font-size: 1.6rem;
   }
 
-  .gallery_info dl {
-    grid-template-columns: 1fr;
-    gap: 5px;
+  .intro_text {
+    margin-top: 30px;
   }
 
-  .gallery_info dt {
-    margin-top: 15px;
+  .intro_text p {
+    line-height: 2;
+  }
+
+  /* -------------------------
+     NAV
+  ------------------------- */
+
+  .lounge_nav {
+    margin-bottom: 100px;
+  }
+
+  .lounge_nav_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lounge_nav_list a {
+    min-height: 90px;
+  }
+
+  .lounge_nav_list a:nth-child(4) {
+    border-left: none;
+
+    border-top: solid 1px #444;
+  }
+
+  .lounge_nav_list a:nth-child(5),
+  .lounge_nav_list a:nth-child(6) {
+    border-top: solid 1px #444;
+  }
+
+  .lounge_nav_list a:nth-child(5) {
+    border-left: solid 1px #444;
+  }
+
+  .lounge_nav_list strong {
+    font-size: 1.3rem;
+  }
+
+  /* -------------------------
+     CONTENT
+  ------------------------- */
+
+  .lounge_block {
+    margin-bottom: 110px;
+
+    scroll-margin-top: 70px;
+  }
+
+  .lounge_main_image {
+    border-radius: 10px;
+  }
+
+  .lounge_main_image img {
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+  }
+
+  /* -------------------------
+     HEADER
+  ------------------------- */
+
+  .lounge_header {
+    margin: 40px 10px 0;
+  }
+
+  .lounge_number {
+    margin-bottom: 10px;
+  }
+
+  .lounge_header h3 {
+    margin-bottom: 22px;
+
+    padding-bottom: 15px;
+
+    font-size: 1.7rem;
+  }
+
+  .lounge_catch {
+    margin-bottom: 30px;
+
+    font-size: 0.9rem;
+
+    line-height: 2;
+  }
+
+  /* -------------------------
+     META
+  ------------------------- */
+
+  .lounge_meta {
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
+
+  .meta_item {
+    min-height: auto;
+
+    padding: 17px 20px;
+  }
+
+  .meta_item + .meta_item {
+    border-top: solid 1px #444;
+    border-left: none;
+  }
+
+  .meta_item span {
+    margin-bottom: 5px;
+  }
+
+  .meta_item strong {
+    font-size: 0.85rem;
+  }
+
+  /* -------------------------
+     FEATURES
+  ------------------------- */
+
+  .lounge_features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 45px;
+  }
+
+  .lounge_feature {
+    display: grid;
+
+    grid-template-columns: 38% 1fr;
+
+    align-items: stretch;
+  }
+
+  .feature_image {
+    aspect-ratio: auto;
+
+    min-height: 130px;
+  }
+
+  .feature_text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 18px 20px;
+  }
+
+  .feature_text h4 {
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+  }
+
+  .feature_text p {
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+  }
+
+  /* -------------------------
+     DIVIDER
+  ------------------------- */
+
+  .lounge_block:not(:last-child)::after {
+    margin-top: 100px;
+  }
+
+  /* -------------------------
+     RESERVATION
+  ------------------------- */
+
+  .yoyaku_foot {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+  .lounge_nav_list a {
+    min-height: 80px;
+  }
+
+  .lounge_nav_list span {
+    font-size: 0.6rem;
+  }
+
+  .lounge_nav_list strong {
+    font-size: 1.2rem;
+  }
+
+  .lounge_main_image img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .lounge_header h3 {
+    font-size: 1.5rem;
+  }
+
+  .lounge_catch {
+    font-size: 0.85rem;
+  }
+
+  .lounge_feature {
+    grid-template-columns: 36% 1fr;
+  }
+
+  .feature_image {
+    min-height: 115px;
+  }
+
+  .feature_text {
+    padding: 15px;
+  }
+
+  .feature_text h4 {
+    font-size: 0.9rem;
+  }
+
+  .feature_text p {
+    font-size: 0.75rem;
+
+    line-height: 1.7;
   }
 }

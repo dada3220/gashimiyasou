@@ -1,24 +1,25 @@
 @charset "UTF-8";
 
 /* =========================================================
-がしみや荘 SHOP PAGE
-shop.css
+   がしみや荘 SHOP PAGE
+   shop.css
 ========================================================= */
 
 /* =========================================================
-共通
+   COMMON
 ========================================================= */
 
 .shop_page {
   background: #0b0b0b;
   color: #eee;
   font-family: "Shippori Mincho", serif;
+  overflow: hidden;
 }
 
 .shop_page img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .shop_page a {
@@ -37,8 +38,8 @@ shop.css
   font-family: "Shippori Mincho", serif;
   font-size: 0.72rem;
   letter-spacing: 0.28em;
-  color: #b9a27b;
 
+  color: #b9a27b;
   text-transform: uppercase;
 }
 
@@ -50,10 +51,11 @@ shop.css
 }
 
 .shop_item_label {
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 
   font-size: 0.68rem;
   letter-spacing: 0.25em;
+
   color: #b9a27b;
 }
 
@@ -65,11 +67,15 @@ shop.css
   font-size: 0.72rem;
   line-height: 2;
 
-  color: #888;
+  color: #777;
+}
+
+.sp_only {
+  display: none;
 }
 
 /* =========================================================
-MV
+   MV
 ========================================================= */
 
 .shop_mv {
@@ -92,7 +98,7 @@ MV
 
   object-fit: cover;
 
-  filter: brightness(0.65);
+  filter: brightness(0.62);
 
   animation: shopMvZoom 12s ease-out forwards;
 }
@@ -113,8 +119,8 @@ MV
 
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.74) 0%,
+    rgba(0, 0, 0, 0.38) 45%,
     rgba(0, 0, 0, 0.12) 100%
   );
 }
@@ -125,9 +131,9 @@ MV
   left: 10%;
   top: 50%;
 
-  transform: translateY(-50%);
-
   z-index: 2;
+
+  transform: translateY(-50%);
 }
 
 .shop_mv_en {
@@ -162,7 +168,7 @@ MV
 }
 
 /* =========================================================
-INTRO
+   INTRO
 ========================================================= */
 
 .shop_intro {
@@ -184,9 +190,9 @@ INTRO
 }
 
 .shop_intro_text {
-  margin: 0 auto;
-
   max-width: 760px;
+
+  margin: 0 auto;
 
   font-size: 0.95rem;
   line-height: 2.5;
@@ -196,7 +202,7 @@ INTRO
 }
 
 /* =========================================================
-SECTION
+   SECTION COMMON
 ========================================================= */
 
 .shop_section {
@@ -204,7 +210,7 @@ SECTION
 }
 
 .shop_section_heading {
-  margin-bottom: 80px;
+  margin-bottom: 85px;
 
   text-align: center;
 }
@@ -228,34 +234,62 @@ SECTION
 }
 
 /* =========================================================
-TAKE HOME
+   01 / TAKE HOME
 ========================================================= */
 
 .shop_takehome {
   background: #0e0e0e;
 }
 
-.shop_feature {
-  display: grid;
+.shop_takehome_list {
+  display: flex;
+  flex-direction: column;
 
-  grid-template-columns: 1.1fr 0.9fr;
+  gap: 120px;
+}
 
-  min-height: 540px;
-
-  margin-bottom: 100px;
+.shop_product {
+  overflow: hidden;
 
   background: #141414;
+
+  transition:
+    background 0.5s ease,
+    transform 0.5s ease;
 }
 
-.shop_feature:last-child {
-  margin-bottom: 0;
+.shop_product:hover {
+  background: #181818;
+
+  transform: translateY(-4px);
 }
 
-.shop_feature_image {
+.shop_product_image {
+  position: relative;
+
+  width: 100%;
+
   overflow: hidden;
+
+  background: #181818;
 }
 
-.shop_feature_image img {
+.shop_product_image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    transparent 65%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+.shop_product_image img {
   width: 100%;
   height: 100%;
 
@@ -264,30 +298,25 @@ TAKE HOME
   transition: transform 1s ease;
 }
 
-.shop_feature:hover .shop_feature_image img {
-  transform: scale(1.04);
+.shop_product:hover .shop_product_image img {
+  transform: scale(1.035);
 }
 
-.shop_feature_text {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 70px;
+.shop_product_text {
+  padding: 55px 70px 65px;
 }
 
-.shop_feature_text h3 {
-  margin-bottom: 35px;
+.shop_product_text h3 {
+  margin-bottom: 30px;
 
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
   font-weight: 400;
 
-  line-height: 1.7;
+  line-height: 1.65;
   letter-spacing: 0.1em;
 }
 
-.shop_feature_text p {
+.shop_product_text p:not(.shop_item_label) {
   margin-bottom: 18px;
 
   font-size: 0.9rem;
@@ -297,39 +326,304 @@ TAKE HOME
   color: #aaa;
 }
 
-.shop_feature_text p:last-of-type {
+.shop_product_text p:last-of-type {
   margin-bottom: 0;
 }
 
-/* 交互順序 */
+/* =========================================================
+   02 / OMAMORI
+========================================================= */
 
-.shop_manju {
-  grid-template-columns: 0.9fr 1.1fr;
+.shop_omamori {
+  background: #0c0c0c;
 }
 
-.shop_manju .shop_feature_text {
-  order: 1;
+.shop_omamori_product {
+  overflow: hidden;
+
+  background: #151515;
+
+  transition:
+    background 0.5s ease,
+    transform 0.5s ease;
 }
 
-.shop_manju .shop_feature_image {
-  order: 2;
+.shop_omamori_product:hover {
+  background: #191919;
+
+  transform: translateY(-4px);
 }
 
-.shop_tenugui {
-  grid-template-columns: 1.1fr 0.9fr;
+.shop_omamori_image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.shop_omamori_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1s ease;
+}
+
+.shop_omamori_product:hover .shop_omamori_image img {
+  transform: scale(1.035);
+}
+
+.shop_omamori_text {
+  padding: 60px 70px 70px;
+}
+
+.shop_omamori_text h3 {
+  margin-bottom: 30px;
+
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+}
+
+.shop_omamori_text p:not(.shop_item_label) {
+  margin-bottom: 20px;
+
+  font-size: 0.9rem;
+  line-height: 2.4;
+  letter-spacing: 0.08em;
+
+  color: #999;
 }
 
 /* =========================================================
-   ICE
+   03 / GAME
+========================================================= */
+
+.shop_game {
+  background: #111;
+}
+
+.game_list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 110px;
+}
+
+.game_item {
+  overflow: hidden;
+
+  background: #171717;
+}
+
+.game_main_image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.game_main_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.9s ease;
+}
+
+.game_item:hover .game_main_image img {
+  transform: scale(1.035);
+}
+
+.game_info {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 55px;
+
+  align-items: center;
+
+  padding: 55px 65px 65px;
+}
+
+.game_text h3 {
+  margin-bottom: 28px;
+
+  font-size: clamp(1.65rem, 2.6vw, 2.3rem);
+  font-weight: 400;
+
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+}
+
+.game_text p:not(.shop_item_label) {
+  margin-bottom: 15px;
+
+  font-size: 0.85rem;
+  line-height: 2.2;
+  letter-spacing: 0.06em;
+
+  color: #999;
+}
+
+.game_machine_image {
+  width: 100%;
+
+  text-align: center;
+}
+
+.game_machine_image img {
+  width: 100%;
+  max-height: 210px;
+
+  object-fit: contain;
+
+  transition: transform 0.6s ease;
+}
+
+.game_item:hover .game_machine_image img {
+  transform: scale(1.035);
+}
+
+.game_machine_image span {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+
+  color: #666;
+}
+
+/* =========================================================
+   04 / LOUNGE ORIGINAL
+========================================================= */
+
+.shop_drink {
+  background: linear-gradient(180deg, #0d0d0d 0%, #131211 100%);
+}
+
+.drink_list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 40px;
+}
+
+.drink_item {
+  display: grid;
+
+  grid-template-columns: 42% 58%;
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  background: #171717;
+
+  border: 1px solid rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
+}
+
+.drink_item:hover {
+  background: #1b1b1b;
+
+  transform: translateY(-5px);
+}
+
+.drink_image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.drink_image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(90deg, transparent 60%, rgba(0, 0, 0, 0.15));
+}
+
+.drink_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.drink_item:hover .drink_image img {
+  transform: scale(1.035);
+}
+
+.drink_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 50px 42px;
+}
+
+.drink_text h3 {
+  margin-bottom: 30px;
+
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+}
+
+.drink_text p:not(.shop_item_label) {
+  margin-bottom: 28px;
+
+  font-size: 0.78rem;
+  line-height: 2.2;
+  letter-spacing: 0.06em;
+
+  color: #999;
+}
+
+.drink_text span {
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+
+  color: #666;
+}
+
+/* =========================================================
+   05 / ICE
 ========================================================= */
 
 .shop_ice {
   position: relative;
+
   background: linear-gradient(180deg, #11100f 0%, #0b0b0b 100%);
 }
 
 .shop_ice_heading {
-  margin-bottom: 100px;
+  margin-bottom: 105px;
 }
 
 .shop_ice_heading h2 {
@@ -337,10 +631,13 @@ TAKE HOME
 }
 
 .shop_heading_description {
-  margin: 35px auto 0;
   max-width: 700px;
+
+  margin: 35px auto 0;
+
   font-size: 0.85rem !important;
   line-height: 2.4 !important;
+
   color: #999 !important;
 }
 
@@ -358,36 +655,47 @@ TAKE HOME
 
 .ice_category_heading {
   margin-bottom: 45px;
+
   text-align: center;
 }
 
 .ice_category_heading > p:first-child {
   margin-bottom: 12px;
+
   font-size: 0.68rem;
   letter-spacing: 0.25em;
+
   color: #a9936e;
 }
 
 .ice_category_heading h3 {
   margin-bottom: 15px;
+
   font-size: 1.8rem;
   font-weight: 400;
+
   letter-spacing: 0.13em;
 }
 
 .ice_category_heading h3 span {
   display: inline-block;
+
   margin-left: 15px;
+
   font-family: Arial, sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.16em;
+
   color: #777;
 }
 
 .ice_category_heading > p:last-child {
   margin: 0;
+
   font-size: 0.78rem;
+  line-height: 1.9;
   letter-spacing: 0.08em;
+
   color: #888;
 }
 
@@ -397,35 +705,44 @@ TAKE HOME
 
 .ice_grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
   gap: 22px;
 }
 
 .ice_card {
   overflow: hidden;
+
   background: #151515;
+
   transition:
     transform 0.4s ease,
     background 0.4s ease;
 }
 
 .ice_card:hover {
-  transform: translateY(-6px);
   background: #1b1b1b;
+
+  transform: translateY(-6px);
 }
 
 .ice_image {
   position: relative;
+
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
+
   background: #222;
 }
 
 .ice_image img {
-  display: block;
-  width: 90%;
+  width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   transition: transform 0.7s ease;
 }
 
@@ -439,92 +756,93 @@ TAKE HOME
 
 .ice_card_text h4 {
   margin-bottom: 10px;
+
   font-size: 1rem;
   font-weight: 400;
+
   letter-spacing: 0.1em;
 }
 
 .ice_card_text p {
   margin: 0;
+
   font-size: 0.72rem;
   line-height: 1.9;
   letter-spacing: 0.04em;
+
   color: #888;
 }
 
 /* =========================================================
-   ICE / STANDARD
-   定番 10種
-========================================================= */
-
-.ice_standard {
-  position: relative;
-}
-
-/* =========================================================
    ICE / LOUNGE
-   ラウンジ限定 6種
 ========================================================= */
 
 .ice_lounge {
   padding: 80px 50px;
+
   background: linear-gradient(135deg, #17141a 0%, #111 100%);
+
   border-top: 1px solid rgba(160, 130, 180, 0.18);
   border-bottom: 1px solid rgba(160, 130, 180, 0.18);
 }
 
 .ice_lounge .ice_grid {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 /* =========================================================
    ICE / PRIVATE BATH
-   貸切風呂限定 12種
 ========================================================= */
 
 .ice_privatebath {
   padding: 80px 50px;
+
   background: linear-gradient(135deg, #111719 0%, #0d0f0f 100%);
+
   border-top: 1px solid rgba(100, 150, 150, 0.15);
   border-bottom: 1px solid rgba(100, 150, 150, 0.15);
 }
 
 .ice_privatebath .ice_grid {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 /* =========================================================
    ICE / PUBLIC BATH
-   大浴場限定 2種
 ========================================================= */
 
 .ice_publicbath {
   padding: 80px 50px;
+
   background: linear-gradient(135deg, #151719 0%, #0f1112 100%);
+
   border-top: 1px solid rgba(150, 170, 180, 0.14);
   border-bottom: 1px solid rgba(150, 170, 180, 0.14);
 }
 
 .ice_publicbath .ice_grid {
   grid-template-columns: repeat(2, minmax(0, 360px));
+
   justify-content: center;
+
   gap: 30px;
 }
 
 /* =========================================================
    ICE / SEASON
-   季節限定 12種
 ========================================================= */
 
 .ice_season {
   padding: 80px 50px;
+
   background: linear-gradient(135deg, #181513 0%, #10100f 100%);
+
   border-top: 1px solid rgba(180, 150, 110, 0.15);
   border-bottom: 1px solid rgba(180, 150, 110, 0.15);
 }
 
 .ice_season .ice_grid {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 /* =========================================================
@@ -533,261 +851,44 @@ TAKE HOME
 
 .ice_footer {
   margin-top: 110px;
+
   padding-top: 70px;
+
   text-align: center;
+
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ice_footer > p:first-child {
   margin-bottom: 15px;
+
   font-family: Arial, sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
+
   color: #a9936e;
 }
 
 .ice_footer h3 {
   margin-bottom: 20px;
+
   font-size: 1.7rem;
   font-weight: 400;
+
   letter-spacing: 0.15em;
 }
 
 .ice_footer p:last-child {
   margin: 0;
+
   font-size: 0.78rem;
   letter-spacing: 0.08em;
+
   color: #777;
 }
 
 /* =========================================================
-OMAMORI
-========================================================= */
-
-.shop_omamori {
-  background: #0c0c0c;
-}
-
-.shop_omamori_feature {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  min-height: 600px;
-
-  background: #151515;
-}
-
-.shop_omamori_image {
-  overflow: hidden;
-}
-
-.shop_omamori_image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 1s ease;
-}
-
-.shop_omamori_feature:hover .shop_omamori_image img {
-  transform: scale(1.04);
-}
-
-.shop_omamori_text {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 80px;
-}
-
-.shop_omamori_text h3 {
-  margin-bottom: 35px;
-
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 400;
-
-  line-height: 1.6;
-  letter-spacing: 0.12em;
-}
-
-.shop_omamori_text p {
-  margin-bottom: 20px;
-
-  font-size: 0.9rem;
-  line-height: 2.4;
-  letter-spacing: 0.08em;
-
-  color: #999;
-}
-
-/* =========================================================
-GAME
-========================================================= */
-
-.shop_game {
-  background: #111;
-}
-
-.game_grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 30px;
-}
-
-.game_card {
-  background: #171717;
-
-  overflow: hidden;
-}
-
-.game_card_image {
-  aspect-ratio: 16 / 10;
-
-  overflow: hidden;
-}
-
-.game_card_image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.8s ease;
-}
-
-.game_card:hover .game_card_image img {
-  transform: scale(1.05);
-}
-
-.game_card_text {
-  padding: 45px 50px 55px;
-}
-
-.game_card_text > p:first-child {
-  margin-bottom: 15px;
-
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-
-  color: #a9936e;
-}
-
-.game_card_text h3 {
-  margin-bottom: 25px;
-
-  font-size: 1.65rem;
-  font-weight: 400;
-
-  line-height: 1.7;
-  letter-spacing: 0.1em;
-}
-
-.game_card_text p {
-  margin-bottom: 15px;
-
-  font-size: 0.82rem;
-  line-height: 2.2;
-  letter-spacing: 0.06em;
-
-  color: #999;
-}
-
-/* =========================================================
-DRINK
-========================================================= */
-
-.shop_drink {
-  background: linear-gradient(180deg, #0d0d0d, #131211);
-}
-
-.drink_grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 35px;
-}
-
-.drink_card {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  min-height: 500px;
-
-  background: #171717;
-}
-
-.drink_image {
-  overflow: hidden;
-}
-
-.drink_image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.8s ease;
-}
-
-.drink_card:hover .drink_image img {
-  transform: scale(1.04);
-}
-
-.drink_text {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 45px;
-}
-
-.drink_text > p:first-child {
-  margin-bottom: 18px;
-
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-
-  color: #a9936e;
-}
-
-.drink_text h3 {
-  margin-bottom: 30px;
-
-  font-size: 1.55rem;
-  font-weight: 400;
-
-  line-height: 1.7;
-  letter-spacing: 0.1em;
-}
-
-.drink_text p {
-  margin-bottom: 30px;
-
-  font-size: 0.78rem;
-  line-height: 2.2;
-  letter-spacing: 0.06em;
-
-  color: #999;
-}
-
-.drink_text span {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-
-  color: #666;
-}
-
-/* =========================================================
-CLOSING
+   CLOSING
 ========================================================= */
 
 .shop_closing {
@@ -816,7 +917,7 @@ CLOSING
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.25));
 }
 
 .shop_closing_text {
@@ -825,9 +926,9 @@ CLOSING
   left: 10%;
   top: 50%;
 
-  transform: translateY(-50%);
-
   z-index: 2;
+
+  transform: translateY(-50%);
 }
 
 .shop_closing_text h2 {
@@ -851,14 +952,14 @@ CLOSING
 }
 
 /* =========================================================
-SCROLL ANIMATION
+   SCROLL ANIMATION
 ========================================================= */
 
-.shop_feature,
-.ice_category,
-.shop_omamori_feature,
-.game_card,
-.drink_card {
+.shop_product,
+.shop_omamori_product,
+.game_item,
+.drink_item,
+.ice_category {
   opacity: 0;
 
   transform: translateY(35px);
@@ -868,18 +969,18 @@ SCROLL ANIMATION
     transform 1s ease;
 }
 
-.shop_feature.is-visible,
-.ice_category.is-visible,
-.shop_omamori_feature.is-visible,
-.game_card.is-visible,
-.drink_card.is-visible {
+.shop_product.is-visible,
+.shop_omamori_product.is-visible,
+.game_item.is-visible,
+.drink_item.is-visible,
+.ice_category.is-visible {
   opacity: 1;
 
   transform: translateY(0);
 }
 
 /* =========================================================
-TABLET
+   TABLET
 ========================================================= */
 
 @media screen and (max-width: 1024px) {
@@ -897,66 +998,78 @@ TABLET
     left: 7%;
   }
 
-  /* Section */
+  /* SECTION */
 
   .shop_section {
     padding: 110px 0;
   }
 
-  /* Feature */
+  /* TAKE HOME */
 
-  .shop_feature {
-    min-height: 450px;
+  .shop_takehome_list {
+    gap: 80px;
   }
 
-  .shop_feature_text {
-    padding: 45px;
+  .shop_product_text {
+    padding: 45px 50px 55px;
   }
 
-  /* ice */
-  .ice_grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  .ice_lounge .ice_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .ice_privatebath .ice_grid,
-  .ice_season .ice_grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* Omamori */
-
-  .shop_omamori_feature {
-    min-height: 500px;
-  }
+  /* OMAMORI */
 
   .shop_omamori_text {
     padding: 50px;
   }
 
-  /* Game */
+  /* GAME */
 
-  .game_card_text {
-    padding: 35px;
+  .game_info {
+    grid-template-columns: minmax(0, 1fr) 240px;
+
+    gap: 35px;
+
+    padding: 45px 50px 55px;
   }
 
-  /* Drink */
+  /* DRINK */
 
-  .drink_card {
-    min-height: 420px;
+  .drink_list {
+    gap: 25px;
+  }
+
+  .drink_item {
+    grid-template-columns: 40% 60%;
+
+    min-height: 540px;
+  }
+
+  .drink_image {
+    min-height: 540px;
   }
 
   .drink_text {
-    padding: 30px;
+    padding: 40px 30px;
+  }
+
+  /* ICE */
+
+  .ice_grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .ice_lounge .ice_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ice_privatebath .ice_grid,
+  .ice_season .ice_grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 /* =========================================================
-MOBILE
+   MOBILE
 ========================================================= */
 
 @media screen and (max-width: 767px) {
@@ -964,8 +1077,12 @@ MOBILE
     width: calc(100% - 34px);
   }
 
+  .sp_only {
+    display: inline;
+  }
+
   /* =======================================================
-  MV
+     MV
   ======================================================= */
 
   .shop_mv {
@@ -977,7 +1094,7 @@ MOBILE
   }
 
   .shop_mv_overlay {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.3));
   }
 
   .shop_mv_text {
@@ -996,18 +1113,16 @@ MOBILE
     margin-bottom: 25px;
 
     font-size: 2.45rem;
-
     line-height: 1.5;
   }
 
   .shop_mv_text > p:last-child {
     font-size: 0.78rem;
-
     line-height: 2.1;
   }
 
   /* =======================================================
-  INTRO
+     INTRO
   ======================================================= */
 
   .shop_intro {
@@ -1024,18 +1139,16 @@ MOBILE
     margin-bottom: 30px;
 
     font-size: 1.9rem;
-
     line-height: 1.7;
   }
 
   .shop_intro_text {
     font-size: 0.78rem;
-
     line-height: 2.3;
   }
 
   /* =======================================================
-  SECTION
+     SECTION
   ======================================================= */
 
   .shop_section {
@@ -1048,64 +1161,190 @@ MOBILE
 
   .shop_section_heading h2 {
     font-size: 1.9rem;
-
     line-height: 1.7;
   }
 
   .shop_section_heading > p:not(.section_label) {
     font-size: 0.75rem;
-
     line-height: 2.2;
   }
 
   /* =======================================================
-  TAKE HOME
+     TAKE HOME
   ======================================================= */
 
-  .shop_feature,
-  .shop_manju,
-  .shop_tenugui {
-    display: flex;
-
-    flex-direction: column;
-
-    min-height: auto;
-
-    margin-bottom: 60px;
+  .shop_takehome_list {
+    gap: 65px;
   }
 
-  .shop_feature_image {
-    height: 300px;
+  .shop_product {
+    transform: none;
   }
 
-  .shop_feature_text {
-    padding: 40px 28px 45px;
+  .shop_product:hover {
+    transform: none;
   }
 
-  .shop_feature_text h3 {
-    margin-bottom: 25px;
+  .shop_product_text {
+    padding: 38px 28px 45px;
+  }
+
+  .shop_item_label {
+    margin-bottom: 15px;
+
+    font-size: 0.6rem;
+  }
+
+  .shop_product_text h3 {
+    margin-bottom: 24px;
 
     font-size: 1.7rem;
-
     line-height: 1.7;
   }
 
-  .shop_feature_text p {
+  .shop_product_text p:not(.shop_item_label) {
     font-size: 0.78rem;
-
     line-height: 2.2;
   }
 
-  .shop_manju .shop_feature_text {
-    order: 2;
-  }
+  .shop_item_note {
+    margin-top: 25px;
 
-  .shop_manju .shop_feature_image {
-    order: 1;
+    font-size: 0.65rem;
   }
 
   /* =======================================================
-  ICE
+     OMAMORI
+  ======================================================= */
+
+  .shop_omamori_product:hover {
+    transform: none;
+  }
+
+  .shop_omamori_text {
+    padding: 40px 28px 48px;
+  }
+
+  .shop_omamori_text h3 {
+    margin-bottom: 25px;
+
+    font-size: 1.8rem;
+    line-height: 1.6;
+  }
+
+  .shop_omamori_text p:not(.shop_item_label) {
+    font-size: 0.78rem;
+    line-height: 2.2;
+  }
+
+  /* =======================================================
+     GAME
+  ======================================================= */
+
+  .game_list {
+    gap: 60px;
+  }
+
+  .game_info {
+    grid-template-columns: minmax(0, 1fr) 115px;
+
+    gap: 22px;
+
+    padding: 35px 24px 40px;
+
+    align-items: center;
+  }
+
+  .game_text h3 {
+    margin-bottom: 20px;
+
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .game_text p:not(.shop_item_label) {
+    font-size: 0.7rem;
+    line-height: 2.1;
+  }
+
+  .game_machine_image img {
+    max-height: 135px;
+  }
+
+  .game_machine_image span {
+    margin-top: 10px;
+
+    font-size: 0.48rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* =======================================================
+     DRINK
+  ======================================================= */
+
+  .drink_list {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  /*
+     スマホでも縦長画像＋説明の
+     横並びを維持する
+  */
+
+  .drink_item {
+    grid-template-columns: 40% 60%;
+
+    min-height: 520px;
+
+    transform: none;
+  }
+
+  .drink_item:hover {
+    transform: none;
+  }
+
+  .drink_image {
+    min-height: 520px;
+  }
+
+  .drink_image img {
+    object-fit: cover;
+  }
+
+  .drink_text {
+    padding: 35px 22px;
+  }
+
+  .drink_text .shop_item_label {
+    margin-bottom: 13px;
+
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+  }
+
+  .drink_text h3 {
+    margin-bottom: 22px;
+
+    font-size: 1.2rem;
+    line-height: 1.65;
+  }
+
+  .drink_text p:not(.shop_item_label) {
+    margin-bottom: 22px;
+
+    font-size: 0.67rem;
+    line-height: 2.1;
+  }
+
+  .drink_text span {
+    font-size: 0.53rem;
+    line-height: 1.8;
+  }
+
+  /* =======================================================
+     ICE
   ======================================================= */
 
   .shop_ice_heading {
@@ -1117,12 +1356,13 @@ MOBILE
   }
 
   .shop_heading_description {
-    font-size: 0.73rem !important;
+    margin-top: 28px;
 
+    font-size: 0.73rem !important;
     line-height: 2.3 !important;
   }
 
-  /* Ice category */
+  /* ICE CATEGORY */
 
   .ice_category {
     margin-bottom: 90px;
@@ -1146,67 +1386,57 @@ MOBILE
 
   .ice_category_heading > p:last-child {
     font-size: 0.7rem;
-
     line-height: 1.9;
   }
 
-  /* Ice grid */
+  /* ICE GRID */
 
-  .ice_lounge,
-  .ice_afterbath,
-  .ice_season {
-    padding: 40px 15px;
+  .ice_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
   }
 
+  .ice_lounge .ice_grid,
+  .ice_privatebath .ice_grid,
+  .ice_season .ice_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ice_publicbath .ice_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  /* ICE CARD */
+
   .ice_card_text {
-    padding: 15px 13px 18px;
+    padding: 15px 12px 18px;
   }
 
   .ice_card_text h4 {
     margin-bottom: 7px;
 
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
   }
 
   .ice_card_text p {
-    font-size: 0.62rem;
-
+    font-size: 0.6rem;
     line-height: 1.7;
   }
 
-  /* Public bath */
+  /* SPECIAL BACKGROUND */
 
-  .ice_special {
-    display: flex;
-
-    flex-direction: column;
-
-    min-height: auto;
+  .ice_lounge,
+  .ice_privatebath,
+  .ice_publicbath,
+  .ice_season {
+    padding: 45px 15px;
   }
 
-  .ice_special_image {
-    height: 300px;
-  }
-
-  .ice_special_text {
-    padding: 40px 28px 45px;
-  }
-
-  .ice_special_text h3 {
-    font-size: 1.9rem;
-  }
-
-  .ice_special_text h4 {
-    font-size: 1rem;
-  }
-
-  .ice_special_text p:last-child {
-    font-size: 0.75rem;
-
-    line-height: 2.1;
-  }
-
-  /* Ice footer */
+  /* ICE FOOTER */
 
   .ice_footer {
     margin-top: 70px;
@@ -1223,101 +1453,7 @@ MOBILE
   }
 
   /* =======================================================
-  OMAMORI
-  ======================================================= */
-
-  .shop_omamori_feature {
-    display: flex;
-
-    flex-direction: column;
-
-    min-height: auto;
-  }
-
-  .shop_omamori_image {
-    height: 330px;
-  }
-
-  .shop_omamori_text {
-    padding: 45px 28px 50px;
-  }
-
-  .shop_omamori_text h3 {
-    margin-bottom: 25px;
-
-    font-size: 1.8rem;
-  }
-
-  .shop_omamori_text p {
-    font-size: 0.78rem;
-
-    line-height: 2.2;
-  }
-
-  /* =======================================================
-  GAME
-  ======================================================= */
-
-  .game_grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-  .game_card_text {
-    padding: 35px 28px 40px;
-  }
-
-  .game_card_text h3 {
-    font-size: 1.35rem;
-  }
-
-  .game_card_text p {
-    font-size: 0.75rem;
-
-    line-height: 2.1;
-  }
-
-  /* =======================================================
-  DRINK
-  ======================================================= */
-
-  .drink_grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-  .drink_card {
-    display: flex;
-
-    flex-direction: column;
-
-    min-height: auto;
-  }
-
-  .drink_image {
-    height: 330px;
-  }
-
-  .drink_text {
-    padding: 38px 28px 45px;
-  }
-
-  .drink_text h3 {
-    margin-bottom: 25px;
-
-    font-size: 1.4rem;
-  }
-
-  .drink_text p {
-    font-size: 0.72rem;
-
-    line-height: 2.1;
-  }
-
-  /* =======================================================
-  CLOSING
+     CLOSING
   ======================================================= */
 
   .shop_closing {
@@ -1337,13 +1473,12 @@ MOBILE
 
   .shop_closing_text p:not(.section_label) {
     font-size: 0.72rem;
-
     line-height: 2.1;
   }
 }
 
 /* =========================================================
-SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
 @media screen and (max-width: 500px) {
@@ -1360,126 +1495,134 @@ SMALL MOBILE
     font-size: 2.15rem;
   }
 
-  .shop_feature_text {
-    padding: 35px 22px 40px;
+  /* TAKE HOME */
+
+  .shop_product_text {
+    padding: 34px 22px 40px;
   }
 
-  /* =========================================================
-   ice
-========================================================= */
+  .shop_product_text h3 {
+    font-size: 1.55rem;
+  }
+
+  /* OMAMORI */
+
+  .shop_omamori_text {
+    padding: 35px 22px 42px;
+  }
+
+  /* GAME */
+
+  .game_info {
+    grid-template-columns: minmax(0, 1fr) 100px;
+
+    gap: 15px;
+
+    padding: 30px 18px 35px;
+  }
+
+  .game_text h3 {
+    font-size: 1.08rem;
+  }
+
+  .game_text p:not(.shop_item_label) {
+    font-size: 0.63rem;
+  }
+
+  .game_machine_image img {
+    max-height: 115px;
+  }
+
+  /* DRINK */
+
+  .drink_item {
+    grid-template-columns: 39% 61%;
+
+    min-height: 470px;
+  }
+
+  .drink_image {
+    min-height: 470px;
+  }
+
+  .drink_text {
+    padding: 28px 16px;
+  }
+
+  .drink_text .shop_item_label {
+    font-size: 0.48rem;
+  }
+
+  .drink_text h3 {
+    font-size: 1.05rem;
+  }
+
+  .drink_text p:not(.shop_item_label) {
+    font-size: 0.61rem;
+  }
+
+  .drink_text span {
+    font-size: 0.48rem;
+  }
+
+  /* ICE */
 
   .shop_ice_heading {
-    margin-bottom: 70px;
+    margin-bottom: 65px;
   }
 
   .shop_ice_heading h2 {
-    font-size: 2.4rem;
+    font-size: 2.15rem;
   }
 
   .shop_heading_description {
-    margin-top: 28px;
-    font-size: 0.78rem !important;
+    font-size: 0.7rem !important;
     line-height: 2.2 !important;
   }
 
-  /* -----------------------------------------
-     Category
-  ----------------------------------------- */
-
   .ice_category {
-    margin-bottom: 90px;
-  }
-
-  .ice_category_heading {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
   }
 
   .ice_category_heading h3 {
-    font-size: 1.45rem;
+    font-size: 1.3rem;
   }
-
-  .ice_category_heading h3 span {
-    display: block;
-    margin: 10px 0 0;
-    font-size: 0.6rem;
-  }
-
-  .ice_category_heading > p:last-child {
-    font-size: 0.7rem;
-    line-height: 1.9;
-  }
-
-  /* -----------------------------------------
-     Grid
-  ----------------------------------------- */
 
   .ice_grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
-
-  .ice_lounge .ice_grid,
-  .ice_privatebath .ice_grid,
-  .ice_season .ice_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .ice_publicbath .ice_grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  /* -----------------------------------------
-     Card
-  ----------------------------------------- */
 
   .ice_card_text {
-    padding: 16px 14px 20px;
+    padding: 13px 9px 16px;
   }
 
   .ice_card_text h4 {
-    margin-bottom: 7px;
-    font-size: 0.88rem;
-    letter-spacing: 0.07em;
+    font-size: 0.72rem;
   }
 
   .ice_card_text p {
-    font-size: 0.65rem;
-    line-height: 1.75;
+    font-size: 0.56rem;
   }
-
-  /* -----------------------------------------
-     Special category backgrounds
-  ----------------------------------------- */
 
   .ice_lounge,
   .ice_privatebath,
   .ice_publicbath,
   .ice_season {
-    padding: 55px 20px;
+    padding: 40px 12px;
   }
 
-  /* -----------------------------------------
-     Footer
-  ----------------------------------------- */
-
   .ice_footer {
-    margin-top: 80px;
-    padding-top: 50px;
+    margin-top: 65px;
+    padding-top: 45px;
   }
 
   .ice_footer h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
-  /* -----------------------------------------
-     その他
-  ----------------------------------------- */
+  /* CLOSING */
 
-  .shop_omamori_text,
-  .drink_text,
-  .game_card_text {
-    padding-left: 22px;
-    padding-right: 22px;
+  .shop_closing_text h2 {
+    font-size: 1.95rem;
   }
 }
