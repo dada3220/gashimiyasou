@@ -197,7 +197,7 @@ html {
   display: block;
 
   width: 100%;
-  height: 580px;
+  height: 100%;
 
   object-fit: cover;
 
@@ -316,7 +316,7 @@ html {
 
   gap: 35px;
 
-  margin-top: 65px;
+  margin: 65px 10px 0px;
 }
 
 .lounge_feature {
@@ -582,10 +582,6 @@ html {
   }
 
   .lounge_main_image img {
-    height: auto;
-
-    aspect-ratio: 16 / 9;
-
     object-fit: cover;
   }
 
@@ -729,10 +725,6 @@ html {
 
   .lounge_nav_list strong {
     font-size: 1.2rem;
-  }
-
-  .lounge_main_image img {
-    aspect-ratio: 4 / 3;
   }
 
   .lounge_header h3 {
