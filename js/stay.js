@@ -1,36 +1,26 @@
 "use strict";
 
-/*==========================
-Fade In
-==========================*/
+/*==================================
+  Stay Page
+==================================*/
+
+/*==================================
+  Elements
+==================================*/
+
+const body = document.body;
+const timeline = document.querySelector(".timeline");
+const progress = document.querySelector(".timeline_progress");
+const mv = document.querySelector(".stay_mv");
 
 const blocks = document.querySelectorAll(".time_block");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-  },
-);
-
-blocks.forEach((block) => {
-  observer.observe(block);
-});
-
-/*==========================
-Background
-==========================*/
-
-const body = document.body;
+/*==================================
+  Time Background
+==================================*/
 
 /*
-時間帯クラス削除
+  時間帯クラスをすべて削除
 */
 
 function resetTimeBackground() {
@@ -44,117 +34,207 @@ function resetTimeBackground() {
 }
 
 /*
-時間帯変更
+  時間帯クラスを設定
 */
 
-const bgObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+function setTimeBackground(theme) {
+  resetTimeBackground();
 
-      const theme = entry.target.dataset.theme;
+  if (!theme) return;
 
-      // 既存時間クラス削除
+  body.classList.add(`time-${theme}`);
+}
 
-      resetTimeBackground();
-
-      // 新しい時間クラス追加
-
-      body.classList.add("time-" + theme);
-    });
-  },
-  {
-    threshold: 0.55,
-  },
-);
-
-blocks.forEach((block) => {
-  bgObserver.observe(block);
-});
+/*==================================
+  Fade In
+==================================*/
 
 /*
-タイムライン外へ出たら
-共通背景へ戻す
+  タイムラインカードを表示
 */
 
-const timeline = document.querySelector(".timeline");
+if (blocks.length > 0) {
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
 
-const timelineObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        resetTimeBackground();
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  },
-);
+          // 一度表示したら監視を終了
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    },
+  );
+
+  blocks.forEach((block) => {
+    fadeObserver.observe(block);
+  });
+}
+
+/*==================================
+  Background Observer
+==================================*/
+
+/*
+  現在表示されている時間帯に合わせて
+  bodyの背景を変更
+*/
+
+if (blocks.length > 0) {
+  const bgObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const theme = entry.target.dataset.theme;
+
+        setTimeBackground(theme);
+      });
+    },
+    {
+      threshold: 0.55,
+    },
+  );
+
+  blocks.forEach((block) => {
+    bgObserver.observe(block);
+  });
+}
+
+/*==================================
+  Timeline Background Reset
+==================================*/
+
+/*
+  タイムラインから離れたら
+  通常の背景へ戻す
+*/
 
 if (timeline) {
+  const timelineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          resetTimeBackground();
+        }
+      });
+    },
+    {
+      threshold: 0.05,
+    },
+  );
+
   timelineObserver.observe(timeline);
 }
 
-/*==========================
-Current Time
-==========================*/
+/*==================================
+  Current Time
+==================================*/
 
-const timeObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const time = entry.target.querySelector(".time");
+/*
+  画面中央付近にある時間を強調
+*/
 
-      if (!time) return;
+if (blocks.length > 0) {
+  const timeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const time = entry.target.querySelector(".time");
 
-      if (entry.isIntersecting) {
-        time.classList.add("active");
-      } else {
-        time.classList.remove("active");
-      }
-    });
-  },
-  {
-    threshold: 0.5,
-  },
-);
+        if (!time) return;
 
-blocks.forEach((block) => {
-  timeObserver.observe(block);
-});
+        if (entry.isIntersecting) {
+          time.classList.add("active");
+        } else {
+          time.classList.remove("active");
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    },
+  );
 
-/*==========================
-Progress
-==========================*/
+  blocks.forEach((block) => {
+    timeObserver.observe(block);
+  });
+}
 
-const progress = document.querySelector(".timeline_progress");
+/*==================================
+  Timeline Progress
+==================================*/
 
-window.addEventListener("scroll", () => {
-  if (!progress) return;
-
-  const timeline = document.querySelector(".timeline");
-
-  if (!timeline) return;
+function updateTimelineProgress() {
+  if (!timeline || !progress) return;
 
   const rect = timeline.getBoundingClientRect();
 
   const total = timeline.offsetHeight;
 
-  const visible = Math.min(Math.max(-rect.top, 0), total);
+  /*
+    タイムライン上端が
+    画面上端よりどれだけ上へ移動したか
+  */
 
-  progress.style.height = visible + "px";
-});
+  const passed = Math.min(Math.max(-rect.top, 0), total);
 
-/*==========================
-Parallax
-==========================*/
+  progress.style.height = `${passed}px`;
+}
 
-const mv = document.querySelector(".stay_mv");
+/*==================================
+  MV Parallax
+==================================*/
 
-window.addEventListener("scroll", () => {
+let ticking = false;
+
+function updateParallax() {
   if (!mv) return;
 
   const y = window.scrollY;
 
   mv.style.backgroundPositionY = `${y * 0.35}px`;
-});
+
+  ticking = false;
+}
+
+/*==================================
+  Scroll
+==================================*/
+
+window.addEventListener(
+  "scroll",
+  () => {
+    /*
+      1回のスクロールイベントで
+      ProgressとParallaxをまとめて更新
+    */
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateTimelineProgress();
+        updateParallax();
+      });
+
+      ticking = true;
+    }
+  },
+  {
+    passive: true,
+  },
+);
+
+/*==================================
+  Initial
+==================================*/
+
+/*
+  ページ読み込み時にも
+  Progressを正しく計算
+*/
+
+updateTimelineProgress();
+updateParallax();

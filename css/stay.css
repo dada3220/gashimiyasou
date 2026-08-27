@@ -1,46 +1,49 @@
 @charset "UTF-8";
 
 /*==================================
-Stay
+  Stay
+==================================*/
+
+/*==================================
+  変数
 ==================================*/
 
 :root {
   --line: #d8c7a3;
+  --gold: #b89b5e;
+  --dark: #28231f;
 
-  --day: #f7f2e7;
-  --evening: #f3e6d5;
-  --night: #1d2232;
-  --midnight: #111827;
-  --morning: #eef6fa;
+  --spring: #d9b7b7;
+  --summer: #8fb6b0;
+  --autumn: #b58c65;
+  --winter: #9eabbc;
 }
+
+/*==================================
+  共通
+==================================*/
 
 .stay_page {
   background: transparent;
-
   color: #fff;
 }
 
-.stay img {
-  width: 100%;
-  display: block;
-}
-
-.section {
+.stay_page .section {
   padding: 120px 0;
 }
 
-.inner {
+.stay_page .inner {
   width: min(1100px, calc(100% - 40px));
   margin-inline: auto;
 }
+
 /*==================================
-MV
+  MV
 ==================================*/
 
 .stay_mv {
   height: 100vh;
   min-height: 700px;
-
   position: relative;
 
   display: flex;
@@ -48,13 +51,11 @@ MV
   justify-content: center;
 
   overflow: hidden;
-
   color: #fff;
 }
 
 .stay_mv::before {
   content: "";
-
   position: absolute;
   inset: 0;
 }
@@ -63,40 +64,32 @@ MV
   position: relative;
   z-index: 2;
 
-  text-align: center;
-
   width: min(900px, 90%);
+  text-align: center;
 }
 
 .stay_sub {
   color: #fff;
-
   letter-spacing: 0.35em;
-
   font-size: 0.9rem;
-
   margin-bottom: 20px;
-
   opacity: 0.9;
 }
 
 .stay_mv h1 {
   font-size: clamp(2.5rem, 6vw, 5rem);
-
   line-height: 1.35;
-
   font-weight: 500;
-
   margin-bottom: 35px;
 }
 
-.stay_mv p {
+.stay_mv_inner > p:last-child {
   font-size: 1.1rem;
-
   line-height: 2.2;
 }
+
 /*==================================
-イントロ
+  INTRO
 ==================================*/
 
 .stay_intro {
@@ -105,19 +98,14 @@ MV
 
 .stay_intro .inner {
   max-width: 800px;
-
   text-align: center;
 }
 
 .stay_intro h2 {
   font-size: 2.2rem;
-
   color: var(--dark);
-
   line-height: 1.6;
-
   margin-bottom: 40px;
-
   position: relative;
 }
 
@@ -130,21 +118,20 @@ MV
   background: var(--gold);
 
   display: block;
-
   margin: 30px auto 0;
 }
 
 .stay_intro p {
   line-height: 2.4;
-
   font-size: 1.05rem;
 }
 
 /*==================================
-背景
+  時間帯による背景
 ==================================*/
+
 body {
-  transition: background 0.8s;
+  transition: background 0.8s ease;
 }
 
 body.time-day {
@@ -166,89 +153,87 @@ body.time-midnight {
 body.time-morning {
   background: #526878;
 }
+
 /*==================================
-タイムライン
+  タイムライン
 ==================================*/
-.time {
-  transition: 0.4s;
-}
-
-.time.active {
-  transform: scale(1.25);
-
-  color: #b89b5e;
-}
 
 .timeline {
   position: relative;
 
   width: min(850px, calc(100% - 40px));
 
-  margin: 120px auto;
-
+  margin: 120px auto 0;
   padding-bottom: 120px;
 }
 
-.timeline_line {
-  position: absolute;
-
-  left: 120px;
-
-  top: 0;
-
-  bottom: 0;
-
-  width: 2px;
-
-  background: var(--line);
-}
-
+.timeline_line,
 .timeline_progress {
   position: absolute;
 
   left: 120px;
-
   top: 0;
 
   width: 2px;
+}
 
+.timeline_line {
+  bottom: 0;
+  background: var(--line);
+}
+
+.timeline_progress {
   height: 0;
+  background: var(--gold);
 
-  background: #b89b5e;
-
-  transition: 0.15s;
+  transition: height 0.15s ease;
 }
 
 /*==================================
-各ブロック
+  タイムライン各ブロック
 ==================================*/
 
 .time_block {
   position: relative;
 
   display: grid;
-
   grid-template-columns: 120px 1fr;
 
   gap: 60px;
-
   margin-bottom: 120px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.time_block.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .time {
   position: sticky;
-
   top: 120px;
 
   font-size: 2rem;
-
   font-weight: 700;
 
   color: var(--gold);
-
   text-align: center;
 
   z-index: 3;
+
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease;
+}
+
+.time.active {
+  transform: scale(1.25);
+  color: #d1b474;
 }
 
 .time::after {
@@ -262,21 +247,20 @@ body.time-morning {
   background: var(--gold);
 
   display: block;
-
   margin: 20px auto 0;
 
   box-shadow: 0 0 0 8px #fff;
 }
 
 /*==================================
-コンテンツカード
+  タイムラインカード
 ==================================*/
 
 .time_content {
+  position: relative;
+
   display: grid;
-
   grid-template-columns: 220px 1fr;
-
   align-items: center;
 
   gap: 35px;
@@ -295,9 +279,9 @@ body.time-morning {
 
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 
-  position: relative;
-
-  transition: 0.5s;
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
 }
 
 .time_content::before {
@@ -306,49 +290,51 @@ body.time-morning {
   position: absolute;
 
   left: 0;
-
   top: 0;
 
   width: 5px;
-
   height: 100%;
 
   background: var(--gold);
 }
 
-/* 画像 */
+/*==================================
+  タイムライン画像
+==================================*/
 
-.time_content img {
+.time_content > img {
   width: 220px;
-
   height: 140px;
 
   object-fit: cover;
 
   border-radius: 15px;
 
-  transition: 1s;
+  transition: transform 1s ease;
 }
 
-/* hover */
+/*==================================
+  タイムライン hover
+==================================*/
 
 .time_content:hover {
   transform: translateY(-8px);
 }
 
-.time_content:hover img {
+.time_content:hover > img {
   transform: scale(1.08);
 }
 
-/* 文章 */
+/*==================================
+  タイムライン文章
+==================================*/
 
-.time_content div {
+.time_content > div {
   padding: 10px;
 }
 
 .time_content h3 {
   font-size: 1.6rem;
-
   line-height: 1.5;
 
   color: #fff;
@@ -365,12 +351,8 @@ body.time-morning {
 }
 
 /*==================================
-Time Zone
+  時間帯別カード
 ==================================*/
-
-.time_block {
-  transition: 0.6s;
-}
 
 body.time-night .time_content,
 body.time-midnight .time_content {
@@ -382,14 +364,355 @@ body.time-morning .time_content {
 }
 
 /*==================================
-スマホ
+  季節の過ごし方
 ==================================*/
+
+.season {
+  position: relative;
+
+  padding-top: 160px;
+  padding-bottom: 160px;
+
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/*==================================
+  セクション見出し
+==================================*/
+
+.season_heading {
+  max-width: 760px;
+
+  margin: 0 auto 120px;
+
+  text-align: center;
+}
+
+.season_heading .section_sub {
+  color: var(--gold);
+
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+
+  margin-bottom: 20px;
+}
+
+.season_heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  font-weight: 500;
+
+  line-height: 1.6;
+
+  margin-bottom: 35px;
+}
+
+.season_lead {
+  font-size: 0.95rem;
+
+  line-height: 2.3;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/*==================================
+  季節グループ
+==================================*/
+
+.season_group {
+  margin-bottom: 150px;
+}
+
+.season_group:last-child {
+  margin-bottom: 0;
+}
+
+/*==================================
+  季節見出し
+==================================*/
+
+.season_group_head {
+  display: grid;
+
+  grid-template-columns: 90px 1fr;
+
+  gap: 30px;
+
+  align-items: start;
+
+  margin-bottom: 45px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.season_number {
+  font-family: serif;
+
+  font-size: 1rem;
+
+  letter-spacing: 0.15em;
+
+  color: var(--gold);
+
+  padding-top: 10px;
+}
+
+.season_en {
+  font-size: 0.75rem;
+
+  letter-spacing: 0.35em;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  margin-bottom: 8px;
+}
+
+.season_group_head h3 {
+  font-size: 2.4rem;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  margin-bottom: 10px;
+}
+
+.season_group_head > div > p:last-child {
+  font-size: 0.9rem;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  line-height: 1.8;
+}
+
+/*==================================
+  季節イベント一覧
+==================================*/
+
+.season_items {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+/*==================================
+  季節イベントカード
+==================================*/
+
+.season_item {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.season_item:hover {
+  transform: translateY(-7px);
+
+  background: rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+/*==================================
+  季節イベント画像
+==================================*/
+
+.season_item_image {
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+}
+
+.season_item_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.season_item:hover .season_item_image img {
+  transform: scale(1.06);
+}
+
+/*==================================
+  季節イベント文章
+==================================*/
+
+.season_item_text {
+  padding: 25px 25px 30px;
+}
+
+.season_item_text > span {
+  display: block;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.25em;
+
+  color: var(--gold);
+
+  margin-bottom: 10px;
+}
+
+.season_item_text h4 {
+  font-size: 1.35rem;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  margin-bottom: 14px;
+}
+
+.season_item_text p {
+  font-size: 0.88rem;
+
+  line-height: 2;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/*==================================
+  季節ごとのアクセント
+==================================*/
+
+.season_spring .season_group_head {
+  border-bottom-color: rgba(217, 183, 183, 0.35);
+}
+
+.season_spring .season_number,
+.season_spring .season_item_text > span {
+  color: var(--spring);
+}
+
+.season_summer .season_group_head {
+  border-bottom-color: rgba(143, 182, 176, 0.35);
+}
+
+.season_summer .season_number,
+.season_summer .season_item_text > span {
+  color: var(--summer);
+}
+
+.season_autumn .season_group_head {
+  border-bottom-color: rgba(181, 140, 101, 0.35);
+}
+
+.season_autumn .season_number,
+.season_autumn .season_item_text > span {
+  color: var(--autumn);
+}
+
+.season_winter .season_group_head {
+  border-bottom-color: rgba(158, 171, 188, 0.35);
+}
+
+.season_winter .season_number,
+.season_winter .season_item_text > span {
+  color: var(--winter);
+}
+
+/*==================================
+  予約ボタン前の余白調整
+==================================*/
+
+.season + .yoyaku_foot {
+  margin-top: 0;
+}
+
+/*==================================
+  スマホ
+==================================*/
+
 @media (max-width: 768px) {
-  .timeline {
-    margin: 80px auto;
+  .stay_page .section {
+    padding: 80px 0;
   }
 
-  .timeline_line {
+  .stay_page .inner {
+    width: min(100% - 30px, 600px);
+  }
+
+  /*--------------------------------
+    MV
+  --------------------------------*/
+
+  .stay_mv {
+    min-height: 600px;
+  }
+
+  .stay_sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+  }
+
+  .stay_mv h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+  }
+
+  .stay_mv_inner > p:last-child {
+    font-size: 0.9rem;
+
+    line-height: 2;
+  }
+
+  /*--------------------------------
+    INTRO
+  --------------------------------*/
+
+  .stay_intro h2 {
+    font-size: 1.7rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+  }
+
+  .stay_intro p {
+    font-size: 0.9rem;
+
+    line-height: 2.2;
+  }
+
+  /*--------------------------------
+    Timeline
+  --------------------------------*/
+
+  .timeline {
+    width: calc(100% - 30px);
+
+    margin: 80px auto 0;
+
+    padding-bottom: 70px;
+  }
+
+  .timeline_line,
+  .timeline_progress {
     left: 25px;
   }
 
@@ -402,47 +725,267 @@ body.time-morning .time_content {
   }
 
   .time {
-    font-size: 1rem;
-
     top: 80px;
+
+    font-size: 1rem;
   }
 
   .time::after {
     width: 14px;
     height: 14px;
+
+    margin-top: 15px;
+
+    box-shadow: 0 0 0 5px #fff;
   }
+
+  .time.active {
+    transform: scale(1.15);
+  }
+
+  /*--------------------------------
+    Timeline card
+  --------------------------------*/
 
   .time_content {
     display: block;
 
-    padding: 20px 35px;
+    padding: 15px;
+
+    border-radius: 15px;
   }
 
-  .time_content img {
+  .time_content > img {
     width: 100%;
-
     height: auto;
+
+    aspect-ratio: 16 / 10;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+  }
+
+  .time_content > div {
+    padding: 5px 5px 10px;
+  }
+
+  .time_content h3 {
+    font-size: 1.15rem;
 
     margin-bottom: 10px;
   }
 
-  .time_content div {
-    padding: 0;
+  .time_content p {
+    font-size: 0.8rem;
+
+    line-height: 2;
+  }
+
+  .time_content:hover {
+    transform: none;
+  }
+
+  .time_content:hover > img {
+    transform: none;
+  }
+
+  /*--------------------------------
+    Season
+  --------------------------------*/
+
+  .season {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .season_heading {
+    margin-bottom: 80px;
+  }
+
+  .season_heading .section_sub {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.25em;
+  }
+
+  .season_heading h2 {
+    font-size: 2rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+  }
+
+  .season_lead {
+    font-size: 0.85rem;
+
+    line-height: 2.2;
+
+    text-align: left;
+  }
+
+  /*--------------------------------
+    Season group
+  --------------------------------*/
+
+  .season_group {
+    margin-bottom: 90px;
+  }
+
+  .season_group_head {
+    grid-template-columns: 50px 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+  }
+
+  .season_number {
+    font-size: 0.8rem;
+
+    padding-top: 7px;
+  }
+
+  .season_en {
+    font-size: 0.6rem;
+
+    letter-spacing: 0.25em;
+  }
+
+  .season_group_head h3 {
+    font-size: 1.8rem;
+
+    margin-bottom: 7px;
+  }
+
+  .season_group_head > div > p:last-child {
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+  }
+
+  /*--------------------------------
+    Season items
+  --------------------------------*/
+
+  .season_items {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .season_item {
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    border-radius: 12px;
+  }
+
+  .season_item_image {
+    height: 100%;
+
+    aspect-ratio: auto;
+  }
+
+  .season_item_image img {
+    height: 100%;
+  }
+
+  .season_item_text {
+    padding: 18px 18px 20px;
+  }
+
+  .season_item_text > span {
+    font-size: 0.55rem;
+
+    margin-bottom: 7px;
+  }
+
+  .season_item_text h4 {
+    font-size: 1.05rem;
+
+    margin-bottom: 8px;
+  }
+
+  .season_item_text p {
+    font-size: 0.72rem;
+
+    line-height: 1.9;
+  }
+}
+
+/*==================================
+  小さいスマホ
+==================================*/
+
+@media (max-width: 480px) {
+  .stay_page .inner {
+    width: calc(100% - 24px);
+  }
+
+  .timeline {
+    width: calc(100% - 24px);
+  }
+
+  .time_block {
+    grid-template-columns: 42px 1fr;
+
+    gap: 15px;
+  }
+
+  .timeline_line,
+  .timeline_progress {
+    left: 21px;
+  }
+
+  .time {
+    font-size: 0.85rem;
+  }
+
+  .time::after {
+    width: 12px;
+    height: 12px;
+
+    box-shadow: 0 0 0 4px #fff;
+  }
+
+  .time_content {
+    padding: 12px;
   }
 
   .time_content h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .time_content p {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
 
-  .time_block:nth-child(even) .time_content {
-    margin-left: 0;
+  /*--------------------------------
+    Season
+  --------------------------------*/
+
+  .season_heading h2 {
+    font-size: 1.8rem;
   }
 
-  .time_block:nth-child(odd) .time_content {
-    margin-right: 0;
+  .season_item {
+    grid-template-columns: 35% 65%;
+  }
+
+  .season_item_text {
+    padding: 15px;
+  }
+
+  .season_item_text h4 {
+    font-size: 0.95rem;
+  }
+
+  .season_item_text p {
+    font-size: 0.68rem;
   }
 }
