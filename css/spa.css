@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*==================================
-共通
+  共通
 ==================================*/
 
 .section_title {
@@ -34,7 +34,7 @@
 }
 
 /*==================================
-大浴場
+  大浴場
 ==================================*/
 
 .spa_select {
@@ -42,65 +42,51 @@
 }
 
 /*==================
-カード一覧
+  カード一覧
 ==================*/
 
 .spa_select_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
-
   margin: 50px 5px;
 }
 
 .spa_card {
   cursor: pointer;
-
   border-radius: 18px;
-
   overflow: hidden;
-
   background: #222;
-
   transition: 0.35s;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
 .spa_card:hover {
   transform: translateY(-8px);
-
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
 }
 
 .spa_card img {
   width: 100%;
   height: 320px;
-
   object-fit: cover;
-
   display: block;
 }
 
 .spa_card h3 {
   padding: 18px;
-
   text-align: center;
-
   font-size: 1.5rem;
-
   font-weight: normal;
-
   letter-spacing: 0.12em;
 }
 
 /*==================
-選択中
+  選択中
 ==================*/
 
 .spa_card.active {
   border: 2px solid #b9975b;
-
   box-shadow: 0 0 25px rgba(185, 151, 91, 0.35);
 }
 
@@ -109,31 +95,25 @@
 }
 
 /*==================================
-詳細表示
+  大浴場 詳細表示
 ==================================*/
 
 #publicSpaContent {
-  margin: 70px 0px;
+  margin: 70px 0;
 }
 
 .public_detail {
   display: grid;
-
   grid-template-columns: 1.2fr 0.8fr;
-
   gap: 50px;
-
   align-items: center;
 }
 
 .public_image img {
   width: 100%;
-
   border-radius: 18px;
-
   display: block;
-
-  padding: 50px 5px 0px;
+  padding: 50px 5px 0;
 }
 
 .public_info {
@@ -142,22 +122,18 @@
 
 .public_info h2 {
   font-size: 2rem;
-
   font-weight: normal;
-
   margin-bottom: 25px;
-
   letter-spacing: 0.12em;
 }
 
 .public_info p {
   line-height: 2.3;
-
   color: #f1f1f1;
 }
 
 /*==================
-泉質など
+  泉質など
 ==================*/
 
 .public_spec {
@@ -166,32 +142,25 @@
 
 .public_spec table {
   width: 100%;
-
   border-collapse: collapse;
 }
 
 .public_spec th {
   width: 110px;
-
   text-align: left;
-
   font-weight: normal;
-
   color: #d8c48d;
-
   padding: 12px 0;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .public_spec td {
   padding: 12px 0;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /*==================
-サブ画像
+  サブ画像
 ==================*/
 
 .public_gallery {
@@ -216,28 +185,24 @@
 }
 
 /*==================================
-注意書き
+  注意書き
 ==================================*/
 
 .spa_warning {
-  margin: 90px 0px 500px;
-
+  margin: 90px 0 180px;
   padding: 30px 35px;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   background: #1a1a1a;
-
   border-radius: 15px;
 }
 
 .spa_warning p {
   line-height: 2.2;
-
   color: #ddd;
 }
+
 /*==================================
-貸切風呂
+  貸切風呂
 ==================================*/
 
 .private_area {
@@ -259,7 +224,7 @@
 }
 
 /*==================
-一覧
+  一覧
 ==================*/
 
 .private_grid {
@@ -271,9 +236,7 @@
 .private_thumb {
   cursor: pointer;
   text-align: center;
-
   padding: 1px;
-
   transition: 0.3s;
 }
 
@@ -281,35 +244,26 @@
   width: 100%;
   height: 50%;
   aspect-ratio: 1 / 1;
-
   object-fit: cover;
-
   border-radius: 12px;
-
   display: block;
-
   transition: 0.35s;
-
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .private_thumb span {
   display: block;
-
   margin-top: 12px;
-
   font-size: 0.95rem;
-
   letter-spacing: 0.12em;
 }
 
 /*==================
-ホバー
+  ホバー
 ==================*/
 
 .private_thumb:hover img {
   transform: translateY(-6px);
-
   box-shadow: 0 15px 28px rgba(0, 0, 0, 0.5);
 }
 
@@ -318,8 +272,9 @@
 }
 
 /*==================
-選択中
+  選択中
 ==================*/
+
 .private_thumb.active {
   background: #2b2b2b;
   border: 2px solid #b9975b;
@@ -327,7 +282,6 @@
 
 .private_thumb.active img {
   border: 2px solid #b9975b;
-
   box-shadow: 0 0 20px rgba(185, 151, 91, 0.45);
 }
 
@@ -336,57 +290,48 @@
 }
 
 /*==================================
-詳細表示
+  貸切風呂 詳細表示
 ==================================*/
 
 #privateIndoorContent {
-  margin-bottom: 500px;
+  margin-bottom: 180px;
 }
 
 .private_detail {
   display: grid;
-
   grid-template-columns: 1.1fr 0.9fr;
-
   gap: 50px;
-
   align-items: center;
 }
 
 /*==================
-画像
+  画像
 ==================*/
 
 .private_image img {
   width: 100%;
-
   display: block;
-
   border-radius: 18px;
 }
 
 /*==================
-説明
+  説明
 ==================*/
 
 .private_info h2 {
   font-size: 2rem;
-
   font-weight: normal;
-
   margin-bottom: 25px;
-
   letter-spacing: 0.15em;
 }
 
 .private_info p {
   line-height: 2.2;
-
   color: #efefef;
 }
 
 /*==================
-情報表
+  情報表
 ==================*/
 
 .private_spec {
@@ -395,87 +340,65 @@
 
 .private_spec table {
   width: 100%;
-
   border-collapse: collapse;
 }
 
 .private_spec th {
   width: 120px;
-
   padding: 12px 0;
-
   text-align: left;
-
   font-weight: normal;
-
   color: #d8c48d;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .private_spec td {
   padding: 12px 0;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /*==================
-サブ画像
+  サブ画像
 ==================*/
 
 .private_gallery {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 15px;
-
   margin-top: 40px;
 }
 
 .private_gallery img {
   width: 100%;
-
   height: 160px;
-
   object-fit: cover;
-
   border-radius: 12px;
-
   transition: 0.3s;
 }
 
 .private_gallery img:hover {
   opacity: 0.85;
-
   transform: scale(1.04);
 }
 
 /*==================
-泉質バッジ
+  泉質バッジ
 ==================*/
 
 .private_badge {
   display: inline-block;
-
   margin-bottom: 20px;
-
   padding: 8px 18px;
-
   border-radius: 30px;
-
   background: #2a2a2a;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   color: #d8c48d;
-
   font-size: 0.9rem;
-
   letter-spacing: 0.1em;
 }
+
 /*==================================
-湯巡りスタンプラリー
+  湯巡りスタンプラリー
 ==================================*/
 
 .stamp {
@@ -484,65 +407,45 @@
 
 .stamp_wrap {
   margin-top: 50px;
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 60px;
-
   align-items: center;
-
   background: #1b1b1b;
-
   border-radius: 20px;
-
   padding: 50px;
 }
 
 .stamp_img img {
   width: 100%;
-
   display: block;
-
   border-radius: 16px;
 }
 
 .stamp_text h3 {
   font-size: 1.8rem;
-
   font-weight: normal;
-
   letter-spacing: 0.12em;
-
   margin-bottom: 30px;
 }
 
 .stamp_text p {
   line-height: 2.3;
-
   color: #efefef;
 }
 
 .stamp_present {
   margin-top: 35px;
-
   padding: 25px;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 15px;
-
   background: #242424;
 }
 
 .stamp_present h4 {
   font-size: 1.1rem;
-
   font-weight: normal;
-
   color: #d8c48d;
-
   margin-bottom: 15px;
 }
 
@@ -555,12 +458,311 @@
 }
 
 /*==================================
-予約ボタン
+  源泉と湯畑
+==================================*/
+
+.source_area {
+  margin-top: 160px;
+}
+
+.source_wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+/*==================
+  源泉画像
+==================*/
+
+.source_gallery {
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr;
+  gap: 15px;
+}
+
+.source_gallery a {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.source_gallery img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.source_gallery a:hover img {
+  transform: scale(1.04);
+}
+
+.source_gallery .source_sub img {
+  height: 500px;
+}
+
+/*==================
+  源泉文章
+==================*/
+
+.source_text {
+  padding: 10px;
+}
+
+.source_text h3 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+}
+
+.source_text p {
+  margin-bottom: 25px;
+  color: #efefef;
+  line-height: 2.3;
+}
+
+/*==================
+  温泉卵
+==================*/
+
+.source_egg {
+  margin-top: 35px;
+  padding: 25px;
+  border-left: 2px solid #b9975b;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.source_egg span {
+  display: block;
+  margin-bottom: 10px;
+  color: #d8c48d;
+  letter-spacing: 0.15em;
+}
+
+.source_egg p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+/*==================================
+  温泉神社
+==================================*/
+
+.onsen_shrine {
+  margin-top: 180px;
+}
+
+/*==================
+  本殿＋説明
+==================*/
+
+.shrine_wrap {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.shrine_img {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.shrine_img img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.shrine_img:hover img {
+  transform: scale(1.03);
+}
+
+.shrine_text {
+  padding: 10px;
+}
+
+.shrine_text h3 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+}
+
+.shrine_text p {
+  margin-bottom: 25px;
+  color: #efefef;
+  line-height: 2.3;
+}
+
+/*==================
+  摂社・無人授与所
+==================*/
+
+.shrine_gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.shrine_gallery a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.shrine_gallery img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.shrine_gallery a:hover img {
+  transform: scale(1.04);
+}
+
+.shrine_gallery span {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/*==================================
+  御守り
+==================================*/
+
+.shrine_omamori {
+  margin-top: 100px;
+  padding: 70px 50px;
+  background: #171717;
+  border-radius: 20px;
+}
+
+.shrine_omamori_title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.shrine_omamori_title h3 {
+  font-size: 1.7rem;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+}
+
+.shrine_omamori_title p {
+  margin-top: 8px;
+  color: #cfcfcf;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+}
+
+/*==================
+  御守り一覧
+==================*/
+
+.omamori_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.omamori_item {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.35s ease;
+}
+
+.omamori_item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  transition: 0.35s ease;
+}
+
+.omamori_item:hover img {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.omamori_item span {
+  display: block;
+  color: #d8c48d;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+}
+
+.omamori_item small {
+  display: block;
+  margin-top: 6px;
+  color: #ccc;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/*==================
+  御守りリンク
+==================*/
+
+.shrine_link {
+  margin: 60px auto 0;
+  max-width: 500px;
+}
+
+.shrine_link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 22px 30px;
+  border: 1px solid rgba(185, 151, 91, 0.5);
+  border-radius: 50px;
+  color: #d8c48d;
+  text-decoration: none;
+  transition: 0.35s ease;
+}
+
+.shrine_link a:hover {
+  background: #b9975b;
+  color: #111;
+  transform: translateY(-4px);
+}
+
+.shrine_link span {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+}
+
+.shrine_link small {
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+}
+
+/*==================================
+  予約ボタン
 ==================================*/
 
 .yoyaku_foot {
-  margin-top: 80px;
-
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -573,56 +775,74 @@
 }
 
 /*==================================
-フェードアップ
+  フェードアップ
 ==================================*/
 
 .fadeUp {
   opacity: 1 !important;
-
   transform: translateY(0) !important;
 }
 
 .spa_select,
 .private_area,
-.stamp {
+.stamp,
+.source_area,
+.onsen_shrine {
   opacity: 0;
-
   transform: translateY(40px);
-
   transition:
     opacity 0.9s ease,
     transform 0.9s ease;
 }
 
 /*==================================
-レスポンシブ
+  レスポンシブ
 ==================================*/
 
 @media (max-width: 900px) {
-  .public_detail {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
+  .public_detail,
   .private_detail {
     grid-template-columns: 1fr;
-
     gap: 35px;
   }
 
   .stamp_wrap {
     grid-template-columns: 1fr;
   }
+
+  .source_wrap,
+  .shrine_wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .shrine_wrap .shrine_text {
+    order: 1;
+  }
+
+  .shrine_wrap .shrine_img {
+    order: 2;
+  }
+
+  .source_gallery img,
+  .source_gallery .source_sub img {
+    height: 420px;
+  }
+
+  .omamori_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 
-/* =========================
-   スマホ
-========================= */
+/*==================================
+  スマホ
+==================================*/
+
 @media (max-width: 768px) {
   /*==================
-共通
-==================*/
+    共通
+  ==================*/
 
   .section_title {
     margin-bottom: 40px;
@@ -634,19 +854,17 @@
 
   .spa_text {
     margin: 30px auto;
-
     padding: 0 10px;
   }
 
   .spa_text p {
     font-size: 0.95rem;
-
     line-height: 2;
   }
 
   /*==================
-大浴場
-==================*/
+    大浴場
+  ==================*/
 
   .spa_select {
     margin-top: 50px;
@@ -654,7 +872,6 @@
 
   .spa_select_grid {
     grid-template-columns: 1fr;
-
     gap: 20px;
   }
 
@@ -664,7 +881,6 @@
 
   .spa_card h3 {
     font-size: 1.3rem;
-
     padding: 14px;
   }
 
@@ -672,16 +888,7 @@
     font-size: 1.6rem;
   }
 
-  .public_thumb {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .public_thumb img {
-    height: 120px;
-  }
-
   .public_gallery {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -691,8 +898,8 @@
   }
 
   /*==================
-貸切風呂
-==================*/
+    貸切風呂
+  ==================*/
 
   .private_area {
     margin-top: 80px;
@@ -700,19 +907,16 @@
 
   .private_title {
     font-size: 1.4rem;
-
     margin: 60px 0 25px;
   }
 
   .private_grid {
     grid-template-columns: repeat(6, 1fr);
-
     gap: 1px;
   }
 
   .private_thumb span {
     font-size: 0.8rem;
-
     margin-top: 8px;
   }
 
@@ -729,24 +933,22 @@
   }
 
   /*==================
-注意書き
-==================*/
+    注意書き
+  ==================*/
 
   .spa_warning {
     padding: 20px;
-
-    margin: 90px 0px 200px;
+    margin: 90px 0 120px;
   }
 
   .spa_warning p {
     font-size: 0.9rem;
-
     line-height: 1.9;
   }
 
   /*==================
-スタンプ
-==================*/
+    スタンプ
+  ==================*/
 
   .stamp {
     margin-top: 90px;
@@ -754,7 +956,6 @@
 
   .stamp_wrap {
     padding: 25px;
-
     gap: 30px;
   }
 
@@ -764,5 +965,151 @@
 
   .stamp_present {
     padding: 20px;
+  }
+
+  /*==================
+    源泉と湯畑
+  ==================*/
+
+  .source_area {
+    margin-top: 100px;
+  }
+
+  .source_wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .source_gallery {
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 10px;
+  }
+
+  .source_gallery img,
+  .source_gallery .source_sub img {
+    height: 280px;
+  }
+
+  .source_text {
+    padding: 0 10px;
+  }
+
+  .source_text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .source_text p {
+    font-size: 0.95rem;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  .source_egg {
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  /*==================
+    温泉神社
+  ==================*/
+
+  .onsen_shrine {
+    margin-top: 110px;
+  }
+
+  .shrine_wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .shrine_text {
+    padding: 0 10px;
+  }
+
+  .shrine_text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .shrine_text p {
+    font-size: 0.95rem;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  /*==================
+    摂社・無人授与所
+  ==================*/
+
+  .shrine_gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 40px;
+  }
+
+  .shrine_gallery img {
+    height: 230px;
+  }
+
+  /*==================
+    御守り
+  ==================*/
+
+  .shrine_omamori {
+    margin-top: 60px;
+    padding: 40px 20px;
+  }
+
+  .shrine_omamori_title {
+    margin-bottom: 35px;
+  }
+
+  .shrine_omamori_title h3 {
+    font-size: 1.4rem;
+  }
+
+  .omamori_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+  }
+
+  .omamori_item span {
+    font-size: 0.9rem;
+  }
+
+  .omamori_item small {
+    font-size: 0.7rem;
+  }
+
+  /*==================
+    御守りリンク
+  ==================*/
+
+  .shrine_link {
+    margin: 45px 10px 0;
+  }
+
+  .shrine_link a {
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  .shrine_link span {
+    font-size: 0.9rem;
+  }
+
+  .shrine_link small {
+    font-size: 0.65rem;
+  }
+
+  /*==================
+    予約
+  ==================*/
+
+  .yoyaku_foot {
+    margin-top: 80px;
   }
 }
