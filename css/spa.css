@@ -242,7 +242,6 @@
 
 .private_thumb img {
   width: 100%;
-  height: 50%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 12px;
@@ -465,7 +464,11 @@
   margin-top: 160px;
 }
 
-.source_wrap {
+/*==================
+  源泉メインレイアウト
+==================*/
+
+.source_intro {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 70px;
@@ -474,7 +477,7 @@
 }
 
 /*==================
-  源泉画像
+  源泉画像ギャラリー
 ==================*/
 
 .source_gallery {
@@ -494,15 +497,11 @@
   height: 500px;
   object-fit: cover;
   display: block;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .source_gallery a:hover img {
   transform: scale(1.04);
-}
-
-.source_gallery .source_sub img {
-  height: 500px;
 }
 
 /*==================
@@ -562,7 +561,7 @@
   本殿＋説明
 ==================*/
 
-.shrine_wrap {
+.shrine_main {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
@@ -570,70 +569,82 @@
   margin-top: 60px;
 }
 
-.shrine_img {
+/*==================
+  本殿画像
+==================*/
+
+.shrine_main_image {
   overflow: hidden;
   border-radius: 18px;
 }
 
-.shrine_img img {
+.shrine_main_image a {
+  display: block;
+}
+
+.shrine_main_image img {
   width: 100%;
   display: block;
   border-radius: 18px;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
-.shrine_img:hover img {
+.shrine_main_image a:hover img {
   transform: scale(1.03);
 }
 
-.shrine_text {
+/*==================
+  本殿説明
+==================*/
+
+.shrine_main_text {
   padding: 10px;
 }
 
-.shrine_text h3 {
+.shrine_main_text h3 {
   margin-bottom: 30px;
   font-size: 1.8rem;
   font-weight: normal;
   letter-spacing: 0.12em;
 }
 
-.shrine_text p {
+.shrine_main_text p {
   margin-bottom: 25px;
   color: #efefef;
   line-height: 2.3;
 }
 
-/*==================
+/*==================================
   摂社・無人授与所
-==================*/
+==================================*/
 
-.shrine_gallery {
+.shrine_sub_gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
-.shrine_gallery a {
+.shrine_sub_gallery a {
   position: relative;
   display: block;
   overflow: hidden;
   border-radius: 16px;
 }
 
-.shrine_gallery img {
+.shrine_sub_gallery img {
   width: 100%;
   height: 320px;
   object-fit: cover;
   display: block;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
-.shrine_gallery a:hover img {
+.shrine_sub_gallery a:hover img {
   transform: scale(1.04);
 }
 
-.shrine_gallery span {
+.shrine_sub_gallery span {
   position: absolute;
   left: 20px;
   bottom: 18px;
@@ -653,6 +664,10 @@
   background: #171717;
   border-radius: 20px;
 }
+
+/*==================
+  タイトル
+==================*/
 
 .shrine_omamori_title {
   text-align: center;
@@ -719,16 +734,23 @@
   letter-spacing: 0.1em;
 }
 
-/*==================
-  御守りリンク
-==================*/
+.omamori_item p {
+  margin-top: 8px;
+  color: #ddd;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
 
-.shrine_link {
+/*==================================
+  御守りショップリンク
+==================================*/
+
+.shrine_shop_link {
   margin: 60px auto 0;
   max-width: 500px;
 }
 
-.shrine_link a {
+.shrine_shop_link a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -741,18 +763,18 @@
   transition: 0.35s ease;
 }
 
-.shrine_link a:hover {
+.shrine_shop_link a:hover {
   background: #b9975b;
   color: #111;
   transform: translateY(-4px);
 }
 
-.shrine_link span {
+.shrine_shop_link span {
   font-size: 1rem;
   letter-spacing: 0.15em;
 }
 
-.shrine_link small {
+.shrine_shop_link small {
   letter-spacing: 0.2em;
   font-size: 0.7rem;
 }
@@ -796,38 +818,65 @@
 }
 
 /*==================================
-  レスポンシブ
+  タブレット
 ==================================*/
 
 @media (max-width: 900px) {
+  /*==================
+    大浴場
+  ==================*/
+
   .public_detail,
   .private_detail {
     grid-template-columns: 1fr;
     gap: 35px;
   }
 
+  /*==================
+    スタンプ
+  ==================*/
+
   .stamp_wrap {
     grid-template-columns: 1fr;
   }
 
-  .source_wrap,
-  .shrine_wrap {
+  /*==================
+    源泉
+  ==================*/
+
+  .source_intro {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .shrine_wrap .shrine_text {
+  .source_gallery img {
+    height: 420px;
+  }
+
+  /*==================
+    温泉神社
+  ==================*/
+
+  .shrine_main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .shrine_main_text {
     order: 1;
   }
 
-  .shrine_wrap .shrine_img {
+  .shrine_main_image {
     order: 2;
   }
 
-  .source_gallery img,
-  .source_gallery .source_sub img {
-    height: 420px;
+  .shrine_sub_gallery {
+    margin-top: 50px;
   }
+
+  /*==================
+    御守り
+  ==================*/
 
   .omamori_grid {
     grid-template-columns: repeat(2, 1fr);
@@ -975,19 +1024,23 @@
     margin-top: 100px;
   }
 
-  .source_wrap {
+  .source_intro {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 40px;
   }
+
+  /*
+    湯畑と温泉卵の2枚を
+    横並びで見せる
+  */
 
   .source_gallery {
     grid-template-columns: 1.5fr 0.8fr;
     gap: 10px;
   }
 
-  .source_gallery img,
-  .source_gallery .source_sub img {
+  .source_gallery img {
     height: 280px;
   }
 
@@ -1019,22 +1072,27 @@
     margin-top: 110px;
   }
 
-  .shrine_wrap {
+  .shrine_main {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 40px;
   }
 
-  .shrine_text {
+  .shrine_main_image {
+    order: 1;
+  }
+
+  .shrine_main_text {
+    order: 2;
     padding: 0 10px;
   }
 
-  .shrine_text h3 {
+  .shrine_main_text h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-  .shrine_text p {
+  .shrine_main_text p {
     font-size: 0.95rem;
     line-height: 2;
     margin-bottom: 20px;
@@ -1044,14 +1102,20 @@
     摂社・無人授与所
   ==================*/
 
-  .shrine_gallery {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .shrine_sub_gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     margin-top: 40px;
   }
 
-  .shrine_gallery img {
-    height: 230px;
+  .shrine_sub_gallery img {
+    height: 200px;
+  }
+
+  .shrine_sub_gallery span {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.85rem;
   }
 
   /*==================
@@ -1077,31 +1141,36 @@
   }
 
   .omamori_item span {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .omamori_item small {
+    font-size: 0.75rem;
+  }
+
+  .omamori_item p {
     font-size: 0.7rem;
+    line-height: 1.7;
   }
 
   /*==================
     御守りリンク
   ==================*/
 
-  .shrine_link {
+  .shrine_shop_link {
     margin: 45px 10px 0;
   }
 
-  .shrine_link a {
+  .shrine_shop_link a {
     padding: 18px 20px;
     gap: 12px;
   }
 
-  .shrine_link span {
+  .shrine_shop_link span {
     font-size: 0.9rem;
   }
 
-  .shrine_link small {
+  .shrine_shop_link small {
     font-size: 0.65rem;
   }
 

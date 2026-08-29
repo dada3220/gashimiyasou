@@ -92,7 +92,7 @@ const publicSpaData = {
     name: "大桜の湯",
     color: "#d42b8e",
 
-    main: "images/spa_main1.png",
+    main: "images/spa/public_oozakura_main.png",
 
     description:
       "桜を望む露天風呂と開放感あふれる内湯を備えた大浴場です。四季折々の景色とともに、自家源泉の豊富な湯量をご堪能ください。",
@@ -104,10 +104,10 @@ const publicSpaData = {
     },
 
     gallery: [
-      "images/spa_sub01.png",
-      "images/spa_sub02.png",
-      "images/spa_sub03.png",
-      "images/spa_sub04.png",
+      "images/spa/public_oozakura01.png",
+      "images/spa/public_oozakura02.png",
+      "images/spa/public_oozakura03.png",
+      "images/spa/public_oozakura04.png",
     ],
   },
 
@@ -116,7 +116,7 @@ const publicSpaData = {
     name: "大滝の湯",
     color: "#300791",
 
-    main: "images/spa_main2.png",
+    main: "images/spa/public_ootaki_main.png",
 
     description:
       "滝のせせらぎを眺めながらゆったりと浸かれる大浴場です。自然に囲まれた開放的な露天風呂と広々とした内湯で、心も身体も癒されます。",
@@ -128,10 +128,10 @@ const publicSpaData = {
     },
 
     gallery: [
-      "images/spa_sub05.png",
-      "images/spa_sub06.png",
-      "images/spa_sub07.png",
-      "images/spa_sub08.png",
+      "images/spa/public_ootaki01.png",
+      "images/spa/public_ootaki02.png",
+      "images/spa/public_ootaki03.png",
+      "images/spa/public_ootaki04.png",
     ],
   },
 };
@@ -153,9 +153,9 @@ const privateIndoorData = {
       "食塩を含む「熱の湯」と呼ばれる代表的な泉質。塩分が肌をコーティングするため、非常に湯冷めしにくいのが特徴です。",
 
     gallery: [
-      "images/kashikiri_1f.png",
-      "images/spa01.png",
-      "images/spa01_2.png",
+      "images/spa/private01_1.png",
+      "images/spa/private01_2.png",
+      "images/spa/private01_3.png",
     ],
   },
 
@@ -171,9 +171,9 @@ const privateIndoorData = {
       "「清涼の湯」と呼ばれ、入浴後の気化熱による清涼感と、古い角質や皮脂を落とすクレンジング効果が特徴です。",
 
     gallery: [
-      "images/kashikiri_2f.png",
-      "images/spa02.png",
-      "images/spa02_2.png",
+      "images/spa/private02_1.png",
+      "images/spa/private02_2.png",
+      "images/spa/private02_3.png",
     ],
   },
 
@@ -189,9 +189,9 @@ const privateIndoorData = {
       "古くから「傷の湯」と呼ばれ、鎮静作用や血圧降下作用、優れた保温・保湿作用を持つ温泉です。",
 
     gallery: [
-      "images/kashikiri_3f.png",
-      "images/spa03.png",
-      "images/spa03_2.png",
+      "images/spa/private03_1.png",
+      "images/spa/private03_2.png",
+      "images/spa/private03_3.png",
     ],
   },
 
@@ -207,9 +207,9 @@ const privateIndoorData = {
       "「黒湯」として知られている、地下の植物性有機物（腐植質）を豊富に含む、肌触りが非常に滑らかな温泉です。",
 
     gallery: [
-      "images/kashikiri_b1.png",
-      "images/spa04.png",
-      "images/spa04_2.png",
+      "images/spa/private04_1.png",
+      "images/spa/private04_2.png",
+      "images/spa/private04_3.png",
     ],
   },
 
@@ -225,9 +225,9 @@ const privateIndoorData = {
       "人工温泉。微量の放射物質（ラドン）を含む温泉。細胞が活性化し自然治癒力を高めるため、「万病の湯」として親しまれています。",
 
     gallery: [
-      "images/kashikiri_rf1.png",
-      "images/spa05.png",
-      "images/spa05_2.png",
+      "images/spa/private05_1.png",
+      "images/spa/private05_2.png",
+      "images/spa/private05_3.png",
     ],
   },
 
@@ -243,9 +243,9 @@ const privateIndoorData = {
       "人工温泉。無数の気泡が付着することから「ラムネの湯」と呼ばれる温泉。炭酸ガスが皮膚から吸収され、血行促進効果があります。",
 
     gallery: [
-      "images/kashikiri_rf2.png",
-      "images/spa06.png",
-      "images/spa06_2.png",
+      "images/spa/private06_1.png",
+      "images/spa/private06_2.png",
+      "images/spa/private06_3.png",
     ],
   },
 };
@@ -266,7 +266,11 @@ const privateOutdoorData = {
     description:
       "鉄イオンを多く含む温泉で、貧血、月経障害などに効果があることから「婦人の湯」と呼ばれています。鉄分が酸化し、赤褐色のお湯になります。",
 
-    gallery: ["images/roten01.png", "images/spa07.png", "images/spa07_2.png"],
+    gallery: [
+      "images/spa/private07_1.png",
+      "images/spa/private07_2.png",
+      "images/spa/private07_3.png",
+    ],
   },
 
   nyuhaku: {
@@ -280,7 +284,11 @@ const privateOutdoorData = {
     description:
       "殺菌効果や血行促進効果が高い温泉。肌荒れの改善や、角質を軟化させメラニンを分解する働きがあることから「美白の湯」とも呼ばれています。",
 
-    gallery: ["images/roten02.png", "images/spa08.png", "images/spa08_2.png"],
+    gallery: [
+      "images/spa/private08_1.png",
+      "images/spa/private08_2.png",
+      "images/spa/private08_3.png",
+    ],
   },
 
   hisui: {
@@ -294,7 +302,11 @@ const privateOutdoorData = {
     description:
       "強い殺菌力から「直しの湯」と呼ばれ、角質を溶かし肌を引き締める効果があります。刺激の強い温泉なのでご注意ください。",
 
-    gallery: ["images/roten03.png", "images/spa09.png", "images/spa09_2.png"],
+    gallery: [
+      "images/spa/private09_1.png",
+      "images/spa/private09_2.png",
+      "images/spa/private09_3.png",
+    ],
   },
 
   kihada: {
@@ -308,7 +320,11 @@ const privateOutdoorData = {
     description:
       "肌を引き締める収れん作用が高いため、「引き締めの湯」とも呼ばれています。以前はみょうばん泉とも言われていました。",
 
-    gallery: ["images/roten04.png", "images/spa10.png", "images/spa10_2.png"],
+    gallery: [
+      "images/spa/private10_1.png",
+      "images/spa/private10_2.png",
+      "images/spa/private10_3.png",
+    ],
   },
 
   kuchiba: {
@@ -322,7 +338,11 @@ const privateOutdoorData = {
     description:
       "トロトロとした肌触りが特徴の温泉。「化粧水の湯」とも呼ばれ、入浴後にはしっとり感も実感できます。",
 
-    gallery: ["images/roten05.png", "images/spa11.png", "images/spa11_2.png"],
+    gallery: [
+      "images/spa/private11_1.png",
+      "images/spa/private11_2.png",
+      "images/spa/private11_3.png",
+    ],
   },
 
   hakudei: {
@@ -336,7 +356,11 @@ const privateOutdoorData = {
     description:
       "湯底にミネラル豊富な泥が沈殿している「泥湯」。泥を全身に塗りパックとして楽しむこともできます。",
 
-    gallery: ["images/roten06.png", "images/spa12.png", "images/spa12_2.png"],
+    gallery: [
+      "images/spa/private12_1.png",
+      "images/spa/private12_2.png",
+      "images/spa/private12_3.png",
+    ],
   },
 };
 
