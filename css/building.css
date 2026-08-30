@@ -4,326 +4,296 @@
    がしみや荘 館内マップ
    building.css
 
-   ・本館 / 庭園 大アコーディオン
-   ・本館 フロアアコーディオン
+   ・本館 / 庭園 タブ切り替え
+   ・本館 SVG マップ
    ・庭園 SVG マップ
-   ・施設紹介
+   ・本館 階別施設紹介
+   ・庭園 施設紹介
 ========================================================= */
 
 /* =========================================================
    共通
 ========================================================= */
 
-.section_title {
-  text-align: center;
+.building_page {
+  overflow: hidden;
+}
 
+.section_title {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .section_title h2 {
   margin: 0;
-
   font-size: 2rem;
-
   font-weight: normal;
-
   letter-spacing: 0.15em;
 }
 
 .section_title p {
   margin: 10px 0 0;
-
-  color: #ddd;
-
-  letter-spacing: 0.2em;
-
+  color: #aaa;
   font-size: 0.9rem;
+  letter-spacing: 0.2em;
 }
 
 /* =========================================================
-   本館・庭園 大アコーディオン
+   本館・庭園 タブ
 ========================================================= */
 
-.map_section {
-  margin: 30px 0;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.03);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-  transition:
-    border-color 0.3s ease,
-    background 0.3s ease;
+.map_tabs {
+  display: flex;
+  width: min(900px, 90%);
+  margin: 60px auto 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* -------------------------
-   大見出しボタン
+   タブボタン
 ------------------------- */
 
-.map_section_btn {
+.map_tab {
   position: relative;
+  flex: 1;
+  padding: 22px 20px 20px;
 
-  width: 100%;
-
-  min-height: 80px;
-
-  padding: 25px 40px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(80, 60, 20, 0.95),
-    rgba(40, 30, 10, 0.95)
-  );
-
-  color: #fff;
+  background: transparent;
+  color: #888;
 
   border: none;
-
   cursor: pointer;
 
   font-family: "Shippori Mincho", serif;
-
-  text-align: left;
+  text-align: center;
 
   transition:
-    background 0.3s ease,
-    min-height 0.3s ease;
+    color 0.3s ease,
+    background 0.3s ease;
 }
 
-.map_section_btn:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(110, 80, 30, 0.98),
-    rgba(60, 45, 15, 0.98)
-  );
+.map_tab:hover {
+  color: #ddd;
 }
 
 /* -------------------------
-   ボタンタイトル
+   タイトル
 ------------------------- */
 
-.map_section_btn .map_section_title {
-  display: flex;
+.map_tab strong {
+  display: block;
 
-  flex-direction: column;
+  font-size: 1.7rem;
+  font-weight: normal;
+  letter-spacing: 0.18em;
 
-  gap: 5px;
+  transition: color 0.3s ease;
 }
 
-.map_section_btn h2 {
+.map_tab small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #666;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+
+  transition: color 0.3s ease;
+}
+
+/* -------------------------
+   アクティブ
+------------------------- */
+
+.map_tab.active {
+  color: #fff;
+}
+
+.map_tab.active strong {
+  color: #d9c07c;
+}
+
+.map_tab.active small {
+  color: #aaa;
+}
+
+/* -------------------------
+   下線
+------------------------- */
+
+.map_tab::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+
+  width: 0;
+  height: 2px;
+
+  background: #d9c07c;
+
+  transform: translateX(-50%);
+
+  transition: width 0.35s ease;
+}
+
+.map_tab.active::after {
+  width: 100%;
+}
+
+/* =========================================================
+   タブコンテンツ
+========================================================= */
+
+.map_panel {
+  display: none;
+
+  width: 100%;
+}
+
+.map_panel.active {
+  display: block;
+}
+
+/* =========================================================
+   マップ共通
+========================================================= */
+
+.building_map,
+.garden_map_section_inner {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+/* =========================================================
+   マップタイトル
+========================================================= */
+
+.map_panel > .section_title {
+  margin-bottom: 45px;
+}
+
+/* =========================================================
+   本館マップ
+========================================================= */
+
+.building_map_visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* -------------------------
+   背景マップ
+------------------------- */
+
+.building_map_visual > img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+}
+
+/* -------------------------
+   本館 SVG
+------------------------- */
+
+.building_map_svg {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  z-index: 2;
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   マップ説明
+========================================================= */
+
+.building_map_text,
+.garden_map_text {
+  max-width: 900px;
+
+  margin: 35px auto 0;
+
+  color: #f0f0f0;
+
+  line-height: 2.3;
+  letter-spacing: 0.05em;
+
+  text-align: center;
+}
+
+/* =========================================================
+   階別施設紹介
+========================================================= */
+
+.floor_group {
+  margin-bottom: 150px;
+}
+
+.floor_group:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   階見出し
+========================================================= */
+
+.floor_heading {
+  position: relative;
+
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+
+  margin: 0 0 70px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid rgba(217, 192, 124, 0.45);
+}
+
+.floor_heading h2 {
   margin: 0;
 
-  font-size: 2rem;
+  color: #fff;
 
+  font-size: 2.3rem;
   font-weight: normal;
 
   letter-spacing: 0.18em;
 }
 
-.map_section_btn p {
+.floor_heading p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: #777;
 
-  font-family: "Shippori Mincho", serif;
-
-  font-size: 0.85rem;
-
+  font-size: 0.8rem;
   letter-spacing: 0.2em;
-}
-
-/* -------------------------
-   ＋ボタン
-------------------------- */
-
-.map_section_btn .arrow {
-  flex-shrink: 0;
-
-  font-size: 2.2rem;
-
-  font-family: Arial, sans-serif;
-
-  font-weight: 200;
-
-  line-height: 1;
-
-  transition: transform 0.35s ease;
-}
-
-/* 開いた状態 */
-
-.map_section.active {
-  border-color: rgba(217, 192, 124, 0.3);
-
-  background: rgba(255, 255, 255, 0.025);
-}
-
-.map_section.active .map_section_btn .arrow {
-  transform: rotate(45deg);
-}
-
-/* =========================================================
-   大アコーディオン 中身
-========================================================= */
-
-.map_section_content {
-  display: none;
-
-  padding: 70px 50px;
-}
-
-.map_section.active .map_section_content {
-  display: block;
-}
-
-/* =========================================================
-   本館 館内マップ
-========================================================= */
-
-.building_map {
-  margin: 0 0 100px;
-
-  text-align: center;
-
-  opacity: 1;
-
-  transform: translateY(0);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.building_map img {
-  display: block;
-
-  width: 95%;
-
-  height: auto;
-
-  margin: 10px auto 0;
-
-  border-radius: 15px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.building_map_text {
-  max-width: 900px;
-
-  margin: 30px auto 0;
-
-  color: #f0f0f0;
-
-  line-height: 2.3;
-
-  letter-spacing: 0.05em;
-}
-
-/* =========================================================
-   本館 フロアアコーディオン
-========================================================= */
-
-.floor_item {
-  margin-bottom: 30px;
-
-  border-radius: 15px;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.03);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* -------------------------
-   フロアボタン
-------------------------- */
-
-.floor_btn {
-  width: 100%;
-
-  padding: 15px 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  background: linear-gradient(
-    90deg,
-    rgba(80, 60, 20, 0.9),
-    rgba(40, 30, 10, 0.9)
-  );
-
-  color: white;
-
-  border: none;
-
-  cursor: pointer;
-
-  font-family: "Shippori Mincho", serif;
-
-  font-size: 1.5rem;
-
-  text-align: left;
-
-  transition: background 0.3s ease;
-}
-
-.floor_btn:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(110, 80, 30, 0.95),
-    rgba(60, 45, 15, 0.95)
-  );
-}
-
-/* -------------------------
-   フロア矢印
-------------------------- */
-
-.floor_btn .arrow {
-  flex-shrink: 0;
-
-  font-size: 2rem;
-
-  line-height: 1;
-
-  transition: transform 0.3s ease;
-}
-
-.floor_item.active .floor_btn .arrow {
-  transform: rotate(45deg);
-}
-
-/* =========================================================
-   フロア 中身
-========================================================= */
-
-.floor_content {
-  display: none;
-
-  padding: 60px 40px;
-}
-
-.floor_item.active .floor_content {
-  display: block;
 }
 
 /* =========================================================
@@ -332,7 +302,6 @@
 
 .building_section {
   display: flex;
-
   align-items: center;
 
   gap: 60px;
@@ -356,7 +325,6 @@
 
 .building_img {
   width: 50%;
-
   flex-shrink: 0;
 }
 
@@ -364,12 +332,11 @@
   display: block;
 
   width: 100%;
-
   height: auto;
 
   border-radius: 15px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
   transition:
     transform 0.4s ease,
@@ -379,7 +346,7 @@
 .building_img img:hover {
   transform: scale(1.02);
 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
 /* =========================================================
@@ -388,19 +355,16 @@
 
 .building_text {
   width: 50%;
-
   min-width: 0;
 }
 
 .building_text h2 {
   margin: 0 0 30px;
-
   padding-bottom: 10px;
 
   border-bottom: solid 1px #cb0e0e;
 
   font-size: 2rem;
-
   font-weight: normal;
 
   letter-spacing: 0.15em;
@@ -412,7 +376,6 @@
   color: #f0f0f0;
 
   line-height: 2.3;
-
   letter-spacing: 0.05em;
 }
 
@@ -438,7 +401,6 @@
   background: #1b1b1b;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 12px;
 
   overflow: hidden;
@@ -459,13 +421,14 @@
   border-color: rgba(217, 192, 124, 0.35);
 }
 
-/* 子画像 */
+/* -------------------------
+   子画像
+------------------------- */
 
 .sub_item img {
   display: block;
 
   width: 100%;
-
   height: auto;
 
   margin-bottom: 15px;
@@ -475,7 +438,9 @@
   object-fit: cover;
 }
 
-/* 子タイトル */
+/* -------------------------
+   子タイトル
+------------------------- */
 
 .sub_item h3 {
   margin: 5px 0 15px;
@@ -483,13 +448,14 @@
   color: #d9c07c;
 
   font-size: 1.1rem;
-
   font-weight: normal;
 
   letter-spacing: 0.08em;
 }
 
-/* 子説明 */
+/* -------------------------
+   子説明
+------------------------- */
 
 .sub_item p {
   margin: 0;
@@ -497,41 +463,26 @@
   color: #ddd;
 
   font-size: 0.9rem;
-
   line-height: 2;
 }
-
-/* =========================================================
-   庭園
-========================================================= */
 
 /* =========================================================
    庭園マップ
 ========================================================= */
 
-.garden_map_section {
-  margin: 0 0 110px;
-
+.garden_map_section_inner {
+  margin-bottom: 100px;
   text-align: center;
-
-  opacity: 1;
-
-  transform: translateY(0);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
 }
 
-/* -------------------------
-   マップ本体
-------------------------- */
+/* =========================================================
+   庭園マップ本体
+========================================================= */
 
 .garden_map {
   position: relative;
 
   width: 100%;
-
   max-width: 1200px;
 
   margin: 0 auto;
@@ -540,7 +491,7 @@
 
   border-radius: 15px;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* -------------------------
@@ -551,16 +502,13 @@
   display: block;
 
   width: 100%;
-
   height: auto;
 
   margin: 0;
-
-  border-radius: 15px;
 }
 
 /* -------------------------
-   SVGクリックマップ
+   庭園 SVG
 ------------------------- */
 
 .garden_map_svg {
@@ -579,42 +527,21 @@
   pointer-events: auto;
 }
 
-/* -------------------------
-   地図説明
-------------------------- */
-
-.garden_map_text {
-  max-width: 900px;
-
-  margin: 40px auto 0;
-
-  color: #f0f0f0;
-
-  line-height: 2.3;
-
-  letter-spacing: 0.05em;
-}
-
 /* =========================================================
    庭園 施設紹介
 ========================================================= */
 
 .garden_section {
   display: flex;
-
   align-items: center;
 
   gap: 40px;
 
   margin: 120px 10px;
+}
 
-  opacity: 1;
-
-  transform: translateY(0);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
+.garden_section:last-child {
+  margin-bottom: 0;
 }
 
 /* 左右反転 */
@@ -639,7 +566,6 @@
   display: block;
 
   width: 100%;
-
   height: auto;
 
   border-radius: 15px;
@@ -673,16 +599,14 @@
   position: relative;
 
   margin: 0 0 30px;
-
   padding-bottom: 10px;
 
-  font-size: 2rem;
+  border-bottom: solid 1px #cb0e0e;
 
+  font-size: 2rem;
   font-weight: normal;
 
   letter-spacing: 0.15em;
-
-  border-bottom: solid 1px #cb0e0e;
 }
 
 .garden_text p {
@@ -691,7 +615,6 @@
   color: #f0f0f0;
 
   line-height: 2.3;
-
   letter-spacing: 0.05em;
 }
 
@@ -715,19 +638,51 @@
   min-width: 180px;
 
   padding: 20px;
+}
 
-  background: #1b1b1b;
+/* =========================================================
+   マップへ戻る
+========================================================= */
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.map_back {
+  margin-top: 50px;
 
-  border-radius: 12px;
+  text-align: center;
+}
 
-  overflow: hidden;
+.map_back a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+
+  padding: 14px 25px;
+
+  color: #d9c07c;
+
+  border: 1px solid rgba(217, 192, 124, 0.45);
+  border-radius: 50px;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.12em;
+
+  text-decoration: none;
 
   transition:
-    transform 0.3s ease,
     background 0.3s ease,
+    color 0.3s ease,
     border-color 0.3s ease;
+}
+
+.map_back a:hover {
+  color: #111;
+
+  background: #d9c07c;
+
+  border-color: #d9c07c;
 }
 
 /* =========================================================
@@ -765,25 +720,18 @@
 }
 
 /* =========================================================
-   スクロールアニメーション
+   スクロール位置調整
 ========================================================= */
 
-.fadeUp {
-  opacity: 1;
+/*
+   ヘッダーが固定されている場合、
+   SVGから各施設へ移動したときに
+   見出しがヘッダーに隠れないようにする。
+*/
 
-  transform: translateY(0);
-}
-
-.fadeUp.is-hidden {
-  opacity: 0;
-
-  transform: translateY(40px);
-}
-
-.fadeUp.is-visible {
-  opacity: 1;
-
-  transform: translateY(0);
+.floor_group,
+.garden_section {
+  scroll-margin-top: 100px;
 }
 
 /* =========================================================
@@ -792,11 +740,23 @@
 
 @media (max-width: 1000px) {
   /* -------------------------
-     大アコーディオン
+     タブ
   ------------------------- */
 
-  .map_section_content {
-    padding: 60px 35px;
+  .map_tabs {
+    width: 90%;
+
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+
+  /* -------------------------
+     マップ
+  ------------------------- */
+
+  .building_map,
+  .garden_map_section_inner {
+    margin-bottom: 80px;
   }
 
   /* -------------------------
@@ -811,6 +771,22 @@
 
   .building_text h2 {
     font-size: 1.8rem;
+  }
+
+  /* -------------------------
+     階
+  ------------------------- */
+
+  .floor_group {
+    margin-bottom: 120px;
+  }
+
+  .floor_heading {
+    margin-bottom: 55px;
+  }
+
+  .floor_heading h2 {
+    font-size: 2rem;
   }
 
   /* -------------------------
@@ -835,7 +811,7 @@
      子コンテンツ
   ------------------------- */
 
-  .sub_item {
+  .garden_text .sub_item {
     flex: 1 1 calc(50% - 10px);
   }
 }
@@ -846,62 +822,58 @@
 
 @media (max-width: 768px) {
   /* =======================================================
-     本館・庭園 大アコーディオン
+     タブ
   ======================================================= */
 
-  .map_section {
-    margin: 25px 0;
+  .map_tabs {
+    width: 100%;
 
-    border-radius: 12px;
+    margin: 40px auto 50px;
   }
 
-  .map_section_btn {
-    min-height: 90px;
-
-    padding: 20px;
-
-    gap: 15px;
+  .map_tab {
+    padding: 18px 10px 16px;
   }
 
-  .map_section_btn h2 {
-    font-size: 1.5rem;
+  .map_tab strong {
+    font-size: 1.35rem;
 
     letter-spacing: 0.12em;
   }
 
-  .map_section_btn p {
-    font-size: 0.75rem;
+  .map_tab small {
+    margin-top: 5px;
+
+    font-size: 0.7rem;
 
     letter-spacing: 0.15em;
   }
 
-  .map_section_btn .arrow {
-    font-size: 1.8rem;
-  }
-
-  /* -------------------------
-     大アコーディオン中身
-  ------------------------- */
-
-  .map_section_content {
-    padding: 45px 15px;
-  }
-
   /* =======================================================
-     本館マップ
+     マップ
   ======================================================= */
 
-  .building_map {
-    margin: 0 0 70px;
+  .building_map,
+  .garden_map_section_inner {
+    margin-bottom: 70px;
   }
 
-  .building_map img {
-    width: 100%;
-
+  .building_map_visual,
+  .garden_map {
     border-radius: 10px;
   }
 
-  .building_map_text {
+  .building_map_visual > img,
+  .garden_map > img {
+    border-radius: 10px;
+  }
+
+  /* =======================================================
+     マップ説明
+  ======================================================= */
+
+  .building_map_text,
+  .garden_map_text {
     margin: 25px 10px 0;
 
     font-size: 0.95rem;
@@ -912,27 +884,44 @@
   }
 
   /* =======================================================
-     フロアアコーディオン
+     セクションタイトル
   ======================================================= */
 
-  .floor_item {
-    margin-bottom: 20px;
-
-    border-radius: 10px;
+  .section_title {
+    margin-bottom: 35px;
   }
 
-  .floor_btn {
-    padding: 18px 20px;
-
-    font-size: 1.3rem;
-  }
-
-  .floor_btn .arrow {
+  .section_title h2 {
     font-size: 1.6rem;
   }
 
-  .floor_content {
-    padding: 40px 15px;
+  .section_title p {
+    font-size: 0.8rem;
+  }
+
+  /* =======================================================
+     階見出し
+  ======================================================= */
+
+  .floor_group {
+    margin-bottom: 90px;
+  }
+
+  .floor_heading {
+    gap: 12px;
+
+    margin-bottom: 45px;
+    padding-bottom: 10px;
+  }
+
+  .floor_heading h2 {
+    font-size: 1.7rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .floor_heading p {
+    font-size: 0.7rem;
   }
 
   /* =======================================================
@@ -956,6 +945,10 @@
   .building_img img {
     border-radius: 12px;
   }
+
+  /* -------------------------
+     本館テキスト
+  ------------------------- */
 
   .building_text h2 {
     margin-bottom: 20px;
@@ -1002,53 +995,7 @@
   }
 
   /* =======================================================
-     庭園マップ
-  ======================================================= */
-
-  .garden_map_section {
-    margin: 0 0 80px;
-  }
-
-  .garden_map {
-    width: 100%;
-
-    border-radius: 10px;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  }
-
-  .garden_map > img {
-    border-radius: 10px;
-  }
-
-  .garden_map_text {
-    margin: 25px 10px 0;
-
-    font-size: 0.95rem;
-
-    line-height: 2;
-
-    letter-spacing: 0.03em;
-  }
-
-  /* =======================================================
-     セクションタイトル
-  ======================================================= */
-
-  .section_title {
-    margin-bottom: 35px;
-  }
-
-  .section_title h2 {
-    font-size: 1.6rem;
-  }
-
-  .section_title p {
-    font-size: 0.8rem;
-  }
-
-  /* =======================================================
-     庭園施設
+     庭園
   ======================================================= */
 
   .garden_section,
@@ -1057,7 +1004,7 @@
 
     gap: 30px;
 
-    margin: 120px 0;
+    margin: 100px 0;
   }
 
   .garden_img {
@@ -1077,6 +1024,10 @@
 
     padding: 0 10px;
   }
+
+  /* -------------------------
+     庭園テキスト
+  ------------------------- */
 
   .garden_text h2 {
     margin-bottom: 25px;
@@ -1115,6 +1066,22 @@
   }
 
   /* =======================================================
+     マップへ戻る
+  ======================================================= */
+
+  .map_back {
+    margin-top: 40px;
+  }
+
+  .map_back a {
+    min-width: 160px;
+
+    padding: 12px 20px;
+
+    font-size: 0.8rem;
+  }
+
+  /* =======================================================
      予約
   ======================================================= */
 
@@ -1133,48 +1100,58 @@
 
 @media (max-width: 480px) {
   /* -------------------------
-     大アコーディオン
+     タブ
   ------------------------- */
 
-  .map_section_btn {
-    min-height: 80px;
-
-    padding: 18px 15px;
+  .map_tabs {
+    margin-top: 30px;
+    margin-bottom: 40px;
   }
 
-  .map_section_btn h2 {
-    font-size: 1.35rem;
+  .map_tab {
+    padding: 15px 5px 13px;
   }
 
-  .map_section_btn p {
-    font-size: 0.7rem;
+  .map_tab strong {
+    font-size: 1.2rem;
   }
 
-  .map_section_btn .arrow {
-    font-size: 1.6rem;
+  .map_tab small {
+    font-size: 0.65rem;
   }
 
-  .map_section_content {
-    padding: 35px 10px;
+  /* -------------------------
+     マップ
+  ------------------------- */
+
+  .building_map_text,
+  .garden_map_text {
+    font-size: 0.9rem;
+  }
+
+  /* -------------------------
+     階
+  ------------------------- */
+
+  .floor_group {
+    margin-bottom: 75px;
+  }
+
+  .floor_heading {
+    margin-bottom: 35px;
+  }
+
+  .floor_heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .floor_heading p {
+    font-size: 0.65rem;
   }
 
   /* -------------------------
      本館
   ------------------------- */
-
-  .building_map_text {
-    font-size: 0.9rem;
-  }
-
-  .floor_btn {
-    padding: 16px;
-
-    font-size: 1.15rem;
-  }
-
-  .floor_content {
-    padding: 35px 10px;
-  }
 
   .building_section {
     margin-bottom: 70px;
@@ -1195,11 +1172,28 @@
   }
 
   /* -------------------------
+     子コンテンツ
+  ------------------------- */
+
+  .sub_item {
+    padding: 12px;
+  }
+
+  .sub_item h3 {
+    font-size: 0.9rem;
+  }
+
+  .sub_item p {
+    font-size: 0.82rem;
+  }
+
+  /* -------------------------
      庭園
   ------------------------- */
 
-  .garden_map_section {
-    margin-bottom: 60px;
+  .garden_section,
+  .garden_section.reverse {
+    margin: 85px 0;
   }
 
   .garden_text {
