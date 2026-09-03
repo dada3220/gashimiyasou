@@ -6,79 +6,105 @@
 
    ・本館 / 庭園タブ切り替え
    ・本館フロアナビ
-   ・庭園SVGクリックマップ
    ・本館SVGクリックマップ
+   ・庭園SVGクリックマップ
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================================================
-     本館 / 庭園 タブ切り替え
+     共通：スムーススクロール
   ========================================================= */
 
-  const mapTabs = document.querySelectorAll(".map_tab");
-  const mapContents = document.querySelectorAll(".map_tab_content");
+  const smoothScrollTo = (selector) => {
+    if (!selector || !selector.startsWith("#")) {
+      return;
+    }
 
-  mapTabs.forEach((tab) => {
+    const target = document.querySelector(selector);
+
+    if (!target) {
+      console.warn(`リンク先が見つかりません: ${selector}`);
+      return;
+    }
+
+    const offset = 120;
+
+    const position =
+      target.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: position,
+      behavior: "smooth",
+    });
+  };
+
+  /* =========================================================
+     本館 / 庭園 タブ
+  ========================================================= */
+
+  const tabs = document.querySelectorAll(".map_tab");
+  const tabContents = document.querySelectorAll(".map_tab_content");
+
+  tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const targetId = tab.dataset.tab;
 
-      if (!targetId) return;
-
-      const targetContent = document.getElementById(targetId);
-
-      if (!targetContent) {
-        console.warn(`タブの切り替え先が見つかりません: #${targetId}`);
+      if (!targetId) {
         return;
       }
 
-      /* -------------------------------------------------------
-         すべてのタブを閉じる
-      ------------------------------------------------------- */
+      /* -------------------------
+         タブの状態
+      ------------------------- */
 
-      mapTabs.forEach((item) => {
+      tabs.forEach((item) => {
         item.classList.remove("active");
         item.setAttribute("aria-selected", "false");
       });
 
-      /* -------------------------------------------------------
-         すべてのコンテンツを閉じる
-      ------------------------------------------------------- */
-
-      mapContents.forEach((content) => {
-        content.classList.remove("active");
-        content.hidden = true;
-      });
-
-      /* -------------------------------------------------------
-         クリックしたタブを開く
-      ------------------------------------------------------- */
-
       tab.classList.add("active");
       tab.setAttribute("aria-selected", "true");
 
-      targetContent.classList.add("active");
-      targetContent.hidden = false;
+      /* -------------------------
+         コンテンツの状態
+      ------------------------- */
 
-      /* -------------------------------------------------------
-         タブ切り替え後、ページ上部へ少し戻す
-      ------------------------------------------------------- */
+      tabContents.forEach((content) => {
+        const isTarget = content.id === targetId;
 
-      const mapTabsPosition =
-        document.querySelector(".map_tabs")?.getBoundingClientRect().top +
-        window.scrollY -
-        120;
+        content.classList.toggle("active", isTarget);
 
-      if (mapTabsPosition !== undefined) {
-        window.scrollTo({
-          top: Math.max(0, mapTabsPosition),
-          behavior: "smooth",
-        });
+        if (isTarget) {
+          content.removeAttribute("hidden");
+        } else {
+          content.setAttribute("hidden", "");
+        }
+      });
+
+      /* -------------------------
+         タブ切り替え後に先頭へ
+      ------------------------- */
+
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        setTimeout(() => {
+          const offset = 120;
+
+          const position =
+            target.getBoundingClientRect().top + window.scrollY - offset;
+
+          window.scrollTo({
+            top: position,
+            behavior: "smooth",
+          });
+        }, 50);
       }
     });
   });
 
   /* =========================================================
-     本館 フロアナビゲーション
+     フロアナビ
   ========================================================= */
 
   const floorLinks = document.querySelectorAll(".floor_nav a");
@@ -87,197 +113,160 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
 
-      if (!href || !href.startsWith("#")) return;
+      if (!href || !href.startsWith("#")) {
+        return;
+      }
 
       const target = document.querySelector(href);
 
       if (!target) {
-        console.warn(`フロアのリンク先が見つかりません: ${href}`);
         return;
       }
 
       event.preventDefault();
 
-      /* -------------------------------------------------------
-         フロア位置までスクロール
-      ------------------------------------------------------- */
-
-      const offset = 120;
-
-      const targetPosition =
-        target.getBoundingClientRect().top + window.scrollY - offset;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
+      smoothScrollTo(href);
     });
   });
 
   /* =========================================================
-     本館 SVG マップ
+     SVGクリックマップ
   ========================================================= */
 
-  const buildingMapObject = document.querySelector(".building_map_svg");
+  const setupSvgMap = (selector, mapName) => {
+    const mapObject = document.querySelector(selector);
 
-  if (buildingMapObject) {
-    buildingMapObject.addEventListener("load", () => {
-      const svgDocument = buildingMapObject.contentDocument;
-
-      if (!svgDocument) {
-        console.warn("本館マップSVGのcontentDocumentを取得できませんでした。");
-        return;
-      }
-
-      console.log("本館マップSVGの読み込み成功");
-
-      const links = svgDocument.querySelectorAll("a");
-
-      console.log(`本館マップのクリックエリア：${links.length}個`);
-
-      links.forEach((link) => {
-        setupSvgLink(link, "building");
-      });
-    });
-
-    buildingMapObject.addEventListener("error", () => {
-      console.error(
-        "本館マップSVGの読み込みに失敗しました。",
-        buildingMapObject.data,
-      );
-    });
-  }
-
-  /* =========================================================
-     庭園 SVG マップ
-  ========================================================= */
-
-  const gardenMapObject = document.querySelector(".garden_map_svg");
-
-  if (gardenMapObject) {
-    gardenMapObject.addEventListener("load", () => {
-      const svgDocument = gardenMapObject.contentDocument;
-
-      if (!svgDocument) {
-        console.warn("庭園マップSVGのcontentDocumentを取得できませんでした。");
-        return;
-      }
-
-      console.log("庭園マップSVGの読み込み成功");
-
-      const links = svgDocument.querySelectorAll("a");
-
-      console.log(`庭園マップのクリックエリア：${links.length}個`);
-
-      links.forEach((link) => {
-        setupSvgLink(link, "garden");
-      });
-    });
-
-    gardenMapObject.addEventListener("error", () => {
-      console.error(
-        "庭園マップSVGの読み込みに失敗しました。",
-        gardenMapObject.data,
-      );
-    });
-  }
-
-  /* =========================================================
-     SVG クリックエリア共通処理
-  ========================================================= */
-
-  function setupSvgLink(link, type) {
-    link.style.cursor = "pointer";
-
-    /* -------------------------------------------------------
-       SVG内部の図形
-    ------------------------------------------------------- */
-
-    const shape = link.querySelector("rect, path, polygon, circle, ellipse");
-
-    if (!shape) {
-      console.warn(`${type}マップ：クリック対象の図形が見つかりません。`);
+    if (!mapObject) {
+      return;
     }
 
-    /* -------------------------------------------------------
-       マウスオーバー
-    ------------------------------------------------------- */
+    mapObject.addEventListener("load", () => {
+      const svgDocument = mapObject.contentDocument;
 
-    link.addEventListener("mouseenter", () => {
-      if (!shape) return;
+      if (!svgDocument) {
+        console.warn(`${mapName}SVGのcontentDocumentを取得できませんでした。`);
 
-      shape.style.fill = "#ffffff";
-      shape.style.fillOpacity = "0.18";
-    });
-
-    /* -------------------------------------------------------
-       マウスアウト
-    ------------------------------------------------------- */
-
-    link.addEventListener("mouseleave", () => {
-      if (!shape) return;
-
-      shape.style.fill = "#000000";
-      shape.style.fillOpacity = "0";
-    });
-
-    /* -------------------------------------------------------
-       クリック
-    ------------------------------------------------------- */
-
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const href = link.getAttribute("href");
-
-      console.log(`${type}マップクリック:`, href);
-
-      if (!href) return;
-
-      /* -----------------------------------------------------
-         ページ内リンク以外は通常処理しない
-      ----------------------------------------------------- */
-
-      if (!href.startsWith("#")) {
         return;
       }
 
-      const target = document.querySelector(href);
+      console.log(`${mapName}マップSVGの読み込み成功`);
 
-      if (!target) {
-        console.warn(`${type}マップのリンク先が見つかりません: ${href}`);
+      /* -------------------------
+         SVG内の<a>を取得
+      ------------------------- */
+
+      const links = svgDocument.querySelectorAll("a");
+
+      console.log(`${mapName}マップのクリックエリア：${links.length}個`);
+
+      if (links.length === 0) {
+        console.warn(`${mapName}SVG内に<a>タグがありません。`);
+
         return;
       }
 
-      /* -----------------------------------------------------
-         庭園側の施設へスクロール
-      ----------------------------------------------------- */
+      /* =====================================================
+         各クリックエリア
+      ===================================================== */
 
-      const offset = type === "garden" ? 150 : 120;
+      links.forEach((link) => {
+        /* -------------------------
+           カーソル
+        ------------------------- */
 
-      const targetPosition =
-        target.getBoundingClientRect().top + window.scrollY - offset;
+        link.style.cursor = "pointer";
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
+        /* -------------------------
+           クリックエリア内の図形
+        ------------------------- */
+
+        const shape = link.querySelector(
+          "rect, path, polygon, polyline, circle, ellipse",
+        );
+
+        /* =====================================================
+           マウスオーバー
+        ===================================================== */
+
+        link.addEventListener("mouseenter", () => {
+          if (!shape) {
+            return;
+          }
+
+          shape.style.setProperty("fill", "#ffffff");
+          shape.style.setProperty("fill-opacity", "0.18");
+        });
+
+        /* =====================================================
+           マウスアウト
+        ===================================================== */
+
+        link.addEventListener("mouseleave", () => {
+          if (!shape) {
+            return;
+          }
+
+          shape.style.setProperty("fill", "none");
+          shape.style.setProperty("fill-opacity", "0");
+        });
+
+        /* =====================================================
+           クリック
+        ===================================================== */
+
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          /* -------------------------
+             href取得
+          ------------------------- */
+
+          const href =
+            link.getAttribute("href") || link.getAttribute("xlink:href");
+
+          console.log(`${mapName}マップクリック: ${href}`);
+
+          /* -------------------------
+             ページ内リンクのみ
+          ------------------------- */
+
+          if (!href || !href.startsWith("#")) {
+            console.warn(`${mapName}SVGのリンク先が正しくありません:`, href);
+
+            return;
+          }
+
+          /* -------------------------
+             スクロール
+          ------------------------- */
+
+          smoothScrollTo(href);
+        });
       });
     });
-  }
+
+    /* =========================================================
+       SVG読み込みエラー
+    ========================================================= */
+
+    mapObject.addEventListener("error", () => {
+      console.error(
+        `${mapName}マップSVGの読み込みに失敗しました。`,
+        mapObject.data,
+      );
+    });
+  };
 
   /* =========================================================
-     初期状態確認
+     本館SVG
   ========================================================= */
 
-  const initialTab = document.querySelector(".map_tab.active");
+  setupSvgMap(".building_map_svg", "本館");
 
-  const initialContent = document.querySelector(".map_tab_content.active");
+  /* =========================================================
+     庭園SVG
+  ========================================================= */
 
-  if (initialTab && initialContent) {
-    initialTab.setAttribute("aria-selected", "true");
-    initialContent.hidden = false;
-  }
-
-  console.log("がしみや荘 館内マップ initialized");
+  setupSvgMap(".garden_map_svg", "庭園");
 });

@@ -13,8 +13,10 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+
   <defs
      id="defs1" />
+
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -33,49 +35,111 @@
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="g1" />
+
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g1">
-    <rect
-       style="opacity:1;fill:none;fill-opacity:0"
-       id="rect1"
-       width="939.7818"
-       height="219.88484"
-       x="93.375755"
-       y="60.242424"
-       inkscape:label="RoofFloor" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:0"
-       id="rect2"
-       width="924.72125"
-       height="213.8606"
-       x="99.399994"
-       y="346.39395"
-       inkscape:label="3Floor" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:0"
-       id="rect3"
-       width="921.70911"
-       height="219.88489"
-       x="96.387878"
-       y="626.52124"
-       inkscape:label="2Floor" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:0"
-       id="rect4"
-       width="942.79388"
-       height="237.95758"
-       x="96.387878"
-       y="909.66058"
-       inkscape:label="1Floor" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:0"
-       id="rect5"
-       width="930.74548"
-       height="225.90909"
-       x="102.41212"
-       y="1204.8485"
-       inkscape:label="BasementFloor" />
+
+    <!-- =====================================================
+         屋上
+    ====================================================== -->
+
+    <a
+       href="#floor-rf"
+       id="link-rooffloor">
+
+      <rect
+         style="opacity:1;fill:none;fill-opacity:0"
+         id="rect1"
+         width="939.7818"
+         height="219.88484"
+         x="93.375755"
+         y="60.242424"
+         inkscape:label="RoofFloor" />
+
+    </a>
+
+
+    <!-- =====================================================
+         3階
+    ====================================================== -->
+
+    <a
+       href="#floor-3f"
+       id="link-3floor">
+
+      <rect
+         style="opacity:1;fill:none;fill-opacity:0"
+         id="rect2"
+         width="924.72125"
+         height="213.8606"
+         x="99.399994"
+         y="346.39395"
+         inkscape:label="3Floor" />
+
+    </a>
+
+
+    <!-- =====================================================
+         2階
+    ====================================================== -->
+
+    <a
+       href="#floor-2f"
+       id="link-2floor">
+
+      <rect
+         style="opacity:1;fill:none;fill-opacity:0"
+         id="rect3"
+         width="921.70911"
+         height="219.88489"
+         x="96.387878"
+         y="626.52124"
+         inkscape:label="2Floor" />
+
+    </a>
+
+
+    <!-- =====================================================
+         1階
+    ====================================================== -->
+
+    <a
+       href="#floor-1f"
+       id="link-1floor">
+
+      <rect
+         style="opacity:1;fill:none;fill-opacity:0"
+         id="rect4"
+         width="942.79388"
+         height="237.95758"
+         x="96.387878"
+         y="909.66058"
+         inkscape:label="1Floor" />
+
+    </a>
+
+
+    <!-- =====================================================
+         地下
+    ====================================================== -->
+
+    <a
+       href="#floor-b1"
+       id="link-basementfloor">
+
+      <rect
+         style="opacity:1;fill:none;fill-opacity:0"
+         id="rect5"
+         width="930.74548"
+         height="225.90909"
+         x="102.41212"
+         y="1204.8485"
+         inkscape:label="BasementFloor" />
+
+    </a>
+
   </g>
+
 </svg>

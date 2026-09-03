@@ -151,20 +151,13 @@
 --------------------------------------------------------- */
 
 .garden_intro_img {
-  width: min(850px, 85%);
-  margin: 0 auto 55px;
-  overflow: hidden;
+  width: 100%;
+  margin-bottom: 55px;
 }
 
 .garden_intro_img img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.garden_intro:hover .japanese_garden_intro_img img {
-  transform: scale(1.025);
 }
 
 /* ---------------------------------------------------------

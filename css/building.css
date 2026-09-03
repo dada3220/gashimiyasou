@@ -19,6 +19,10 @@
   overflow: hidden;
 }
 
+.building_page img {
+  max-width: 100%;
+}
+
 .section_title {
   margin-bottom: 50px;
   text-align: center;
@@ -26,14 +30,18 @@
 
 .section_title h2 {
   margin: 0;
+
   font-size: 2rem;
   font-weight: normal;
+
   letter-spacing: 0.15em;
 }
 
 .section_title p {
   margin: 10px 0 0;
+
   color: #aaa;
+
   font-size: 0.9rem;
   letter-spacing: 0.2em;
 }
@@ -44,8 +52,11 @@
 
 .map_tabs {
   display: flex;
+
   width: min(900px, 90%);
+
   margin: 60px auto 70px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -55,16 +66,20 @@
 
 .map_tab {
   position: relative;
+
   flex: 1;
+
   padding: 22px 20px 20px;
 
   background: transparent;
   color: #888;
 
   border: none;
+
   cursor: pointer;
 
   font-family: "Shippori Mincho", serif;
+
   text-align: center;
 
   transition:
@@ -77,14 +92,19 @@
 }
 
 /* -------------------------
-   タイトル
+   タブタイトル
 ------------------------- */
+
+.map_tab_title {
+  display: block;
+}
 
 .map_tab strong {
   display: block;
 
   font-size: 1.7rem;
   font-weight: normal;
+
   letter-spacing: 0.18em;
 
   transition: color 0.3s ease;
@@ -98,7 +118,9 @@
   color: #666;
 
   font-family: "Shippori Mincho", serif;
+
   font-size: 0.75rem;
+
   letter-spacing: 0.2em;
 
   transition: color 0.3s ease;
@@ -121,13 +143,14 @@
 }
 
 /* -------------------------
-   下線
+   タブ下線
 ------------------------- */
 
 .map_tab::after {
   content: "";
 
   position: absolute;
+
   left: 50%;
   bottom: -1px;
 
@@ -149,23 +172,35 @@
    タブコンテンツ
 ========================================================= */
 
-.map_panel {
-  display: none;
+/*
+   HTMLでは
 
+   .map_tab_content
+
+   を使用しているため、
+   .map_panelではなくこちらを使用。
+*/
+
+.map_tab_content {
   width: 100%;
 }
 
-.map_panel.active {
+.map_tab_content[hidden] {
+  display: none;
+}
+
+.map_tab_content.active {
   display: block;
 }
 
 /* =========================================================
-   マップ共通
+   本館・庭園 マップ共通
 ========================================================= */
 
 .building_map,
 .garden_map_section_inner {
   width: 100%;
+
   margin-bottom: 100px;
 }
 
@@ -173,7 +208,8 @@
    マップタイトル
 ========================================================= */
 
-.map_panel > .section_title {
+.building_map > .section_title,
+.garden_map_section_inner > .section_title {
   margin-bottom: 45px;
 }
 
@@ -197,7 +233,7 @@
 }
 
 /* -------------------------
-   背景マップ
+   本館 背景画像
 ------------------------- */
 
 .building_map_visual > img {
@@ -219,12 +255,76 @@
   top: 0;
   left: 0;
 
+  display: block;
+
   width: 100%;
   height: 100%;
 
-  border: none;
+  margin: 0;
+
+  border: 0;
 
   z-index: 2;
+
+  background: transparent;
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   庭園マップ
+========================================================= */
+
+.garden_map {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------
+   庭園 背景画像
+------------------------- */
+
+.garden_map > img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+}
+
+/* -------------------------
+   庭園 SVG
+------------------------- */
+
+.garden_map_svg {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  border: 0;
+
+  z-index: 2;
+
+  background: transparent;
 
   pointer-events: auto;
 }
@@ -242,20 +342,23 @@
   color: #f0f0f0;
 
   line-height: 2.3;
+
   letter-spacing: 0.05em;
 
   text-align: center;
 }
 
 /* =========================================================
-   階別施設紹介
+   本館 フロア
 ========================================================= */
 
-.floor_group {
+.floor_section {
+  width: 100%;
+
   margin-bottom: 150px;
 }
 
-.floor_group:last-child {
+.floor_section:last-child {
   margin-bottom: 0;
 }
 
@@ -267,10 +370,13 @@
   position: relative;
 
   display: flex;
+
   align-items: baseline;
+
   gap: 18px;
 
   margin: 0 0 70px;
+
   padding-bottom: 15px;
 
   border-bottom: 1px solid rgba(217, 192, 124, 0.45);
@@ -282,6 +388,7 @@
   color: #fff;
 
   font-size: 2.3rem;
+
   font-weight: normal;
 
   letter-spacing: 0.18em;
@@ -293,6 +400,7 @@
   color: #777;
 
   font-size: 0.8rem;
+
   letter-spacing: 0.2em;
 }
 
@@ -302,6 +410,7 @@
 
 .building_section {
   display: flex;
+
   align-items: center;
 
   gap: 60px;
@@ -313,7 +422,9 @@
   margin-bottom: 0;
 }
 
-/* 左右反転 */
+/* -------------------------
+   左右反転
+------------------------- */
 
 .building_section.reverse {
   flex-direction: row-reverse;
@@ -325,6 +436,7 @@
 
 .building_img {
   width: 50%;
+
   flex-shrink: 0;
 }
 
@@ -355,16 +467,19 @@
 
 .building_text {
   width: 50%;
+
   min-width: 0;
 }
 
 .building_text h2 {
   margin: 0 0 30px;
+
   padding-bottom: 10px;
 
-  border-bottom: solid 1px #cb0e0e;
+  border-bottom: 1px solid #cb0e0e;
 
   font-size: 2rem;
+
   font-weight: normal;
 
   letter-spacing: 0.15em;
@@ -376,6 +491,7 @@
   color: #f0f0f0;
 
   line-height: 2.3;
+
   letter-spacing: 0.05em;
 }
 
@@ -401,6 +517,7 @@
   background: #1b1b1b;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   border-radius: 12px;
 
   overflow: hidden;
@@ -448,6 +565,7 @@
   color: #d9c07c;
 
   font-size: 1.1rem;
+
   font-weight: normal;
 
   letter-spacing: 0.08em;
@@ -463,68 +581,8 @@
   color: #ddd;
 
   font-size: 0.9rem;
+
   line-height: 2;
-}
-
-/* =========================================================
-   庭園マップ
-========================================================= */
-
-.garden_map_section_inner {
-  margin-bottom: 100px;
-  text-align: center;
-}
-
-/* =========================================================
-   庭園マップ本体
-========================================================= */
-
-.garden_map {
-  position: relative;
-
-  width: 100%;
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  overflow: hidden;
-
-  border-radius: 15px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* -------------------------
-   庭園地図画像
-------------------------- */
-
-.garden_map > img {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  margin: 0;
-}
-
-/* -------------------------
-   庭園 SVG
-------------------------- */
-
-.garden_map_svg {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border: none;
-
-  z-index: 2;
-
-  pointer-events: auto;
 }
 
 /* =========================================================
@@ -533,6 +591,7 @@
 
 .garden_section {
   display: flex;
+
   align-items: center;
 
   gap: 40px;
@@ -544,7 +603,9 @@
   margin-bottom: 0;
 }
 
-/* 左右反転 */
+/* -------------------------
+   左右反転
+------------------------- */
 
 .garden_section.reverse {
   flex-direction: row-reverse;
@@ -599,11 +660,13 @@
   position: relative;
 
   margin: 0 0 30px;
+
   padding-bottom: 10px;
 
-  border-bottom: solid 1px #cb0e0e;
+  border-bottom: 1px solid #cb0e0e;
 
   font-size: 2rem;
+
   font-weight: normal;
 
   letter-spacing: 0.15em;
@@ -615,6 +678,7 @@
   color: #f0f0f0;
 
   line-height: 2.3;
+
   letter-spacing: 0.05em;
 }
 
@@ -663,6 +727,7 @@
   color: #d9c07c;
 
   border: 1px solid rgba(217, 192, 124, 0.45);
+
   border-radius: 50px;
 
   font-size: 0.9rem;
@@ -720,18 +785,12 @@
 }
 
 /* =========================================================
-   スクロール位置調整
+   スクロール位置
 ========================================================= */
 
-/*
-   ヘッダーが固定されている場合、
-   SVGから各施設へ移動したときに
-   見出しがヘッダーに隠れないようにする。
-*/
-
-.floor_group,
+.floor_section,
 .garden_section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 145px;
 }
 
 /* =========================================================
@@ -760,7 +819,7 @@
   }
 
   /* -------------------------
-     本館
+     本館施設
   ------------------------- */
 
   .building_section {
@@ -774,10 +833,10 @@
   }
 
   /* -------------------------
-     階
+     フロア
   ------------------------- */
 
-  .floor_group {
+  .floor_section {
     margin-bottom: 120px;
   }
 
@@ -900,10 +959,10 @@
   }
 
   /* =======================================================
-     階見出し
+     フロア見出し
   ======================================================= */
 
-  .floor_group {
+  .floor_section {
     margin-bottom: 90px;
   }
 
@@ -911,6 +970,7 @@
     gap: 12px;
 
     margin-bottom: 45px;
+
     padding-bottom: 10px;
   }
 
@@ -1130,10 +1190,10 @@
   }
 
   /* -------------------------
-     階
+     フロア
   ------------------------- */
 
-  .floor_group {
+  .floor_section {
     margin-bottom: 75px;
   }
 
