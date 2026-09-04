@@ -38,57 +38,6 @@
 }
 
 /*==================================
-  MV
-==================================*/
-
-.stay_mv {
-  height: 100vh;
-  min-height: 700px;
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-  color: #fff;
-}
-
-.stay_mv::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.stay_mv_inner {
-  position: relative;
-  z-index: 2;
-
-  width: min(900px, 90%);
-  text-align: center;
-}
-
-.stay_sub {
-  color: #fff;
-  letter-spacing: 0.35em;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.stay_mv h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.35;
-  font-weight: 500;
-  margin-bottom: 35px;
-}
-
-.stay_mv_inner > p:last-child {
-  font-size: 1.1rem;
-  line-height: 2.2;
-}
-
-/*==================================
   INTRO
 ==================================*/
 
@@ -103,7 +52,7 @@
 
 .stay_intro h2 {
   font-size: 2.2rem;
-  color: var(--dark);
+
   line-height: 1.6;
   margin-bottom: 40px;
   position: relative;
@@ -652,33 +601,6 @@ body.time-morning .time_content {
 
   .stay_page .inner {
     width: min(100% - 30px, 600px);
-  }
-
-  /*--------------------------------
-    MV
-  --------------------------------*/
-
-  .stay_mv {
-    min-height: 600px;
-  }
-
-  .stay_sub {
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-  }
-
-  .stay_mv h1 {
-    font-size: clamp(2rem, 9vw, 3rem);
-
-    line-height: 1.5;
-
-    margin-bottom: 25px;
-  }
-
-  .stay_mv_inner > p:last-child {
-    font-size: 0.9rem;
-
-    line-height: 2;
   }
 
   /*--------------------------------

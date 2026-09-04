@@ -403,113 +403,6 @@ Lightbox
 .stall_card:hover img {
   transform: scale(1.05);
 }
-/*==================================================
-モデルコース
-==================================================*/
-
-.activity_model {
-  width: min(1200px, 92%);
-
-  margin: 180px auto 120px;
-}
-
-.activity_model a {
-  position: relative;
-
-  display: block;
-
-  overflow: hidden;
-
-  border-radius: 10px;
-
-  text-decoration: none;
-}
-
-.activity_model img {
-  width: 100%;
-
-  aspect-ratio: 21 / 8;
-
-  object-fit: cover;
-
-  display: block;
-
-  transition: 0.7s;
-}
-
-.activity_model a::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.35);
-
-  z-index: 1;
-}
-
-.activity_model:hover img {
-  transform: scale(1.05);
-}
-
-.activity_model_text {
-  position: absolute;
-
-  top: 50%;
-
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  width: 90%;
-
-  text-align: center;
-
-  color: #fff;
-
-  z-index: 2;
-}
-
-.activity_model_text span {
-  display: block;
-
-  letter-spacing: 0.35em;
-
-  margin-bottom: 20px;
-
-  font-size: 0.9rem;
-}
-
-.activity_model_text h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-
-  font-weight: normal;
-
-  margin-bottom: 25px;
-}
-
-.activity_model_text p {
-  line-height: 2;
-
-  margin-bottom: 35px;
-}
-
-.model_button {
-  display: inline-block;
-
-  padding: 15px 42px;
-
-  border: 1px solid #fff;
-
-  transition: 0.3s;
-}
-
-.activity_model:hover .model_button {
-  background: #fff;
-
-  color: #222;
-}
 
 /*==================================================
 フェードアップ（JS用）
@@ -577,10 +470,6 @@ Lightbox
 
   .stall_grid {
     gap: 20px;
-  }
-
-  .activity_model {
-    margin: 120px auto 80px;
   }
 }
 
@@ -656,24 +545,6 @@ Lightbox
 
   .stall_grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .activity_model img {
-    aspect-ratio: 16 / 9;
-  }
-
-  .activity_model_text h2 {
-    font-size: 1.6rem;
-  }
-
-  .activity_model_text p {
-    font-size: 0.9rem;
-  }
-
-  .model_button {
-    padding: 12px 28px;
-
-    font-size: 0.9rem;
   }
 }
 

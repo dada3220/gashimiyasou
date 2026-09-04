@@ -9,13 +9,13 @@
 
   font-size: 2.5rem;
 
-  margin-bottom: 40px;
+  margin: 0 30px 40px;
 
   letter-spacing: 0.15em;
 
   font-weight: normal;
 
-  border-bottom: solid 1px #838282;
+  border-bottom: solid 1px #9c0505;
 }
 
 .food_text h2 {
@@ -23,13 +23,13 @@
 
   text-align: center;
 
-  margin-bottom: 20px;
+  margin: 0 80px 20px;
 
   letter-spacing: 0.15em;
 
   font-weight: normal;
 
-  border-bottom: solid 1px #cb0e0e;
+  border-bottom: solid 1px #3b3b3b;
 }
 
 .food_text h3 {
@@ -68,13 +68,13 @@
 
   font-size: 2.5rem;
 
-  margin-bottom: 40px;
+  margin: 0 80px 40px;
 
   letter-spacing: 0.15em;
 
   font-weight: normal;
 
-  border-bottom: solid 1px #838282;
+  border-bottom: solid 1px #6d6c6c;
 }
 
 .season_title.spring {
@@ -761,7 +761,7 @@ BAR 画像比率
 
   border-radius: 50%;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(145, 144, 144, 0.5);
 
   color: #fff;
 
@@ -774,6 +774,7 @@ BAR 画像比率
   flex-shrink: 0;
 
   backdrop-filter: blur(5px);
+  margin: 0 10px 0;
 }
 
 .slider_btn:hover {
@@ -805,7 +806,7 @@ BAR 画像比率
 
   border-radius: 10px;
 
-  border: 1px solid #da2808;
+  border: 1px solid #7a7776;
 
   margin-bottom: 100px;
 }
@@ -1161,6 +1162,8 @@ BAR 画像比率
   ========================= */
 
   .slider_btn {
+    background: rgba(5, 5, 5, 0.5);
+
     position: absolute;
 
     top: 50%;
@@ -1169,11 +1172,11 @@ BAR 画像比率
 
     z-index: 10;
 
-    width: 30px;
+    width: 50px;
 
-    height: 30px;
+    height: 50px;
 
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .prev {

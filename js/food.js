@@ -16,26 +16,26 @@ function initSeasonMenu() {
   const seasonData = {
     spring: {
       title: "春のお料理",
-      image: "images/food01.png",
-      menu: "images/menu01.png",
+      image: "images/food/food01.png",
+      menu: "images/food/menu01.png",
     },
 
     summer: {
       title: "夏のお料理",
-      image: "images/food02.png",
-      menu: "images/menu02.png",
+      image: "images/food/food02.png",
+      menu: "images/food/menu02.png",
     },
 
     autumn: {
       title: "秋のお料理",
-      image: "images/food03.png",
-      menu: "images/menu03.png",
+      image: "images/food/food03.png",
+      menu: "images/food/menu03.png",
     },
 
     winter: {
       title: "冬のお料理",
-      image: "images/food04.png",
-      menu: "images/menu04.png",
+      image: "images/food/food04.png",
+      menu: "images/food/menu04.png",
     },
   };
 

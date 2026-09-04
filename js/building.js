@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
-          shape.style.setProperty("fill", "none");
+          shape.style.setProperty("fill", "#000000");
           shape.style.setProperty("fill-opacity", "0");
         });
 

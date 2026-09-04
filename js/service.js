@@ -28,19 +28,4 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(item);
     });
   }
-
-  /* =========================================================
-     Lightbox
-  ========================================================= */
-
-  if (typeof lightbox !== "undefined") {
-    lightbox.option({
-      resizeDuration: 300,
-      fadeDuration: 300,
-      imageFadeDuration: 300,
-      wrapAround: true,
-      albumLabel: "%1 / %2",
-      disableScrolling: true,
-    });
-  }
 });

@@ -20,6 +20,7 @@ html {
 .lounge_intro {
   margin-top: 90px;
   margin-bottom: 100px;
+
   text-align: center;
 }
 
@@ -30,15 +31,18 @@ html {
 .section_title h2 {
   margin: 0;
   padding-bottom: 20px;
+
   border-bottom: solid 1px #696767;
 
   font-size: 2rem;
   font-weight: normal;
+
   letter-spacing: 0.15em;
 }
 
 .intro_text {
   max-width: 900px;
+
   margin: 45px auto 0;
 }
 
@@ -56,7 +60,7 @@ html {
 .lounge_nav {
   max-width: 1000px;
 
-  margin: 0 auto 150px;
+  margin: 0 auto 120px;
 
   text-align: center;
 }
@@ -67,6 +71,7 @@ html {
   color: #a9a18d;
 
   font-size: 0.8rem;
+
   letter-spacing: 0.35em;
 }
 
@@ -141,6 +146,8 @@ html {
   font-weight: normal;
 }
 
+/* ナビカラー */
+
 .nav_fire::after {
   background: #bd0404;
 }
@@ -176,9 +183,37 @@ html {
 .lounge_block {
   position: relative;
 
-  margin-bottom: 180px;
+  display: block;
+
+  margin-bottom: 80px;
 
   scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.lounge_summary {
+  position: relative;
+
+  display: block;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+/* Safari / Chrome */
+
+.lounge_summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Firefox */
+
+.lounge_summary::marker {
+  display: none;
 }
 
 /* =========================================================
@@ -197,27 +232,33 @@ html {
   display: block;
 
   width: 100%;
-  height: 100%;
+  height: 520px;
 
   object-fit: cover;
 
-  transition: transform 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    filter 0.6s ease;
 }
 
-.lounge_block:hover .lounge_main_image img {
+.lounge_summary:hover .lounge_main_image img {
   transform: scale(1.015);
 }
 
 /* =========================================================
-   LOUNGE HEADER
+   SUMMARY INFO
 ========================================================= */
 
-.lounge_header {
+.lounge_summary_info {
   max-width: 1000px;
 
-  margin: 65px auto 0;
+  margin: 50px auto 0;
+
+  padding-bottom: 55px;
 
   text-align: center;
+
+  border-bottom: solid 1px #444;
 }
 
 .lounge_number {
@@ -230,6 +271,155 @@ html {
   font-size: 0.75rem;
 
   letter-spacing: 0.35em;
+}
+
+.lounge_summary_info h3 {
+  margin: 0 0 25px;
+
+  font-size: 2.3rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.15em;
+}
+
+.lounge_summary_catch {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  font-size: 1rem;
+
+  line-height: 2.2;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   ACCORDION BUTTON
+========================================================= */
+
+.accordion_button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 35px;
+
+  padding: 12px 25px;
+
+  border: solid 1px #555;
+
+  color: #bbb;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.15em;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.lounge_summary:hover .accordion_button {
+  color: #fff;
+
+  border-color: #888;
+}
+
+.accordion_open,
+.accordion_close {
+  display: inline-block;
+}
+
+.accordion_close {
+  display: none;
+}
+
+.lounge_block[open] .accordion_open {
+  display: none;
+}
+
+.lounge_block[open] .accordion_close {
+  display: inline-block;
+}
+
+.accordion_button i {
+  position: relative;
+
+  display: block;
+
+  width: 12px;
+  height: 12px;
+}
+
+.accordion_button i::before,
+.accordion_button i::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 12px;
+  height: 1px;
+
+  background: #aaa;
+
+  transform: translate(-50%, -50%);
+
+  transition: transform 0.3s ease;
+}
+
+.accordion_button i::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.lounge_block[open] .accordion_button i::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.lounge_detail {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding-top: 65px;
+
+  animation: loungeOpen 0.6s ease both;
+}
+
+@keyframes loungeOpen {
+  from {
+    opacity: 0;
+
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LOUNGE HEADER
+========================================================= */
+
+.lounge_header {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  text-align: center;
 }
 
 .lounge_header h3 {
@@ -312,11 +502,11 @@ html {
 .lounge_features {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 35px;
+  gap: 25px;
 
-  margin: 65px 10px 0px;
+  margin: 65px 10px 0;
 }
 
 .lounge_feature {
@@ -340,7 +530,7 @@ html {
 .feature_image {
   overflow: hidden;
 
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
 }
 
 .feature_image img {
@@ -359,17 +549,19 @@ html {
 }
 
 .feature_text {
-  padding: 25px 28px 30px;
+  padding: 22px 22px 27px;
 }
 
 .feature_text h4 {
-  margin: 0 0 15px;
+  margin: 0 0 12px;
 
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 
   font-weight: normal;
 
-  letter-spacing: 0.12em;
+  line-height: 1.6;
+
+  letter-spacing: 0.1em;
 }
 
 .feature_text p {
@@ -377,9 +569,90 @@ html {
 
   color: #ccc;
 
+  font-size: 0.82rem;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   LIMITED EVENT
+========================================================= */
+
+.lounge_event {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  margin: 65px 10px 0;
+
+  border: solid 1px #555;
+
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.event_image {
+  overflow: hidden;
+}
+
+.event_image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 280px;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.lounge_event:hover .event_image img {
+  transform: scale(1.03);
+}
+
+.event_text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 50px;
+}
+
+.event_label {
+  margin: 0 0 15px;
+
+  color: #888;
+
+  font-family: serif;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.3em;
+}
+
+.event_text h4 {
+  margin: 0 0 20px;
+
+  font-size: 1.5rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.12em;
+}
+
+.event_text > p:last-child {
+  margin: 0;
+
+  color: #ccc;
+
   font-size: 0.9rem;
 
-  line-height: 2;
+  line-height: 2.1;
 
   letter-spacing: 0.05em;
 }
@@ -390,48 +663,60 @@ html {
 
 /* 火 */
 
+.lounge_fire .lounge_summary_info h3,
 .lounge_fire .lounge_header h3,
-.lounge_fire .feature_text h4 {
+.lounge_fire .feature_text h4,
+.lounge_fire .event_text h4 {
   color: #bd0404;
 }
 
 /* 月 */
 
+.lounge_moon .lounge_summary_info h3,
 .lounge_moon .lounge_header h3,
-.lounge_moon .feature_text h4 {
+.lounge_moon .feature_text h4,
+.lounge_moon .event_text h4 {
   color: #a84bb7;
 }
 
 /* 土 */
 
+.lounge_earth .lounge_summary_info h3,
 .lounge_earth .lounge_header h3,
-.lounge_earth .feature_text h4 {
+.lounge_earth .feature_text h4,
+.lounge_earth .event_text h4 {
   color: #cc5009;
 }
 
 /* 木 */
 
+.lounge_wood .lounge_summary_info h3,
 .lounge_wood .lounge_header h3,
-.lounge_wood .feature_text h4 {
+.lounge_wood .feature_text h4,
+.lounge_wood .event_text h4 {
   color: #069201;
 }
 
 /* 水 */
 
+.lounge_water .lounge_summary_info h3,
 .lounge_water .lounge_header h3,
-.lounge_water .feature_text h4 {
+.lounge_water .feature_text h4,
+.lounge_water .event_text h4 {
   color: #0284a5;
 }
 
 /* 金 */
 
+.lounge_gold .lounge_summary_info h3,
 .lounge_gold .lounge_header h3,
-.lounge_gold .feature_text h4 {
+.lounge_gold .feature_text h4,
+.lounge_gold .event_text h4 {
   color: #c6d403;
 }
 
 /* =========================================================
-   ラウンジごとの区切り
+   ラウンジ区切り
 ========================================================= */
 
 .lounge_block:not(:last-child)::after {
@@ -442,45 +727,82 @@ html {
   width: 70px;
   height: 1px;
 
-  margin: 150px auto 0;
+  margin: 80px auto 0;
 
   background: #555;
 }
 
 /* =========================================================
-   RESERVATION
+   LOUNGE NOTES
 ========================================================= */
 
-.yoyaku_foot {
-  margin-top: 20px;
-  margin-bottom: 100px;
+.lounge_notes {
+  max-width: 1000px;
+
+  margin: 0 auto 130px;
+}
+
+.lounge_notes .section_title {
+  margin-bottom: 45px;
+}
+
+.lounge_notes_inner {
+  padding: 45px 55px;
+
+  border-top: solid 1px #444;
+  border-bottom: solid 1px #444;
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.lounge_notes_inner ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.lounge_notes_inner li {
+  position: relative;
+
+  padding-left: 25px;
+
+  color: #ccc;
+
+  font-size: 0.85rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.05em;
+}
+
+.lounge_notes_inner li + li {
+  margin-top: 15px;
+}
+
+.lounge_notes_inner li::before {
+  content: "・";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  color: #bfa76f;
+}
+
+.lounge_notes_bottom {
+  margin: 35px 0 0;
+
+  color: #a9a18d;
+
+  font-size: 0.8rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.08em;
 
   text-align: center;
-}
-
-.yoyaku_foot p {
-  margin: 0;
-}
-
-.yoyaku_foot a {
-  display: inline-block;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.yoyaku_foot a:hover {
-  opacity: 0.75;
-
-  transform: translateY(-3px);
-}
-
-.yoyaku_foot img {
-  display: block;
-
-  max-width: 100%;
-  height: auto;
 }
 
 /* =========================================================
@@ -489,7 +811,12 @@ html {
 
 @media screen and (max-width: 1000px) {
   .lounge_main_image img {
-    height: 500px;
+    height: 450px;
+  }
+
+  .lounge_summary_info {
+    margin-right: 30px;
+    margin-left: 30px;
   }
 
   .lounge_header {
@@ -498,11 +825,22 @@ html {
   }
 
   .lounge_features {
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 20px;
   }
 
   .feature_text {
-    padding: 22px 20px 25px;
+    padding: 20px;
+  }
+
+  .lounge_event {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .event_text {
+    padding: 35px;
   }
 }
 
@@ -537,7 +875,7 @@ html {
   ------------------------- */
 
   .lounge_nav {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
   .lounge_nav_list {
@@ -572,7 +910,7 @@ html {
   ------------------------- */
 
   .lounge_block {
-    margin-bottom: 110px;
+    margin-bottom: 60px;
 
     scroll-margin-top: 70px;
   }
@@ -582,7 +920,37 @@ html {
   }
 
   .lounge_main_image img {
-    object-fit: cover;
+    height: 380px;
+  }
+
+  .lounge_summary_info {
+    margin: 35px 10px 0;
+
+    padding-bottom: 40px;
+  }
+
+  .lounge_summary_info h3 {
+    margin-bottom: 20px;
+
+    font-size: 1.7rem;
+  }
+
+  .lounge_summary_catch {
+    font-size: 0.9rem;
+
+    line-height: 2;
+  }
+
+  .accordion_button {
+    margin-top: 25px;
+  }
+
+  /* -------------------------
+     DETAIL
+  ------------------------- */
+
+  .lounge_detail {
+    padding-top: 45px;
   }
 
   /* -------------------------
@@ -590,7 +958,7 @@ html {
   ------------------------- */
 
   .lounge_header {
-    margin: 40px 10px 0;
+    margin: 0 10px;
   }
 
   .lounge_number {
@@ -631,6 +999,7 @@ html {
 
   .meta_item + .meta_item {
     border-top: solid 1px #444;
+
     border-left: none;
   }
 
@@ -647,9 +1016,7 @@ html {
   ------------------------- */
 
   .lounge_features {
-    display: flex;
-
-    flex-direction: column;
+    grid-template-columns: 1fr;
 
     gap: 15px;
 
@@ -667,7 +1034,7 @@ html {
   .feature_image {
     aspect-ratio: auto;
 
-    min-height: 130px;
+    min-height: 140px;
   }
 
   .feature_text {
@@ -693,20 +1060,43 @@ html {
   }
 
   /* -------------------------
+     EVENT
+  ------------------------- */
+
+  .lounge_event {
+    grid-template-columns: 1fr;
+
+    margin-top: 45px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .event_image img {
+    height: 250px;
+
+    min-height: 0;
+  }
+
+  .event_text {
+    padding: 30px 25px 35px;
+  }
+
+  .event_text h4 {
+    font-size: 1.25rem;
+  }
+
+  .event_text > p:last-child {
+    font-size: 0.8rem;
+
+    line-height: 1.9;
+  }
+
+  /* -------------------------
      DIVIDER
   ------------------------- */
 
   .lounge_block:not(:last-child)::after {
-    margin-top: 100px;
-  }
-
-  /* -------------------------
-     RESERVATION
-  ------------------------- */
-
-  .yoyaku_foot {
-    margin-top: 0;
-    margin-bottom: 70px;
+    margin-top: 60px;
   }
 }
 
@@ -727,6 +1117,24 @@ html {
     font-size: 1.2rem;
   }
 
+  .lounge_main_image img {
+    height: 280px;
+  }
+
+  .lounge_summary_info h3 {
+    font-size: 1.5rem;
+  }
+
+  .lounge_summary_catch {
+    font-size: 0.85rem;
+  }
+
+  .accordion_button {
+    padding: 10px 20px;
+
+    font-size: 0.7rem;
+  }
+
   .lounge_header h3 {
     font-size: 1.5rem;
   }
@@ -740,7 +1148,7 @@ html {
   }
 
   .feature_image {
-    min-height: 115px;
+    min-height: 120px;
   }
 
   .feature_text {
@@ -755,5 +1163,21 @@ html {
     font-size: 0.75rem;
 
     line-height: 1.7;
+  }
+
+  .event_image img {
+    height: 210px;
+  }
+
+  .event_text {
+    padding: 25px 20px 30px;
+  }
+
+  .event_text h4 {
+    font-size: 1.1rem;
+  }
+
+  .event_text > p:last-child {
+    font-size: 0.75rem;
   }
 }
