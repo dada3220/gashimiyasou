@@ -35,13 +35,13 @@
   <body>
     <!-- =========================
          ヘッダー
-    ========================= -->
+    ========================== -->
     <div id="header-area"></div>
 
     <main class="lounge_page wrapper">
       <!-- =========================
            ページタイトル
-      ========================= -->
+      ========================== -->
       <div class="page_head">
         <h1>ラウンジ</h1>
         <p>lounge</p>
@@ -49,7 +49,7 @@
 
       <!-- =========================
            MV
-      ========================= -->
+      ========================== -->
       <section class="mv">
         <img src="images/mv/lounge_mv.png" alt="がしみや荘のラウンジ" />
 
@@ -65,7 +65,7 @@
 
       <!-- =========================
            INTRO
-      ========================= -->
+      ========================== -->
       <section class="lounge_intro">
         <div class="section_title">
           <h2>6つのラウンジ</h2>
@@ -88,7 +88,7 @@
 
       <!-- =========================
            ラウンジナビ
-      ========================= -->
+      ========================== -->
       <nav class="lounge_nav" aria-label="ラウンジ一覧">
         <p class="lounge_nav_title">LOUNGE</p>
 
@@ -108,14 +108,14 @@
             <strong>土</strong>
           </a>
 
-          <a href="#lounge04" class="nav_wood">
+          <a href="#lounge04" class="nav_water">
             <span>04</span>
-            <strong>木</strong>
+            <strong>水</strong>
           </a>
 
-          <a href="#lounge05" class="nav_water">
+          <a href="#lounge05" class="nav_wood">
             <span>05</span>
-            <strong>水</strong>
+            <strong>木</strong>
           </a>
 
           <a href="#lounge06" class="nav_gold">
@@ -127,7 +127,7 @@
 
       <!-- =========================
            ラウンジ紹介
-      ========================= -->
+      ========================== -->
       <section class="lounge_contents">
         <!-- =====================================================
              火のラウンジ
@@ -157,12 +157,17 @@
           </summary>
 
           <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
             <div class="lounge_header">
-              <p class="lounge_catch">
-                暖炉の炎を眺めながら、ゆったりとした時間を過ごす
-                本館のメインラウンジ。
-              </p>
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  本館1階に位置する、がしみや荘の中心的なラウンジです。<br />
+                  時間帯によって変わる軽食やドリンクを片手に、思い思いの時間をお過ごしいただけます。<br />
+                  暖炉の炎やレコードの音色に包まれながら、旅の合間のひとときをお楽しみください。
+                </p>
+              </div>
 
+              <!-- 基本情報 -->
               <div class="lounge_meta">
                 <div class="meta_item">
                   <span>場所</span>
@@ -173,25 +178,48 @@
                   <span>営業時間</span>
                   <strong>24時間</strong>
                 </div>
+              </div>
 
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong> ソフトドリンク・アルコール・軽食 </strong>
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    時間帯ごとに内容が変わる軽食と、
+                    豊富なドリンクをお楽しみいただけます。
+                  </p>
+
+                  <ul>
+                    <li>軽食</li>
+                    <li>アルコール</li>
+                    <li>ソフトドリンク</li>
+                  </ul>
+                </div>
+
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/f_service.png"
+                    alt="火のラウンジの提供内容"
+                  />
                 </div>
               </div>
             </div>
 
+            <!-- コンテンツ -->
             <div class="lounge_features">
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge01_feature01.png"
+                    src="images/lounge/f_contents_01.png"
                     alt="時間によって変わる軽食とドリンク"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>時間によって変わる軽食・ドリンク</h4>
+                  <h4>軽食ビュッフェ</h4>
                   <p>
                     時間帯に合わせて内容が変わる軽食と、
                     豊富なお飲み物を自由にお楽しみいただけます。
@@ -201,27 +229,33 @@
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge01_feature02.png" alt="イベント催し" />
+                  <img
+                    src="images/lounge/f_contents_02.png"
+                    alt="レコードプレーヤー"
+                  />
                 </div>
 
                 <div class="feature_text">
-                  <h4>イベント催し</h4>
+                  <h4>レコードプレーヤー</h4>
                   <p>
-                    館内の中心にあるメインラウンジならではの、
-                    音楽や季節の催しをお楽しみください。
+                    昔懐かしいレコードプレーヤーを設置しております。
+                    お好みの音楽をレコードの音質で。
                   </p>
                 </div>
               </div>
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge01_feature03.png" alt="焼き立てパン" />
+                  <img
+                    src="images/lounge/f_contents_03.png"
+                    alt="焼き立てパン"
+                  />
                 </div>
 
                 <div class="feature_text">
                   <h4>焼き立てパン</h4>
                   <p>
-                    香ばしい香りが広がる焼き立てパン。
+                    石窯と薪で焼き上げた焼き立てパン。
                     軽食やおやつとして気軽にお楽しみいただけます。
                   </p>
                 </div>
@@ -229,7 +263,7 @@
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge01_feature04.png" alt="庭園足湯" />
+                  <img src="images/lounge/f_contents_04.png" alt="庭園足湯" />
                 </div>
 
                 <div class="feature_text">
@@ -242,10 +276,11 @@
               </div>
             </div>
 
+            <!-- イベント -->
             <div class="lounge_event">
               <div class="event_image">
                 <img
-                  src="images/lounge01_event.png"
+                  src="images/lounge/f_event.png"
                   alt="火のラウンジ ミニライブ"
                 />
               </div>
@@ -293,12 +328,17 @@
           </summary>
 
           <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
             <div class="lounge_header">
-              <p class="lounge_catch">
-                山々を望む屋上で、昼は景色を、夜は星空を楽しむ
-                大人のための展望ラウンジ。
-              </p>
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  屋上に設けられた、山々と星空を望む開放的なラウンジです。<br />
+                  昼は景色を眺めながら、夜は星空の下でお酒やおつまみをお楽しみいただけます。<br />
+                  静かな夜にゆっくりとグラスを傾ける、大人のための特別な時間をご用意しています。
+                </p>
+              </div>
 
+              <!-- 基本情報 -->
               <div class="lounge_meta">
                 <div class="meta_item">
                   <span>場所</span>
@@ -309,53 +349,46 @@
                   <span>営業時間</span>
                   <strong>15:00～25:00 / 7:00～11:00</strong>
                 </div>
+              </div>
 
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong> アルコール・カクテル・アペリティフ </strong>
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    夜のひとときを楽しむためのお酒とアペリティフを中心にご用意。
+                  </p>
+
+                  <ul>
+                    <li>日本酒・ワイン・ウイスキー</li>
+                    <li>カクテル</li>
+                    <li>アペリティフ</li>
+                  </ul>
+                </div>
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/m_service.png"
+                    alt="月のラウンジの提供内容"
+                  />
                 </div>
               </div>
             </div>
 
+            <!-- コンテンツ -->
             <div class="lounge_features">
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge02_feature01.png" alt="豊富なお酒" />
+                  <img src="images/lounge/m_contents_01.png" alt="酒庫バー" />
                 </div>
 
                 <div class="feature_text">
-                  <h4>豊富なお酒</h4>
+                  <h4>酒庫バー</h4>
                   <p>
-                    ウイスキーやワイン、カクテルなど、
-                    夜の時間を楽しむ多彩なお酒を取り揃えています。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge02_feature02.png" alt="大人の空間" />
-                </div>
-
-                <div class="feature_text">
-                  <h4>大人の空間</h4>
-                  <p>
-                    静かな屋上で景色や星空を眺めながら、
-                    日常を離れてゆっくり過ごせる空間です。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge02_feature03.png" alt="テラス" />
-                </div>
-
-                <div class="feature_text">
-                  <h4>テラス</h4>
-                  <p>
-                    開放感のあるテラス席で、
-                    山々を望みながらお酒やアペリティフをどうぞ。
+                    ワインや日本酒、ウイスキーやカクテルなど、
+                    お酒の貯蔵庫からお好きなものを。
                   </p>
                 </div>
               </div>
@@ -363,25 +396,60 @@
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge02_feature04.png"
-                    alt="生ハム原木とセルフ燻製"
+                    src="images/lounge/m_contents_02.png"
+                    alt="プレミアムおつまみ"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>生ハム原木・セルフ燻製</h4>
+                  <h4>プレミアムおつまみ</h4>
                   <p>
-                    生ハム原木やセルフ燻製など、
-                    お酒と相性の良い味わいを自由にお楽しみください。
+                    生ハム原木やセルフ燻製、卓上炙りや手作りディッパーなど、
+                    楽しみながら味わえるおつまみを。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/m_contents_03.png"
+                    alt="ミニプラネタリウム"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>ミニプラネタリウム</h4>
+                  <p>
+                    雨の日でも星空を楽しめる、解説付きの
+                    ミニサイズのプラネタリウムです。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/m_contents_04.png"
+                    alt="セルフシーシャ"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>セルフシーシャ</h4>
+                  <p>
+                    喫煙ルームにシーシャをご用意しております。
+                    （ご利用は喫煙ルーム内でのみお願いいたします。）
                   </p>
                 </div>
               </div>
             </div>
 
+            <!-- イベント -->
             <div class="lounge_event">
               <div class="event_image">
                 <img
-                  src="images/lounge02_event.png"
+                  src="images/lounge/m_event.png"
                   alt="月のラウンジ 天体観測会"
                 />
               </div>
@@ -406,7 +474,7 @@
         <details class="lounge_block lounge_earth" id="lounge03">
           <summary class="lounge_summary">
             <div class="lounge_main_image">
-              <img src="images/lounge/ground_main.png" alt="土のラウンジ" />
+              <img src="images/lounge/earth_main.png" alt="土のラウンジ" />
             </div>
 
             <div class="lounge_summary_info">
@@ -428,12 +496,17 @@
           </summary>
 
           <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
             <div class="lounge_header">
-              <p class="lounge_catch">
-                本やボードゲームを囲みながら、
-                一人でも皆でも自由に楽しめる地下ラウンジ。
-              </p>
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  地下1階の落ち着いた空間に、本やゲームを集めた遊び心のあるラウンジです。<br />
+                  一人で読書を楽しむのはもちろん、二人でボードゲームを囲むこともできます。<br />
+                  少し夜更かしをしながら、童心に帰るようなひとときをお楽しみください。
+                </p>
+              </div>
 
+              <!-- 基本情報 -->
               <div class="lounge_meta">
                 <div class="meta_item">
                   <span>場所</span>
@@ -444,35 +517,58 @@
                   <span>営業時間</span>
                   <strong>15:00～24:00 / 7:00～11:00</strong>
                 </div>
+              </div>
 
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong> 瓶缶飲料・缶詰・スナック類 </strong>
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    手軽に楽しめる、瓶缶飲料や
+                    缶詰・スナックなどをご用意しています。
+                  </p>
+
+                  <ul>
+                    <li>瓶缶飲料</li>
+                    <li>缶詰</li>
+                    <li>スナック</li>
+                  </ul>
+                </div>
+
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/e_service.png"
+                    alt="土のラウンジの提供内容"
+                  />
                 </div>
               </div>
             </div>
 
+            <!-- コンテンツ -->
             <div class="lounge_features">
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge03_feature01.png"
-                    alt="本とボードゲーム"
+                    src="images/lounge/e_contents_01.png"
+                    alt="ボードゲーム"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>本とボードゲーム</h4>
+                  <h4>ボードゲーム</h4>
                   <p>
-                    小説や漫画、雑誌からボードゲームまで。
-                    一人でも、誰かと一緒でも自由に楽しめます。
+                    二人用の物を中心に、多種取り揃えております。
+                    ラウンジでも、お部屋でもお楽しみいただけます。
                   </p>
                 </div>
               </div>
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge03_feature02.png" alt="缶詰バー" />
+                  <img src="images/lounge/e_contents_02.png" alt="缶詰バー" />
                 </div>
 
                 <div class="feature_text">
@@ -487,23 +583,9 @@
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge03_feature03.png"
-                    alt="手作りスナック"
+                    src="images/lounge/e_contents_03.png"
+                    alt="TVゲーム個室"
                   />
-                </div>
-
-                <div class="feature_text">
-                  <h4>手作りスナック</h4>
-                  <p>
-                    ラウンジで気軽につまめる、
-                    がしみや荘手作りの軽食をご用意しています。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge03_feature04.png" alt="TVゲーム個室" />
                 </div>
 
                 <div class="feature_text">
@@ -514,12 +596,30 @@
                   </p>
                 </div>
               </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/e_contents_04.png"
+                    alt="コワーキングスペース"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>コワーキングスペース</h4>
+                  <p>
+                    本を読んだり、この後の予定を考えたり、
+                    一人でゆっくり過ごせる空間です。
+                  </p>
+                </div>
+              </div>
             </div>
 
+            <!-- イベント -->
             <div class="lounge_event">
               <div class="event_image">
                 <img
-                  src="images/lounge03_event.png"
+                  src="images/lounge/e_event.png"
                   alt="土のラウンジ ゲーム大会"
                 />
               </div>
@@ -540,16 +640,189 @@
         </details>
 
         <!-- =====================================================
+             水のラウンジ
+        ====================================================== -->
+        <details class="lounge_block lounge_water" id="lounge04">
+          <summary class="lounge_summary">
+            <div class="lounge_main_image">
+              <img src="images/lounge/water_main.png" alt="水のラウンジ" />
+            </div>
+
+            <div class="lounge_summary_info">
+              <p class="lounge_number">LOUNGE 04</p>
+
+              <h3>水のラウンジ</h3>
+
+              <p class="lounge_summary_catch">
+                川のせせらぎを間近に感じる、 開放感あふれる庭園の川床ラウンジ。
+              </p>
+
+              <span class="accordion_button">
+                <span class="accordion_open">詳細を見る</span>
+                <span class="accordion_close">閉じる</span>
+                <i></i>
+              </span>
+            </div>
+          </summary>
+
+          <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
+            <div class="lounge_header">
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  庭園を流れる川のすぐそばに設けられた、開放感あふれる川床ラウンジです。<br />
+                  川のせせらぎや水辺の風を感じながら、クラフトビールやお茶をお楽しみいただけます。<br />
+                  足湯やアクアリウムなど、水辺ならではの涼やかな時間をお過ごしください。
+                </p>
+              </div>
+
+              <!-- 基本情報 -->
+              <div class="lounge_meta">
+                <div class="meta_item">
+                  <span>場所</span>
+                  <strong>庭園内 川床エリア</strong>
+                </div>
+
+                <div class="meta_item">
+                  <span>営業時間</span>
+                  <strong>15:00～23:00 / 7:00～11:00</strong>
+                </div>
+              </div>
+
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    お風呂上りにビールやジェラート、
+                    川床で楽しむ抹茶と和菓子などをご用意しています。
+                  </p>
+
+                  <ul>
+                    <li>クラフトビール</li>
+                    <li>手作りジェラート</li>
+                    <li>抹茶</li>
+                    <li>和菓子</li>
+                  </ul>
+                </div>
+
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/w_service.png"
+                    alt="水のラウンジの提供内容"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- コンテンツ -->
+            <div class="lounge_features">
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/w_contents_01.png"
+                    alt="クラフトビール"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>クラフトビール</h4>
+                  <p>
+                    風呂上がりに、地元や各地のクラフトビールを
+                    川床の開放的な空間でお楽しみいただけます。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/w_contents_02.png"
+                    alt="ドクターフィッシュ"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>ドクターフィッシュ</h4>
+                  <p>
+                    足の角質を除去してくれるドクターフィッシュ。
+                    この機会にぜひお試しください。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/w_contents_03.png"
+                    alt="セルフお抹茶"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>セルフお抹茶</h4>
+                  <p>
+                    茶器を使って自分で点てるお抹茶。
+                    川のせせらぎを聞きながら、ゆっくりとお楽しみください。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img
+                    src="images/lounge/w_contents_04.png"
+                    alt="生け簀アクアリウム"
+                  />
+                </div>
+
+                <div class="feature_text">
+                  <h4>生け簀アクアリウム</h4>
+                  <p>
+                    生け簀をアクアリウムにしました。
+                    水槽を見ながら涼やかな時間をお過ごしください。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- イベント -->
+            <div class="lounge_event">
+              <div class="event_image">
+                <img
+                  src="images/lounge/w_event.png"
+                  alt="水のラウンジ 川釣り"
+                />
+              </div>
+
+              <div class="event_text">
+                <p class="event_label">LIMITED EVENT</p>
+
+                <h4>川釣り（5月～11月）</h4>
+
+                <p>
+                  庭園を流れる川で楽しむ、季節限定の川釣り体験。
+                  水辺の風を感じながら、ゆったりとした時間をお楽しみください。
+                </p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- =====================================================
              木のラウンジ
         ====================================================== -->
-        <details class="lounge_block lounge_wood" id="lounge04">
+        <details class="lounge_block lounge_wood" id="lounge05">
           <summary class="lounge_summary">
             <div class="lounge_main_image">
               <img src="images/lounge/tree_main.png" alt="木のラウンジ" />
             </div>
 
             <div class="lounge_summary_info">
-              <p class="lounge_number">LOUNGE 04</p>
+              <p class="lounge_number">LOUNGE 05</p>
 
               <h3>木のラウンジ</h3>
 
@@ -567,12 +840,17 @@
           </summary>
 
           <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
             <div class="lounge_header">
-              <p class="lounge_catch">
-                木々の香りに包まれながら、
-                森の中でゆっくりと過ごすアウトドアラウンジ。
-              </p>
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  庭園の木々に囲まれた、自然を身近に感じられるアウトドアラウンジです。<br />
+                  果実や焚火を使った食の体験など、森の中だからこそ楽しめる時間をご用意しています。<br />
+                  木々の香りに包まれながら、日常を忘れてお寛ぎください。
+                </p>
+              </div>
 
+              <!-- 基本情報 -->
               <div class="lounge_meta">
                 <div class="meta_item">
                   <span>場所</span>
@@ -583,25 +861,66 @@
                   <span>営業時間</span>
                   <strong>15:00～23:00 / 7:00～11:00</strong>
                 </div>
+              </div>
 
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong> 果物・果実酒・シロップ・アウトドア体験 </strong>
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    森の恵みを感じられる、季節の果物や自家製果実酒
+                    などをご用意しています。
+                  </p>
+
+                  <ul>
+                    <li>果物</li>
+                    <li>果実酒・シロップ</li>
+                    <li>ドライフルーツ</li>
+                    <li>アウトドアフード</li>
+                  </ul>
+                </div>
+
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/t_service.png"
+                    alt="木のラウンジの提供内容"
+                  />
                 </div>
               </div>
             </div>
 
+            <!-- コンテンツ -->
             <div class="lounge_features">
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge04_feature01.png" alt="果物" />
+                  <img
+                    src="images/lounge/t_contents_01.png"
+                    alt="果実酒・ドライフルーツ"
+                  />
                 </div>
 
                 <div class="feature_text">
-                  <h4>果物</h4>
+                  <h4>果実酒・ドライフルーツ</h4>
                   <p>
-                    季節ごとに旬を迎える果物を、
-                    森の中でゆっくりと味わっていただけます。
+                    季節の果実を使った自家製の果実酒やシロップ。
+                    自家製ドライフルーツとご一緒にどうぞ。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lounge_feature">
+                <div class="feature_image">
+                  <img src="images/lounge/t_contents_02.png" alt="キャンプ飯" />
+                </div>
+
+                <div class="feature_text">
+                  <h4>キャンプ飯</h4>
+                  <p>
+                    外の焚火で焼き上げる焼き芋やBBQ、マシュマロなど。
+                    ピザ窯で、ミニピザ作りも。
                   </p>
                 </div>
               </div>
@@ -609,56 +928,40 @@
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge04_feature02.png"
-                    alt="果実酒と果実シロップ"
+                    src="images/lounge/t_contents_03.png"
+                    alt="バレルサウナ"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>果実酒・果実シロップ</h4>
+                  <h4>バレルサウナ</h4>
                   <p>
-                    季節の果実を使った果実酒やシロップ。
-                    ソーダ割りなど、お好みの飲み方でどうぞ。
+                    バレルサウナで整い体験を（水着着用）。
+                    水風呂がわりに天然の川でクールダウン。
                   </p>
                 </div>
               </div>
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img
-                    src="images/lounge04_feature03.png"
-                    alt="キャンプとキャンプ飯"
-                  />
+                  <img src="images/lounge/t_contents_04.png" alt="サシェ作り" />
                 </div>
 
                 <div class="feature_text">
-                  <h4>キャンプ・キャンプ飯</h4>
+                  <h4>サシェ作り</h4>
                   <p>
-                    森の空気を感じながら、
-                    焚き火やアウトドア料理を楽しむ時間をご用意しています。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge04_feature04.png" alt="ログハウス" />
-                </div>
-
-                <div class="feature_text">
-                  <h4>ログハウス</h4>
-                  <p>
-                    木の温もりを感じるログハウスで、
-                    森の中ならではの静かな時間をお過ごしください。
+                    ドライフラワーやアロマを使ってサシェ作りを体験。
+                    作ったサシェはお土産としてお持ち帰りいただけます。
                   </p>
                 </div>
               </div>
             </div>
 
+            <!-- イベント -->
             <div class="lounge_event">
               <div class="event_image">
                 <img
-                  src="images/lounge04_event.png"
+                  src="images/lounge/t_event.png"
                   alt="木のラウンジ プロジェクションマッピング"
                 />
               </div>
@@ -669,146 +972,8 @@
                 <h4>プロジェクションマッピング</h4>
 
                 <p>
-                  夜の森を舞台に、木々や建物へ映像を投影。
+                  夜の森を舞台に、木々やスクリーンへ映像を投影。
                   自然と光が織りなす幻想的な空間をお楽しみいただけます。
-                </p>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- =====================================================
-             水のラウンジ
-        ====================================================== -->
-        <details class="lounge_block lounge_water" id="lounge05">
-          <summary class="lounge_summary">
-            <div class="lounge_main_image">
-              <img src="images/lounge/water_main.png" alt="水のラウンジ" />
-            </div>
-
-            <div class="lounge_summary_info">
-              <p class="lounge_number">LOUNGE 05</p>
-
-              <h3>水のラウンジ</h3>
-
-              <p class="lounge_summary_catch">
-                川のせせらぎを間近に感じる、 開放感あふれる庭園の川床ラウンジ。
-              </p>
-
-              <span class="accordion_button">
-                <span class="accordion_open">詳細を見る</span>
-                <span class="accordion_close">閉じる</span>
-                <i></i>
-              </span>
-            </div>
-          </summary>
-
-          <div class="lounge_detail">
-            <div class="lounge_header">
-              <p class="lounge_catch">
-                川のせせらぎを間近に感じる、 開放感あふれる庭園の川床ラウンジ。
-              </p>
-
-              <div class="lounge_meta">
-                <div class="meta_item">
-                  <span>場所</span>
-                  <strong>庭園内 川床エリア</strong>
-                </div>
-
-                <div class="meta_item">
-                  <span>営業時間</span>
-                  <strong>15:00～23:00 / 7:00～11:00</strong>
-                </div>
-
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong>
-                    茶葉・クラフトビール・手作りジェラート・和菓子
-                  </strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="lounge_features">
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge05_feature01.png" alt="セルフお抹茶" />
-                </div>
-
-                <div class="feature_text">
-                  <h4>セルフお抹茶</h4>
-                  <p>
-                    茶器を使って自分で点てるお抹茶。
-                    川のせせらぎを聞きながら、ゆっくりとお楽しみください。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img
-                    src="images/lounge05_feature02.png"
-                    alt="手作り和菓子とジェラート"
-                  />
-                </div>
-
-                <div class="feature_text">
-                  <h4>手作り和菓子・ジェラート</h4>
-                  <p>
-                    季節に合わせた手作り和菓子と、
-                    がしみや荘オリジナルジェラートをご用意しています。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img
-                    src="images/lounge05_feature03.png"
-                    alt="クラフトビール"
-                  />
-                </div>
-
-                <div class="feature_text">
-                  <h4>クラフトビール</h4>
-                  <p>
-                    地元や各地のクラフトビールを、
-                    川床の開放的な空間でお楽しみいただけます。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lounge_feature">
-                <div class="feature_image">
-                  <img src="images/lounge05_feature04.png" alt="川床足湯" />
-                </div>
-
-                <div class="feature_text">
-                  <h4>川床足湯</h4>
-                  <p>
-                    足湯に浸かりながら川の流れを眺める、
-                    水のラウンジならではの贅沢なひと休みです。
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="lounge_event">
-              <div class="event_image">
-                <img
-                  src="images/lounge05_event.png"
-                  alt="水のラウンジ 川釣り"
-                />
-              </div>
-
-              <div class="event_text">
-                <p class="event_label">LIMITED EVENT</p>
-
-                <h4>川釣り</h4>
-
-                <p>
-                  庭園を流れる川で楽しむ、季節限定の川釣り体験。
-                  水辺の風を感じながら、ゆったりとした時間をお楽しみください。
                 </p>
               </div>
             </div>
@@ -843,12 +1008,17 @@
           </summary>
 
           <div class="lounge_detail">
+            <!-- ラウンジ紹介 -->
             <div class="lounge_header">
-              <p class="lounge_catch">
-                アートや音楽に触れながら、
-                感性を満たす雅廊館のギャラリーラウンジ。
-              </p>
+              <div class="lounge_introduction">
+                <p class="lounge_catch">
+                  雅廊館の一角に設けられた、アートと文化に触れられる、カフェのようなギャラリーラウンジです。<br />
+                  季節のスイーツや挽きたてのコーヒーを楽しみながら、館内の作品をご鑑賞いただけます。<br />
+                  映画や音楽など、その日の気分に合わせてゆっくりとお過ごしください。
+                </p>
+              </div>
 
+              <!-- 基本情報 -->
               <div class="lounge_meta">
                 <div class="meta_item">
                   <span>場所</span>
@@ -859,35 +1029,58 @@
                   <span>営業時間</span>
                   <strong>15:00～23:00 / 7:00～11:00</strong>
                 </div>
+              </div>
 
-                <div class="meta_item">
-                  <span>提供内容</span>
-                  <strong> スイーツ・ひきたてコーヒー・茶葉 </strong>
+              <!-- 提供内容 -->
+              <div class="lounge_service">
+                <div class="lounge_service_text">
+                  <p class="service_label">SERVICE</p>
+
+                  <h4>提供内容</h4>
+
+                  <p>
+                    手作りスイーツや挽きたてのコーヒー、
+                    様々な茶葉をご用意しています。
+                  </p>
+
+                  <ul>
+                    <li>スイーツ</li>
+                    <li>コーヒー</li>
+                    <li>茶葉</li>
+                  </ul>
+                </div>
+
+                <div class="lounge_service_image">
+                  <img
+                    src="images/lounge/g_service.png"
+                    alt="金のラウンジの提供内容"
+                  />
                 </div>
               </div>
             </div>
 
+            <!-- コンテンツ -->
             <div class="lounge_features">
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge06_feature01.png"
-                    alt="手作りスイーツ"
+                    src="images/lounge/g_contents_01.png"
+                    alt="手作りパフェ"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>手作りスイーツ</h4>
+                  <h4>手作りパフェ</h4>
                   <p>
-                    季節の素材を使った手作りスイーツ。
-                    ゆっくりとしたカフェタイムをお楽しみください。
+                    季節の素材を使った手作りパフェが作れます。
+                    お好きな具材で自分だけのパフェをお作りください。
                   </p>
                 </div>
               </div>
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge06_feature02.png" alt="茶葉バー" />
+                  <img src="images/lounge/g_contents_02.png" alt="茶葉バー" />
                 </div>
 
                 <div class="feature_text">
@@ -902,15 +1095,15 @@
               <div class="lounge_feature">
                 <div class="feature_image">
                   <img
-                    src="images/lounge06_feature03.png"
-                    alt="ひきたてコーヒー"
+                    src="images/lounge/g_contents_03.png"
+                    alt="手挽きコーヒー"
                   />
                 </div>
 
                 <div class="feature_text">
-                  <h4>ひきたてコーヒー</h4>
+                  <h4>手挽きコーヒー</h4>
                   <p>
-                    豆をその場で挽いて淹れる、
+                    お好みの豆をその場で挽いて淹れる、
                     香り豊かなコーヒーをお楽しみください。
                   </p>
                 </div>
@@ -918,23 +1111,27 @@
 
               <div class="lounge_feature">
                 <div class="feature_image">
-                  <img src="images/lounge06_feature04.png" alt="クラフトジン" />
+                  <img
+                    src="images/lounge/g_contents_04.png"
+                    alt="クラフトジン"
+                  />
                 </div>
 
                 <div class="feature_text">
                   <h4>クラフトジン</h4>
                   <p>
-                    香りや味わいの異なるクラフトジンを揃え、
-                    大人のための一杯をご用意しています。
+                    オリジナルのクラフトジンが作れます。
+                    小瓶に入れられるので、1時間ほど持ち歩いて味を馴染ませます。
                   </p>
                 </div>
               </div>
             </div>
 
+            <!-- イベント -->
             <div class="lounge_event">
               <div class="event_image">
                 <img
-                  src="images/lounge06_event.png"
+                  src="images/lounge/g_event.png"
                   alt="金のラウンジ オールナイト上映会"
                 />
               </div>
@@ -956,8 +1153,8 @@
       </section>
 
       <!-- =========================
-     ラウンジご利用上の注意
-========================= -->
+           ラウンジご利用上の注意
+      ========================== -->
       <section class="lounge_notes">
         <div class="section_title">
           <h2>ラウンジご利用にあたって</h2>
@@ -1010,7 +1207,7 @@
 
       <!-- =========================
            予約ボタン
-      ========================= -->
+      ========================== -->
       <div class="yoyaku_foot">
         <p>
           <a href="reserve.html">
@@ -1022,7 +1219,7 @@
 
     <!-- =========================
          フッター
-    ========================= -->
+    ========================== -->
     <div id="footer-area"></div>
 
     <!-- JS -->
