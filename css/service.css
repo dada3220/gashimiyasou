@@ -580,7 +580,7 @@
 .ice_intro h2 {
   font-family: "Shippori Mincho", serif;
 
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
 
   letter-spacing: 0.18em;
@@ -768,22 +768,69 @@
 
 .smoking_area {
   display: grid;
-
   grid-template-columns: 1.15fr 0.85fr;
-
   gap: 90px;
-
   align-items: center;
-
   padding: 100px 0;
-
   border-top: 1px solid rgba(184, 162, 118, 0.3);
   border-bottom: 1px solid rgba(184, 162, 118, 0.3);
 }
 
+/* 画像*/
+
 .smoking_image {
   position: relative;
+
+  /*
+    画像2枚を重ねるための余白
+  */
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  /*
+    背景側の装飾線がはみ出しても
+    レイアウトを崩さない
+  */
+  isolation: isolate;
 }
+
+/* 共通 */
+
+.smoking_photo {
+  position: absolute;
+
+  width: 55%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+}
+
+.smoking_photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 手前の画像 */
+
+.smoking_photo_main {
+  left: 0;
+  top: 0;
+
+  z-index: 1;
+}
+
+/* 奥の画像 */
+
+.smoking_photo_sub {
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+}
+
+/* 装飾フレーム */
 
 .smoking_image::after {
   content: "";
@@ -800,15 +847,11 @@
   border-bottom: 1px solid rgba(184, 162, 118, 0.45);
 
   pointer-events: none;
+
+  z-index: 3;
 }
 
-.smoking_image img {
-  width: 100%;
-
-  aspect-ratio: 4 / 3;
-
-  object-fit: cover;
-}
+/* テキスト */
 
 .smoking_text {
   padding: 10px;
@@ -816,35 +859,26 @@
 
 .smoking_text h2 {
   font-family: "Shippori Mincho", serif;
-
   font-size: 2.5rem;
   font-weight: 400;
-
   letter-spacing: 0.18em;
-
   margin: 0 0 20px;
 }
 
 .smoking_text h3 {
   font-family: "Shippori Mincho", serif;
-
   font-size: 1.05rem;
   font-weight: 400;
-
   line-height: 1.9;
   letter-spacing: 0.08em;
-
   margin: 0 0 25px;
 }
 
 .smoking_text > p {
   font-size: 0.82rem;
-
   line-height: 2.3;
   letter-spacing: 0.05em;
-
   opacity: 0.78;
-
   margin: 0;
 }
 
@@ -1489,7 +1523,7 @@
   }
 
   .ice_intro h2 {
-    font-size: 2.15rem;
+    font-size: 2rem;
 
     line-height: 1.7;
 
@@ -1568,41 +1602,47 @@
     font-size: 3.2rem;
   }
 
-  /* -------------------------------------------------------
-     喫煙所
-  ------------------------------------------------------- */
+  /* =========================================================
+      喫煙所
+    ========================================================= */
 
   .smoking_area {
-    width: 88%;
+    display: grid;
 
-    gap: 45px;
+    /*
+      スマホでは縦方向に配置
+    */
+    grid-template-columns: 1fr;
 
-    padding: 60px 0;
+    gap: 70px;
+
+    padding: 70px 0;
   }
 
-  .smoking_image::after {
-    right: -10px;
-    bottom: -10px;
+  .smoking_image {
+    /*
+      PCと同じく横長の画像エリア
+    */
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .smoking_photo_main {
+    left: 0;
+    top: 0;
+  }
+
+  .smoking_photo_sub {
+    right: 0;
+    bottom: 0;
   }
 
   .smoking_text {
-    padding: 0 5px;
+    padding: 0;
   }
 
   .smoking_text h2 {
     font-size: 2rem;
-  }
-
-  .smoking_text h3 {
-    font-size: 0.9rem;
-
-    line-height: 1.8;
-  }
-
-  .smoking_text > p {
-    font-size: 0.76rem;
-
-    line-height: 2.1;
   }
 
   /* -------------------------------------------------------
