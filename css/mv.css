@@ -9,8 +9,7 @@ MV
 .mv img {
   width: 100%;
 
-  height: 70vh;
-
+  height: 70%;
   min-height: 550px;
 
   object-fit: cover;
@@ -68,8 +67,6 @@ MV
 
 @media (max-width: 600px) {
   .mv img {
-    height: 55vh;
-
     min-height: 400px;
   }
 
