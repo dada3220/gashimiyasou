@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>購入手続き | がしみや荘 ONLINE SHOP</title>
+
+    <meta
+      name="description"
+      content="がしみや荘 ONLINE SHOPの購入手続きページです。"
+    />
+
+    <link rel="icon" href="../images/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/shop-checkout.css" />
+
+    <!-- =====================================================
+         CHECKOUT PAGE STYLE
+    ====================================================== -->
+
+    <style>
+      /* =====================================================
+         CHECKOUT
+      ====================================================== */
+
+      .checkout_page {
+        background: #000;
+        color: #fff;
+        padding: 90px 20px 120px;
+      }
+
+      .checkout_inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .checkout_layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 70px;
+        align-items: start;
+      }
+
+      .checkout_main {
+        min-width: 0;
+      }
+
+      .checkout_section {
+        margin-bottom: 70px;
+      }
+
+      .checkout_section_head {
+        border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+        padding-bottom: 18px;
+        margin-bottom: 30px;
+      }
+
+      .checkout_section_label {
+        color: #d4af37;
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        margin-bottom: 8px;
+      }
+
+      .checkout_section_head h2 {
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+      }
+
+      /* -----------------------------------------------
+         FORM
+      ------------------------------------------------ */
+
+      .checkout_form_group {
+        margin-bottom: 25px;
+      }
+
+      .checkout_form_group:last-child {
+        margin-bottom: 0;
+      }
+
+      .checkout_form_group label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+      }
+
+      .required {
+        display: inline-block;
+        margin-left: 8px;
+        color: #d4af37;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+      }
+
+      .checkout_form_group input,
+      .checkout_form_group select,
+      .checkout_form_group textarea {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: #111;
+        color: #fff;
+        padding: 15px 16px;
+        border-radius: 0;
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .checkout_form_group input:focus,
+      .checkout_form_group select:focus,
+      .checkout_form_group textarea:focus {
+        border-color: #d4af37;
+      }
+
+      .checkout_form_group textarea {
+        min-height: 120px;
+        resize: vertical;
+        line-height: 1.8;
+      }
+
+      .checkout_form_group select {
+        appearance: auto;
+      }
+
+      .form_row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form_error {
+        display: none;
+        margin-top: 7px;
+        color: #e86a6a;
+        font-size: 12px;
+      }
+
+      .checkout_form_group.error input,
+      .checkout_form_group.error select {
+        border-color: #c44;
+      }
+
+      .checkout_form_group.error .form_error {
+        display: block;
+      }
+
+      /* -----------------------------------------------
+         PAYMENT
+      ------------------------------------------------ */
+
+      .payment_options {
+        display: grid;
+        gap: 12px;
+      }
+
+      .payment_option {
+        position: relative;
+      }
+
+      .payment_option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .payment_option label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: #0b0b0b;
+        cursor: pointer;
+        transition:
+          border-color 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .payment_option label::before {
+        content: "";
+        width: 17px;
+        height: 17px;
+        border: 1px solid #777;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .payment_option input:checked + label {
+        border-color: #d4af37;
+        background: rgba(212, 175, 55, 0.06);
+      }
+
+      .payment_option input:checked + label::before {
+        border-color: #d4af37;
+        box-shadow: inset 0 0 0 4px #0b0b0b;
+        background: #d4af37;
+      }
+
+      .payment_option_text strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .payment_option_text span {
+        display: block;
+        color: #999;
+        font-size: 11px;
+      }
+
+      /* -----------------------------------------------
+         ORDER SUMMARY
+      ------------------------------------------------ */
+
+      .checkout_summary {
+        position: sticky;
+        top: 30px;
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: #090909;
+        padding: 35px 30px;
+      }
+
+      .checkout_summary_label {
+        color: #d4af37;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        margin-bottom: 8px;
+      }
+
+      .checkout_summary h2 {
+        margin-bottom: 30px;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+
+      .checkout_order_items {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .checkout_order_item {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 15px;
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .checkout_order_image {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        background: #151515;
+      }
+
+      .checkout_order_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .checkout_order_name {
+        margin-bottom: 5px;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .checkout_order_quantity {
+        color: #999;
+        font-size: 11px;
+      }
+
+      .checkout_order_price {
+        margin-top: 5px;
+        color: #d4af37;
+        font-size: 13px;
+      }
+
+      .checkout_price_list {
+        margin-top: 25px;
+      }
+
+      .checkout_price_list > div {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 8px 0;
+        font-size: 13px;
+      }
+
+      .checkout_total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 18px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(212, 175, 55, 0.4);
+      }
+
+      .checkout_total span {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+      }
+
+      .checkout_total strong {
+        color: #d4af37;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .checkout_tax_note {
+        margin-top: 12px;
+        color: #777;
+        font-size: 10px;
+        line-height: 1.7;
+      }
+
+      /* -----------------------------------------------
+         SUBMIT
+      ------------------------------------------------ */
+
+      .checkout_submit_area {
+        margin-top: 45px;
+      }
+
+      .checkout_submit {
+        width: 100%;
+        border: 1px solid #d4af37;
+        background: #d4af37;
+        color: #000;
+        padding: 20px;
+        cursor: pointer;
+        font-family: inherit;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .checkout_submit span {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+      }
+
+      .checkout_submit strong {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+      }
+
+      .checkout_submit:hover {
+        background: transparent;
+        color: #d4af37;
+      }
+
+      .checkout_back {
+        display: block;
+        margin-top: 18px;
+        color: #aaa;
+        text-align: center;
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      .checkout_back:hover {
+        color: #d4af37;
+      }
+
+      /* -----------------------------------------------
+         NOTICE
+      ------------------------------------------------ */
+
+      .checkout_notice {
+        margin-top: 35px;
+        padding: 20px;
+        background: #111;
+        color: #888;
+        font-size: 11px;
+        line-height: 1.9;
+      }
+
+      /* -----------------------------------------------
+         EMPTY
+      ------------------------------------------------ */
+
+      .checkout_empty {
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .checkout_empty_label {
+        margin-bottom: 15px;
+        color: #d4af37;
+        font-size: 11px;
+        letter-spacing: 0.25em;
+      }
+
+      .checkout_empty h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: 500;
+      }
+
+      .checkout_empty p {
+        color: #888;
+        font-size: 13px;
+        line-height: 2;
+      }
+
+      .checkout_empty a {
+        display: inline-block;
+        margin-top: 35px;
+        border: 1px solid #d4af37;
+        padding: 15px 30px;
+        color: #d4af37;
+        text-decoration: none;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* -----------------------------------------------
+         RESPONSIVE
+      ------------------------------------------------ */
+
+      @media (max-width: 900px) {
+        .checkout_layout {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+
+        .checkout_summary {
+          position: static;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .checkout_page {
+          padding: 60px 15px 80px;
+        }
+
+        .form_row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .checkout_section {
+          margin-bottom: 55px;
+        }
+
+        .checkout_section_head h2 {
+          font-size: 20px;
+        }
+
+        .checkout_summary {
+          padding: 25px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="shop_header">
+      <div class="shop_header_inner">
+        <a href="index.html" class="shop_logo">
+          <span class="shop_logo_jp">がしみや荘</span>
+          <p>オンラインショップ</p>
+          <span class="shop_logo_en">ONLINE SHOP</span>
+        </a>
+
+        <nav class="shop_header_nav">
+          <a href="../index.html" class="back_to_main"> 本館サイトへ </a>
+
+          <a href="index.html" class="shop_home_link"> SHOP </a>
+
+          <a href="cart.html" class="cart_link">
+            <span class="cart_icon">🛒</span>
+
+            <span>CART</span>
+
+            <span id="cartCount" class="cart_count"> 0 </span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         PAGE HEAD
+    ====================================================== -->
+
+    <section class="shop_page_head">
+      <div class="shop_page_head_inner">
+        <p class="shop_page_label">CHECKOUT</p>
+
+        <h1>購入手続き</h1>
+
+        <p>お届け先とご注文内容をご確認ください。</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
+
+    <div class="shop_breadcrumb">
+      <a href="index.html"> ONLINE SHOP </a>
+
+      <span>›</span>
+
+      <a href="cart.html"> CART </a>
+
+      <span>›</span>
+
+      <span> CHECKOUT </span>
+    </div>
+
+    <!-- =====================================================
+         CHECKOUT
+    ====================================================== -->
+
+    <main class="checkout_page">
+      <div id="checkoutEmpty" class="checkout_empty" style="display: none">
+        <p class="checkout_empty_label">CART IS EMPTY</p>
+
+        <h1>カートに商品がありません</h1>
+
+        <p>
+          購入手続きを行うには、<br />
+          まず商品をカートに追加してください。
+        </p>
+
+        <a href="index.html"> ショップへ戻る </a>
+      </div>
+
+      <div id="checkoutContent" class="checkout_inner">
+        <form id="checkoutForm" novalidate>
+          <div class="checkout_layout">
+            <!-- =================================================
+                 LEFT
+            ================================================== -->
+
+            <div class="checkout_main">
+              <!-- ---------------------------------------------
+                   CUSTOMER
+              ---------------------------------------------- -->
+
+              <section class="checkout_section">
+                <div class="checkout_section_head">
+                  <p class="checkout_section_label">DELIVERY INFORMATION</p>
+
+                  <h2>お届け先</h2>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="name">
+                    お名前
+                    <span class="required">必須</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="例：山田 太郎"
+                    required
+                  />
+
+                  <p class="form_error">お名前を入力してください。</p>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="postal">
+                    郵便番号
+                    <span class="required">必須</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="postal"
+                    name="postal"
+                    inputmode="numeric"
+                    autocomplete="postal-code"
+                    placeholder="例：330-0000"
+                    maxlength="8"
+                    required
+                  />
+
+                  <p class="form_error">郵便番号を入力してください。</p>
+                </div>
+
+                <div class="form_row">
+                  <div class="checkout_form_group">
+                    <label for="prefecture">
+                      都道府県
+                      <span class="required">必須</span>
+                    </label>
+
+                    <select
+                      id="prefecture"
+                      name="prefecture"
+                      autocomplete="address-level1"
+                      required
+                    >
+                      <option value="">選択してください</option>
+
+                      <option>北海道</option>
+                      <option>青森県</option>
+                      <option>岩手県</option>
+                      <option>宮城県</option>
+                      <option>秋田県</option>
+                      <option>山形県</option>
+                      <option>福島県</option>
+                      <option>茨城県</option>
+                      <option>栃木県</option>
+                      <option>群馬県</option>
+                      <option>埼玉県</option>
+                      <option>千葉県</option>
+                      <option>東京都</option>
+                      <option>神奈川県</option>
+                      <option>新潟県</option>
+                      <option>富山県</option>
+                      <option>石川県</option>
+                      <option>福井県</option>
+                      <option>山梨県</option>
+                      <option>長野県</option>
+                      <option>岐阜県</option>
+                      <option>静岡県</option>
+                      <option>愛知県</option>
+                      <option>三重県</option>
+                      <option>滋賀県</option>
+                      <option>京都府</option>
+                      <option>大阪府</option>
+                      <option>兵庫県</option>
+                      <option>奈良県</option>
+                      <option>和歌山県</option>
+                      <option>鳥取県</option>
+                      <option>島根県</option>
+                      <option>岡山県</option>
+                      <option>広島県</option>
+                      <option>山口県</option>
+                      <option>徳島県</option>
+                      <option>香川県</option>
+                      <option>愛媛県</option>
+                      <option>高知県</option>
+                      <option>福岡県</option>
+                      <option>佐賀県</option>
+                      <option>長崎県</option>
+                      <option>熊本県</option>
+                      <option>大分県</option>
+                      <option>宮崎県</option>
+                      <option>鹿児島県</option>
+                      <option>沖縄県</option>
+                    </select>
+
+                    <p class="form_error">都道府県を選択してください。</p>
+                  </div>
+
+                  <div class="checkout_form_group">
+                    <label for="city">
+                      市区町村
+                      <span class="required">必須</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      autocomplete="address-level2"
+                      placeholder="例：さいたま市大宮区"
+                      required
+                    />
+
+                    <p class="form_error">市区町村を入力してください。</p>
+                  </div>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="address">
+                    番地・町名
+                    <span class="required">必須</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    autocomplete="street-address"
+                    placeholder="例：○○町1-2-3"
+                    required
+                  />
+
+                  <p class="form_error">住所を入力してください。</p>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="building">
+                    建物名・部屋番号
+                    <span>任意</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="building"
+                    name="building"
+                    autocomplete="address-line2"
+                    placeholder="例：○○マンション101号室"
+                  />
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="phone">
+                    電話番号
+                    <span class="required">必須</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="例：090-1234-5678"
+                    required
+                  />
+
+                  <p class="form_error">電話番号を入力してください。</p>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="email">
+                    メールアドレス
+                    <span class="required">必須</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="例：example@example.com"
+                    required
+                  />
+
+                  <p class="form_error">メールアドレスを入力してください。</p>
+                </div>
+              </section>
+
+              <!-- ---------------------------------------------
+                   PAYMENT
+              ---------------------------------------------- -->
+
+              <section class="checkout_section">
+                <div class="checkout_section_head">
+                  <p class="checkout_section_label">PAYMENT</p>
+
+                  <h2>お支払い方法</h2>
+                </div>
+
+                <div class="payment_options">
+                  <div class="payment_option">
+                    <input
+                      type="radio"
+                      id="paymentCard"
+                      name="payment"
+                      value="クレジットカード"
+                      checked
+                    />
+
+                    <label for="paymentCard">
+                      <div class="payment_option_text">
+                        <strong> クレジットカード </strong>
+
+                        <span> Visa / Mastercard / JCB / AMEX </span>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="payment_option">
+                    <input
+                      type="radio"
+                      id="paymentBank"
+                      name="payment"
+                      value="銀行振込"
+                    />
+
+                    <label for="paymentBank">
+                      <div class="payment_option_text">
+                        <strong> 銀行振込 </strong>
+
+                        <span> ご注文後に振込先をご案内します </span>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="payment_option">
+                    <input
+                      type="radio"
+                      id="paymentCod"
+                      name="payment"
+                      value="代金引換"
+                    />
+
+                    <label for="paymentCod">
+                      <div class="payment_option_text">
+                        <strong> 代金引換 </strong>
+
+                        <span> 商品お届け時にお支払いください </span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </section>
+
+              <!-- ---------------------------------------------
+                   NOTE
+              ---------------------------------------------- -->
+
+              <section class="checkout_section">
+                <div class="checkout_section_head">
+                  <p class="checkout_section_label">NOTE</p>
+
+                  <h2>ご注文について</h2>
+                </div>
+
+                <div class="checkout_form_group">
+                  <label for="note">
+                    備考
+                    <span>任意</span>
+                  </label>
+
+                  <textarea
+                    id="note"
+                    name="note"
+                    placeholder="配送についてのご希望などがございましたらご記入ください。"
+                  ></textarea>
+                </div>
+              </section>
+            </div>
+
+            <!-- =================================================
+                 RIGHT
+            ================================================== -->
+
+            <aside class="checkout_summary">
+              <p class="checkout_summary_label">ORDER SUMMARY</p>
+
+              <h2>ご注文内容</h2>
+
+              <div id="checkoutOrderItems" class="checkout_order_items">
+                <!-- JavaScript -->
+              </div>
+
+              <div class="checkout_price_list">
+                <div>
+                  <span> 商品小計 </span>
+
+                  <strong> ¥<span id="checkoutSubtotal">0</span> </strong>
+                </div>
+
+                <div>
+                  <span> 送料 </span>
+
+                  <strong>
+                    <span id="checkoutShipping"> 無料 </span>
+                  </strong>
+                </div>
+              </div>
+
+              <div class="checkout_total">
+                <span> 合計 </span>
+
+                <strong> ¥<span id="checkoutTotal">0</span> </strong>
+              </div>
+
+              <p class="checkout_tax_note">
+                ※表示価格はすべて税込です。<br />
+                ※5,000円以上のご注文は送料無料です。
+              </p>
+
+              <div class="checkout_submit_area">
+                <button type="submit" class="checkout_submit">
+                  <span> COMPLETE ORDER </span>
+
+                  <strong> 注文を確定する </strong>
+                </button>
+
+                <a href="cart.html" class="checkout_back"> ← カートに戻る </a>
+              </div>
+
+              <div class="checkout_notice">
+                ご注文を確定すると、 カート内の商品が注文済みとなります。
+                このサイトはデモ用のオンラインショップです。
+                実際の決済・配送は行われません。
+              </div>
+            </aside>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="shop_footer">
+      <div class="shop_footer_inner">
+        <div class="shop_footer_logo">
+          <span> 大宮温泉 </span>
+
+          <strong> がしみや荘 </strong>
+
+          <small> ONLINE SHOP </small>
+        </div>
+
+        <div class="shop_footer_links">
+          <a href="index.html"> SHOP TOP </a>
+
+          <a href="../index.html"> がしみや荘 本館 </a>
+        </div>
+
+        <p class="shop_footer_copy">© GASHIMIYASOU</p>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

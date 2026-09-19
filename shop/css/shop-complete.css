@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/* =========================================================
+   がしみや荘 ONLINE SHOP
+   shop-compleat.css
+
+    完了画面
+========================================================= */
+
+/* =========================================================
+   COMPLETE PAGE
+========================================================= */
+
+.complete_page {
+  width: min(900px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 130px 0 170px;
+}
+
+.complete_inner {
+  padding: 75px 70px;
+  border: 1px solid #292929;
+  background:
+    radial-gradient(
+      circle at center top,
+      rgba(212, 175, 55, 0.08),
+      transparent 45%
+    ),
+    #101010;
+  text-align: center;
+}
+
+.complete_mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 30px;
+  border: 1px solid #d4af37;
+  border-radius: 50%;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+}
+
+.complete_label {
+  margin: 0 0 15px;
+  color: #c8a95b;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+}
+
+.complete_inner h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.complete_text {
+  margin: 30px auto 0;
+  max-width: 600px;
+  color: #999;
+  font-size: 13px;
+  line-height: 2.3;
+}
+
+/* =========================================================
+   ORDER NUMBER
+========================================================= */
+
+.order_number_box {
+  max-width: 500px;
+  margin: 45px auto 0;
+  padding: 25px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.order_number_label {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+.order_number {
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   COMPLETE INFO
+========================================================= */
+
+.complete_info {
+  max-width: 600px;
+  margin: 45px auto 0;
+  text-align: left;
+}
+
+.complete_info_item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 25px;
+  padding: 16px 0;
+  border-bottom: 1px solid #292929;
+}
+
+.complete_info_item:first-child {
+  border-top: 1px solid #292929;
+}
+
+.complete_info_item dt {
+  color: #777;
+  font-size: 11px;
+}
+
+.complete_info_item dd {
+  margin: 0;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.complete_actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.complete_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  min-height: 55px;
+  padding: 0 25px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.complete_button:hover {
+  background: #d4af37;
+  color: #111;
+}
+
+.complete_button.sub {
+  border-color: #444;
+  color: #888;
+}
+
+.complete_button.sub:hover {
+  border-color: #777;
+  background: #222;
+  color: #fff;
+}
+
+/* =========================================================
+   COMPLETE NOTICE
+========================================================= */
+
+.complete_notice {
+  max-width: 600px;
+  margin: 50px auto 0;
+  padding: 25px;
+  border: 1px solid #292929;
+  background: #0c0c0c;
+  text-align: left;
+}
+
+.complete_notice_title {
+  margin: 0 0 12px;
+  color: #c8a95b;
+  font-size: 12px;
+}
+
+.complete_notice p {
+  margin: 0;
+  color: #777;
+  font-size: 10px;
+  line-height: 2;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 700px) {
+  .complete_page {
+    width: calc(100% - 30px);
+    padding: 80px 0 100px;
+  }
+
+  .complete_inner {
+    padding: 60px 20px;
+  }
+
+  .complete_inner h1 {
+    font-size: 28px;
+  }
+
+  .complete_text {
+    font-size: 11px;
+  }
+
+  .order_number_box {
+    margin-top: 35px;
+    padding: 20px 10px;
+  }
+
+  .order_number {
+    font-size: 17px;
+  }
+
+  .complete_info_item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 15px 0;
+  }
+
+  .complete_actions {
+    flex-direction: column;
+  }
+
+  .complete_button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 420px) {
+  .complete_page {
+    width: calc(100% - 20px);
+  }
+
+  .complete_inner {
+    padding: 50px 15px;
+  }
+}

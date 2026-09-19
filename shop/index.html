@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>オンラインショップ | がしみや荘</title>
+
+    <meta
+      name="description"
+      content="がしみや荘公式オンラインショップ。旅の余韻をご自宅へ。オリジナルアイスやお土産、湯巡りグッズなどをご用意しています。"
+    />
+
+    <link rel="icon" href="../images/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/shop-index.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         SHOP HEADER
+    ====================================================== -->
+
+    <header class="shop_header">
+      <div class="shop_header_inner">
+        <a href="index.html" class="shop_logo">
+          <span class="shop_logo_jp">がしみや荘</span>
+          <p>オンラインショップ</p>
+          <span class="shop_logo_en">ONLINE SHOP</span>
+        </a>
+
+        <div class="shop_header_right">
+          <a href="../index.html" class="back_to_main"> がしみや荘本館へ </a>
+
+          <a href="cart.html" class="cart_link">
+            <span class="cart_icon">🛒</span>
+            <span>カート</span>
+            <span id="cartCount" class="cart_count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+      <section class="shop_hero">
+        <div class="shop_hero_overlay"></div>
+
+        <div class="shop_hero_content">
+          <p class="hero_en">GASHIMIYASOU ONLINE SHOP</p>
+
+          <h1>
+            旅の余韻を、<br />
+            ご自宅へ。
+          </h1>
+
+          <p class="hero_text">
+            がしみや荘で出会った味や品を、<br />
+            ご自宅でもお楽しみください。
+          </p>
+
+          <a href="#shopItems" class="hero_button"> SHOPPING </a>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           INTRO
+      ====================================================== -->
+
+      <section class="shop_intro">
+        <p class="section_label">ONLINE SHOP</p>
+
+        <h2>
+          がしみや荘の<br />
+          お気に入りをお届けします。
+        </h2>
+
+        <p class="section_text">
+          滞在中に出会った味、湯上がりのひととき、 旅の記憶を残す品々。
+          <br />
+          がしみや荘ならではの商品を、 一つひとつ丁寧にお届けします。
+        </p>
+      </section>
+
+      <!-- =====================================================
+           CATEGORY
+      ====================================================== -->
+
+      <section class="shop_category">
+        <div class="section_heading">
+          <p class="section_label">CATEGORY</p>
+          <h2>商品を探す</h2>
+        </div>
+
+        <div class="category_grid">
+          <button type="button" class="category_card" data-category="all">
+            <span class="category_number">01</span>
+            <span class="category_name">すべての商品</span>
+            <span class="category_arrow">→</span>
+          </button>
+
+          <button type="button" class="category_card" data-category="ice">
+            <span class="category_number">02</span>
+            <span class="category_name">オリジナルアイス</span>
+            <span class="category_arrow">→</span>
+          </button>
+
+          <button type="button" class="category_card" data-category="food">
+            <span class="category_number">03</span>
+            <span class="category_name">食べもの</span>
+            <span class="category_arrow">→</span>
+          </button>
+
+          <button type="button" class="category_card" data-category="goods">
+            <span class="category_number">04</span>
+            <span class="category_name">旅の品</span>
+            <span class="category_arrow">→</span>
+          </button>
+
+          <button type="button" class="category_card" data-category="omamori">
+            <span class="category_number">05</span>
+            <span class="category_name">温泉神社</span>
+            <span class="category_arrow">→</span>
+          </button>
+
+          <button type="button" class="category_card" data-category="seasonal">
+            <span class="category_number">06</span>
+            <span class="category_name">季節限定</span>
+            <span class="category_arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           RECOMMEND
+      ====================================================== -->
+
+      <section class="shop_section recommend_section">
+        <div class="section_heading section_heading_flex">
+          <div>
+            <p class="section_label">RECOMMEND</p>
+
+            <h2>おすすめの商品</h2>
+          </div>
+
+          <button type="button" class="text_link" id="showAllButton">
+            すべて見る →
+          </button>
+        </div>
+
+        <div id="recommendProducts" class="product_grid"></div>
+      </section>
+
+      <!-- =====================================================
+           SEARCH
+      ====================================================== -->
+
+      <section class="shop_search_section" id="shopItems">
+        <div class="section_heading">
+          <p class="section_label">SHOPPING</p>
+
+          <h2>商品一覧</h2>
+        </div>
+
+        <div class="shop_search">
+          <div class="search_box">
+            <span class="search_icon">⌕</span>
+
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="商品名から探す"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="sort_box">
+            <select id="sortSelect">
+              <option value="default">おすすめ順</option>
+
+              <option value="price-low">価格の安い順</option>
+
+              <option value="price-high">価格の高い順</option>
+
+              <option value="name">商品名順</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category_filter">
+          <button
+            type="button"
+            class="filter_button active"
+            data-category="all"
+          >
+            ALL
+          </button>
+
+          <button type="button" class="filter_button" data-category="ice">
+            ICE
+          </button>
+
+          <button type="button" class="filter_button" data-category="food">
+            FOOD
+          </button>
+
+          <button type="button" class="filter_button" data-category="goods">
+            GOODS
+          </button>
+
+          <button type="button" class="filter_button" data-category="omamori">
+            OMAMORI
+          </button>
+
+          <button type="button" class="filter_button" data-category="seasonal">
+            SEASONAL
+          </button>
+        </div>
+
+        <p id="productCount" class="product_count"></p>
+
+        <div id="productList" class="product_grid product_grid_large"></div>
+
+        <p id="noProducts" class="no_products">該当する商品がありません。</p>
+      </section>
+
+      <!-- =====================================================
+           ABOUT SHOP
+      ====================================================== -->
+
+      <section class="shop_about">
+        <div class="shop_about_inner">
+          <p class="section_label">ABOUT GASHIMIYASOU</p>
+
+          <h2>
+            旅の続きを、<br />
+            もう一度。
+          </h2>
+
+          <p>
+            がしみや荘で過ごした時間が、 ご自宅に帰ってからも
+            ふと思い出せるように。
+          </p>
+
+          <p>お気に入りの商品を、 旅の思い出とともにお楽しみください。</p>
+
+          <a href="../index.html" class="about_link"> がしみや荘について → </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="shop_footer">
+      <div class="shop_footer_inner">
+        <div class="footer_logo">
+          <span class="footer_logo_jp"> がしみや荘 </span>
+
+          <span class="footer_logo_en"> GASHIMIYASOU </span>
+        </div>
+
+        <div class="footer_links">
+          <a href="../index.html"> がしみや荘本館 </a>
+
+          <a href="#"> ご利用ガイド </a>
+
+          <a href="#"> 特定商取引法に基づく表記 </a>
+
+          <a href="#"> プライバシーポリシー </a>
+        </div>
+
+        <p class="copyright">© GASHIMIYASOU</p>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         JS
+    ====================================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/shop.js"></script>
+  </body>
+</html>

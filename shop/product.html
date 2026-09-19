@@ -1,0 +1,177 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>商品詳細 | がしみや荘 ONLINE SHOP</title>
+
+    <meta
+      name="description"
+      content="がしみや荘 ONLINE SHOPの商品詳細ページです。"
+    />
+
+    <link rel="icon" href="../images/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/shop-product.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+     HEADER
+====================================================== -->
+
+    <header class="shop_header">
+      <div class="shop_header_inner">
+        <a href="index.html" class="shop_logo">
+          <span class="shop_logo_jp">がしみや荘</span>
+          <p>オンラインショップ</p>
+          <span class="shop_logo_en">ONLINE SHOP</span>
+        </a>
+
+        <div class="shop_header_right">
+          <a href="../index.html" class="back_to_main"> がしみや荘本館へ </a>
+
+          <a href="cart.html" class="cart_link">
+            <span class="cart_icon"> 🛒 </span>
+
+            <span> カート </span>
+
+            <span id="cartCount" class="cart_count"> 0 </span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+     BREADCRUMB
+====================================================== -->
+
+    <nav class="product_breadcrumb" aria-label="パンくずリスト">
+      <div class="product_breadcrumb_inner">
+        <a href="index.html"> ONLINE SHOP </a>
+
+        <span> / </span>
+
+        <span id="breadcrumbProduct"> 商品詳細 </span>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+     PRODUCT
+====================================================== -->
+
+    <main>
+      <section class="product_detail">
+        <div id="productDetail" class="product_detail_inner">
+          <!-- JavaScriptで商品情報を表示 -->
+
+          <div class="product_loading">
+            <p>商品情報を読み込んでいます。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       NOTICE
+  ====================================================== -->
+
+      <section class="product_notice">
+        <div class="product_notice_inner">
+          <div class="notice_item">
+            <p class="section_label">DELIVERY</p>
+
+            <h3>お届けについて</h3>
+
+            <p>
+              商品のお届け時期や送料については、
+              商品・配送地域によって異なります。
+            </p>
+          </div>
+
+          <div class="notice_item">
+            <p class="section_label">ATTENTION</p>
+
+            <h3>ご注文について</h3>
+
+            <p>
+              掲載している商品は、がしみや荘の
+              オリジナル商品をイメージしたものです。
+            </p>
+          </div>
+
+          <div class="notice_item">
+            <p class="section_label">SHOP</p>
+
+            <h3>がしみや荘について</h3>
+
+            <p>がしみや荘での滞在とともに、 旅の余韻をお楽しみください。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       RELATED PRODUCTS
+  ====================================================== -->
+
+      <section class="related_products">
+        <div class="section_heading">
+          <p class="section_label">YOU MAY ALSO LIKE</p>
+
+          <h2>こちらの商品もおすすめ</h2>
+        </div>
+
+        <div id="relatedProducts" class="product_grid"></div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+     FOOTER
+====================================================== -->
+
+    <footer class="shop_footer">
+      <div class="shop_footer_inner">
+        <div class="footer_logo">
+          <span class="footer_logo_jp"> がしみや荘 </span>
+
+          <span class="footer_logo_en"> GASHIMIYASOU </span>
+        </div>
+
+        <div class="footer_links">
+          <a href="../index.html"> がしみや荘本館 </a>
+
+          <a href="index.html"> オンラインショップ </a>
+
+          <a href="#"> ご利用ガイド </a>
+
+          <a href="#"> 特定商取引法に基づく表記 </a>
+
+          <a href="#"> プライバシーポリシー </a>
+        </div>
+
+        <p class="copyright">© GASHIMIYASOU</p>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+     JS
+====================================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/product.js"></script>
+  </body>
+</html>

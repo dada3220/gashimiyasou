@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ショッピングカート | がしみや荘 ONLINE SHOP</title>
+
+    <meta
+      name="description"
+      content="がしみや荘 ONLINE SHOPのショッピングカートです。"
+    />
+
+    <link rel="icon" href="../images/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/shop-cart.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="shop_header">
+      <div class="shop_header_inner">
+        <a href="index.html" class="shop_logo">
+          <span class="shop_logo_jp">がしみや荘</span>
+          <p>オンラインショップ</p>
+          <span class="shop_logo_en">ONLINE SHOP</span>
+        </a>
+
+        <nav class="shop_header_nav">
+          <a href="../index.html" class="back_to_main"> 本館サイトへ </a>
+
+          <a href="index.html" class="shop_home_link"> SHOP </a>
+
+          <a
+            href="cart.html"
+            class="cart_link active"
+            aria-label="ショッピングカート"
+          >
+            <span class="cart_icon">🛒</span>
+
+            <span> CART </span>
+
+            <span id="cartCount" class="cart_count"> 0 </span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         PAGE HEAD
+    ====================================================== -->
+
+    <section class="shop_page_head">
+      <div class="shop_page_head_inner">
+        <p class="shop_page_label">SHOPPING CART</p>
+
+        <h1>ショッピングカート</h1>
+
+        <p>選んだ品々を、ゆっくりとお確かめください。</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
+
+    <div class="shop_breadcrumb">
+      <a href="index.html"> ONLINE SHOP </a>
+
+      <span>›</span>
+
+      <span> ショッピングカート </span>
+    </div>
+
+    <!-- =====================================================
+         CART
+    ====================================================== -->
+
+    <main class="cart_page">
+      <section class="cart_section">
+        <div class="cart_inner">
+          <!-- =================================================
+               CART CONTENT
+          ================================================== -->
+
+          <div id="cartContent" class="cart_content">
+            <!-- JavaScriptで商品を表示 -->
+          </div>
+
+          <!-- =================================================
+               EMPTY CART
+          ================================================== -->
+
+          <div id="emptyCart" class="empty_cart" style="display: none">
+            <p class="empty_cart_label">YOUR CART IS EMPTY</p>
+
+            <h2>カートに商品がありません</h2>
+
+            <p>
+              気になる品を見つけたら、<br />
+              こちらからお買い物をお楽しみください。
+            </p>
+
+            <a href="index.html" class="cart_button cart_button_primary">
+              SHOPPING START
+            </a>
+          </div>
+
+          <!-- =================================================
+               CART SUMMARY
+          ================================================== -->
+
+          <aside id="cartSummary" class="cart_summary" style="display: none">
+            <div class="cart_summary_inner">
+              <p class="cart_summary_label">ORDER SUMMARY</p>
+
+              <h2>ご注文内容</h2>
+
+              <dl class="cart_price_list">
+                <div>
+                  <dt>商品小計</dt>
+
+                  <dd>¥<span id="subtotal">0</span></dd>
+                </div>
+
+                <div>
+                  <dt>送料</dt>
+
+                  <dd>¥<span id="shipping">0</span></dd>
+                </div>
+              </dl>
+
+              <div class="cart_total">
+                <span> 合計 </span>
+
+                <strong> ¥<span id="total">0</span> </strong>
+              </div>
+
+              <p class="cart_tax_notice">※表示価格はすべて税込です。</p>
+
+              <a
+                href="checkout.html"
+                id="checkoutButton"
+                class="cart_button cart_button_primary"
+              >
+                購入手続きへ
+              </a>
+
+              <a href="index.html" class="cart_button cart_button_secondary">
+                買い物を続ける
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           NOTICE
+      ====================================================== -->
+
+      <section class="cart_notice">
+        <div class="cart_notice_inner">
+          <p class="cart_notice_label">SHOPPING INFORMATION</p>
+
+          <h2>ご利用について</h2>
+
+          <div class="cart_notice_list">
+            <div>
+              <h3>送料について</h3>
+
+              <p>
+                商品の配送には別途送料がかかります。
+                ご注文内容・配送地域により送料が異なる場合があります。
+              </p>
+            </div>
+
+            <div>
+              <h3>ご注文について</h3>
+
+              <p>
+                ご注文内容をご確認のうえ、購入手続きへお進みください。
+                実際の決済は購入手続き画面で行います。
+              </p>
+            </div>
+
+            <div>
+              <h3>お届けについて</h3>
+
+              <p>
+                商品の発送時期は商品によって異なります。
+                季節限定商品については、販売期間をご確認ください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="shop_footer">
+      <div class="shop_footer_inner">
+        <div class="shop_footer_logo">
+          <span> 大宮温泉 </span>
+
+          <strong> がしみや荘 </strong>
+
+          <small> ONLINE SHOP </small>
+        </div>
+
+        <div class="shop_footer_links">
+          <a href="index.html"> SHOP TOP </a>
+
+          <a href="../index.html"> がしみや荘 本館 </a>
+        </div>
+
+        <p class="shop_footer_copy">© GASHIMIYASOU</p>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>

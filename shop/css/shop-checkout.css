@@ -1,0 +1,517 @@
+@charset "UTF-8";
+
+/* =========================================================
+   がしみや荘 ONLINE SHOP
+   shop-checkout.css
+
+   購入画面
+========================================================= */
+
+/* =========================================================
+   CHECKOUT PAGE
+========================================================= */
+
+.checkout_page {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 100px 0 150px;
+}
+
+.checkout_page_header {
+  margin-bottom: 55px;
+}
+
+.checkout_page_header h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   CHECKOUT STEPS
+========================================================= */
+
+.checkout_steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 750px;
+  margin: 0 auto 70px;
+}
+
+.checkout_step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  color: #555;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.checkout_step::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin: 0 15px;
+  background: #333;
+}
+
+.checkout_step:last-child::after {
+  display: none;
+}
+
+.checkout_step_number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 9px;
+  border: 1px solid #444;
+  border-radius: 50%;
+}
+
+.checkout_step.active {
+  color: #d4af37;
+}
+
+.checkout_step.active .checkout_step_number {
+  border-color: #d4af37;
+  background: #d4af37;
+  color: #111;
+}
+
+/* =========================================================
+   CHECKOUT LAYOUT
+========================================================= */
+
+.checkout_layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 70px;
+  align-items: start;
+}
+
+/* =========================================================
+   CHECKOUT FORM
+========================================================= */
+
+.checkout_form {
+  min-width: 0;
+}
+
+.checkout_section {
+  margin-bottom: 55px;
+}
+
+.checkout_section_heading {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #292929;
+}
+
+.checkout_section_number {
+  color: #a68d4d;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.checkout_section_heading h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.form_group {
+  margin-bottom: 25px;
+}
+
+.form_group:last-child {
+  margin-bottom: 0;
+}
+
+.form_label {
+  display: block;
+  margin-bottom: 9px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.required {
+  margin-left: 8px;
+  color: #c8a95b;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.form_input,
+.form_select,
+.form_textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: border-color 0.3s ease;
+}
+
+.form_input,
+.form_select {
+  height: 52px;
+  padding: 0 15px;
+}
+
+.form_textarea {
+  min-height: 130px;
+  padding: 15px;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+.form_input:focus,
+.form_select:focus,
+.form_textarea:focus {
+  border-color: #a68d4d;
+}
+
+.form_row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form_note {
+  margin: 8px 0 0;
+  color: #666;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.form_error {
+  margin: 8px 0 0;
+  color: #c87878;
+  font-size: 10px;
+}
+
+/* =========================================================
+   PAYMENT METHOD
+========================================================= */
+
+.payment_methods {
+  display: grid;
+  gap: 10px;
+}
+
+.payment_method {
+  position: relative;
+}
+
+.payment_method input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.payment_method label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 65px;
+  padding: 12px 18px;
+  border: 1px solid #333;
+  background: #111;
+  cursor: pointer;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.payment_method label::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.payment_method input:checked + label {
+  border-color: #d4af37;
+  background: #15130d;
+}
+
+.payment_method input:checked + label::before {
+  border: 4px solid #d4af37;
+}
+
+.payment_method_text strong {
+  display: block;
+  color: #ddd;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.payment_method_text span {
+  display: block;
+  margin-top: 3px;
+  color: #666;
+  font-size: 9px;
+}
+
+/* =========================================================
+   CHECKOUT AGREEMENT
+========================================================= */
+
+.checkout_agreement {
+  margin-top: 30px;
+  padding: 25px;
+  border: 1px solid #292929;
+  background: #101010;
+}
+
+.agreement_check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.agreement_check input {
+  margin-top: 5px;
+  accent-color: #d4af37;
+}
+
+.agreement_check span {
+  color: #888;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.agreement_check a {
+  color: #c8a95b;
+  border-bottom: 1px solid #555;
+}
+
+/* =========================================================
+   ORDER CONFIRM BUTTON
+========================================================= */
+
+.order_button {
+  width: 100%;
+  min-height: 68px;
+  border: 1px solid #d4af37;
+  background: #d4af37;
+  color: #111;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.order_button:hover {
+  background: transparent;
+  color: #d4af37;
+}
+
+.order_button:disabled {
+  border-color: #444;
+  background: #333;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   CHECKOUT SUMMARY
+========================================================= */
+
+.checkout_summary {
+  position: sticky;
+  top: 110px;
+  padding: 30px;
+  border: 1px solid #292929;
+  background: #111;
+}
+
+.checkout_summary_heading {
+  margin: 0 0 25px;
+  color: #c8a95b;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+}
+
+.checkout_summary_items {
+  border-top: 1px solid #292929;
+}
+
+.checkout_summary_item {
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr);
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #242424;
+}
+
+.checkout_summary_image {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  background: #181818;
+}
+
+.checkout_summary_image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.checkout_summary_name {
+  margin: 0;
+  color: #ccc;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.checkout_summary_quantity {
+  margin: 5px 0 0;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+}
+
+.checkout_summary_price {
+  margin: 5px 0 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.checkout_summary_total {
+  margin-top: 20px;
+}
+
+.checkout_summary_row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.checkout_summary_row span:first-child {
+  color: #777;
+  font-size: 10px;
+}
+
+.checkout_summary_row span:last-child {
+  color: #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.checkout_summary_grand_total {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 18px;
+  border-top: 1px solid #444;
+}
+
+.checkout_summary_grand_total span:first-child {
+  color: #aaa;
+  font-size: 11px;
+}
+
+.checkout_summary_grand_total span:last-child {
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1000px) {
+  .checkout_layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .checkout_summary {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .checkout_page {
+    width: calc(100% - 40px);
+    padding: 75px 0 100px;
+  }
+
+  .checkout_page_header {
+    margin-bottom: 35px;
+  }
+
+  .checkout_steps {
+    margin-bottom: 45px;
+  }
+
+  .checkout_step {
+    justify-content: center;
+    font-size: 0;
+  }
+
+  .checkout_step::after {
+    margin: 0 8px;
+  }
+
+  .checkout_step_number {
+    margin-right: 0;
+  }
+
+  .checkout_section {
+    margin-bottom: 45px;
+  }
+
+  .checkout_section_heading h2 {
+    font-size: 17px;
+  }
+
+  .form_row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .checkout_summary {
+    padding: 25px 20px;
+  }
+
+  .checkout_agreement {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .checkout_page {
+    width: calc(100% - 30px);
+  }
+}

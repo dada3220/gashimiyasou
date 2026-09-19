@@ -3,6 +3,9 @@
 /* =========================================================
 TOP HERO / ORIGINAL SLIDER
 ========================================================= */
+.top_page {
+  margin-top: 11%;
+}
 
 .top_hero {
   position: relative;
@@ -1925,9 +1928,7 @@ MOBILE
   .top_lounge_image {
     order: 0;
 
-    min-height: 450px;
-
-    height: 60vw;
+    width: 100%;
   }
 
   .top_lounge_content {
