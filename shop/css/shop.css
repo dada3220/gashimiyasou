@@ -95,82 +95,219 @@ img {
 .shop_header {
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 1000;
+
+  width: 100%;
+
+  background-image: url("../../images/takegara.png");
+  background-color: rgba(0, 82, 11, 0.9);
+
+  background-repeat: repeat;
+  background-position: center center;
+
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-  background: rgba(8, 8, 8, 0.95);
-  backdrop-filter: blur(15px);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
+/* =========================================================
+   HEADER INNER
+========================================================= */
+
 .shop_header_inner {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   width: min(1400px, calc(100% - 80px));
   min-height: 82px;
-  margin: 0 auto;
+
+  margin: 0 auto 20px;
 }
 
-.shop_logo {
+/* =========================================================
+   LEFT : MAIN LOGO
+========================================================= */
+
+.shop_main_logo {
   display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.shop_main_logo:hover {
+  opacity: 0.7;
+}
+
+.shop_main_logo img {
+  display: block;
+
+  width: 90%;
+  height: 80px;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   CENTER : SHOP LOGO
+========================================================= */
+
+.shop_logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  align-items: center;
   flex-direction: column;
+
+  transform: translate(-50%, -50%);
+
+  color: #fff;
+
+  text-align: center;
+  text-decoration: none;
+
   line-height: 1;
 }
 
-.shop_logo_jp {
-  font-size: 20px;
-  letter-spacing: 0.18em;
+/* がしみや荘 */
+
+.shop_logo_small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 7px;
+
+  color: #d4af37;
+
+  font-size: 17px;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
 }
 
-.shop_logo_en {
-  margin-top: 8px;
-  color: #a99560;
-  font-family: Arial, sans-serif;
-  font-size: 8px;
-  letter-spacing: 0.35em;
+.shop_logo_small img {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 4px;
+
+  object-fit: contain;
 }
+
+/* オンラインショップ */
+
+.shop_logo_jp {
+  display: block;
+
+  font-size: 20px;
+  font-weight: normal;
+
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+/* ONLINE SHOP */
+
+.shop_logo_en {
+  display: block;
+
+  margin-top: 9px;
+
+  color: #a99560;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+  letter-spacing: 0.35em;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RIGHT
+========================================================= */
 
 .shop_header_right {
   display: flex;
   align-items: center;
+
   gap: 35px;
+
+  margin-left: auto;
 }
 
-.back_to_main {
-  color: #aaa;
-  font-size: 12px;
-  transition: color 0.3s ease;
-}
-
-.back_to_main:hover {
-  color: #d4af37;
-}
+/* =========================================================
+   CART
+========================================================= */
 
 .cart_link {
   display: flex;
   align-items: center;
-  gap: 7px;
+
+  gap: 2px;
+
   color: #fff;
-  font-size: 12px;
+
+  font-size: 17px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
 }
 
-.cart_icon {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+.cart_link:hover {
+  color: #d4af37;
 }
+
+/* カートアイコン */
+
+.cart_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+/* カート数量 */
 
 .cart_count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   min-width: 20px;
   height: 20px;
+
   padding: 0 5px;
+
   border-radius: 50%;
+
   background: #d4af37;
   color: #111;
+
   font-family: Arial, sans-serif;
-  font-size: 10px;
+
+  font-size: 12px;
   font-weight: bold;
+
+  line-height: 1;
 }
 
 /* =========================================================
@@ -613,86 +750,135 @@ img {
 
 .shop_footer {
   border-top: 1px solid #252525;
-  background: #070707;
+  background-image: url("../../images/takegara.png");
+  background-color: rgba(0, 82, 11, 0.9);
 }
 
-.shop_footer_inner {
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
-  padding: 60px 0 30px;
-}
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
 
 .footer_logo {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 35px;
+  margin: 20px 0;
 }
 
-.footer_logo_jp {
-  font-size: 20px;
-  letter-spacing: 0.18em;
+.footer_logo a {
+  display: block;
 }
 
-.footer_logo_en {
-  margin-top: 7px;
-  color: #8e7946;
-  font-family: Arial, sans-serif;
-  font-size: 8px;
-  letter-spacing: 0.3em;
+.footer_logo img {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
 }
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
 
 .footer_links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+
+  margin-bottom: 20px;
 }
 
 .footer_links a {
-  color: #777;
-  font-size: 10px;
-  transition: color 0.3s ease;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .footer_links a:hover {
   color: #d4af37;
 }
 
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
 .copyright {
-  margin: 45px 0 0;
-  color: #444;
-  font-family: Arial, sans-serif;
-  font-size: 8px;
-  letter-spacing: 0.15em;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-align: center;
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 700px) {
-  /* =======================================================
-     HEADER
-  ======================================================= */
+@media (max-width: 768px) {
+  /* =========================================================
+   RESPONSIVE
+  ========================================================= */
 
   .shop_header_inner {
     width: calc(100% - 30px);
-    min-height: 68px;
+    min-height: 70px;
+    margin: 0 auto 15px;
+  }
+
+  /* 左ロゴ */
+
+  .shop_main_logo img {
+    height: 45px;
+  }
+
+  /* 中央ロゴ */
+
+  .shop_logo_small {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .shop_logo_small img {
+    width: 17px;
+    height: 17px;
   }
 
   .shop_logo_jp {
-    font-size: 16px;
+    font-size: 17px;
+    letter-spacing: 0.12em;
   }
 
   .shop_logo_en {
-    font-size: 7px;
+    margin-top: 7px;
+
+    font-size: 12px;
+    letter-spacing: 0.25em;
   }
 
-  .back_to_main {
-    display: none;
-  }
+  /* 右側 */
 
   .shop_header_right {
-    gap: 15px;
+    gap: 0;
+  }
+
+  .cart_link {
+    font-size: 13px;
+  }
+
+  .cart_icon {
+    font-size: 20px;
+  }
+
+  .cart_count {
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 4px;
+
+    font-size: 9px;
   }
 
   /* =======================================================
@@ -831,12 +1017,19 @@ img {
      FOOTER
   ======================================================= */
 
-  .shop_footer_inner {
-    width: calc(100% - 40px);
+  .footer_logo img {
+    width: 170px;
   }
 
   .footer_links {
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .footer_links a {
+    font-size: 10px;
+  }
+
+  .copyright {
+    font-size: 9px;
   }
 }

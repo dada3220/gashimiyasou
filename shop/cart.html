@@ -31,34 +31,36 @@
 
   <body>
     <!-- =====================================================
-         HEADER
+     SHOP HEADER
     ====================================================== -->
 
     <header class="shop_header">
       <div class="shop_header_inner">
+        <!-- 左：旅館ロゴ（トップページへ） -->
+        <a href="../index.html" class="shop_main_logo">
+          <img src="../images/title.png" alt="がしみや荘 トップページへ" />
+        </a>
+
+        <!-- 中央：オンラインショップロゴ -->
         <a href="index.html" class="shop_logo">
-          <span class="shop_logo_jp">がしみや荘</span>
-          <p>オンラインショップ</p>
+          <span class="shop_logo_small"
+            ><img
+              src="../images/favicon.png"
+              alt="がしみや荘 トップページへ"
+            />がしみや荘</span
+          >
+          <span class="shop_logo_jp">オンラインショップ</span>
           <span class="shop_logo_en">ONLINE SHOP</span>
         </a>
 
-        <nav class="shop_header_nav">
-          <a href="../index.html" class="back_to_main"> 本館サイトへ </a>
-
-          <a href="index.html" class="shop_home_link"> SHOP </a>
-
-          <a
-            href="cart.html"
-            class="cart_link active"
-            aria-label="ショッピングカート"
-          >
+        <!-- 右：カート -->
+        <div class="shop_header_right">
+          <a href="cart.html" class="cart_link">
             <span class="cart_icon">🛒</span>
-
-            <span> CART </span>
-
-            <span id="cartCount" class="cart_count"> 0 </span>
+            <span>カート</span>
+            <span id="cartCount" class="cart_count">0</span>
           </a>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -218,21 +220,23 @@
 
     <footer class="shop_footer">
       <div class="shop_footer_inner">
-        <div class="shop_footer_logo">
-          <span> 大宮温泉 </span>
-
-          <strong> がしみや荘 </strong>
-
-          <small> ONLINE SHOP </small>
+        <div class="footer_logo">
+          <a href="../index.html">
+            <img src="../images/title.png" alt="がしみや荘 トップページへ" />
+          </a>
         </div>
 
-        <div class="shop_footer_links">
-          <a href="index.html"> SHOP TOP </a>
+        <div class="footer_links">
+          <a href="../index.html"> がしみや荘本館 </a>
 
-          <a href="../index.html"> がしみや荘 本館 </a>
+          <a href="#"> ご利用ガイド </a>
+
+          <a href="#"> 特定商取引法に基づく表記 </a>
+
+          <a href="#"> プライバシーポリシー </a>
         </div>
 
-        <p class="shop_footer_copy">© GASHIMIYASOU</p>
+        <p class="copyright">© GASHIMIYASOU</p>
       </div>
     </footer>
 

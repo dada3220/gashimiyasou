@@ -19,13 +19,13 @@
 
 .product_detail_inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
   gap: 90px;
   align-items: start;
 }
 
 /* =========================================================
-   PRODUCT DETAIL IMAGE
+   PRODUCT IMAGE
 ========================================================= */
 
 .product_image_area {
@@ -33,10 +33,19 @@
 }
 
 .product_image_area .product_image {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: #151515;
+}
+
+.product_image_area .product_image::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  content: "";
+  pointer-events: none;
 }
 
 .product_image_area .product_image img {
@@ -47,7 +56,7 @@
 }
 
 /* =========================================================
-   PRODUCT DETAIL INFO
+   PRODUCT INFO
 ========================================================= */
 
 .product_detail .product_info {
@@ -55,26 +64,30 @@
 }
 
 .product_detail .product_category {
-  margin-bottom: 15px;
+  margin: 0 0 14px;
   color: #b49751;
   font-family: Arial, sans-serif;
   font-size: 10px;
+  line-height: 1.5;
   letter-spacing: 0.22em;
 }
 
 .product_detail .product_badge {
-  position: static;
   display: inline-block;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
   padding: 6px 12px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.08);
+  color: #d4af37;
+  font-family: Arial, sans-serif;
   font-size: 8px;
+  line-height: 1;
   letter-spacing: 0.15em;
 }
 
 .product_detail .product_name {
-  min-height: auto;
   margin: 0;
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.1em;
@@ -82,13 +95,23 @@
 
 .product_detail .product_price {
   margin: 25px 0 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
   font-size: 24px;
+  line-height: 1.4;
   letter-spacing: 0.05em;
 }
 
 .product_detail .product_price span {
+  margin-left: 3px;
+  color: #777;
   font-size: 11px;
+  letter-spacing: 0;
 }
+
+/* =========================================================
+   PRODUCT DESCRIPTION
+========================================================= */
 
 .product_description {
   margin-top: 40px;
@@ -112,6 +135,10 @@
   margin-top: 35px;
 }
 
+/* =========================================================
+   QUANTITY
+========================================================= */
+
 .quantity_area {
   display: flex;
   align-items: center;
@@ -123,6 +150,7 @@
   margin: 0;
   color: #999;
   font-size: 12px;
+  line-height: 1.5;
   letter-spacing: 0.12em;
 }
 
@@ -130,6 +158,7 @@
   display: flex;
   align-items: center;
   height: 48px;
+  overflow: hidden;
   border: 1px solid #333;
 }
 
@@ -142,6 +171,8 @@
   color: #d4af37;
   font-family: Arial, sans-serif;
   font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
   transition:
     background 0.3s ease,
     color 0.3s ease;
@@ -189,18 +220,30 @@
   border: 1px solid #d4af37;
   background: #d4af37;
   color: #111;
+  cursor: pointer;
   transition:
     background 0.3s ease,
     color 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.add_cart_button:hover {
+  background: transparent;
+  color: #d4af37;
+}
+
+.add_cart_button:active {
+  transform: translateY(1px);
 }
 
 .add_cart_button span {
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   font-family: Arial, sans-serif;
   font-size: 9px;
   font-weight: bold;
+  line-height: 1.3;
   letter-spacing: 0.25em;
 }
 
@@ -208,12 +251,8 @@
   display: block;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.5;
   letter-spacing: 0.12em;
-}
-
-.add_cart_button:hover {
-  background: transparent;
-  color: #d4af37;
 }
 
 .add_cart_button.added {
@@ -266,18 +305,21 @@
 
 .meta_item span {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #666;
   font-family: Arial, sans-serif;
   font-size: 8px;
+  line-height: 1.4;
   letter-spacing: 0.15em;
 }
 
 .meta_item strong {
+  display: block;
   color: #aaa;
   font-family: Arial, sans-serif;
   font-size: 10px;
   font-weight: normal;
+  line-height: 1.5;
   letter-spacing: 0.08em;
 }
 
@@ -286,11 +328,13 @@
 ========================================================= */
 
 .product_loading {
+  grid-column: 1 / -1;
   padding: 150px 20px;
   color: #777;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 10px;
+  line-height: 1.8;
   letter-spacing: 0.2em;
 }
 
@@ -310,6 +354,7 @@
   color: #a68d4d;
   font-family: Arial, sans-serif;
   font-size: 10px;
+  line-height: 1.5;
   letter-spacing: 0.25em;
 }
 
@@ -317,12 +362,13 @@
   margin: 0;
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 400;
+  line-height: 1.5;
   letter-spacing: 0.1em;
 }
 
 .product_not_found > p:not(.not_found_label) {
-  margin: 25px auto 35px;
   max-width: 550px;
+  margin: 25px auto 35px;
   color: #888;
   font-size: 13px;
   line-height: 2.2;
@@ -346,12 +392,14 @@
 .back_shop_button span {
   font-family: Arial, sans-serif;
   font-size: 9px;
+  line-height: 1.4;
   letter-spacing: 0.2em;
 }
 
 .back_shop_button strong {
   font-size: 13px;
   font-weight: 400;
+  line-height: 1.5;
   letter-spacing: 0.12em;
 }
 
@@ -373,18 +421,18 @@
 .product_notice_inner {
   width: min(1000px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 70px 0;
+  padding: 75px 0;
 }
 
-.product_notice_inner > .section_label {
-  margin-bottom: 30px;
-}
+/* =========================================================
+   NOTICE ITEM
+========================================================= */
 
 .notice_item {
   display: grid;
   grid-template-columns: 170px 1fr;
   gap: 30px;
-  padding: 20px 0;
+  padding: 22px 0;
   border-top: 1px solid #242424;
 }
 
@@ -392,10 +440,13 @@
   border-bottom: 1px solid #242424;
 }
 
-.notice_item strong {
-  color: #c8a95b;
-  font-size: 12px;
+.notice_item h3 {
+  margin: 0;
+  color: #ddd;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
 }
 
 .notice_item p {
@@ -403,6 +454,15 @@
   color: #888;
   font-size: 12px;
   line-height: 2.1;
+}
+
+.notice_item .section_label {
+  margin: 0;
+  color: #a68d4d;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
 }
 
 /* =========================================================
@@ -415,26 +475,41 @@
   padding: 130px 0 150px;
 }
 
-.related_products_heading {
+/* =========================================================
+   SECTION HEADING
+   HTML側の .section_heading に対応
+========================================================= */
+
+.related_products .section_heading {
   margin-bottom: 45px;
 }
 
-.related_products_heading .section_label {
-  margin-bottom: 10px;
+.related_products .section_heading .section_label {
+  margin: 0 0 10px;
 }
 
-.related_products_heading h2 {
+.related_products .section_heading h2 {
   margin: 0;
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 400;
+  line-height: 1.5;
   letter-spacing: 0.12em;
 }
 
-.related_grid {
+/* =========================================================
+   RELATED PRODUCT GRID
+   HTML側は #relatedProducts.product_grid
+========================================================= */
+
+#relatedProducts.product_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
+
+/* =========================================================
+   RELATED CARD
+========================================================= */
 
 .related_card {
   overflow: hidden;
@@ -451,7 +526,12 @@
 
 .related_link {
   display: block;
+  height: 100%;
 }
+
+/* =========================================================
+   RELATED IMAGE
+========================================================= */
 
 .related_image {
   position: relative;
@@ -472,21 +552,27 @@
   transform: scale(1.05);
 }
 
+/* =========================================================
+   RELATED TEXT
+========================================================= */
+
 .related_text {
   padding: 18px 17px 22px;
 }
 
 .related_category {
-  margin: 0 0 6px;
+  margin: 0 0 7px;
   color: #a68d4d;
   font-family: Arial, sans-serif;
   font-size: 8px;
+  line-height: 1.5;
   letter-spacing: 0.16em;
 }
 
 .related_text h3 {
-  margin: 0;
   min-height: 50px;
+  margin: 0;
+  color: #eee;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
@@ -498,6 +584,7 @@
   color: #fff;
   font-family: Arial, sans-serif;
   font-size: 13px;
+  line-height: 1.5;
 }
 
 .related_price span {
@@ -506,28 +593,42 @@
   font-size: 9px;
 }
 
+/* =========================================================
+   RELATED EMPTY
+========================================================= */
+
 .related_empty {
+  grid-column: 1 / -1;
   padding: 80px 20px;
   color: #666;
   text-align: center;
   font-size: 13px;
+  line-height: 2;
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1000px) {
-  .product_grid,
-  .product_grid_large {
+@media (max-width: 1100px) {
+  .product_detail_inner {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+    gap: 60px;
+  }
+
+  #relatedProducts.product_grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .category_grid {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .product_detail {
+    padding: 90px 0 110px;
   }
-
-  /* 商品詳細 */
 
   .product_detail_inner {
     grid-template-columns: 1fr;
@@ -538,10 +639,19 @@
     padding-top: 0;
   }
 
-  .related_grid {
+  .product_image_area .product_image {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  #relatedProducts.product_grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
   /* =======================================================
@@ -566,7 +676,12 @@
   }
 
   .product_detail .product_category {
+    margin-bottom: 12px;
     font-size: 9px;
+  }
+
+  .product_detail .product_badge {
+    margin-bottom: 15px;
   }
 
   .product_detail .product_name {
@@ -579,6 +694,14 @@
     font-size: 20px;
   }
 
+  .product_detail .product_price span {
+    font-size: 10px;
+  }
+
+  /* =======================================================
+     DESCRIPTION
+  ======================================================= */
+
   .product_description {
     margin-top: 30px;
     padding: 25px 0;
@@ -587,6 +710,14 @@
   .product_description p {
     font-size: 12px;
     line-height: 2.2;
+  }
+
+  /* =======================================================
+     PURCHASE
+  ======================================================= */
+
+  .product_purchase {
+    margin-top: 30px;
   }
 
   .quantity_area {
@@ -611,6 +742,14 @@
     min-height: 64px;
   }
 
+  .add_cart_button strong {
+    font-size: 13px;
+  }
+
+  /* =======================================================
+     META
+  ======================================================= */
+
   .product_meta {
     margin-top: 25px;
   }
@@ -634,8 +773,12 @@
     padding: 18px 0;
   }
 
-  .notice_item strong {
-    font-size: 11px;
+  .notice_item h3 {
+    font-size: 13px;
+  }
+
+  .notice_item .section_label {
+    font-size: 8px;
   }
 
   .notice_item p {
@@ -651,11 +794,15 @@
     padding: 90px 0 100px;
   }
 
-  .related_products_heading {
+  .related_products .section_heading {
     margin-bottom: 30px;
   }
 
-  .related_grid {
+  .related_products .section_heading h2 {
+    font-size: 25px;
+  }
+
+  #relatedProducts.product_grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
@@ -667,10 +814,15 @@
   .related_text h3 {
     min-height: auto;
     font-size: 12px;
+    line-height: 1.7;
   }
 
   .related_price {
     font-size: 12px;
+  }
+
+  .related_price span {
+    font-size: 8px;
   }
 
   /* =======================================================
@@ -696,8 +848,14 @@
   }
 }
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 420px) {
-  /* 商品詳細 */
+  /* =======================================================
+     PRODUCT DETAIL
+  ======================================================= */
 
   .product_detail {
     width: calc(100% - 30px);
@@ -706,6 +864,14 @@
   .product_detail .product_name {
     font-size: 24px;
   }
+
+  .product_detail .product_price {
+    font-size: 19px;
+  }
+
+  /* =======================================================
+     META
+  ======================================================= */
 
   .product_meta {
     grid-template-columns: 1fr;
@@ -716,13 +882,15 @@
     border-left: none;
   }
 
-  /* 関連商品 */
+  /* =======================================================
+     RELATED
+  ======================================================= */
 
   .related_products {
     width: calc(100% - 30px);
   }
 
-  .related_grid {
+  #relatedProducts.product_grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
@@ -731,7 +899,9 @@
     aspect-ratio: 4 / 3;
   }
 
-  /* 商品注意事項 */
+  /* =======================================================
+     NOTICE
+  ======================================================= */
 
   .product_notice_inner {
     width: calc(100% - 30px);

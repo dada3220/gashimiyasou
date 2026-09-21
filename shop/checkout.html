@@ -27,484 +27,40 @@
 
     <link rel="stylesheet" href="css/shop.css" />
     <link rel="stylesheet" href="css/shop-checkout.css" />
-
-    <!-- =====================================================
-         CHECKOUT PAGE STYLE
-    ====================================================== -->
-
-    <style>
-      /* =====================================================
-         CHECKOUT
-      ====================================================== */
-
-      .checkout_page {
-        background: #000;
-        color: #fff;
-        padding: 90px 20px 120px;
-      }
-
-      .checkout_inner {
-        width: min(1180px, 100%);
-        margin: 0 auto;
-      }
-
-      .checkout_layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 380px;
-        gap: 70px;
-        align-items: start;
-      }
-
-      .checkout_main {
-        min-width: 0;
-      }
-
-      .checkout_section {
-        margin-bottom: 70px;
-      }
-
-      .checkout_section_head {
-        border-bottom: 1px solid rgba(212, 175, 55, 0.45);
-        padding-bottom: 18px;
-        margin-bottom: 30px;
-      }
-
-      .checkout_section_label {
-        color: #d4af37;
-        font-size: 11px;
-        letter-spacing: 0.25em;
-        margin-bottom: 8px;
-      }
-
-      .checkout_section_head h2 {
-        font-size: 24px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-      }
-
-      /* -----------------------------------------------
-         FORM
-      ------------------------------------------------ */
-
-      .checkout_form_group {
-        margin-bottom: 25px;
-      }
-
-      .checkout_form_group:last-child {
-        margin-bottom: 0;
-      }
-
-      .checkout_form_group label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 14px;
-        letter-spacing: 0.08em;
-      }
-
-      .required {
-        display: inline-block;
-        margin-left: 8px;
-        color: #d4af37;
-        font-size: 10px;
-        letter-spacing: 0.05em;
-      }
-
-      .checkout_form_group input,
-      .checkout_form_group select,
-      .checkout_form_group textarea {
-        width: 100%;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        background: #111;
-        color: #fff;
-        padding: 15px 16px;
-        border-radius: 0;
-        font-family: inherit;
-        font-size: 14px;
-        outline: none;
-        transition: border-color 0.3s ease;
-      }
-
-      .checkout_form_group input:focus,
-      .checkout_form_group select:focus,
-      .checkout_form_group textarea:focus {
-        border-color: #d4af37;
-      }
-
-      .checkout_form_group textarea {
-        min-height: 120px;
-        resize: vertical;
-        line-height: 1.8;
-      }
-
-      .checkout_form_group select {
-        appearance: auto;
-      }
-
-      .form_row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .form_error {
-        display: none;
-        margin-top: 7px;
-        color: #e86a6a;
-        font-size: 12px;
-      }
-
-      .checkout_form_group.error input,
-      .checkout_form_group.error select {
-        border-color: #c44;
-      }
-
-      .checkout_form_group.error .form_error {
-        display: block;
-      }
-
-      /* -----------------------------------------------
-         PAYMENT
-      ------------------------------------------------ */
-
-      .payment_options {
-        display: grid;
-        gap: 12px;
-      }
-
-      .payment_option {
-        position: relative;
-      }
-
-      .payment_option input {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .payment_option label {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: #0b0b0b;
-        cursor: pointer;
-        transition:
-          border-color 0.3s ease,
-          background 0.3s ease;
-      }
-
-      .payment_option label::before {
-        content: "";
-        width: 17px;
-        height: 17px;
-        border: 1px solid #777;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-
-      .payment_option input:checked + label {
-        border-color: #d4af37;
-        background: rgba(212, 175, 55, 0.06);
-      }
-
-      .payment_option input:checked + label::before {
-        border-color: #d4af37;
-        box-shadow: inset 0 0 0 4px #0b0b0b;
-        background: #d4af37;
-      }
-
-      .payment_option_text strong {
-        display: block;
-        margin-bottom: 4px;
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      .payment_option_text span {
-        display: block;
-        color: #999;
-        font-size: 11px;
-      }
-
-      /* -----------------------------------------------
-         ORDER SUMMARY
-      ------------------------------------------------ */
-
-      .checkout_summary {
-        position: sticky;
-        top: 30px;
-        border: 1px solid rgba(212, 175, 55, 0.35);
-        background: #090909;
-        padding: 35px 30px;
-      }
-
-      .checkout_summary_label {
-        color: #d4af37;
-        font-size: 10px;
-        letter-spacing: 0.25em;
-        margin-bottom: 8px;
-      }
-
-      .checkout_summary h2 {
-        margin-bottom: 30px;
-        font-size: 22px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-      }
-
-      .checkout_order_items {
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-      }
-
-      .checkout_order_item {
-        display: grid;
-        grid-template-columns: 70px 1fr;
-        gap: 15px;
-        padding: 18px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .checkout_order_image {
-        width: 70px;
-        height: 70px;
-        overflow: hidden;
-        background: #151515;
-      }
-
-      .checkout_order_image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .checkout_order_name {
-        margin-bottom: 5px;
-        font-size: 13px;
-        line-height: 1.6;
-      }
-
-      .checkout_order_quantity {
-        color: #999;
-        font-size: 11px;
-      }
-
-      .checkout_order_price {
-        margin-top: 5px;
-        color: #d4af37;
-        font-size: 13px;
-      }
-
-      .checkout_price_list {
-        margin-top: 25px;
-      }
-
-      .checkout_price_list > div {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 8px 0;
-        font-size: 13px;
-      }
-
-      .checkout_total {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 18px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(212, 175, 55, 0.4);
-      }
-
-      .checkout_total span {
-        font-size: 14px;
-        letter-spacing: 0.08em;
-      }
-
-      .checkout_total strong {
-        color: #d4af37;
-        font-size: 24px;
-        font-weight: 500;
-      }
-
-      .checkout_tax_note {
-        margin-top: 12px;
-        color: #777;
-        font-size: 10px;
-        line-height: 1.7;
-      }
-
-      /* -----------------------------------------------
-         SUBMIT
-      ------------------------------------------------ */
-
-      .checkout_submit_area {
-        margin-top: 45px;
-      }
-
-      .checkout_submit {
-        width: 100%;
-        border: 1px solid #d4af37;
-        background: #d4af37;
-        color: #000;
-        padding: 20px;
-        cursor: pointer;
-        font-family: inherit;
-        transition:
-          background 0.3s ease,
-          color 0.3s ease;
-      }
-
-      .checkout_submit span {
-        display: block;
-        margin-bottom: 4px;
-        font-size: 10px;
-        letter-spacing: 0.25em;
-      }
-
-      .checkout_submit strong {
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-      }
-
-      .checkout_submit:hover {
-        background: transparent;
-        color: #d4af37;
-      }
-
-      .checkout_back {
-        display: block;
-        margin-top: 18px;
-        color: #aaa;
-        text-align: center;
-        font-size: 12px;
-        text-decoration: none;
-      }
-
-      .checkout_back:hover {
-        color: #d4af37;
-      }
-
-      /* -----------------------------------------------
-         NOTICE
-      ------------------------------------------------ */
-
-      .checkout_notice {
-        margin-top: 35px;
-        padding: 20px;
-        background: #111;
-        color: #888;
-        font-size: 11px;
-        line-height: 1.9;
-      }
-
-      /* -----------------------------------------------
-         EMPTY
-      ------------------------------------------------ */
-
-      .checkout_empty {
-        padding: 100px 20px;
-        text-align: center;
-      }
-
-      .checkout_empty_label {
-        margin-bottom: 15px;
-        color: #d4af37;
-        font-size: 11px;
-        letter-spacing: 0.25em;
-      }
-
-      .checkout_empty h1 {
-        margin-bottom: 20px;
-        font-size: 26px;
-        font-weight: 500;
-      }
-
-      .checkout_empty p {
-        color: #888;
-        font-size: 13px;
-        line-height: 2;
-      }
-
-      .checkout_empty a {
-        display: inline-block;
-        margin-top: 35px;
-        border: 1px solid #d4af37;
-        padding: 15px 30px;
-        color: #d4af37;
-        text-decoration: none;
-        font-size: 12px;
-        letter-spacing: 0.1em;
-      }
-
-      /* -----------------------------------------------
-         RESPONSIVE
-      ------------------------------------------------ */
-
-      @media (max-width: 900px) {
-        .checkout_layout {
-          grid-template-columns: 1fr;
-          gap: 60px;
-        }
-
-        .checkout_summary {
-          position: static;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .checkout_page {
-          padding: 60px 15px 80px;
-        }
-
-        .form_row {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-
-        .checkout_section {
-          margin-bottom: 55px;
-        }
-
-        .checkout_section_head h2 {
-          font-size: 20px;
-        }
-
-        .checkout_summary {
-          padding: 25px 20px;
-        }
-      }
-    </style>
   </head>
 
   <body>
     <!-- =====================================================
-         HEADER
+     SHOP HEADER
     ====================================================== -->
 
     <header class="shop_header">
       <div class="shop_header_inner">
+        <!-- 左：旅館ロゴ（トップページへ） -->
+        <a href="../index.html" class="shop_main_logo">
+          <img src="../images/title.png" alt="がしみや荘 トップページへ" />
+        </a>
+
+        <!-- 中央：オンラインショップロゴ -->
         <a href="index.html" class="shop_logo">
-          <span class="shop_logo_jp">がしみや荘</span>
-          <p>オンラインショップ</p>
+          <span class="shop_logo_small"
+            ><img
+              src="../images/favicon.png"
+              alt="がしみや荘 トップページへ"
+            />がしみや荘</span
+          >
+          <span class="shop_logo_jp">オンラインショップ</span>
           <span class="shop_logo_en">ONLINE SHOP</span>
         </a>
 
-        <nav class="shop_header_nav">
-          <a href="../index.html" class="back_to_main"> 本館サイトへ </a>
-
-          <a href="index.html" class="shop_home_link"> SHOP </a>
-
+        <!-- 右：カート -->
+        <div class="shop_header_right">
           <a href="cart.html" class="cart_link">
             <span class="cart_icon">🛒</span>
-
-            <span>CART</span>
-
-            <span id="cartCount" class="cart_count"> 0 </span>
+            <span>カート</span>
+            <span id="cartCount" class="cart_count">0</span>
           </a>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -928,21 +484,23 @@
 
     <footer class="shop_footer">
       <div class="shop_footer_inner">
-        <div class="shop_footer_logo">
-          <span> 大宮温泉 </span>
-
-          <strong> がしみや荘 </strong>
-
-          <small> ONLINE SHOP </small>
+        <div class="footer_logo">
+          <a href="../index.html">
+            <img src="../images/title.png" alt="がしみや荘 トップページへ" />
+          </a>
         </div>
 
-        <div class="shop_footer_links">
-          <a href="index.html"> SHOP TOP </a>
+        <div class="footer_links">
+          <a href="../index.html"> がしみや荘本館 </a>
 
-          <a href="../index.html"> がしみや荘 本館 </a>
+          <a href="#"> ご利用ガイド </a>
+
+          <a href="#"> 特定商取引法に基づく表記 </a>
+
+          <a href="#"> プライバシーポリシー </a>
         </div>
 
-        <p class="shop_footer_copy">© GASHIMIYASOU</p>
+        <p class="copyright">© GASHIMIYASOU</p>
       </div>
     </footer>
 
